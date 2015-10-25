@@ -16,7 +16,7 @@ nTier On Time is developing a code generator with a Single Codebase solution  fo
   - Windows App Store on MVVM
   - Windows Phone 7/8 on MVVM
   - Silverlight on MVVM
-* UI and Design Pattern Working in progress:
+* UI and Design Pattern working in progress:
   - PhoneGap/Cordova with Angular JS, Angular JS UI and Bootstrap on Mvc/Mvw.
   - IOS Native Mobile App on MVVM, Xamarin
   - Android Native Mobile App on MVVM, Xamarin
