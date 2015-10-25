@@ -1,0 +1,29 @@
+@model Log4Net.AspNetMvc40Common.Models.RegisterExternalLoginModel
+@{
+    ViewBag.Title = Framework.Resources.UIStringResource.Account_ExternalLogin_AssociationTitleText;
+}
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@string.Format(Framework.Resources.UIStringResource.Account_ExternalLogin_AssociateExternalLoginTitle, ViewBag.ProviderDisplayName)</h2>
+</hgroup>
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Framework.Resources.UIStringResource.Account_ExternalLogin_AssociateExternalLoginLegend</legend>
+        <p>@string.Format(Framework.Resources.UIStringResource.Account_ExternalLogin_AssociateExternalLoginSuccess, ViewBag.ProviderDisplayName)
+        </p>
+        <ol>
+            <li class="name">
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+        </ol>
+        @Html.HiddenFor(m => m.ExternalLoginData)
+        <input type="submit" value="@Framework.Resources.UIStringResource.Account_ExternalLogin_AssociationSubmitValue" />
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

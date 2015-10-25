@@ -1,0 +1,66 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Log4Net.WebFormApp.MasterPages.Default" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxControlToolkit" %>
+<%@ Register src="~/UserControls/GenericHeader.ascx" tagname="GenericHeader" tagprefix="uc1" %>
+<%@ Register src="~/UserControls/GenericFooter.ascx" tagname="GenericFooter" tagprefix="uc3" %>
+<%@ Register src="~/UserControls/GenericHorizonMenu.ascx" tagname="GenericHorizonMenu" tagprefix="uc4" %>
+<%@ Register src="~/UserControls/GenericVerticalMenu.ascx" tagname="GenericVerticalMenu" tagprefix="uc6" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="MainHead" runat="server" >
+    <title><asp:Literal ID="Literal1" runat="server" Text="<%$ Resources:Log4Net.Resources|UIStringResource, Application_Title%>" /></title>
+    <asp:ContentPlaceHolder ID="CPHH" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="MainForm" runat="server">
+        <ajaxControlToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+        </ajaxControlToolkit:ToolkitScriptManager>
+        <table id="MainTable" style ="width:90%" border="0" align="center" >
+            <tr id="a">
+                <td colspan="3" align="center" >
+                    &nbsp;</td>
+            </tr>
+            <tr visible="false">
+                <td colspan="3" align="right"  visible="false">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3" >
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right" >
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                        LogoutPageUrl="~/Default.aspx" onloggedout="LoginStatus1_LoggedOut"
+                        LoginText="<%$ Resources:Log4Net.Resources|UIStringResource, Account_LogInStatus_LoginText %>"
+                        LogoutText="<%$ Resources:Log4Net.Resources|UIStringResource, Account_LogInStatus_LogoutText %>" 
+                        />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="headerbar" align="right">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" SkinID="SiteMapPath" 
+                        Height="25px" ParentLevelsDisplayed="4" Width="100%">
+                    </asp:SiteMapPath>
+                </td>
+            </tr>
+                    <tr>
+                        <td id="leftzonecontainer" valign="top" style="width:250px;">
+                            <uc6:GenericVerticalMenu ID="GenericVerticalMenu1" runat="server" />
+                        </td>
+
+                        <td id="mainzonecontainer" valign="top" style="width:100%">
+                    <asp:contentplaceholder id="CPHMCID" runat="server">
+                    </asp:contentplaceholder>
+                        </td>
+                        <td id="rightzonecontainer" valign="top" style="width:250px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" colspan="3">
+                            &nbsp;</td>
+                    </tr>
+            </table>
+    </form>
+</body>
+</html>

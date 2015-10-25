@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseName>Log4Net</TargetDatabaseName>
+    <DeployScriptFileName>VS2012DatabaseProject.sql</DeployScriptFileName>
+    <TargetConnectionString>Data Source=Localhost;Initial Catalog=Log4Net;UID=sa;PWD=Qwer~123;</TargetConnectionString>
+    <ProfileVersionNumber>1</ProfileVersionNumber>
+    <ScriptDatabaseOptions>True</ScriptDatabaseOptions>
+    <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
+    <CreateNewDatabase>True</CreateNewDatabase>
+    <BackupDatabaseBeforeChanges>True</BackupDatabaseBeforeChanges>
+  </PropertyGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="SqlCmdVar_LoadSystemInitilizationData">
+      <Value>True</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="SqlCmdVar_DumpTestData">
+      <Value>Test</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+</Project>

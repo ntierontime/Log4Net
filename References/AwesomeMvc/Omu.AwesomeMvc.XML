@@ -1,0 +1,2870 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Omu.AwesomeMvc</name>
+    </assembly>
+    <members>
+        <member name="T:Omu.AwesomeMvc.PopupFormActionLink`1">
+            <summary>
+            PopupFormActionLink Html Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Omu.AwesomeMvc.PopupBase`2">
+            <summary>
+            Base class for the popup helpers
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TH"></typeparam>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeHelperBase">
+            <summary>
+            Base class for awesome Helpers
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelperBase.Render">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelperBase.ToString">
+            <summary>
+            Render the html helper output
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelperBase.ToHtmlString">
+            <summary>
+            Render the html helper output
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.PopupClass(System.String)">
+            <summary>
+            Set a string to be added in the class attribute of the popup element 
+            </summary>
+            <param name="o">html class</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.RemoveOnClose(System.Boolean)">
+            <summary>
+            whether to remove the content of the popup and the popup itself after close, by default is true
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Name(System.String)">
+            <summary>
+            gives the popup a name;
+            default name is awesomePopup;
+            when using 2 popups with same name opening one will close the other.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Content(System.String)">
+            <summary>
+            Set the content of the popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Button(System.String,System.String)">
+            <summary>
+            Add a button to the popup
+            </summary>
+            <param name="text">text of the button</param>
+            <param name="click">name of a JavaScript function to be called when clicking this button</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Width(System.Int32)">
+            <summary>
+            Set the width of the popup 
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Height(System.Int32)">
+            <summary>
+            Set the height of the popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Modal(System.Boolean)">
+            <summary>
+            If set to true, the popup will be modal
+            Modal dialogs create an overlay below the Popup but above other page elements
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Title(System.String)">
+            <summary>
+            Set the title of the popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Fullscreen(System.Boolean)">
+            <summary>
+            If true the popup will fill the browser window 
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Position(System.String)">
+            <summary>
+            Specifies where the dialog should be displayed. Possible values: 
+            1) a single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'. 
+            2) an array containing an x,y coordinate pair in pixel offset from left, top corner of viewport (e.g. [350,100]) 
+            3) an array containing x,y position string values (e.g. ['right','top'] for top right corner).
+             </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Resizable(System.Boolean)">
+            <summary>
+            If set to true, the popup will be resizable
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupBase`2.Url(System.String)">
+            <summary>
+            The Url from where to load the content of the popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormActionLink`1.#ctor">
+            <summary>
+            Creates an instance of the PopupFormActionLink Html Helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormActionLink`1.CancelText(System.String)">
+            <summary>
+            Set the text of the cancel button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormActionLink`1.OkText(System.String)">
+            <summary>
+            Set the text of the Ok button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormActionLink`1.Success(System.String)">
+            <summary>
+            Set the name of a JavaScript function to be called on success (when a json object is returned from the server)
+            the json object returned by the server will be passed to this function as a parameter
+            </summary>
+            <param name="o">name of the success js function</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormActionLink`1.RefreshOnSuccess(System.Boolean)">
+            <summary>
+            When true the page will refresh after a successful post
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+            <remarks>Successful post for the PopupForm is when a Json object is returned from the server</remarks>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormActionLink`1.LinkText(System.String)">
+            <summary>
+            Set the text of the link
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormActionLink`1.HtmlAttributes(System.Object)">
+            <summary>
+            Set html attributes
+            </summary>
+            <param name="o">An object that contains the HTML attributes to set for the element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormActionLink`1.CssClass(System.String)">
+            <summary>
+            Set CSS class
+            </summary>
+            <param name="o">String to be added in the class html attribute of the element</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.PopupFormAction">
+            <summary>
+            PopupFormAction Url Helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormAction.#ctor">
+            <summary>
+            Creates an instance of the PopupFormAction Url Helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormAction.CancelText(System.String)">
+            <summary>
+            Set the text of the cancel button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormAction.OkText(System.String)">
+            <summary>
+            Set the text of the Ok button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormAction.Success(System.String)">
+            <summary>
+            Set the name of a JavaScript function to be called on success (when a json object is returned from the server)
+            the json object returned by the server will be passed to this function as a parameter
+            </summary>
+            <param name="o">name of the success js function</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupFormAction.RefreshOnSuccess(System.Boolean)">
+            <summary>
+            When true the page will refresh after a successful post
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+            <remarks>Successful post for the PopupForm is when a Json object is returned from the server</remarks>
+        </member>
+        <member name="T:Omu.AwesomeMvc.GridModelBuilder`1">
+            <summary>
+            builds the awesome grid model
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.GridModelBuilder`1.gridParams">
+            <summary>
+            Grid Parameters
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.GridModelBuilder`1.items">
+            <summary>
+            A queryable collection of items
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.GridModelBuilder`1.#ctor(System.Linq.IQueryable{`0},Omu.AwesomeMvc.GridParams)">
+            <summary>
+            Create an instance of the GridModelBuilder
+            </summary>
+            <param name="gridParams"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.GridModelBuilder`1.Build">
+            <summary>
+            Build the Grid Model
+            </summary>
+            <returns>object representing the grid model</returns>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModelBuilder`1.MakeFooter">
+            <summary>
+            Function for creating a group footer
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModelBuilder`1.AreInSameGroup">
+            <summary>
+            Used to compare 2 objects and determine whether these objects are in the same group;
+            parameters: column name, row1, row2;
+            returns: true if rows are in the same group;
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModelBuilder`1.Key">
+            <summary>
+            used to sort by it when there is no sorting (GridParams.SortNames array is empty)
+            needed for EntityFramework to always do OrderBy before doing Skip (paging),
+            don't use if you're already sorting the data by calling OrderBy/OrderByDescending
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModelBuilder`1.MakeHeader">
+            <summary>
+            Function for creating a group header
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModelBuilder`1.Map">
+            <summary>
+            Function for mapping the item
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModelBuilder`1.PageCount">
+            <summary>
+            when this property has value the data won't be ordered or paged, it would be expected that the passed items 
+            are already ordered and paged;
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeMetadataAttribute">
+            <summary>
+            Base class for Awesome Metadata Attributes
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.AwesomeMetadataAttribute.wasSet">
+            <summary>
+            Contains the names of the properties of the attribute that have some value set to them
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeMetadataAttribute.OnMetadataCreated(System.Web.Mvc.ModelMetadata)">
+            <summary>
+            Handle Metadata created
+            </summary>
+            <param name="metadata"></param>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AjaxDropdown`1">
+            <summary>
+            Awesome AjaxDropdown Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeHelper`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TH"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.CssClass(System.String)">
+            <summary>
+            Set CSS class
+            </summary>
+            <param name="s">String to be added in the class html attribute of the element </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.HtmlAttributes(System.Object)">
+            <summary>
+            Set html attributes
+            </summary>
+            <param name="o">An object that contains the HTML attributes to set for the element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.Parent(System.String,System.String)">
+            <summary>
+            Add a Parent element
+            On load the value of the parent is sent to the server
+            </summary>
+            <param name="o"> the html id of the parent element</param>
+            <param name="alias"> the alias to be used at the server side for the parent (default = 'parent')</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.Parent``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String)">
+            <summary>
+            Add a Parent element. 
+            On load the value of the parent is sent to the server.
+            On parent change child is reloaded.
+            </summary>
+            <param name="o"> Model's Property used to generate the html id of the parent element</param>
+            <param name="alias"> the alias to be used at the server side for the parent (default = 'parent')</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.Area(System.String)">
+            <summary>
+            Set the MVC Area to be used when generating the url
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.Controller``1">
+            <summary>
+            Set the MVC controller to be used when generating the url
+            </summary>
+            <typeparam name="TController">Controller Type</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.Controller(System.String)">
+            <summary>
+            Set the MVC controller to be used when generating the url
+            </summary>
+            <param name="o">name of the controller</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.Value(System.Object)">
+            <summary>
+            Set value
+            </summary>
+            <param name="o">
+             The value of the text input element. If this value is null, the value of
+             the element is retrieved from the System.Web.Mvc.ViewDataDictionary object.
+             If no value exists there, the value is retrieved from the System.Web.Mvc.ModelStateDictionary object.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.Prefix(System.String)">
+            <summary>
+            Set Prefix for the html id (use to achieve unique ids for elements with same name)
+            </summary>
+            <param name="s">prefix</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHelper`2.Parameter(System.String,System.Object)">
+            <summary>
+            Set a parameter.
+            On load parameters are sent to the server.
+            </summary>
+            <param name="name">the name of the parameter to be used on the server side</param>
+            <param name="value">the value of the parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxDropdown`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Creates an instance of the Awesome AjaxDropdown Helper
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxDropdown`1.Url(System.String)">
+            <summary>.
+            Set the Url to get data from
+            When url has value Controller, Action and Area are ignored
+            </summary>
+            <param name="o">the string url</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxDropdown`1.Action(System.String)">
+            <summary>
+            The Action from where to get data from (default "GetItems")
+            </summary>
+            <param name="o">action</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AweUtil">
+            <summary>
+            Awesome Utilities
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AweUtil.GetColumnValue(System.String,System.Object)">
+            <summary>
+            Gets the value of one or more properties which names are specified separated by comma; e.g. "FirstName,LastName"
+            </summary>
+            <param name="name">comma separated property names</param>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeUrlHelper">
+            <summary>
+            Awesome Wrapper for the Url Helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeUrlHelper.#ctor(System.Web.Mvc.UrlHelper)">
+            <summary>
+            Create an instance of the AwesomeUrlHelper
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AwesomeUrlHelper.Url">
+            <summary>
+            Url Helper
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AjaxRadioList`1">
+            <summary>
+            AjaxRadioList Html Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxRadioList`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Creates an instance of the AjaxRadioList Html Helper
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxRadioList`1.Url(System.String)">
+            <summary>
+            Set from Url to get data from
+            If set Controller, Action and Area are ignored
+            </summary>
+            <param name="o">the string url</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxRadioList`1.Action(System.String)">
+            <summary>
+            The Action from where to get data from (default "GetItems")
+            </summary>
+            <param name="o">action</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.ControllerExtensions">
+            <summary>
+            Awesome controller extensions
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.ControllerExtensions.RenderView(System.Web.Mvc.Controller,System.String,System.Object,System.String)">
+            <summary>
+            Renders a view and returns the rendered html
+            </summary>
+            <param name="controller">MVC controller</param>
+            <param name="viewName">view name</param>
+            <param name="model">model for the view</param>
+            <param name="master">masterpage</param>
+            <returns>the rendered html</returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.GroupView`1">
+            <summary>
+            Awesome Grid GroupView
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupView`1.Header">
+            <summary>
+            Group Header
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupView`1.Groups">
+            <summary>
+            Groups
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupView`1.Items">
+            <summary>
+            Group items
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupView`1.Footer">
+            <summary>
+            Group footer
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Column">
+            <summary>
+            Awesome Grid Column
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.Name">
+            <summary>
+            Name of the column, used for binding to the items properties
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.Header">
+            <summary>
+            Content of the header for this column
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.Sortable">
+            <summary>
+            if true column will be sortable
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.Groupable">
+            <summary>
+            if true column will be groupable
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.Width">
+            <summary>
+            width in px
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.PercentWidth">
+            <summary>
+            Width in percent
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.ClientFormat">
+            <summary>
+            Client format for the column defined as a string using .ModelPropertyName for including values of the row model,
+            if the ClientFormat starts with &lt;td then grid rendering wont wrap the cell value with td (the ones in format will be used instead),
+            this way additional html attributes can be added to the td tag (this attributes can contain .ModelProp)
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.Group">
+            <summary>
+            defines whether initially the column is grouped
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.Sort">
+            <summary>
+            defines the initial sorting for this column
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.SortRank">
+            <summary>
+            defines the initial sort rank for this column
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.GroupRank">
+            <summary>
+            Defines the Group rank for this column
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.GroupRemovable">
+            <summary>
+            (default is true) if set to false grouped column won't have the remove group button
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.Column.ClientFormatFunc">
+            <summary>
+            Defines the Name of a javascript function that will receive as a parameter the model of the grid row and must return a string
+            which will be used a value for the cell 
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Sort">
+            <summary>
+            Sorting types
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Sort.None">
+            <summary>
+            No sorting
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Sort.Asc">
+            <summary>
+            Ascending
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Sort.Desc">
+            <summary>
+            Descending
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings">
+            <summary>
+            Default settings for the Awesome Helpers
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.HtmlEncodeEnabled">
+            <summary>
+            When true html encoding will be applied to SelectableItem and KeyContent
+            (default true) 
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.GetText">
+            <summary>
+            Function used for localizing default text,
+            this function will receive 2 parameters (name of the helper and name of the property) and must return a string,
+            if the function returns null the default text will be used instead
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.Grid">
+            <summary>
+            Grid Defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.LoadOnParentChange">
+            <summary>
+            Reload every time a parent element is changed; default is true
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.Groupable">
+            <summary>
+            Groupable (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.Sortable">
+            <summary>
+            Sortable (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.GroupRemovable">
+            <summary>
+            When false group buttons on the groupbar don't have a remove button (x) 
+            (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.ShowGroupHeader">
+            <summary>
+            Show or not the GroupHeader (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.ShowGroupedColumn">
+            <summary>
+            Show the columns that are grouped by (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.ShowFooter">
+            <summary>
+            Show Footer (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.ShowHeader">
+            <summary>
+            Show Header (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.SingleColumnSort">
+            <summary>
+            When true grid can be sorted only by one column at a time
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.CollapseOnHeaderClick">
+            <summary>
+            When true groups will collapse/expand when clicking on the group header row 
+            otherwise only when clicking one collapse/expand button (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Grid.GroupBarText">
+            <summary>
+            Text on the GroupBar
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.Autocomplete">
+            <summary>
+            Autocomplete defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Autocomplete.IdFormat">
+            <summary>
+            String format for generation of the Id field
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Autocomplete.Delay">
+            <summary>
+            The delay in milliseconds the Autocomplete waits after a keystroke to activate itself. 
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Autocomplete.MinLength">
+            <summary>
+            The minimum number of characters a user has to type before the Autocomplete activates. (default 1)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Autocomplete.GeneratePropId">
+            <summary>
+            If true a hidden input will be generated to store the key for the selected value
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.AjaxList">
+            <summary>
+            AjaxList defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.AjaxList.LoadOnParentChange">
+            <summary>
+            Reload every time a parent element is changed; default is true
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.AjaxList.MoreText">
+            <summary>
+            Text of the "More results" button
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.AjaxList.SearchOnChange">
+            <summary>
+            If true load of data will be triggered each time value of a parent element will be changed 
+            (default = true)
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.Form">
+            <summary>
+            Form html helper defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.FillFormOnContent">
+            <summary>
+            If true, when the post result will be content (Content(),View(), string, not Json object)
+            the content of the form will be filled with that result
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.UseAjax">
+            <summary>
+            When true form submission is made via AJAX (default true)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.FormClass">
+            <summary>
+            Default form class
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.Confirm">
+            <summary>
+            If true form submission will be prevented by a confirm dialog
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.Form.ConfirmOptions">
+            <summary>
+            Default options for the confirm dialog
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.ConfirmOptions.Title">
+            <summary>
+            Title of the confirm dialog
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.ConfirmOptions.Width">
+            <summary>
+            Popup width
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.ConfirmOptions.Height">
+            <summary>
+            Popup height
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.ConfirmOptions.YesText">
+            <summary>
+            Yes text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.ConfirmOptions.NoText">
+            <summary>
+            No text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.ConfirmOptions.Modal">
+            <summary>
+            Make the confirm dialog modal
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Form.ConfirmOptions.Message">
+            <summary>
+            Confirm dialog's message
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.Lookup">
+            <summary>
+            Lookup defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.Modal">
+            <summary>
+            Modal popup
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.Width">
+            <summary>
+            Popup width
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.Height">
+            <summary>
+            Popup height
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.ClearButton">
+            <summary>
+            Show a clear button
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.OkText">
+            <summary>
+            Ok button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.CancelText">
+            <summary>
+            Cancel button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.Title">
+            <summary>
+            Popup title
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.MoreText">
+            <summary>
+            More results button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.SearchText">
+            <summary>
+            Search button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.Fullscreen">
+            <summary>
+            Make the Popup full screen
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.ClearButtonText">
+            <summary>
+            Clear button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.PopupButtonText">
+            <summary>
+            Open popup button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.SearchOnChange">
+            <summary>
+            TODO:
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Lookup.HighlightChange">
+            <summary>
+            Highlight the element on change
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.MultiLookup">
+            <summary>
+            MultiLookup defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.Modal">
+            <summary>
+            Make popup modal
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.Width">
+            <summary>
+            Width (default 750)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.Height">
+            <summary>
+            Height (default 465)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.ClearButton">
+            <summary>
+            Show clear button
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.OkText">
+            <summary>
+            Ok button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.CancelText">
+            <summary>
+            Cancel button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.Title">
+            <summary>
+            Popup title
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.MoreText">
+            <summary>
+            More results button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.SearchText">
+            <summary>
+            Search button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.Fullscreen">
+            <summary>
+            Make popup fullscreen
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.ClearButtonText">
+            <summary>
+            Clear button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.PopupButtonText">
+            <summary>
+            Popup button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.SearchOnChange">
+            <summary>
+            TODO:
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.DragAndDrop">
+            <summary>
+            If true drag and drop of the items from search list to selected list will be enabled
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.MultiLookup.HighlightChange">
+            <summary>
+            If true a highlight animation will trigger when selecting a value
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.PopupForm">
+            <summary>
+            PopupForm defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.PopupForm.Fullscreen">
+            <summary>
+            Make PopupForm fullscreen
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.PopupForm.Width">
+            <summary>
+            Width
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.PopupForm.Height">
+            <summary>
+            Height
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.PopupForm.RefreshOnSuccess">
+            <summary>
+            Refresh document on successful form post (form from inside the popup)
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.PopupForm.OkText">
+            <summary>
+            Ok button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.PopupForm.CancelText">
+            <summary>
+            Cancel button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.PopupForm.Resizable">
+            <summary>
+            Make popup resizable
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.PopupForm.Modal">
+            <summary>
+            Make popup modal
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.Popup">
+            <summary>
+            Popup defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Popup.Width">
+            <summary>
+            Width
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Popup.Height">
+            <summary>
+            Height
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Popup.Resizable">
+            <summary>
+            Is popup resizable
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Popup.Modal">
+            <summary>
+            Make popup modal
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.Popup.Fullscreen">
+            <summary>
+            Make popup fullscreen
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Settings.DatePicker">
+            <summary>
+            DatePicker defaults
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.DatePicker.ChangeYear">
+            <summary>
+            Show change year dropdown
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.DatePicker.ChangeMonth">
+            <summary>
+            Show change month dropdown
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.DatePicker.DateFormat">
+            <summary>
+            Set DateFormat
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.DatePicker.ClearButton">
+            <summary>
+            Show a clear button
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.DatePicker.ClearButtonText">
+            <summary>
+            Clear button text
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Settings.DatePicker.PopupButtonText">
+            <summary>
+            Open popup button text
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.MultiLookup`1">
+            <summary>
+            MultiLookup Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Create an instance of the MultiLookup Html Helper
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.TableLayout(System.Boolean)">
+            <summary>
+            If set to true it will use a table tag instead of the ul
+            When using TableLayout you must use Custom Item Layout (in the AjaxListResult return Content, not Items), 
+            and the View used to generate Content should consist from tr tags with class="awe-li" and data-val='key' attributes
+            When using TableLayout you can set the Thead property of the AjaxListResult and this string value will be set into the thead tag of the table
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.DragAndDrop(System.Boolean)">
+            <summary>
+            If true drag and drop of the items from search list to selected list will be enabled
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.SearchOnChange(System.Boolean)">
+            <summary>
+            If true it will search automatically when a search input (inside the lookup popup) is changed. Default is true.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.ClearButton(System.Boolean)">
+            <summary>
+            If true a Clear Button will be generated.
+            When clicked the button clears the value.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.Fullscreen(System.Boolean)">
+            <summary>
+            If true the popup will fill the browser window 
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.Title(System.String)">
+            <summary>
+            Set the title of the popup
+            </summary>
+            <param name="o">title</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.OkText(System.String)">
+            <summary>
+            Set the text of the ok button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.CancelText(System.String)">
+            <summary>
+            Set the text of the Cancel button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.SearchText(System.String)">
+            <summary>
+            Set the text of the search button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.MoreText(System.String)">
+            <summary>
+            Set the text of the "More results" button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.Width(System.Int32)">
+            <summary>
+            Set the width of the popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.Height(System.Int32)">
+            <summary>
+            Set the height of the popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.Modal(System.Boolean)">
+            <summary>
+            If set to true, the popup will be modal.
+            Modal dialogs create an overlay below the Popup but above other page elements.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.CustomSearch(System.Boolean)">
+            <summary>
+            If true the the content of the search form will be replaced with the html loaded from the "SearchForm" action of the Controller.
+            (if true SearchForm action must be created).
+            Values of the inputs will be sent to the search action using name as the name of the parameter.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.HighlightChange(System.Boolean)">
+            <summary>
+            If true a highlight animation will trigger when selecting a value
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.PopupClass(System.String)">
+            <summary>
+            Set a string to be added in the class attribute of the popup element 
+            </summary>
+            <param name="o">html class</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.GetItemsUrl(System.String)">
+            <summary>
+            Set the get items url
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.SearchUrl(System.String)">
+            <summary>
+            Set the search url
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.SelectedUrl(System.String)">
+            <summary>
+            Set the selected url
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.MultiLookup`1.SearchFormUrl(System.String)">
+            <summary>
+            Set the searchform url
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.PopupAction">
+            <summary>
+            PopupAction Url Helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupAction.#ctor">
+            <summary>
+            Creates an instance of the PopupAction Url helper
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeParametersAttribute">
+            <summary>
+            Attribute for setting awesome parameters to the helper associated with the model property
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeParametersAttribute.#ctor(System.String)">
+            <summary>
+            Creates an instance of the AwesomeParametersAttribute
+            </summary>
+            <param name="data">
+            A JSON encoded string containing an dictionary of parameters
+            e.g. "{ par1: 'hi', par2: 19 }"
+            </param>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AwesomeParametersAttribute.Parameters">
+            <summary>
+            A JSON encoded string containing an array of parameters
+            e.g. "{ par1: 'hi', par2: 19 }"
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeParentsAttribute">
+            <summary>
+            Attribute for setting awesome parents to the helper associated with the model property
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeParentsAttribute.#ctor(System.String)">
+            <summary>
+            Creates an instance of the AwesomeParentsAttribute
+            </summary>
+            <param name="data">
+            A JSON encoded string containing an dictionary of parents
+            e.g. "{ parent: 'ParentCategory', parent2: 'txtSearch' }"
+            </param>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AwesomeParentsAttribute.Parents">
+            <summary>
+            A JSON encoded string containing an dictionary of parents
+            e.g. "{ parent: 'ParentCategory', parent2: 'txtSearch' }"
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AutocompleteAttribute">
+            <summary>
+            Attribute for adding additional metadata to the Autocomplete
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AjaxDropdownAttribute">
+            <summary>
+            AjaxDropdown attribute for adding additional metadata
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AjaxDropdownAttribute.Prefix">
+            <summary>
+            Prefix
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AjaxDropdownAttribute.Controller">
+            <summary>
+            Controller
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AutocompleteAttribute.PropId">
+            <summary>
+            Name of the Id Property
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AutocompleteAttribute.MinLength">
+            <summary>
+            The minimum number of characters a user has to type before the Autocomplete activates
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AutocompleteAttribute.Delay">
+            <summary>
+            The delay in milliseconds the Autocomplete waits after a keystroke to activate itself
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AjaxRadioListAttribute">
+            <summary>
+            Attribute for adding additional metadata to the AjaxRadioList
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AjaxCheckBoxListAttribute">
+            <summary>
+            Attribute for adding additional metadata to the AjaxCheckBoxList
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.MultiLookupAttribute">
+            <summary>
+            Attribute for adding additional metadata to the MultiLookup
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.LookupAttribute">
+            <summary>
+            Attribute for adding additional metadata to the Lookup
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.LookupAttribute.Title">
+            <summary>
+            Set the title of the popup
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.LookupAttribute.CustomSearch">
+            <summary>
+            If true the the content of the search form will be replaced with the html loaded from the "SearchForm" action of the Controller 
+            (if true SearchForm action must be created)
+            Values of the inputs will be sent to the search action using value of the html name attribute as the name of the parameter
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.LookupAttribute.ClearButton">
+            <summary>
+            If true a Clear Button will be generated
+            When clicked the button clears the value
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.LookupAttribute.Fullscreen">
+            <summary>
+            If true the popup will fill the browser window 
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.LookupAttribute.Width">
+            <summary>
+            Set the width of the popup
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.LookupAttribute.Height">
+            <summary>
+            Set the height of the popup
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.MultiLookupAttribute.DragAndDrop">
+            <summary>
+            If true drag and drop of the items from search list to selected list will be enabled
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Pager">
+            <summary>
+            Pager Html Helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Pager.Page(System.Int32)">
+            <summary>
+            Set the current page
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Pager.Count(System.Int32)">
+            <summary>
+            Set the page count
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Pager.Url(System.String)">
+            <summary>
+            Set the url where the pager is going to link to 
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Pager.CssClass(System.String)">
+            <summary>
+            Set CSS class
+            </summary>
+            <param name="o">String to be added in the class html attribute of the element</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Persistence">
+            <summary>
+            Grid persistence type
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Persistence.None">
+            <summary>
+            No Persistence
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Persistence.View">
+            <summary>
+            In view persistence
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Persistence.Session">
+            <summary>
+            Persistence, using sessionStorage
+            </summary>
+        </member>
+        <member name="F:Omu.AwesomeMvc.Persistence.Local">
+            <summary>
+            Persistence using localStorage
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Lookup`1">
+            <summary>
+            Lookup Html Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Creates an instance of Lookup Html Helper
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.PopupClass(System.String)">
+            <summary>
+            Set a string to be added in the class attribute of the popup element 
+            </summary>
+            <param name="o">html class</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.HighlightChange(System.Boolean)">
+            <summary>
+            If true a highlight animation will trigger when selecting a value
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.SearchOnChange(System.Boolean)">
+            <summary>
+            Search automatically when a search input (inside the lookup popup) is changed. Default is true.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.CustomSearch(System.Boolean)">
+            <summary>
+            If true the the content of the search form will be replaced with the html loaded from the "SearchForm" action of the Controller .
+            (SearchForm action must be created).
+            Values of the inputs will be sent to the search action using value of the html name attribute as the name of the parameter.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.ClearButton(System.Boolean)">
+            <summary>
+            If true a Clear Button will be generated
+            When clicked the button clears the value
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.Fullscreen(System.Boolean)">
+            <summary>
+            If true the popup will fill the browser window 
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.Title(System.String)">
+            <summary>
+            Set the title of the popup
+            </summary>
+            <param name="o">title</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.OkText(System.String)">
+            <summary>
+            Set the text of the ok button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.CancelText(System.String)">
+            <summary>
+            Set the text of the Cancel button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.SearchText(System.String)">
+            <summary>
+            Set the text of the search button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.MoreText(System.String)">
+            <summary>
+            Set the text of the "More results" button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.Width(System.Int32)">
+            <summary>
+            Set the width of the popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.Height(System.Int32)">
+            <summary>
+            Set the height of the popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.Modal(System.Boolean)">
+            <summary>
+            If set to true, the popup will be modal
+            Modal dialogs create an overlay below the Popup but above other page elements
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.TableLayout(System.Boolean)">
+            <summary>
+            If set to true it will use a table tag instead of the ul
+            When using TableLayout you must use Custom Item Layout (in the AjaxListResult return Content, not Items), 
+            and the View used to generate Content should consist from tr tags with class="awe-li" and data-val='key' attributes
+            When using TableLayout you can set the Thead property of the AjaxListResult and this string value will be set into the thead tag of the table
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.GetItemUrl(System.String)">
+            <summary>
+            Set the GetItem Url 
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.SearchUrl(System.String)">
+            <summary>
+            Set the Search Url
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Lookup`1.SearchFormUrl(System.String)">
+            <summary>
+            Set the SearchForm url
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeExtensions">
+            <summary>
+            Awesome extensions
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeExtensions.Awe``1(System.Web.Mvc.HtmlHelper{``0})">
+            <summary>
+            Awesome html extension
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="html"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeExtensions.Awe(System.Web.Mvc.UrlHelper)">
+            <summary>
+            Awesome url extension
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeHtmlHelper`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelper`1.#ctor(System.Web.Mvc.HtmlHelper{`0})">
+            <summary>
+            
+            </summary>
+            <param name="html"></param>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AwesomeHtmlHelper`1.Html">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Autocomplete`1">
+            <summary>
+            Autocomplete helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Creates an instance of the Autocomplete helper
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.Url(System.String)">
+            <summary>
+            Set from Url to get data from
+            If set Controller, Action and Area are ignored
+            </summary>
+            <param name="o">the string url</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.MaxLength(System.Int32)">
+            <summary>
+            Set maximum length
+            </summary>
+            <param name="o">Maximum length of the string input</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.Placeholder(System.String)">
+            <summary>
+            Html5 placeholder
+            </summary>
+            <param name="o">string to be used as placeholder</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.MinLength(System.Int32)">
+            <summary>
+            The minimum number of characters a user has to type before the Autocomplete activates
+            </summary>
+            <param name="o">min length</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.Delay(System.Int32)">
+            <summary>
+            The delay in milliseconds the Autocomplete waits after a keystroke to activate itself
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.PropIdValue(System.Object)">
+            <summary>
+            Set value of the key field
+            Used only when the key field is generated automatically
+            </summary>
+            <param name="o">value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.PropId``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Set Model's property to use as name of the Key hidden input (default is name + "Id"), which can be created manually
+            or if you set GeneratePropId(true) it will be generated automatically 
+            </summary>
+            <typeparam name="TReturn">Expression that identifies the Model's property </typeparam>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.PropId(System.String)">
+            <summary>
+            Set the name of the Key hidden input (default is name + "Id"), which can be created manually
+            or if you set GeneratePropId(true) it will be generated automatically 
+            </summary>
+            <param name="o">Name of the key hidden input</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.GeneratePropId(System.Boolean)">
+            <summary>
+            If true a hidden input will be generated to store the key for the selected value
+            </summary>
+            <param name="o">generate propId</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Autocomplete`1.Action(System.String)">
+            <summary>
+            The Action from where to get data from (default "GetItems")
+            </summary>
+            <param name="o">action</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.GridModel`1">
+            <summary>
+            Represents the Awesome Grid Model
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModel`1.PageCount">
+            <summary>
+            Total number of pages
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModel`1.Data">
+            <summary>
+            Grid Data
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridModel`1.Dates">
+            <summary>
+            DateTime properties names
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.KeyContent">
+            <summary>
+            KeyContent 
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.KeyContent.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.KeyContent.#ctor(System.Object,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="key">Key of the item</param>
+            <param name="content">Content of the item</param>
+            <param name="encode">when true Content will be html encoded</param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.KeyContent.#ctor(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="content"></param>
+        </member>
+        <member name="P:Omu.AwesomeMvc.KeyContent.K">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.KeyContent.C">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.KeyContent.Key">
+            <summary>
+            Key of the item
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.KeyContent.Content">
+            <summary>
+            Content of the item
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.KeyContent.Encode">
+            <summary>
+            When true the Content will be html encoded
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.GroupHeader">
+            <summary>
+            Awesome Grid Group Header
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupHeader.Content">
+            <summary>
+            Content of the Group Header
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupHeader.Collapsed">
+            <summary>
+            If true the group will be collapsed
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupHeader.Key">
+            <summary>
+            Key for persistence, set it to define your own custom key,
+            by default is made by concatenating page number, grouped values and $ symbols
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Grid`1">
+            <summary>
+            Awesome Grid Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Instantiates an awesome grid
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.HtmlAttributes(System.Object)">
+            <summary>
+            Set html attributes
+            </summary>
+            <param name="o">An object that contains the HTML attributes to set for the element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.CssClass(System.String)">
+            <summary>
+            Set CSS class
+            </summary>
+            <param name="s">String to be added in the class html attribute of the element </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.PageSize(System.Int32)">
+            <summary>
+            Set the page size
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.LoadOnParentChange(System.Boolean)">
+            <summary>
+            Reload every time a parent element is changed; default is true
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.RowClassClientFormat(System.String)">
+            <summary>
+            Client format for the row's (tr) html class attribute defined as a string using .ModelPropertyName for including values of the row model
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.CollapseOnHeaderClick(System.Boolean)">
+            <summary>
+            If true Groups will collapse/expand when clicking on the group row
+            When false the group is only collapsed/expanded when clicking on the collapse/expand button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.DateFormat(System.String)">
+            <summary>
+            Date format to be used by default
+            by default Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern is used
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Persistence(Omu.AwesomeMvc.Persistence)">
+            <summary>
+            Set the type of persistence 
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.PersistenceKey(System.String)">
+            <summary>
+            Set a persistence key
+            By default the value of the html id of the grid is used as persistence key
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.ShowHeader(System.Boolean)">
+            <summary>
+            Specify whether to show the header of the grid or not
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.ShowFooter(System.Boolean)">
+            <summary>
+            Specify whether to show the footer of the grid or not
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.GroupBarText(System.String)">
+            <summary>
+            Set the text to display on the Group Bar when there no groups are selected
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.ShowGroupedColumn(System.Boolean)">
+            <summary>
+            Show the columns that are grouped by (default true)
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.MinHeight(System.Int32)">
+            <summary>
+            Set minimum height of the grid
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Height(System.Int32)">
+            <summary>
+            Set height of the grid, when set the grid will be scrollable.
+            When not specified (or zero) the grid will automatically scale it's height
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.PercentWidth(System.Int32)">
+            <summary>
+            Set the width of the grid in percent
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Width(System.Int32)">
+            <summary>
+            Set the width of the grid
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Parent(System.String,System.String)">
+            <summary>
+            Add a Parent element
+            On load the value of the parent is sent to the server
+            </summary>
+            <param name="o"> Model's Property used to generate the html id of the parent element</param>
+            <param name="alias"> the alias to be used at the server side for the parent (default = 'parent')</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Parent``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String)">
+            <summary>
+            Add a Parent element
+            On load the value of the parent is sent to the server
+            </summary>
+            <param name="o"> Model's Property used to generate the html id of the parent element</param>
+            <param name="alias"> the alias to be used at the server side for the parent (default = 'parent')</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Parameter(System.String,System.Object)">
+            <summary>
+            Set a parameter
+            On load parameters are sent to the server
+            </summary>
+            <param name="name">the name of the parameter to be used on the server side</param>
+            <param name="value">the value of the parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.GroupRemovable(System.Boolean)">
+            <summary>
+            Set the default value for the GroupRemovable property of each column
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.SingleColumnSort(System.Boolean)">
+            <summary>
+            enables sorting by one column at a time
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.ShowGroupBar(System.Boolean)">
+            <summary>
+            Specify whether to show the GroupBar or not
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Groupable(System.Boolean)">
+            <summary>
+            Set the default value for the Groupable property of each column
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Sortable(System.Boolean)">
+            <summary>
+            Set the default value for the Sortable property of each column
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Url(System.String)">
+            <summary>
+            Specify the url from where to load data from 
+            </summary>
+            <param name="o">string url</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Columns(Omu.AwesomeMvc.Column[])">
+            <summary>
+            Specify the columns of the Grid
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Grid`1.Prefix(System.String)">
+            <summary>
+            Set Prefix for the html id (use to achieve unique ids for elements with same name)
+            </summary>
+            <param name="s">prefix</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions">
+            <summary>
+            Awesome Html Helpers
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.Grid``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders an Awesome Grid 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name">used to create the html id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.TextBox``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders a textbox
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name">
+            The name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.TextBoxFor``2(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders a textbox
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="a"></param>
+            <param name="expression">An expression that identifies a property representing the name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.AjaxRadioListFor``2(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders an AjaxRadioList element
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="a"></param>
+            <param name="expression"> An expression that identifies a property representing the name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.AjaxRadioList``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders an AjaxRadioList
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="prop"> The name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.AjaxCheckboxListFor``2(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders an AjaxCheckboxList
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="a"></param>
+            <param name="expression">An expression that identifies a property representing the name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.AjaxCheckboxList``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders an AjaxCheckboxList
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name"> The name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.AjaxDropdownFor``2(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders an AjaxDropdown
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="a"></param>
+            <param name="expression">An expression that identifies a property representing the name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.AjaxDropdown``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders an AjaxDropdown 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name">The name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.LookupFor``2(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders a Lookup
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="a"></param>
+            <param name="expression">An expression that identifies a property representing the name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.Lookup``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders a Lookup
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name">The name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.MultiLookupFor``2(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders a MultiLookup
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="a"></param>
+            <param name="expression">An expression that identifies a property representing the name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.MultiLookup``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders a MultiLookup
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name">The name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.AjaxList``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders an AjaxList
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name">used to create the html id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.DatePickerFor``2(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders a DatePicker
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="a"></param>
+            <param name="expression">An expression that identifies a property representing the name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.DatePicker``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name">The name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.AutocompleteFor``2(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders an Autocomplete
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="a"></param>
+            <param name="expression">An expression that identifies a property representing the name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.Autocomplete``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0},System.String)">
+            <summary>
+            Renders an Autocomplete
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <param name="name">The name of the form field and the System.Web.Mvc.ViewDataDictionary key
+            that is used to look up the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.Form``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0})">
+            <summary>
+            Renders the the Awesome Form
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.PopupActionLink``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0})">
+            <summary>
+            Renders an anchor element, when clicked a popup will open
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.PopupFormActionLink``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0})">
+            <summary>
+            Renders an anchor element, when clicked a popup will open, the popup will contain a form and two buttons Ok and Cancel
+            clicking on Ok will post the form 
+            if the response of the post is a JSON object the popup will close and the JSON will be passed to the success function (if there is one)
+            clicking on Cancel will close the form
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomeHtmlHelperExtensions.Pager``1(Omu.AwesomeMvc.AwesomeHtmlHelper{``0})">
+            <summary>
+            Renders a pager
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AweInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AweInfo.Prop">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AweInfo.Metadata">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AweInfo.Html">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.GridParams">
+            <summary>
+            Awesome grid parameters
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.GridParams.#ctor">
+            <summary>
+            Default constructor for GridParams, sets Paging to true
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridParams.Page">
+            <summary>
+            The requested page
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridParams.PageSize">
+            <summary>
+            Page size
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridParams.SortNames">
+            <summary>
+            Properties names to sort by 
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridParams.SortDirections">
+            <summary>
+            Sort directions for the SortNames
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridParams.Groups">
+            <summary>
+            Grouped columns
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridParams.Headers">
+            <summary>
+            Group columns headers
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GridParams.Paging">
+            <summary>
+            Enable paging, default is true
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.Form`1">
+            <summary>
+            The Awesome Form Html helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.#ctor">
+            <summary>
+            Creates an instance of the Awesome Form Html helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.Confirm(System.Boolean)">
+            <summary>
+            If true form submission will be prevented by a confirm dialog
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.ConfirmOptions(System.Action{Omu.AwesomeMvc.ConfirmOptions})">
+            <summary>
+            Change options of the confirm dialog
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.UseAjax(System.Boolean)">
+            <summary>
+            When true form submission is made via AJAX (default true)
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.FillFormOnContent(System.Boolean)">
+            <summary>
+            When true, when the post result will be content (Content(),View(), string, not Json object)
+            the content of the form will be filled with that result
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.FormClass(System.String)">
+            <summary>
+            Specify the html class of the forms to apply the Form on
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.Success(System.String)">
+            <summary>
+            Set the name of the JavaScript function to be executed on success, 
+            the JSON object returned by the server will be passed to this function as an argument
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.BeforeSubmit(System.String)">
+            <summary>
+            Specify the name of a JavaScript function to be called before submitting the form
+            if the function will return false the submit will be canceled
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.Form`1.Url(System.String)">
+            <summary>
+            Specify an url that will override the form's action attribute
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.SelectableItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.SelectableItem.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.SelectableItem.#ctor(System.Object,System.String)">
+            <summary>
+            create an instance of the SelectableItem
+            </summary>
+            <param name="value"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.SelectableItem.#ctor(System.Object,System.String,System.Boolean)">
+            <summary>
+            create an instance of the SelectableItem
+            </summary>
+            <param name="value"></param>
+            <param name="text"></param>
+            <param name="selected"></param>
+        </member>
+        <member name="P:Omu.AwesomeMvc.SelectableItem.T">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.SelectableItem.V">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.SelectableItem.S">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.SelectableItem.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.SelectableItem.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.SelectableItem.Selected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AjaxListResult">
+            <summary>
+            Model used for the AjaxList, Lookup and MultiLookup
+            When Content has value Items will be ignored and instead the Content will be set as is (items are wrapped in li tags)
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AjaxListResult.Items">
+            <summary>
+            The AjaxList Items for this page
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AjaxListResult.More">
+            <summary>
+            Indicates whether there is more data in the next page
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AjaxListResult.Content">
+            <summary>
+            When it has value Items will be ignored and instead this Content will be used as is (items are wrapped in li tags)
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.AjaxListResult.Thead">
+            <summary>
+            When using TableLayout you can set the Thead property of the AjaxListResult and this string value will be set into the thead tag of the table
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.DatePicker`1">
+            <summary>
+            DatePicker Html Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Creates an instance of the DatePicker Html Helper
+            </summary>
+            <param name="a"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.Placeholder(System.String)">
+            <summary>
+            Html5 placeholder
+            </summary>
+            <param name="o">string to be used as placeholder</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.DateFormat(System.String)">
+            <summary>
+            Set the date format
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.ChangeMonth(System.Boolean)">
+            <summary>
+            Set to true to Enable the ChangeMonth dropdown in the datepicker popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.ChangeYear(System.Boolean)">
+            <summary>
+            Set to true to Enable the ChangeYear dropdown in the datepicker popup
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.ClearButton(System.Boolean)">
+            <summary>
+            If true a Clear Button will be generated
+            When clicked the button clears the value
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.CssClass(System.String)">
+            <summary>
+            Set CSS class
+            </summary>
+            <param name="s">String to be added in the class html attribute of the element</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.HtmlAttributes(System.Object)">
+            <summary>
+            Set html attributes
+            </summary>
+            <param name="o">An object that contains the HTML attributes to set for the element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.Value(System.Nullable{System.DateTime})">
+            <summary>
+            Set value
+            </summary>
+            <param name="o">
+             The value of the text input element. If this value is null, the value of
+             the element is retrieved from the System.Web.Mvc.ViewDataDictionary object.
+             If no value exists there, the value is retrieved from the System.Web.Mvc.ModelStateDictionary object.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.DatePicker`1.Prefix(System.String)">
+            <summary>
+            Set Prefix for the html id (use to achieve unique ids for elements with same name)
+            </summary>
+            <param name="s">prefix</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AwesomUrlHelperExtensions">
+            <summary>
+            Aawesome Url Helper Extensions
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomUrlHelperExtensions.PopupFormAction(Omu.AwesomeMvc.AwesomeUrlHelper)">
+            <summary>
+            Renders a JavaScript function call, when executed a popup will open, the popup will contain a form and two buttons Ok and Cancel
+            clicking on Ok will post the form 
+            if the response of the post is a JSON object the popup will close and the JSON will be passed to the success function (if there is one)
+            clicking on Cancel will close the form
+            examples of using it:
+                &lt;button onclick="&lt;%:Url.Awe().PopupFormAction()...
+            or  &lt;a href="javascript:Url.Awe().PopupFormAction()...
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AwesomUrlHelperExtensions.PopupAction(Omu.AwesomeMvc.AwesomeUrlHelper)">
+            <summary>
+            Renders a JavaScript function call, when executed a popup will open
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.TextBox">
+            <summary>
+            Textbox Html Helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.TextBox.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Creates an instance of the Textbox Html Helper
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.TextBox.MaxLength(System.Int32)">
+            <summary>
+            Set maximum length
+            </summary>
+            <param name="o">Maximum length of the string input</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.TextBox.Placeholder(System.String)">
+            <summary>
+            Html5 placeholder
+            </summary>
+            <param name="o">string to be used as placeholder</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.TextBox.HtmlAttributes(System.Object)">
+            <summary>
+            Set html attributes
+            </summary>
+            <param name="o">An object that contains the HTML attributes to set for the element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.TextBox.Value(System.String)">
+            <summary>
+            Set value
+            </summary>
+            <param name="o">
+             The value of the text input element. If this value is null, the value of
+             the element is retrieved from the System.Web.Mvc.ViewDataDictionary object.
+             If no value exists there, the value is retrieved from the System.Web.Mvc.ModelStateDictionary object.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.TextBox.Prefix(System.String)">
+            <summary>
+            Set Prefix for the html id (use to achieve unique ids for elements with same name)
+            </summary>
+            <param name="s">prefix</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.TextBox.CssClass(System.String)">
+            <summary>
+            Set CSS class
+            </summary>
+            <param name="o">String to be added in the class html attribute of the element</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.TextBox.Numeric(System.Boolean)">
+            <summary>
+            Set Numeric
+            </summary>
+            <param name="o"> If true input will be restricted to numbers only</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.ConfirmOptions">
+            <summary>
+            Confirm options for the Awesome Form Html Helper
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.ConfirmOptions.Title">
+            <summary>
+            Title of the popup 
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.ConfirmOptions.YesText">
+            <summary>
+            Yes button text
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.ConfirmOptions.NoText">
+            <summary>
+            No button text
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.ConfirmOptions.Message">
+            <summary>
+            Popup message
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.ConfirmOptions.Width">
+            <summary>
+            Popup width
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.ConfirmOptions.Height">
+            <summary>
+            Popup Height
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.ConfirmOptions.Modal">
+            <summary>
+            Make the popup modal
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.ConfirmOptions.Position">
+            <summary>
+            Position of the popup
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.WhiteSpaceFilterAttribute">
+            <summary>
+            Filters the html output, removing all the unnecessary whitespaces
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.WhiteSpaceFilterAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            Handles action executing
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AjaxCheckboxList`1">
+            <summary>
+            AjaxCheckboxList Html Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxCheckboxList`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            AjaxCheckboxList Html Helper
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxCheckboxList`1.Url(System.String)">
+            <summary>
+            Set from Url to get data from
+            If set Controller, Action and Area are ignored
+            </summary>
+            <param name="o">the string url</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxCheckboxList`1.Action(System.String)">
+            <summary>
+            The Action from where to get data from (default "GetItems")
+            </summary>
+            <param name="o">action</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.GroupInfo`1">
+            <summary>
+            Awesome Grid Group Info
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupInfo`1.Items">
+            <summary>
+            Group Items
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupInfo`1.Column">
+            <summary>
+            Column grouped by
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupInfo`1.Header">
+            <summary>
+            Header text of the column
+            </summary>
+        </member>
+        <member name="P:Omu.AwesomeMvc.GroupInfo`1.Level">
+            <summary>
+            Level of the group
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvc.AjaxList`1">
+            <summary>
+            Awesome AjaxList Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.#ctor(Omu.AwesomeMvc.AweInfo)">
+            <summary>
+            Creates an instance of the AjaxList html helper
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.LoadOnParentChange(System.Boolean)">
+            <summary>
+            Reload every time a parent element is changed; default is true
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.TableLayout(System.Boolean)">
+            <summary>
+            If set to true it will use a table tag instead of the ul
+            When using TableLayout you must use Custom Item Layout (in the AjaxListResult return Content, not Items), 
+            and the View used to generate Content should consist from tr tags with class="awe-li" and data-val='key' attributes
+            When using TableLayout you can set the Thead property of the AjaxListResult and this string value will be set into the thead tag of the table
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.HtmlAttributes(System.Object)">
+            <summary>
+            Set html attributes
+            </summary>
+            <param name="o">An object that contains the HTML attributes to set for the element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.Url(System.String)">
+            <summary>
+            Set the Url from where the data for that is loaded
+            When set the Controller, Action and Area are ignored
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.MoreText(System.String)">
+            <summary>
+            Set the text of the "More results" button
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.Action(System.String)">
+            <summary>
+            The Action from where to get data from (default "Search")
+            </summary>
+            <param name="o">action</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.Parent(System.String,System.String)">
+            <summary>
+            Add a Parent element
+            On load the value of the parent is sent to the server
+            </summary>
+            <param name="o"> Model's Property used to generate the html id of the parent element</param>
+            <param name="alias"> the alias to be used at the server side for the parent (default = 'parent')</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.Parent``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String)">
+            <summary>
+            Add a Parent element
+            On load the value of the parent is sent to the server
+            </summary>
+            <param name="o"> Model's Property used to generate the html id of the parent element</param>
+            <param name="alias"> the alias to be used at the server side for the parent (default = 'parent')</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.Parameter(System.String,System.Object)">
+            <summary>
+            Set a parameter
+            On load parameters are sent to the server
+            </summary>
+            <param name="name">the name of the parameter to be used on the server side</param>
+            <param name="value">the value of the parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.Prefix(System.String)">
+            <summary>
+            Set Prefix for the html id (use to achieve unique ids for elements with same name)
+            </summary>
+            <param name="s">prefix</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.AjaxList`1.CssClass(System.String)">
+            <summary>
+            Set CSS class
+            </summary>
+            <param name="s">String to be added in the class html attribute of the element </param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvc.PopupActionLink`1">
+            <summary>
+            PopupActionLink Html Helper
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupActionLink`1.#ctor">
+            <summary>
+            Creates an instance of the PopupActionLink Html Helper
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupActionLink`1.LinkText(System.String)">
+            <summary>
+            Set the text of the link
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupActionLink`1.HtmlAttributes(System.Object)">
+            <summary>
+            Set html attributes
+            </summary>
+            <param name="o">An object that contains the HTML attributes to set for the element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvc.PopupActionLink`1.CssClass(System.String)">
+            <summary>
+            Set CSS class
+            </summary>
+            <param name="o">String to be added in the class html attribute of the element</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

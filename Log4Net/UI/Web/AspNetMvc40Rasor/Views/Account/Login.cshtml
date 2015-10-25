@@ -1,0 +1,44 @@
+@model Log4Net.AspNetMvc40Common.Models.LoginModel
+@{
+    ViewBag.Title = Framework.Resources.UIStringResource.Account_LogIn_TitleText;
+}
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+<section id="loginForm">
+<h2>@Framework.Resources.UIStringResource.Account_LogIn_Usealocalaccounttologin</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Framework.Resources.UIStringResource.Account_LogIn_Legend</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input type="submit" value="@Framework.Resources.UIStringResource.Account_LogIn_LoginButtonText" />
+    </fieldset>
+    <p>
+        @Html.ActionLink("Register", "Register") @Framework.Resources.UIStringResource.Account_LogIn_ifyoudonthaveanaccount
+    </p>
+}
+</section>
+<section class="social" id="socialLoginForm">
+    <h2>@Framework.Resources.UIStringResource.Account_LogIn_Useanotherservicetologin</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

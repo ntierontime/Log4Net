@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC9FEEAF-D769-4805-817D-2BA4078975ED}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.Xaml</RootNamespace>
+    <AssemblyName>Framework.Xaml.WP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="system" />
+    <Reference Include="mscorlib.Extensions" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <Content Include="Maps\map.1.D.1.vsd" />
+    <Content Include="Maps\map.1.D.1.vsd.png" />
+    <Compile Include="..\..\Frameworks\Framework.Xaml\TextBoxUpdateSourceBehaviour.cs">
+      <Link>TextBoxUpdateSourceBehaviour.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\BindingUtility.cs">
+      <Link>BindingUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\BooleanToOnOffConverter.cs">
+      <Link>BooleanToOnOffConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\InfiniteListBox.cs">
+      <Link>InfiniteListBox.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\LayoutAwarePage.cs">
+      <Link>LayoutAwarePage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\NameValuePairToIntegerConverter.cs">
+      <Link>NameValuePairToIntegerConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\RichTextColumns.cs">
+      <Link>RichTextColumns.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\SuspensionManager.cs">
+      <Link>SuspensionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\ViewModelBaseWithResultAndUIElement.cs">
+      <Link>ViewModelBaseWithResultAndUIElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\BooleanNegationConverter.cs">
+      <Link>BooleanNegationConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\BoolToVisibilityConverter.cs">
+      <Link>BoolToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\MenuTreeItem.cs">
+      <Link>MenuTreeItem.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.WP\Framework.WP.csproj">
+      <Project>{8601cd0c-5985-4b2b-a333-52c0a5902ce2}</Project>
+      <Name>Framework.WP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.EntityContracts.WP\Framework.EntityContracts.WP.csproj">
+      <Project>{431a4d9a-5861-4b82-aed8-c312bae2a641}</Project>
+      <Name>Framework.EntityContracts.WP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Resources.WP\Framework.Resources.WP.csproj">
+      <Project>{2c2c8dbe-ea36-429e-afae-3a5cfc481ac9}</Project>
+      <Name>Framework.Resources.WP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib.Extensions" />
+    <Reference Include="system" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="System.Windows" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\packages\MvvmLightLibs.4.4.32.1\lib\sl4-wp71\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\..\packages\MvvmLightLibs.4.4.32.1\lib\sl4-wp71\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!--
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <!-- For ProjectLinker -->
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="e5302713-0022-4657-85d8-9620818071df" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

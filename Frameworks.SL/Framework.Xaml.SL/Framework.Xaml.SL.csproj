@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A829235-6F24-487A-98E7-24AD98BE7CBC}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.Xaml</RootNamespace>
+    <AssemblyName>Framework.Xaml.SL</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <Content Include="Maps\map.1.D.1.vsd" />
+    <Content Include="Maps\map.1.D.1.vsd.png" />
+    <Compile Include="..\..\Frameworks\Framework.Xaml\TextBoxUpdateSourceBehaviour.cs">
+      <Link>TextBoxUpdateSourceBehaviour.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\BindingUtility.cs">
+      <Link>BindingUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\BooleanToOnOffConverter.cs">
+      <Link>BooleanToOnOffConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\InfiniteListBox.cs">
+      <Link>InfiniteListBox.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\LayoutAwarePage.cs">
+      <Link>LayoutAwarePage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\NameValuePairToIntegerConverter.cs">
+      <Link>NameValuePairToIntegerConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\RichTextColumns.cs">
+      <Link>RichTextColumns.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\SuspensionManager.cs">
+      <Link>SuspensionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\ViewModelBaseWithResultAndUIElement.cs">
+      <Link>ViewModelBaseWithResultAndUIElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\BooleanNegationConverter.cs">
+      <Link>BooleanNegationConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\BoolToVisibilityConverter.cs">
+      <Link>BoolToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.Xaml\MenuTreeItem.cs">
+      <Link>MenuTreeItem.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.SL\Framework.SL.csproj">
+      <Project>{1888f6cc-7810-45a6-82be-02d7f5d9ca6f}</Project>
+      <Name>Framework.SL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.EntityContracts.SL\Framework.EntityContracts.SL.csproj">
+      <Project>{66bbec2c-d9d8-4a2c-92c7-274dfa0096cf}</Project>
+      <Name>Framework.EntityContracts.SL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Resources.SL\Framework.Resources.SL.csproj">
+      <Project>{f3ad1556-69b4-4b36-ab5d-9dc9015d351d}</Project>
+      <Name>Framework.Resources.SL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="System.Windows" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight, Version=4.4.32.39769, Culture=neutral, PublicKeyToken=c114982fcf1a3a2e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibs.4.4.32.7\lib\sl50\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=4.4.32.39769, Culture=neutral, PublicKeyToken=e7f91b7703710fe7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibs.4.4.32.7\lib\sl50\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibs.4.4.32.7\lib\sl50\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!--
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+      <UserProperties ProjectLinkReference="e5302713-0022-4657-85d8-9620818071df" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

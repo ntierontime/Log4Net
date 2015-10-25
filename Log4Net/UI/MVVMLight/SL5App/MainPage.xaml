@@ -1,0 +1,38 @@
+<UserControl x:Class="Log4Net.SL5App.MainPage"
+			 xmlns:slsdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+             xmlns:navigationCore="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
+             DataContext="{Binding Main, Source={StaticResource Locator}}"
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel Background="White" >
+        <TextBlock FontSize="36"
+                   FontWeight="Bold"
+                   Foreground="Purple"
+                   Text="{Binding Welcome}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap" />
+        <StackPanel Background="White" Orientation="Horizontal">
+            <HyperlinkButton Content="Go To Test Page" Height="23" TargetName="navFrame" HorizontalAlignment="Left" Name="hyperlinkButton1" VerticalAlignment="Top" Width="100" NavigateUri="/Pages/WPCommonOfLoopRefEntity1.xaml"/>
+        <HyperlinkButton Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Log, Source={StaticResource LocalizedStrings}}" Height="23" TargetName="navFrame" HorizontalAlignment="Left" Name="Button_Log4Net_Log" VerticalAlignment="Top" Width="100" NavigateUri="/Pages/WPCommonOfLog.xaml"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Stretch" Orientation="Vertical">
+            <Grid Margin="2,2,2,2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FlowDirection="LeftToRight">
+                <Rectangle Stroke="Black" StrokeThickness="2" />
+                <navigation:Frame x:Name="navFrame" Margin="2" Height="500" />
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

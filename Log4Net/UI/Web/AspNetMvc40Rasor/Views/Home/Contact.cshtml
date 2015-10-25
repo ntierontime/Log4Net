@@ -1,0 +1,34 @@
+@{
+    ViewBag.Title = Framework.Resources.UIStringResource.Common_ContactPageTitle;
+}
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+<section class="contact">
+    <header>
+        <h3>@Framework.Resources.UIStringResource.Contact_PhoneText</h3>
+    </header>
+    <p>
+        <span class="label">@Framework.Resources.UIStringResource.Contact_PhoneText:</span>
+        <span>425.555.0100</span>
+    </p>
+</section>
+<section class="contact">
+    <header>
+        <h3>@Framework.Resources.UIStringResource.Common_EmailLabelText</h3>
+    </header>
+    <p>
+        <span class="label">@Framework.Resources.UIStringResource.Common_EmailLabelText:</span>
+        <span><a href="mailto:Support@example.com">Support@example.com</a></span>
+    </p>
+</section>
+<section class="contact">
+    <header>
+        <h3>@Framework.Resources.UIStringResource.Contact_AddressText</h3>
+    </header>
+    <p>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399
+    </p>
+</section>

@@ -1,0 +1,143 @@
+@model Log4Net.DataSourceEntities.Log
+@{
+    ViewBag.Title = @Framework.Resources.UIStringResource.EditAlternativeText;
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Log4Net.Resources.UIStringResourcePerEntityLog.Log.</legend>
+<div class="editor-label">
+			@Html.LabelFor(model => model.Id)
+        </div>
+        <div class="editor-field">
+			@Html.DisplayFor(model => model.Id)
+        </div>
+        <div class="editor-label">
+			@Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+			@Html.TextBoxFor(model => model.Date, new { @Value = Model.Date.ToString("dd/MM/yyyy") })
+        </div>
+        <div class="editor-label">
+			@Html.LabelFor(model => model.Thread)
+        </div>
+        <div class="editor-field">
+			@Html.EditorFor(model => model.Thread)
+        </div>
+        <div class="editor-label">
+			@Html.LabelFor(model => model.Level)
+        </div>
+        <div class="editor-field">
+			@Html.EditorFor(model => model.Level)
+        </div>
+        <div class="editor-label">
+			@Html.LabelFor(model => model.Logger)
+        </div>
+        <div class="editor-field">
+			@Html.EditorFor(model => model.Logger)
+        </div>
+        <div class="editor-label">
+			@Html.LabelFor(model => model.Message)
+        </div>
+        <div class="editor-field">
+			@Html.EditorFor(model => model.Message)
+        </div>
+        <div class="editor-label">
+			@Html.LabelFor(model => model.Exception)
+        </div>
+        <div class="editor-field">
+			@Html.EditorFor(model => model.Exception)
+        </div>
+        <div class="buttonContainer">
+            <input type="submit" value="@Framework.Resources.UIStringResource.SaveAlternativeText" class="button" />
+			<input type="button" value="@Framework.Resources.UIStringResource.RefreshAlternativeText" class="button" onclick="location.href='@Url.Action("Edit", new { isToCompareIdByIdentifierOftOfByIdentifier=true, valueToCompareIdByIdentifierOftOfByIdentifier = Model.Id })'" />
+			<input type="button" value="@Framework.Resources.UIStringResource.BackAlternativeText" class="button" onclick="location.href='@Url.Action("Index")'" />
+        </div>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/dataTables")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+        //http://www.softfinity.com/blog/using-ajax-with-knockout-js-and-asp-net-mvc-4-to-load-select-drop-down-options/
+        $(document).ready($(function() {
+            $('input[name=Date]').datepicker({
+                autoclose: true,
+                beforeShowDay: $.noop,
+                calendarWeeks: false,
+                clearBtn: false,
+                daysOfWeekDisabled: [],
+                endDate: Infinity,
+                forceParse: true,
+                format: 'dd/mm/yyyy',
+                keyboardNavigation: true,
+                language: 'en',
+                minViewMode: 0,
+                orientation: 'auto',
+                rtl: false,
+                startDate: -Infinity,
+                startView: 2,
+                todayBtn: false,
+                todayHighlight: false,
+                weekStart: 0
+            });
+        }));
+        $(document).ready($(function() {
+            $.validator.addMethod(
+                "date",
+                function(value, element) {
+                    var bits = value.match(/([0-9]+)/gi), str;
+                    if (!bits)
+                        return this.optional(element) || false;
+                    str = bits[1] + '/' + bits[0] + '/' + bits[2];
+                    return this.optional(element) || !/Invalid|NaN/.test(new Date(str));
+                },
+                "Please enter a date in the format dd/mm/yyyy"
+            );
+            $("form").validate({
+                onkeyup: false,
+                errorPlacement: function(error, element) {
+                    if (element.attr("name").indexOf("DOB") >= 0) {
+                        error.insertAfter("#DOB_Day");
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                rules: {
+                },
+                messages: {
+                },
+                highlight:
+                    function(element) {
+                        $(element).css('border', '2px solid red');
+                    },
+                unhighlight:
+                    function(element) {
+                        $(element).css('border', '1px solid rgb(170, 170, 170)');
+                    },
+                errorLabelContainer: "#ErrorList",
+                wrapper: "li",
+            });
+        }));
+        //cascaded dropdownlist by knockoutjs
+        function CascadingDDLViewModel() {
+            var self = this;
+        }
+        var objVM = new CascadingDDLViewModel();
+        ko.applyBindings(objVM);
+    </script>
+}

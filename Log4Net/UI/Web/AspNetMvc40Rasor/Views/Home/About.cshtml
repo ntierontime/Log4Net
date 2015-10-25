@@ -1,0 +1,14 @@
+@{
+    ViewBag.Title = Framework.Resources.UIStringResource.Common_AboutPageTitle;
+}
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+<aside>
+    <ul>
+        <li>@Html.ActionLink(Framework.Resources.UIStringResource.Home_TitleText, "Index", "Home")</li>
+        <li>@Html.ActionLink(Framework.Resources.UIStringResource.Common_AboutPageTitle, "About", "Home")</li>
+        <li>@Html.ActionLink(Framework.Resources.UIStringResource.Common_ContactPageTitle, "Contact", "Home")</li>
+    </ul>
+</aside>

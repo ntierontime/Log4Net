@@ -1,0 +1,122 @@
+<UserControl x:Class="Log4Net.WP71App.UserControls.UCCommonOfLog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:WPToolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+	xmlns:WPToolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
+	xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras"
+	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+	xmlns:vm="clr-namespace:Log4Net.ViewModels;assembly=Log4Net.ViewModels.WP"
+	xmlns:fvm="clr-namespace:Framework.Xaml;assembly=Framework.Xaml.WP"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="960" d:DesignWidth="480"
+	>
+<Grid>
+<Grid Width="960">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+<WPToolkit:ExpanderView x:Name="expander" Header="Search" Grid.Row="0" IsExpanded="True" Width="480">
+                <WPToolkit:ExpanderView.Items>
+                    <ScrollViewer Height="480" HorizontalAlignment="Stretch" Name="scrollViewerOfSearchPane"  VerticalScrollBarVisibility="Visible" >
+        <Grid Width="480" DataContext="{Binding Log4Net_ViewModels_WPCommonOfLogCollectionVM, Source={StaticResource Locator}}">
+<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />            </Grid.RowDefinitions>
+<CheckBox Name="ID_CheckBox_Search_isToCompareExceptionCommonOftOfCommon" Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareExceptionCommonOftOfCommon, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" IsChecked="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.ExceptionCommonOft.IsToCompare, Mode=TwoWay}" />
+<TextBox Name="ID_TextBox_Search_valueToBeContainedExceptionCommonOftOfCommon" Text="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.ExceptionCommonOft.ValueToBeContained, Mode=TwoWay}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="1" fvm:BindingUtility.UpdateSourceOnChange="true" />
+<CheckBox Name="ID_CheckBox_Search_isToCompareMessageCommonOftOfCommon" Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareMessageCommonOftOfCommon, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" IsChecked="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.MessageCommonOft.IsToCompare, Mode=TwoWay}" />
+<TextBox Name="ID_TextBox_Search_valueToBeContainedMessageCommonOftOfCommon" Text="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.MessageCommonOft.ValueToBeContained, Mode=TwoWay}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="3" fvm:BindingUtility.UpdateSourceOnChange="true" />
+<CheckBox Name="ID_CheckBox_Search_isToCompareLoggerCommonOftOfCommon" Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareLoggerCommonOftOfCommon, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" IsChecked="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.LoggerCommonOft.IsToCompare, Mode=TwoWay}" />
+<TextBox Name="ID_TextBox_Search_valueToBeContainedLoggerCommonOftOfCommon" Text="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.LoggerCommonOft.ValueToBeContained, Mode=TwoWay}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="5" fvm:BindingUtility.UpdateSourceOnChange="true" />
+<CheckBox Name="ID_CheckBox_Search_isToCompareLevelCommonOftOfCommon" Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareLevelCommonOftOfCommon, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="6" IsChecked="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.LevelCommonOft.IsToCompare, Mode=TwoWay}" />
+<TextBox Name="ID_TextBox_Search_valueToBeContainedLevelCommonOftOfCommon" Text="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.LevelCommonOft.ValueToBeContained, Mode=TwoWay}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="7" fvm:BindingUtility.UpdateSourceOnChange="true" />
+<CheckBox Name="ID_CheckBox_Search_isToCompareThreadCommonOftOfCommon" Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareThreadCommonOftOfCommon, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="8" IsChecked="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.ThreadCommonOft.IsToCompare, Mode=TwoWay}" />
+<TextBox Name="ID_TextBox_Search_valueToBeContainedThreadCommonOftOfCommon" Text="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.ThreadCommonOft.ValueToBeContained, Mode=TwoWay}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="9" fvm:BindingUtility.UpdateSourceOnChange="true" />
+<CheckBox Name="ID_CheckBox_Search_isToCompareDateCommonOftOfCommon" Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareDateCommonOftOfCommon, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="10" IsChecked="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.DateCommonOft.IsToCompare, Mode=TwoWay}" />
+<CheckBox Name="ID_CheckBox_Search_isToCompareLowerBoundDateCommonOftOfCommon" Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.IsToCompareLowerBound_ID_CheckBox_Search_isToCompareLowerBoundDateCommonOftOfCommon, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="11" IsChecked="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.DateCommonOft.IsToCompareLowerBound, Mode=TwoWay}" />
+<WPToolkit:DatePicker Name="ID_DatePicker_Search_lowerBoundDateCommonOftOfCommon" Grid.Row="12" Value="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.DateCommonOft.LowerBound, Mode=TwoWay}" />
+<CheckBox Name="ID_CheckBox_Search_isToCompareUpperBoundDateCommonOftOfCommon" Content="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.IsToCompareUpperBound_ID_CheckBox_Search_isToCompareUpperBoundDateCommonOftOfCommon, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="13" IsChecked="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.DateCommonOft.IsToCompareUpperBound, Mode=TwoWay}" />
+<WPToolkit:DatePicker Name="ID_DatePicker_Search_upperBoundDateCommonOftOfCommon" Grid.Row="14" Value="{Binding Path=Criteria.BusinessLogicLayerQueryCriteriaEntityLogCommon.DateCommonOft.UpperBound, Mode=TwoWay}" />
+        </Grid>
+                    </ScrollViewer>
+                </WPToolkit:ExpanderView.Items>
+                <WPToolkit:ExpanderView.Expander>
+                    <Rectangle Height="25" Width="480" Fill="Blue">
+                    </Rectangle>
+                </WPToolkit:ExpanderView.Expander>
+            </WPToolkit:ExpanderView>
+<ScrollViewer HorizontalAlignment="Stretch" Grid.Row="1" Name="scrollViewerOfSearchResult" VerticalScrollBarVisibility="Visible" Height="600" >
+<fvm:InfiniteListBox Name="V_Common" HorizontalAlignment="Stretch" VerticalAlignment="Center" DataContext="{Binding Log4Net_ViewModels_WPCommonOfLogCollectionVM, Source={StaticResource Locator}}" ItemsSource="{Binding Path=EntityCollection}" SelectedItem="{Binding Path=Log4Net_ViewModels_WPCommonOfLogVM.Current, Mode=TwoWay, Source={StaticResource Locator}}" SelectionMode="Single" CompressionBottomCommand="{Binding Log4Net_ViewModels_WPCommonOfLogVM.InfinityScrollingSearchCommand, Source={StaticResource Locator}}">
+  <fvm:InfiniteListBox.ItemsPanel>
+                        <ItemsPanelTemplate >
+                            <StackPanel Orientation="Vertical"  ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                        </ItemsPanelTemplate>
+                    </fvm:InfiniteListBox.ItemsPanel>
+					<fvm:InfiniteListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding Log4Net_ViewModels_WPCommonOfLogCollectionVM.SelectionChangedCommand, Source={StaticResource Locator}}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+				<StackPanel Orientation="Horizontal" Width="420">
+					<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Id, Source={StaticResource LocalizedStrings}}" Width="100" />
+					<TextBlock Text="{Binding Path=Id}" />
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Width="420">
+					<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Date, Source={StaticResource LocalizedStrings}}" Width="100" />
+					<TextBlock Text="{Binding Path=Date}" />
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Width="420">
+					<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Thread, Source={StaticResource LocalizedStrings}}" Width="100" />
+					<TextBlock Text="{Binding Path=Thread}" />
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Width="420">
+					<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Level, Source={StaticResource LocalizedStrings}}" Width="100" />
+					<TextBlock Text="{Binding Path=Level}" />
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Width="420">
+					<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Logger, Source={StaticResource LocalizedStrings}}" Width="100" />
+					<TextBlock Text="{Binding Path=Logger}" />
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Width="420">
+					<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Message, Source={StaticResource LocalizedStrings}}" Width="100" />
+					<TextBlock Text="{Binding Path=Message}" />
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Width="420">
+					<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Exception, Source={StaticResource LocalizedStrings}}" Width="100" />
+					<TextBlock Text="{Binding Path=Exception}" />
+				</StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </fvm:InfiniteListBox.ItemTemplate>
+</fvm:InfiniteListBox>
+</ScrollViewer>
+			</Grid>
+    </Grid>
+</UserControl>

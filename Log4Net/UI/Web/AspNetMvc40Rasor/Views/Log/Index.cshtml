@@ -1,0 +1,25 @@
+@{
+    ViewBag.Title = Log4Net.Resources.UIStringResourcePerEntityLog.Log;
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>@Log4Net.Resources.UIStringResourcePerEntityLog.Log
+            </p>
+        </div>
+    </section>
+}
+<div>
+	<ol>
+		<li>@Html.ActionLink(Framework.Resources.UIStringResource.AddNewAlternativeText, "Create")</li>
+		<li>@Html.ActionLink(Framework.Resources.UIStringResource.DeleteAlternativeText, "Delete") - Please add parameters to load this page </li>
+		<li>@Html.ActionLink(Framework.Resources.UIStringResource.EditAlternativeText, "Edit") - Please add parameters to load this page </li>
+		<li>@Html.ActionLink(Framework.Resources.UIStringResource.DetailsAlternativeText, "Details") - Please add parameters to load this page </li>
+		<li>@Html.ActionLink(Log4Net.Resources.UIStringResourcePerApp.Common_of_Log4Net_Log, "WPCommonOfLog")</li>
+		<li>@Html.ActionLink(Log4Net.Resources.UIStringResourcePerApp.EntityRelated_of_Log4Net_Log, "WPEntityRelatedOfLog")</li>
+	</ol>
+</div>

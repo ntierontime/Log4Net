@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1888F6CC-7810-45A6-82BE-02D7F5D9CA6F}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework</RootNamespace>
+    <AssemblyName>Framework.SL</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <Compile Include="..\..\Frameworks\Framework\DataServiceTypes.cs">
+      <Link>DataServiceTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework\DataStreamServiceResult.cs">
+      <Link>DataStreamServiceResult.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework\IDataStreamServiceProviderBase.cs">
+      <Link>IDataStreamServiceProviderBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework\NavigationSetting.cs">
+      <Link>NavigationSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework\PropertyChangedNotifier.cs">
+      <Link>PropertyChangedNotifier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework\UIAction.cs">
+      <Link>UIAction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework\UIActionStatus.cs">
+      <Link>UIActionStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework\UIActionStatusMessage.cs">
+      <Link>UIActionStatusMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework\IoCContainerWrapper.cs">
+      <Link>IoCContainerWrapper.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\BinaryRelated\BinaryFile.cs">
+      <Link>BinaryRelated\BinaryFile.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\BinaryRelated\BinaryFileHelper.cs">
+      <Link>BinaryRelated\BinaryFileHelper.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\DateTimePeriodHelper.cs">
+      <Link>DateTimePeriodHelper.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\Models\MenuTreeItem.cs">
+      <Link>Models\MenuTreeItem.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\LoggingOptions.cs">
+      <Link>LoggingOptions.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\BinaryRelated\MIMEContentTypeToFileExtensionMappingCollection.cs">
+      <Link>BinaryRelated\MIMEContentTypeToFileExtensionMappingCollection.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\Models\ChangePasswordModel.cs">
+      <Link>Models\ChangePasswordModel.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\Models\LogOnModel.cs">
+      <Link>Models\LogOnModel.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\Models\RegisterModel.cs">
+      <Link>Models\RegisterModel.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\NameValuePair.cs">
+      <Link>NameValuePair.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\PagingPageSizeOption.cs">
+      <Link>PagingPageSizeOption.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\RssItem.cs">
+      <Link>RssItem.cs</Link>
+    </Compile>    <Compile Include="..\..\Frameworks\Framework\Common\Singleton.cs">
+      <Link>Common\Singleton.cs</Link>
+    </Compile>  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="system" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!--
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+      <!-- For ProjectLinker -->
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="6d25aa30-c3af-4ae0-b567-0f2653120cdc" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,39 @@
+<Page
+        x:Class="Log4Net.WPF4App.Pages.Log.Edit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras"
+		xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+		xmlns:vm="clr-namespace:Log4Net.ViewModels;assembly=Log4Net.ViewModels"
+		xmlns:fresx="clr-namespace:Framework.Resources;assembly=Framework.Resources"
+		xmlns:eresx="clr-namespace:Log4Net.Resources;assembly=Log4Net.Resources"
+		xmlns:Log="clr-namespace:Log4Net.WPF4App.UserControls.Log"
+        Title="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Log_Edit, Source={StaticResource LocalizedStrings}}"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"  />
+            <RowDefinition Height="Auto"  />
+        </Grid.RowDefinitions>
+        <ToolBarTray Grid.Row="0" >
+            <ToolBar>
+                <Button     Name="Update" Command="{Binding Log4Net_ViewModels_WPCommonOfLogVM_Static.SaveCommand, Source={StaticResource Locator}}" Width="75" Height="25" >
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Framework_Resources_UIStringResource.UpdateAlternativeText, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button     Name="Refresh" Command="{Binding Log4Net_ViewModels_WPCommonOfLogVM_Static.RefreshCurrentEditingItemCommand, Source={StaticResource Locator}}" Width="75" Height="25" >
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Framework_Resources_UIStringResource.RefreshAlternativeText, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button     Name="Close" Command="{Binding Log4Net_ViewModels_WPCommonOfLogVM_Static.CloseEditViewCommand, Source={StaticResource Locator}}" Width="75" Height="25" >
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Framework_Resources_UIStringResource.CloseAlternativeText, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <Log:Edit Grid.Row="1" />
+    </Grid>
+</Page>

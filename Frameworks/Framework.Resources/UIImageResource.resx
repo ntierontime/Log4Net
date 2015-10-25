@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <data name="AddNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\addnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddNewAlternativeText" xml:space="preserve">
+    <value>AddNew</value>
+  </data>
+  <data name="AddNewUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=AddNew</value>
+  </data>
+  <data name="Attachment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\attachment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AttachmentAlternativeText" xml:space="preserve">
+    <value>Attachment</value>
+  </data>
+  <data name="AttachmentUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Attachment</value>
+  </data>
+  <data name="Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackAlternativeText" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BackUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Back</value>
+  </data>
+  <data name="Bookmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bookmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BookmarkAlternativeText" xml:space="preserve">
+    <value>Bookmark</value>
+  </data>
+  <data name="BookmarkUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Bookmark</value>
+  </data>
+  <data name="Calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CalendarAlternativeText" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="CalendarUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Calendar</value>
+  </data>
+  <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CancelAlternativeText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CancelUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Cancel</value>
+  </data>
+  <data name="ChangePassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\changepassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChangePasswordAlternativeText" xml:space="preserve">
+    <value>ChangePassword</value>
+  </data>
+  <data name="ChangePasswordUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=ChangePassword</value>
+  </data>
+  <data name="Chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChartAlternativeText" xml:space="preserve">
+    <value>Chart</value>
+  </data>
+  <data name="ChartUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Chart</value>
+  </data>
+  <data name="Checkbox_Checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\checkbox_checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Checkbox_CheckedAlternativeText" xml:space="preserve">
+    <value>Checkbox_Checked</value>
+  </data>
+  <data name="Checkbox_CheckedUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Checkbox_Checked</value>
+  </data>
+  <data name="Checkbox_Unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\checkbox_unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Checkbox_UncheckedAlternativeText" xml:space="preserve">
+    <value>Checkbox_Unchecked</value>
+  </data>
+  <data name="Checkbox_UncheckedUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Checkbox_Unchecked</value>
+  </data>
+  <data name="Clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClockAlternativeText" xml:space="preserve">
+    <value>Clock</value>
+  </data>
+  <data name="ClockUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Clock</value>
+  </data>
+  <data name="Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseAlternativeText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CloseUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Close</value>
+  </data>
+  <data name="Comment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\comment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CommentAlternativeText" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="CommentUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Comment</value>
+  </data>
+  <data name="Comments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\comments.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CommentsAlternativeText" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="CommentsUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Comments</value>
+  </data>
+  <data name="Confirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\confirm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConfirmAlternativeText" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ConfirmUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Confirm</value>
+  </data>
+  <data name="CreateUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\createuser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateUserAlternativeText" xml:space="preserve">
+    <value>CreateUser</value>
+  </data>
+  <data name="CreateUserUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=CreateUser</value>
+  </data>
+  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteAlternativeText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Delete</value>
+  </data>
+  <data name="Details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\details.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DetailsAlternativeText" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="DetailsUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Details</value>
+  </data>
+  <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownAlternativeText" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="DownUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Down</value>
+  </data>
+  <data name="Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownloadAlternativeText" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="DownloadUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Download</value>
+  </data>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditAlternativeText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Edit</value>
+  </data>
+  <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExitAlternativeText" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="ExitUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Exit</value>
+  </data>
+  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExportAlternativeText" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Export</value>
+  </data>
+  <data name="ExportToExcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\exporttoexcel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExportToExcelAlternativeText" xml:space="preserve">
+    <value>ExportToExcel</value>
+  </data>
+  <data name="ExportToExcelUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=ExportToExcel</value>
+  </data>
+  <data name="Favorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FavoriteAlternativeText" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="FavoriteUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Favorite</value>
+  </data>
+  <data name="FileReplace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\filereplace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FileReplaceAlternativeText" xml:space="preserve">
+    <value>FileReplace</value>
+  </data>
+  <data name="FileReplaceUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=FileReplace</value>
+  </data>
+  <data name="First" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\first.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FirstAlternativeText" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="FirstUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=First</value>
+  </data>
+  <data name="Forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\forward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ForwardAlternativeText" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="ForwardUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Forward</value>
+  </data>
+  <data name="Go" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GoAlternativeText" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="GoUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Go</value>
+  </data>
+  <data name="Heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeartAlternativeText" xml:space="preserve">
+    <value>Heart</value>
+  </data>
+  <data name="HeartUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Heart</value>
+  </data>
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HelpAlternativeText" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="HelpUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Help</value>
+  </data>
+  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomeAlternativeText" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HomeUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Home</value>
+  </data>
+  <data name="Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImportAlternativeText" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Import</value>
+  </data>
+  <data name="Index" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\index.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IndexAlternativeText" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="IndexUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Index</value>
+  </data>
+  <data name="Information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InformationAlternativeText" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="InformationUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Information</value>
+  </data>
+  <data name="Insert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\insert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InsertAlternativeText" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="InsertUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Insert</value>
+  </data>
+  <data name="Last" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\last.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LastAlternativeText" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="LastUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Last</value>
+  </data>
+  <data name="LoadFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\loadfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadFileAlternativeText" xml:space="preserve">
+    <value>LoadFile</value>
+  </data>
+  <data name="LoadFileUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=LoadFile</value>
+  </data>
+  <data name="Lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LockAlternativeText" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="LockUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Lock</value>
+  </data>
+  <data name="Mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MailAlternativeText" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="MailUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Mail</value>
+  </data>
+  <data name="MailLock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\maillock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MailLockAlternativeText" xml:space="preserve">
+    <value>MailLock</value>
+  </data>
+  <data name="MailLockUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=MailLock</value>
+  </data>
+  <data name="MailReceive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mailreceive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MailReceiveAlternativeText" xml:space="preserve">
+    <value>MailReceive</value>
+  </data>
+  <data name="MailReceiveUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=MailReceive</value>
+  </data>
+  <data name="MailSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mailsearch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MailSearchAlternativeText" xml:space="preserve">
+    <value>MailSearch</value>
+  </data>
+  <data name="MailSearchUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=MailSearch</value>
+  </data>
+  <data name="MailSend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mailsend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MailSendAlternativeText" xml:space="preserve">
+    <value>MailSend</value>
+  </data>
+  <data name="MailSendUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=MailSend</value>
+  </data>
+  <data name="Minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinusAlternativeText" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="MinusUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Minus</value>
+  </data>
+  <data name="Money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoneyAlternativeText" xml:space="preserve">
+    <value>Money</value>
+  </data>
+  <data name="MoneyUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Money</value>
+  </data>
+  <data name="NewFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\newfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewFileAlternativeText" xml:space="preserve">
+    <value>NewFile</value>
+  </data>
+  <data name="NewFileUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=NewFile</value>
+  </data>
+  <data name="Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NextAlternativeText" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NextUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Next</value>
+  </data>
+  <data name="NumericDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\numericdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NumericDownAlternativeText" xml:space="preserve">
+    <value>NumericDown</value>
+  </data>
+  <data name="NumericDownUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=NumericDown</value>
+  </data>
+  <data name="NumericUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\numericup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NumericUpAlternativeText" xml:space="preserve">
+    <value>NumericUp</value>
+  </data>
+  <data name="NumericUpUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=NumericUp</value>
+  </data>
+  <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OpenAlternativeText" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="OpenUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Open</value>
+  </data>
+  <data name="PageSize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pagesize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageSizeAlternativeText" xml:space="preserve">
+    <value>PageSize</value>
+  </data>
+  <data name="PageSizeUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=PageSize</value>
+  </data>
+  <data name="PasswordRecovery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\passwordrecovery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasswordRecoveryAlternativeText" xml:space="preserve">
+    <value>PasswordRecovery</value>
+  </data>
+  <data name="PasswordRecoveryUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=PasswordRecovery</value>
+  </data>
+  <data name="Pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PauseAlternativeText" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="PauseUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Pause</value>
+  </data>
+  <data name="PieChart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\piechart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PieChartAlternativeText" xml:space="preserve">
+    <value>PieChart</value>
+  </data>
+  <data name="PieChartUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=PieChart</value>
+  </data>
+  <data name="Play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayAlternativeText" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="PlayUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Play</value>
+  </data>
+  <data name="Plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlusAlternativeText" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="PlusUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Plus</value>
+  </data>
+  <data name="Previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\previous.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PreviousAlternativeText" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="PreviousUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Previous</value>
+  </data>
+  <data name="Process" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\process.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProcessAlternativeText" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="ProcessUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Process</value>
+  </data>
+  <data name="Promotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\promotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PromotionAlternativeText" xml:space="preserve">
+    <value>Promotion</value>
+  </data>
+  <data name="PromotionUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Promotion</value>
+  </data>
+  <data name="Protection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\protection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProtectionAlternativeText" xml:space="preserve">
+    <value>Protection</value>
+  </data>
+  <data name="ProtectionUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Protection</value>
+  </data>
+  <data name="Question" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuestionAlternativeText" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="QuestionUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Question</value>
+  </data>
+  <data name="Record" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\record.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RecordAlternativeText" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="RecordUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Record</value>
+  </data>
+  <data name="Recycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\recycle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RecycleAlternativeText" xml:space="preserve">
+    <value>Recycle</value>
+  </data>
+  <data name="RecycleUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Recycle</value>
+  </data>
+  <data name="Redo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\redo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedoAlternativeText" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="RedoUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Redo</value>
+  </data>
+  <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshAlternativeText" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="RefreshUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Refresh</value>
+  </data>
+  <data name="Register" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegisterAlternativeText" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisterUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Register</value>
+  </data>
+  <data name="Repeat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\repeat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RepeatAlternativeText" xml:space="preserve">
+    <value>Repeat</value>
+  </data>
+  <data name="RepeatUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Repeat</value>
+  </data>
+  <data name="RSS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\rss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RSSAlternativeText" xml:space="preserve">
+    <value>RSS</value>
+  </data>
+  <data name="RSSUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=RSS</value>
+  </data>
+  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveAlternativeText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Save</value>
+  </data>
+  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchAlternativeText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Search</value>
+  </data>
+  <data name="SearchPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\searchpage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchPageAlternativeText" xml:space="preserve">
+    <value>SearchPage</value>
+  </data>
+  <data name="SearchPageUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=SearchPage</value>
+  </data>
+  <data name="Setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SettingAlternativeText" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="SettingUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Setting</value>
+  </data>
+  <data name="ShoppingCart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\shoppingcart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShoppingCartAlternativeText" xml:space="preserve">
+    <value>ShoppingCart</value>
+  </data>
+  <data name="ShoppingCartUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=ShoppingCart</value>
+  </data>
+  <data name="SignUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\signup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignUpAlternativeText" xml:space="preserve">
+    <value>SignUp</value>
+  </data>
+  <data name="SignUpUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=SignUp</value>
+  </data>
+  <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StopAlternativeText" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="StopUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Stop</value>
+  </data>
+  <data name="TagBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tagblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TagBlueAlternativeText" xml:space="preserve">
+    <value>TagBlue</value>
+  </data>
+  <data name="TagBlueUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=TagBlue</value>
+  </data>
+  <data name="TagGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\taggreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TagGreenAlternativeText" xml:space="preserve">
+    <value>TagGreen</value>
+  </data>
+  <data name="TagGreenUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=TagGreen</value>
+  </data>
+  <data name="TextPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\textpage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextPageAlternativeText" xml:space="preserve">
+    <value>TextPage</value>
+  </data>
+  <data name="TextPageUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=TextPage</value>
+  </data>
+  <data name="Title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TitleAlternativeText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="TitleUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Title</value>
+  </data>
+  <data name="ToggleButton_Checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\togglebutton_checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToggleButton_CheckedAlternativeText" xml:space="preserve">
+    <value>ToggleButton_Checked</value>
+  </data>
+  <data name="ToggleButton_CheckedUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=ToggleButton_Checked</value>
+  </data>
+  <data name="ToggleButton_Unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\togglebutton_unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToggleButton_UncheckedAlternativeText" xml:space="preserve">
+    <value>ToggleButton_Unchecked</value>
+  </data>
+  <data name="ToggleButton_UncheckedUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=ToggleButton_Unchecked</value>
+  </data>
+  <data name="Tutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tutorial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TutorialAlternativeText" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="TutorialUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Tutorial</value>
+  </data>
+  <data name="Undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UndoAlternativeText" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="UndoUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Undo</value>
+  </data>
+  <data name="Unlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\unlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UnlockAlternativeText" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="UnlockUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Unlock</value>
+  </data>
+  <data name="Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpAlternativeText" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="UpUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Up</value>
+  </data>
+  <data name="Update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpdateAlternativeText" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UpdateUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Update</value>
+  </data>
+  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserAlternativeText" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="UserUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=User</value>
+  </data>
+  <data name="Users" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UsersAlternativeText" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="UsersUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Users</value>
+  </data>
+  <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarningAlternativeText" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="WarningUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Warning</value>
+  </data>
+  <data name="ZoomIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\zoomin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZoomInAlternativeText" xml:space="preserve">
+    <value>ZoomIn</value>
+  </data>
+  <data name="ZoomInUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=ZoomIn</value>
+  </data>
+  <data name="ZoomOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\zoomout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZoomOutAlternativeText" xml:space="preserve">
+    <value>ZoomOut</value>
+  </data>
+  <data name="ZoomOutUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=ZoomOut</value>
+  </data>
+  <data name="Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CopyAlternativeText" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CopyUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Copy</value>
+  </data>
+  <data name="Paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasteAlternativeText" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="PasteUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=Paste</value>
+  </data>
+  <data name="More" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\more.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoreAlternativeText" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="MoreUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=More</value>
+  </data>
+  <data name="FullDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fulldetails.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FullDetailsAlternativeText" xml:space="preserve">
+    <value>FullDetails</value>
+  </data>
+  <data name="FullDetailsUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=FullDetails</value>
+  </data>
+  <data name="GotoSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gotosearch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GotoSearchAlternativeText" xml:space="preserve">
+    <value>GotoSearch</value>
+  </data>
+  <data name="GotoSearchUrl" xml:space="preserve">
+    <value>IISHandlers/WebFormApplicationBinaryResourceHandler.ashx?img=GotoSearch</value>
+  </data>
+
+</root>

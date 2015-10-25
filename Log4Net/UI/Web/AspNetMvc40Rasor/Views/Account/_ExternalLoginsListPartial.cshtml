@@ -1,0 +1,23 @@
+@model ICollection<AuthenticationClientData>
+@if (Model.Count == 0)
+{
+    <div class="message-info">
+        <p>@Framework.Resources.UIStringResource.Account_ExternalLogin_NoExternalLoginText</p>
+    </div>
+}
+else
+{
+    using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+    @Html.AntiForgeryToken()
+    <fieldset id="socialLoginList">
+        <legend>@Framework.Resources.UIStringResource.Account_ExternalLogin_TitleText</legend>
+        <p>
+        @foreach (AuthenticationClientData p in Model)
+        {
+            <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="@string.Format(Framework.Resources.UIStringResource.Account_ExternalLogin_DescriptionText, p.DisplayName)">@p.DisplayName</button>
+        }
+        </p>
+    </fieldset>
+    }
+}

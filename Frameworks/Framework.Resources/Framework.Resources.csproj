@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C72B898B-B53B-42D5-9F4F-673F84BB485B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.Resources</RootNamespace>
+    <AssemblyName>Framework.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="UIImageResource.resx">
+    </EmbeddedResource>
+    <Compile Include="UIImageResource.designer.cs">
+      <DependentUpon>UIImageResource.resx</DependentUpon>
+      <SubType>RESXCodeBehind</SubType>
+    </Compile>
+    <EmbeddedResource Include="UIStringResource.resx">
+    </EmbeddedResource>
+    <Compile Include="UIStringResource.designer.cs">
+      <DependentUpon>UIStringResource.resx</DependentUpon>
+      <SubType>RESXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Images\Comments.png" />
+    <Content Include="Images\Confirm.png" />
+    <Content Include="Images\CreateUser.png" />
+    <Content Include="Images\Delete.png" />
+    <Content Include="Images\Details.png" />
+    <Content Include="Images\Down.png" />
+    <Content Include="Images\Download.png" />
+    <Content Include="Images\Edit.png" />
+    <Content Include="Images\Exit.png" />
+    <Content Include="Images\Export.png" />
+    <Content Include="Images\ExportToExcel.png" />
+    <Content Include="Images\Favorite.png" />
+    <Content Include="Images\FileReplace.png" />
+    <Content Include="Images\First.png" />
+    <Content Include="Images\Forward.png" />
+    <Content Include="Images\Go.png" />
+    <Content Include="Images\Heart.png" />
+    <Content Include="Images\Help.png" />
+    <Content Include="Images\Home.png" />
+    <Content Include="Images\Import.png" />
+    <Content Include="Images\Index.png" />
+    <Content Include="Images\Information.png" />
+    <Content Include="Images\Insert.png" />
+    <Content Include="Images\Last.png" />
+    <Content Include="Images\LoadFile.png" />
+    <Content Include="Images\Lock.png" />
+    <Content Include="Images\Mail.png" />
+    <Content Include="Images\MailLock.png" />
+    <Content Include="Images\MailReceive.png" />
+    <Content Include="Images\MailSearch.png" />
+    <Content Include="Images\MailSend.png" />
+    <Content Include="Images\Minus.png" />
+    <Content Include="Images\Money.png" />
+    <Content Include="Images\NewFile.png" />
+    <Content Include="Images\Next.png" />
+    <Content Include="Images\NumericDown.png" />
+    <Content Include="Images\NumericUp.png" />
+    <Content Include="Images\Open.png" />
+    <Content Include="Images\PageSize.png" />
+    <Content Include="Images\PasswordRecovery.png" />
+    <Content Include="Images\Pause.png" />
+    <Content Include="Images\PieChart.png" />
+    <Content Include="Images\Play.png" />
+    <Content Include="Images\Plus.png" />
+    <Content Include="Images\Previous.png" />
+    <Content Include="Images\Process.png" />
+    <Content Include="Images\Promotion.png" />
+    <Content Include="Images\Protection.png" />
+    <Content Include="Images\Question.png" />
+    <Content Include="Images\Record.png" />
+    <Content Include="Images\Recycle.png" />
+    <Content Include="Images\Redo.png" />
+    <Content Include="Images\Refresh.png" />
+    <Content Include="Images\Register.png" />
+    <Content Include="Images\Repeat.png" />
+    <Content Include="Images\Rss.png" />
+    <Content Include="Images\Save.png" />
+    <Content Include="Images\Search.png" />
+    <Content Include="Images\SearchPage.png" />
+    <Content Include="Images\Setting.png" />
+    <Content Include="Images\ShoppingCart.png" />
+    <Content Include="Images\SignUp.png" />
+    <Content Include="Images\Stop.png" />
+    <Content Include="Images\TagBlue.png" />
+    <Content Include="Images\TagGreen.png" />
+    <Content Include="Images\TextPage.png" />
+    <Content Include="Images\Title.png" />
+    <Content Include="Images\ToggleButton_Checked.png" />
+    <Content Include="Images\ToggleButton_Unchecked.png" />
+    <Content Include="Images\Tutorial.png" />
+    <Content Include="Images\Undo.png" />
+    <Content Include="Images\Unlock.png" />
+    <Content Include="Images\Up.png" />
+    <Content Include="Images\Update.png" />
+    <Content Include="Images\User.png" />
+    <Content Include="Images\Users.png" />
+    <Content Include="Images\Warning.png" />
+    <Content Include="Images\ZoomIn.png" />
+    <Content Include="Images\ZoomOut.png" />
+    <Content Include="Images\AddNew.png" />
+    <Content Include="Images\Attachment.png" />
+    <Content Include="Images\Back.png" />
+    <Content Include="Images\Bookmark.png" />
+    <Content Include="Images\Calendar.png" />
+    <Content Include="Images\Cancel.png" />
+    <Content Include="Images\ChangePassword.png" />
+    <Content Include="Images\Chart.png" />
+    <Content Include="Images\Checkbox_Checked.png" />
+    <Content Include="Images\Checkbox_Unchecked.png" />
+    <Content Include="Images\Clock.png" />
+    <Content Include="Images\Close.png" />
+    <Content Include="Images\Comment.png" />
+    <Content Include="Images\Paste.png" />
+    <Content Include="Images\Copy.png" />
+    <Content Include="Images\More.png" />
+    <Content Include="Images\FullDetails.png" />
+    <Content Include="Images\GotoSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>rem copy $(TargetPath) $(SolutionDir)BuiltResults\*.* /y</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

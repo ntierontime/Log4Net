@@ -1,0 +1,1 @@
+<%@ Application CodeBehind="Global.asax.cs" Inherits="Log4Net.WebFormApp.Global" Language="C#" %>

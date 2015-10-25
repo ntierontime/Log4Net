@@ -1,0 +1,261 @@
+@using Framework.Mvc;
+@model Log4Net.AspNetMvc40ViewModel.WPCommonOfLogVM
+@{
+    // http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
+    // http://dotnetmentors.com/mvc/paging-and-sorting-in-asp-net-mvc-and-entity-framework-application.aspx
+    ViewBag.Title = Log4Net.Resources.UIStringResourcePerEntityLog.Log;
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<article>
+<div>
+<div class="default">
+@using (Html.BeginForm()){
+<div>
+<div class="buttonContainer">
+<input   class="button button-Search" type="submit" name="SearchToolBarUp" value="@Framework.Resources.UIStringResource.SearchAlternativeText" />
+<input   onclick="location.href='@Url.Action("AddNew", "Log")'" class="button button-AddNew" type="button" name="AddNewToolBarUp" value="@Framework.Resources.UIStringResource.AddNewAlternativeText" />
+<input   onclick="location.href='@Url.Action("WPCommonOfLog_Export", "Log", new RouteValueDictionary { { "dataServiceType", "Csv" } })'" class="button button-Export" type="button" name="ExportToolBarUp" value="@Framework.Resources.UIStringResource.ExportAlternativeText" />
+<input   onclick="location.href='@Url.Action("WPCommonOfLog_Export", "Log", new RouteValueDictionary { { "dataServiceType", "Excel2010" } })'" class="button button-ExportToExcel" type="button" name="ExportToExcelToolBarUp" value="@Framework.Resources.UIStringResource.ExportToExcelAlternativeText" />
+<input   onclick="location.href='@Url.Action("Import", "Log")'" class="button button-Import" type="button" name="ImportToolBarUp" value="@Framework.Resources.UIStringResource.ImportAlternativeText" />
+</div>
+<div>
+</div>
+<div>
+@Html.CheckBoxFor(model=>model.Criteria.IsToCompareExceptionCommonOftOfCommon, new { style="display:display;" })@Log4Net.Resources.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareExceptionCommonOftOfCommon
+@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedExceptionCommonOftOfCommon)
+</div>
+<div>
+@Html.CheckBoxFor(model=>model.Criteria.IsToCompareMessageCommonOftOfCommon, new { style="display:display;" })@Log4Net.Resources.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareMessageCommonOftOfCommon
+@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedMessageCommonOftOfCommon)
+</div>
+<div>
+@Html.CheckBoxFor(model=>model.Criteria.IsToCompareLoggerCommonOftOfCommon, new { style="display:display;" })@Log4Net.Resources.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareLoggerCommonOftOfCommon
+@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedLoggerCommonOftOfCommon)
+</div>
+<div>
+@Html.CheckBoxFor(model=>model.Criteria.IsToCompareLevelCommonOftOfCommon, new { style="display:display;" })@Log4Net.Resources.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareLevelCommonOftOfCommon
+@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedLevelCommonOftOfCommon)
+</div>
+<div>
+@Html.CheckBoxFor(model=>model.Criteria.IsToCompareThreadCommonOftOfCommon, new { style="display:display;" })@Log4Net.Resources.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareThreadCommonOftOfCommon
+@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedThreadCommonOftOfCommon)
+</div>
+<div>
+@Html.CheckBoxFor(model=>model.Criteria.IsToCompareDateCommonOftOfCommon, new { style="display:display;" })@Log4Net.Resources.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareDateCommonOftOfCommon
+@Html.CheckBoxFor(model=>model.Criteria.IsToCompareLowerBoundDateCommonOftOfCommon, new { style="display:display;" })@Log4Net.Resources.UIStringResourcePerEntityLog.IsToCompareLowerBound_ID_CheckBox_Search_isToCompareLowerBoundDateCommonOftOfCommon
+@Html.TextBox("lowerBoundDateCommonOftOfCommon", Model.Criteria.LowerBoundDateCommonOftOfCommon.ToString(), new { @readonly = "readonly" })
+@Html.CheckBoxFor(model=>model.Criteria.IsToCompareUpperBoundDateCommonOftOfCommon, new { style="display:display;" })@Log4Net.Resources.UIStringResourcePerEntityLog.IsToCompareUpperBound_ID_CheckBox_Search_isToCompareUpperBoundDateCommonOftOfCommon
+@Html.TextBox("upperBoundDateCommonOftOfCommon", Model.Criteria.UpperBoundDateCommonOftOfCommon.ToString(), new { @readonly = "readonly" })
+</div>
+<div class="buttonContainer">
+    <div class="paging-label">Items per page : </div><div class="paging-field">@Html.DropDownListFor(model=>model.QueryPagingSetting.PageSize, Model.SelectListOfPageSize, new Dictionary<string,Object>{ { "onchange", "this.form.submit();" } })
+    </div><div class="paging-label">Sort by:</div><div class="paging-field">@Html.DropDownListFor(model => model.QueryOrderBySettingCollecionInString, Model.SelectListOfQueryOrderBySettingCollecionInString, new Dictionary<string, Object> { { "onchange", "this.form.submit();" } })
+    </div><div class="paging-field-right">@Model.QueryPagingSetting.GetPagingInformationString()</div>
+</div>
+<div class="buttonContainer">
+<input   class="button button-Search" type="submit" name="SearchToolBarBottom" value="@Framework.Resources.UIStringResource.SearchAlternativeText" />
+<input   onclick="location.href='@Url.Action("AddNew", "Log")'" class="button button-AddNew" type="button" name="AddNewToolBarBottom" value="@Framework.Resources.UIStringResource.AddNewAlternativeText" />
+<input   onclick="location.href='@Url.Action("WPCommonOfLog_Export", "Log", new RouteValueDictionary { { "dataServiceType", "Csv" } })'" class="button button-Export" type="button" name="ExportToolBarBottom" value="@Framework.Resources.UIStringResource.ExportAlternativeText" />
+<input   onclick="location.href='@Url.Action("WPCommonOfLog_Export", "Log", new RouteValueDictionary { { "dataServiceType", "Excel2010" } })'" class="button button-ExportToExcel" type="button" name="ExportToExcelToolBarBottom" value="@Framework.Resources.UIStringResource.ExportToExcelAlternativeText" />
+<input   onclick="location.href='@Url.Action("Import", "Log")'" class="button button-Import" type="button" name="ImportToolBarBottom" value="@Framework.Resources.UIStringResource.ImportAlternativeText" />
+</div>
+</div>
+}
+</div>
+<div class="default">
+<div>
+    @Html.PagedListPager(Url
+        , new PagerHtmlRenderer(
+        //Constructor mandatory values
+                currentPageNumber: Model.QueryPagingSetting.CurrentPage,
+                pageSize: Model.QueryPagingSetting.PageSize,
+                totalNumberOfItems: Model.QueryPagingSetting.CountOfRecords,
+                actionName: "WPCommonOfLog",
+                controllerName: "Log",
+                routeValues: new RouteValueDictionary() { { "currentPage", "" } },
+                pageRouteValueName: "currentPage")
+                {
+                    //Properties
+                    PreviousLinkInnerHtml = "<strong>Previous</strong>",
+                    NextLinkInnerHtml = "<strong>Next<strong>",
+                    FirstLinkInnerHtml = "<strong>First</strong>",
+                    LastLinkInnerHtml = "<strong>Last</strong>"
+                });
+</div>
+<div>
+<table id="MasterDataControl0" name="MasterDataControl0" >
+<tr><th class="sorting"></th>
+<th class="sorting">@Log4Net.Resources.UIStringResourcePerEntityLog.Date</th>
+<th class="sorting">@Log4Net.Resources.UIStringResourcePerEntityLog.Thread</th>
+<th class="sorting">@Log4Net.Resources.UIStringResourcePerEntityLog.Level</th>
+<th class="sorting">@Log4Net.Resources.UIStringResourcePerEntityLog.Logger</th>
+<th class="sorting">@Log4Net.Resources.UIStringResourcePerEntityLog.Message</th>
+<th class="sorting">@Log4Net.Resources.UIStringResourcePerEntityLog.Exception</th>
+<th class="sorting"></th></tr>
+    @if (Model != null && Model.StatusOfResult == Framework.CommonBLLEntities.BusinessLogicLayerResponseStatus.MessageOK)
+    {
+        foreach (var item in Model.Result)
+        {
+<tr><td ></td>
+<td >@Html.DisplayFor(modelItem => item.Date)</td>
+<td >@Html.DisplayFor(modelItem => item.Thread)</td>
+<td >@Html.DisplayFor(modelItem => item.Level)</td>
+<td >@Html.DisplayFor(modelItem => item.Logger)</td>
+<td >@Html.DisplayFor(modelItem => item.Message)</td>
+<td >@Html.DisplayFor(modelItem => item.Exception)</td>
+<td ><div class="buttonContainer">
+<input   onclick="location.href='@Url.Action("WPEntityRelatedOfLog", "Log", new { isToCompareIdByIdentifierOftOfByIdentifier=true, valueToCompareIdByIdentifierOftOfByIdentifier = item.Id })'" class="button button-Details" type="button" name="DetailsToolBarRightInList" value="@Framework.Resources.UIStringResource.DetailsAlternativeText" />
+<input   onclick="location.href='@Url.Action("Edit", "Log", new { isToCompareIdByIdentifierOftOfByIdentifier=true, valueToCompareIdByIdentifierOftOfByIdentifier = item.Id })'" class="button button-Edit" type="button" name="EditToolBarRightInList" value="@Framework.Resources.UIStringResource.EditAlternativeText" />
+</div></td></tr>
+        }
+    }
+    else
+    {
+<tr><td colspan="50" ><div class="error-label">@Model.StatusMessageOfResult</div></td></tr>
+    }
+</table>
+</div>
+<div>
+    @Html.PagedListPager(Url
+        , new PagerHtmlRenderer(
+        //Constructor mandatory values
+                currentPageNumber: Model.QueryPagingSetting.CurrentPage,
+                pageSize: Model.QueryPagingSetting.PageSize,
+                totalNumberOfItems: Model.QueryPagingSetting.CountOfRecords,
+                actionName: "WPCommonOfLog",
+                controllerName: "Log",
+                routeValues: new RouteValueDictionary() { { "currentPage", "" } },
+                pageRouteValueName: "currentPage")
+                {
+                    //Properties
+                    PreviousLinkInnerHtml = "<strong>Previous</strong>",
+                    NextLinkInnerHtml = "<strong>Next<strong>",
+                    FirstLinkInnerHtml = "<strong>First</strong>",
+                    LastLinkInnerHtml = "<strong>Last</strong>"
+                });
+</div>
+</div>
+</div>
+</article>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/dataTables")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+        //http://www.softfinity.com/blog/using-ajax-with-knockout-js-and-asp-net-mvc-4-to-load-select-drop-down-options/
+        $(document).ready($(function() {
+            $('input[name=upperBoundDateCommonOftOfCommon]').datepicker({
+                autoclose: true,
+                beforeShowDay: $.noop,
+                calendarWeeks: false,
+                clearBtn: false,
+                daysOfWeekDisabled: [],
+                endDate: Infinity,
+                forceParse: true,
+                format: 'dd/mm/yyyy',
+                keyboardNavigation: true,
+                language: 'en',
+                minViewMode: 0,
+                orientation: 'auto',
+                rtl: false,
+                startDate: -Infinity,
+                startView: 2,
+                todayBtn: false,
+                todayHighlight: false,
+                weekStart: 0
+            });
+            $('input[name=lowerBoundDateCommonOftOfCommon]').datepicker({
+                autoclose: true,
+                beforeShowDay: $.noop,
+                calendarWeeks: false,
+                clearBtn: false,
+                daysOfWeekDisabled: [],
+                endDate: Infinity,
+                forceParse: true,
+                format: 'dd/mm/yyyy',
+                keyboardNavigation: true,
+                language: 'en',
+                minViewMode: 0,
+                orientation: 'auto',
+                rtl: false,
+                startDate: -Infinity,
+                startView: 2,
+                todayBtn: false,
+                todayHighlight: false,
+                weekStart: 0
+            });
+        }));
+        $(document).ready($(function() {
+            $.validator.addMethod(
+                "date",
+                function(value, element) {
+                    var bits = value.match(/([0-9]+)/gi), str;
+                    if (!bits)
+                        return this.optional(element) || false;
+                    str = bits[1] + '/' + bits[0] + '/' + bits[2];
+                    return this.optional(element) || !/Invalid|NaN/.test(new Date(str));
+                },
+                "Please enter a date in the format dd/mm/yyyy"
+            );
+            $("form").validate({
+                onkeyup: false,
+                errorPlacement: function(error, element) {
+                    if (element.attr("name").indexOf("DOB") >= 0) {
+                        error.insertAfter("#DOB_Day");
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                rules: {
+                    upperBoundDateCommonOftOfCommon: {
+                        //required: true,
+                        date: true,
+                        range: ['1900-01-01', '2100-01-01']
+                    },
+                    lowerBoundDateCommonOftOfCommon: {
+                        //required: true,
+                        date: true,
+                        range: ['1900-01-01', '2100-01-01']
+                    },
+                },
+                messages: {
+                    upperBoundDateCommonOftOfCommon: {
+                        //required: 'Email is required',
+                        date: 'Please enter a date in the format dd/mm/yyyy',
+                    },
+                    lowerBoundDateCommonOftOfCommon: {
+                        //required: 'Email is required',
+                        date: 'Please enter a date in the format dd/mm/yyyy',
+                    },
+                },
+                highlight:
+                    function(element) {
+                        $(element).css('border', '2px solid red');
+                    },
+                unhighlight:
+                    function(element) {
+                        $(element).css('border', '1px solid rgb(170, 170, 170)');
+                    },
+                errorLabelContainer: "#ErrorList",
+                wrapper: "li",
+            });
+        }));
+        //cascaded dropdownlist by knockoutjs
+        function CascadingDDLViewModel() {
+            var self = this;
+        }
+        var objVM = new CascadingDDLViewModel();
+        ko.applyBindings(objVM);
+    </script>
+}

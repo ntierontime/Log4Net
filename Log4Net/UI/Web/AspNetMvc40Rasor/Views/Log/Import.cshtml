@@ -1,0 +1,23 @@
+@{
+    ViewBag.Title = Framework.Resources.UIStringResource.ImportAlternativeText;
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@Framework.Resources.UIStringResource.Data_Import_DescriptionText</h2>
+                <h3>@ViewBag.Message</h3>
+            </hgroup>
+        </div>
+    </section>
+}
+@using (Html.BeginForm("Import", "Log", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<div class="buttonContainer">
+    <input type="file" name="file" id="file" />
+    <input type="submit" name="Import" value="@Framework.Resources.UIStringResource.ImportAlternativeText" class="button" />
+</div>
+}
