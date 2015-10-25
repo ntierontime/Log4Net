@@ -22,9 +22,10 @@ nTier On Time is developing a code generator with a Single Codebase solution  fo
   - Android Native Mobile App on MVVM, Xamarin
   - XBOX Application on MVVM
 
-You need Visual Studio 2012 and up.
+Visual Studio 2012 Pro and Windows 8.1 Pro are required to build and run all types of UI.
 Mandatory Visual Studio Tools you need:
 * Nuget: https://www.nuget.org/
 * Project Linker: https://visualstudiogallery.msdn.microsoft.com/273dbf44-55a1-4ac6-a1f3-0b9741587b9a
 
-Please feel free email your .dbml/.edmx to ntierontime@gmail.com. A .zip file will be emailed back to you with generated solution similar to Log4Net demo solution. It is promised that your .dbml/.edmx will be removed after .zip file is sent out. 
+Please feel free email your .dbml/.edmx to ntierontime@gmail.com. A .zip file will email back to you with generated solution similar to Log4Net demo solution. It is promised that your .dbml/.edmx will be removed after .zip file is sent out. 
+ 
