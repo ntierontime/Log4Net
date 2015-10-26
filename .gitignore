@@ -41,3 +41,25 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.cache
+*.dll
+*.g.i.cs
+_UpgradeReport_Files/UpgradeReport_Warning.png
+_UpgradeReport_Files/UpgradeReport_Success.png
+_UpgradeReport_Files/UpgradeReport_Error.png
+_UpgradeReport_Files/UpgradeReport.css
+_UpgradeReport_Files/UpgradeReport.xslt
+UpgradeLog.htm
+UpgradeLog.XML
+_UpgradeReport_Files/UpgradeReport_Information.png
+bin/debug/*.*
+bin/release/*.*
+obj/debug/*.*
+obj/release/*.*
+obj/debug/TempPE/*.*
+obj/release/TempPE/*.*
+TemporaryGeneratedFile*.*
+*.dbmdl
+Log4Net/Core/VS2012DatabaseProject/Log4Net.VS2012DatabaseProject.dbmdl
+*.suo
+Log4Net/Core/VS2012DatabaseProject/Log4Net.VS2012DatabaseProject.dbmdl
