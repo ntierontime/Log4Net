@@ -1,6 +1,10 @@
 # Log4Net
 A demo Visual Studio 2012 Solution for Single Codebase And Cross-Platform with following applications: Asp.Net Mvc, Asp.Net Web Form, WPF, Windows Phone, Windows App Store, Silverlight.
 
+Architecture and coding Details are described in Github wiki:
+
+https://github.com/ntierontime/Log4Net/wiki
+
 All code files, project files, solution files are under MIT licence.
 
 nTier On Time is developing a code generator with a Single Codebase solution  for cross-platform systems, which is taking .dbml(Linq To Sql) and/or .edmx(Entity Framework) file as input, generates:
