@@ -53,7 +53,7 @@ namespace Framework.Mvc
         private int _pageSize;
 
         /// <summary>
-        /// The total number of elements in the list. 
+        /// The total number of elements in the list.
         /// </summary>
         public int TotalNumberOfItems { get; set; }
 
@@ -128,7 +128,7 @@ namespace Framework.Mvc
         public bool ShowFirstLink { get; set; }
 
         /// <summary>
-        /// The HTML/text to show inside the first link element. Default is '&lt;&lt;'. 
+        /// The HTML/text to show inside the first link element. Default is '&lt;&lt;'.
         /// </summary>
         public string FirstLinkInnerHtml { get; set; }
 
@@ -138,7 +138,7 @@ namespace Framework.Mvc
         public bool ShowLastLink { get; set; }
 
         /// <summary>
-        /// The HTML/text to show inside the last link element. Default is '&gt;&gt;'. 
+        /// The HTML/text to show inside the last link element. Default is '&gt;&gt;'.
         /// </summary>
         public string LastLinkInnerHtml { get; set; }
 

@@ -132,7 +132,7 @@ namespace Framework.EntityContracts.DateTimePivotEntities
         #endregion Functions
 
         #region GetDateTimePerX...PivotBaseCollection(...)
-        
+
         public Framework.EntityContracts.DateTimePivotEntities.DateTimePivotCollection<TCollection, T, TCategoryCollection, TCategory, TSubSummary> GetDateTimePerXIntervalTermPivotBaseCollection(
             Framework.EntityContracts.Queries.DateTimeUnit dateTimeUnit
             , int interval)

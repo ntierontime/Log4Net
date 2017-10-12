@@ -7,35 +7,31 @@ using System.Text;
 
 namespace Log4Net.WcfContracts
 {
-    public static class WcfServiceResolver
+    public static partial class WcfServiceResolver
     {
 
-
-        public static Log4Net.WcfContracts.ILogWcfService ResolveWcfServiceLog()
+        public static Log4Net.WcfContracts.ILogService ResolveWcfServiceLog()
         {
             Framework.CommonBLLEntities.IBusinessLogicLayerContextContainer _IBusinessLogicLayerContextContainer = Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Resolve<Framework.CommonBLLEntities.IBusinessLogicLayerContextContainer>();
             Framework.CommonBLLEntities.BusinessLogicLayerContext _BusinessLogicLayerContext = _IBusinessLogicLayerContextContainer.BusinessLogicLayerContext;
             Log4Net.WcfContracts.IBusinessLogicLayerFactory _IBusinessLogicLayerFactory = Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Resolve<Log4Net.WcfContracts.IBusinessLogicLayerFactory>();
-            Log4Net.WcfContracts.ILogWcfService _BusinessLogicLayerInstance = _IBusinessLogicLayerFactory.CreateBLLInstanceOfEntityLog(_BusinessLogicLayerContext);
+            Log4Net.WcfContracts.ILogService _BusinessLogicLayerInstance = _IBusinessLogicLayerFactory.CreateBLLInstanceOfEntityLog(_BusinessLogicLayerContext);
             return _BusinessLogicLayerInstance;
         }
 
-
     }
 
-    public static class WcfServiceResolverAsyn
+    public static partial class WcfServiceResolverAsyn
     {
 
-
-        public static Log4Net.WcfContracts.WcfServiceContractAsynLog ResolveWcfServiceLog()
+        public static Log4Net.WcfContracts.ILogServiceAsyn ResolveWcfServiceLog()
         {
             Framework.CommonBLLEntities.IBusinessLogicLayerContextContainer _IBusinessLogicLayerContextContainer = Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Resolve<Framework.CommonBLLEntities.IBusinessLogicLayerContextContainer>();
             Framework.CommonBLLEntities.BusinessLogicLayerContext _BusinessLogicLayerContext = _IBusinessLogicLayerContextContainer.BusinessLogicLayerContext;
             Log4Net.WcfContracts.IBusinessLogicLayerFactoryAsyn _IBusinessLogicLayerFactory = Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Resolve<Log4Net.WcfContracts.IBusinessLogicLayerFactoryAsyn>();
-            Log4Net.WcfContracts.WcfServiceContractAsynLog _BusinessLogicLayerInstance = _IBusinessLogicLayerFactory.CreateBLLInstanceOfEntityLog(_BusinessLogicLayerContext);
+            Log4Net.WcfContracts.ILogServiceAsyn _BusinessLogicLayerInstance = _IBusinessLogicLayerFactory.CreateBLLInstanceOfEntityLog(_BusinessLogicLayerContext);
             return _BusinessLogicLayerInstance;
         }
-
 
     }
 }

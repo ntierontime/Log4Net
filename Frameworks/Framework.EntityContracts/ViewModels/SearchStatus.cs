@@ -12,3 +12,4 @@ namespace Framework.EntityContracts
         SearchResultLoaded,
     }
 }
+

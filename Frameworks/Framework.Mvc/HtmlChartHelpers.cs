@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-
 namespace Framework.Mvc
 {
     public static class HtmlChartHelpers

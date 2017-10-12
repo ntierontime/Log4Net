@@ -1,81 +1,81 @@
-@model Log4Net.DataSourceEntities.Log
-@{
-    ViewBag.Title = Framework.Resources.UIStringResource.AddNewAlternativeText;
+@using UrlStringsAlias = Log4Net.AspNetMvc40Rasor.Helpers.UrlStrings;
+@model Log4Net.AspNetMvc40ViewModel.LogItemVM
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>@Model.ContentData.Title.</h2>
+                <h4>@Model.ContentData.Summary</h4>
+            </div>
+@if (Model.StatusOfResult != Framework.CommonBLLEntities.BusinessLogicLayerResponseStatus.MessageOK && Model.StatusOfResult != Framework.CommonBLLEntities.BusinessLogicLayerResponseStatus.UIProcessReady)
+{
+            <div class="panel-body">
+                <div class="text-danger">@Model.StatusMessageOfResult</div>
+            </div>
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-        </div>
-    </section>
-}
-@using (Html.BeginForm()) {
+@using (Html.BeginForm(UrlStringsAlias.ActionName_Log_AddNew, UrlStringsAlias.ControllerName_Log, FormMethod.Post, new { @class= "form" })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>@Log4Net.Resources.UIStringResourcePerEntityLog.Log.</legend>
-<div class="editor-label">
-			@Html.LabelFor(model => model.Id)
-        </div>
-        <div class="editor-field">
-			@Html.DisplayFor(model => model.Id)
-        </div>
-        <div class="editor-label">
-			@Html.LabelFor(model => model.Date)
-        </div>
-        <div class="editor-field">
-			@Html.TextBoxFor(model => model.Date, new { @Value = Model.Date.ToString("dd/MM/yyyy") })
-        </div>
-        <div class="editor-label">
-			@Html.LabelFor(model => model.Thread)
-        </div>
-        <div class="editor-field">
-			@Html.EditorFor(model => model.Thread)
-        </div>
-        <div class="editor-label">
-			@Html.LabelFor(model => model.Level)
-        </div>
-        <div class="editor-field">
-			@Html.EditorFor(model => model.Level)
-        </div>
-        <div class="editor-label">
-			@Html.LabelFor(model => model.Logger)
-        </div>
-        <div class="editor-field">
-			@Html.EditorFor(model => model.Logger)
-        </div>
-        <div class="editor-label">
-			@Html.LabelFor(model => model.Message)
-        </div>
-        <div class="editor-field">
-			@Html.EditorFor(model => model.Message)
-        </div>
-        <div class="editor-label">
-			@Html.LabelFor(model => model.Exception)
-        </div>
-        <div class="editor-field">
-			@Html.EditorFor(model => model.Exception)
-        </div>
-        <div class="buttonContainer">
-			<input type="submit" value="@Framework.Resources.UIStringResource.AddNewAlternativeText" class="button" />
-			<input type="button" value="@Framework.Resources.UIStringResource.RefreshAlternativeText" class="button" onclick="location.href='@Url.Action("Create")'" />
-			<input type="button" value="@Framework.Resources.UIStringResource.BackAlternativeText" class="button" onclick="location.href='@Url.Action("Index")'" />
-        </div>
-    </fieldset>
+            <div class="panel-body">
+@Html.HiddenFor(model => model.Item.Id)  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Date, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Item.Date, new { @Value = Model.Item.Date.ToString("dd/MM/yyyy"), @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Item.Date, null, new { @class = "text-danger" })
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Thread, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Item.Thread, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Item.Thread, null, new { @class = "text-danger" })
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Level, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Item.Level, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Item.Level, null, new { @class = "text-danger" })
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Logger, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Item.Logger, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Item.Logger, null, new { @class = "text-danger" })
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Message, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Item.Message, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Item.Message, null, new { @class = "text-danger" })
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Exception, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Item.Exception, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Item.Exception, null, new { @class = "text-danger" })
+    </div>
+            </div>
+            <div class="panel-footer nopadding">
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" role="button" type="submit">
+                            <span class="glyphicon glyphicon-ok-sign"></span>
+                            <span class="submit-text hidden-xs hidden-sm visible-md-inline visible-lg-inline">@Framework.Resx.UIStringResource.Save</span>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <a href="@Url.Action(UrlStringsAlias.ActionName_Log_AddNew)" class="btn btn-default" role="button" type="button">
+                            <span class="glyphicon glyphicon-refresh"></span><span class="hidden-xs hidden-sm visible-md-inline visible-lg-inline">@Framework.Resx.UIStringResource.Refresh</span>
+                        </a>
+                    </div>
+                    <div class="btn-group">
+                        <a href="@Url.Action(UrlStringsAlias.ActionName_Log_Index)" class="btn btn-default" role="button" type="button">
+                            <span class="glyphicon glyphicon-ban-circle"></span><span class="hidden-xs hidden-sm visible-md-inline visible-lg-inline">@Framework.Resx.UIStringResource.Back</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 }
+        </div>
+    </div>
+</div>
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/knockout")
-    @Scripts.Render("~/bundles/dataTables")
-    @Scripts.Render("~/bundles/bootstrap")
     <script type="text/javascript">
-        //http://www.softfinity.com/blog/using-ajax-with-knockout-js-and-asp-net-mvc-4-to-load-select-drop-down-options/
         $(document).ready($(function() {
-            $('input[name=Date]').datepicker({
+            $('input[name=Item.Date]').datepicker({
                 autoclose: true,
                 beforeShowDay: $.noop,
                 calendarWeeks: false,
@@ -130,7 +130,7 @@
                         $(element).css('border', '1px solid rgb(170, 170, 170)');
                     },
                 errorLabelContainer: "#ErrorList",
-                wrapper: "li",
+                wrapper: "li"
             });
         }));
         //cascaded dropdownlist by knockoutjs

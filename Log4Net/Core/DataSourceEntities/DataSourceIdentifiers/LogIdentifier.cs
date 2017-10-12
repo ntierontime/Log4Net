@@ -6,29 +6,29 @@ namespace Log4Net.DataSourceEntities
     /// <summary>
     /// table/entity identifier, inherit from entity interface, <see cref="Log4Net.EntityContracts.ILogIdentifier"/>
     /// </summary>
-	public class LogIdentifier 
-		: Log4Net.EntityContracts.ILogIdentifier
-	{ 
+    public partial class LogIdentifier
+        : Log4Net.EntityContracts.ILogIdentifier
+    {
 
-		#region constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LogIdentifier"/> class.
-        /// </summary>
-		public LogIdentifier ()
-		{
-		}
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LogIdentifier"/> class.
         /// </summary>
-		public LogIdentifier (
+        public LogIdentifier ()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogIdentifier"/> class.
+        /// </summary>
+        public LogIdentifier (
 System.Int64 id)
-		{
+        {
 
-			this.Id=id;
+            this.Id=id;
 
-		}
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LogIdentifier"/> class.
@@ -38,19 +38,17 @@ System.Int64 id)
             Log4Net.EntityContracts.ILogIdentifierHelper.Copy<Log4Net.EntityContracts.ILogIdentifier, LogIdentifier>(item, this);
         }
 
-		#endregion constructors
+        #endregion constructors
 
-		#region properties
-
+        #region properties
 
         public System.Int64 Id { get; set; }
 
-
-		#endregion properties
+        #endregion properties
 
         #region override methods
-		
-		/// <summary>
+
+        /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance, using ToString method in entity contract helper in EntityContract project
         /// </summary>
         /// <returns>
@@ -82,7 +80,7 @@ System.Int64 id)
         /// Returns a hash code for this instance.
         /// </summary>
         /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
         public override int GetHashCode()
         {
@@ -91,7 +89,7 @@ System.Int64 id)
 
         #endregion override methods
 
-		#region Method of LogIdentifier GetAClone()
+        #region Method of LogIdentifier GetAClone()
 
         /// <summary>
         /// Gets the A clone, using clone method in entity contract helper in EntityContract project.
@@ -102,14 +100,13 @@ System.Int64 id)
             return Log4Net.EntityContracts.ILogIdentifierHelper.Clone<LogIdentifier, LogIdentifier>(this);
         }
 
-
-		#endregion Method of LogIdentifier GetAClone()
-	}
+        #endregion Method of LogIdentifier GetAClone()
+    }
 
     /// <summary>
     ///  a property defined when <see cref="WithIdentifierContractLog"/> is used in other classes.
     /// </summary>
-    public interface WithIdentifierContractLog
+    public partial interface WithIdentifierContractLog
     {
         /// <summary>
         /// Gets or sets the LogIdentifier

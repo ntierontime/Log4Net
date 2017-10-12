@@ -7,10 +7,10 @@ namespace Log4Net.EntityContracts
     /// <summary>
     /// provides common methods/actions/stubs on an identifier of an entity.
     /// </summary>
-	public static class ILogIdentifierHelper
-	{
+    public static partial class ILogIdentifierHelper
+    {
 
-		#region Create new Identifier instance from Framework.NameValueCollection
+        #region Create new Identifier instance from Framework.NameValueCollection
 
         /// <summary>
         /// Creates the specified input.
@@ -24,7 +24,7 @@ namespace Log4Net.EntityContracts
             try
             {
                 T _retval = new T();
-				_retval.Id = System.Int64.Parse(input["Id"]);
+                _retval.Id = System.Int64.Parse(input["Id"]);
                 return _retval;
             }
             catch
@@ -46,8 +46,8 @@ namespace Log4Net.EntityContracts
             {
                 string[] _SplitInputValue = input.Split(";".ToCharArray());
                 T _retval = new T();
-				int _Count = 0;
-				_retval.Id = System.Int64.Parse(_SplitInputValue[_Count++]);
+                int _Count = 0;
+                _retval.Id = System.Int64.Parse(_SplitInputValue[_Count++]);
                 return _retval;
             }
             catch
@@ -56,9 +56,9 @@ namespace Log4Net.EntityContracts
             }
         }
 
-		#endregion Create new Identifier instance from System.Collections.Specialized.NameValueCollection
+        #endregion Create new Identifier instance from System.Collections.Specialized.NameValueCollection
 
-		#region Copy<...>(...), Equals<...>(...), Clone<...>(...), ToString<...>(...), 
+        #region Copy<...>(...), Equals<...>(...), Clone<...>(...), ToString<...>(...),
 
         /// <summary>
         /// Copies the specified property from source.
@@ -72,9 +72,9 @@ namespace Log4Net.EntityContracts
             where T2 : ILogIdentifier
         {
 
-			to.Id = from.Id;
+            to.Id = from.Id;
 
-        } 
+        }
 
         /// <summary>
         /// Equalses the specified from.
@@ -88,11 +88,11 @@ namespace Log4Net.EntityContracts
             where T1 : ILogIdentifier
             where T2 : ILogIdentifier
         {
-			bool _retval = true;
+            bool _retval = true;
 
-			_retval = _retval && to.Id == from.Id;
+            _retval = _retval && to.Id == from.Id;
 
-			return _retval;
+            return _retval;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Log4Net.EntityContracts
         public static string ToString<T>(T input)
             where T : ILogIdentifier
         {
-			string _Format = "Id:{0};";
+            string _Format = "Id:{0};";
             return string.Format(_Format, input.Id);
         }
 
@@ -133,13 +133,13 @@ namespace Log4Net.EntityContracts
         /// </returns>
         public static string ToString(System.Int64 id)
         {
-			string _Format = "Id:{0}";
+            string _Format = "Id:{0}";
             return string.Format(_Format, id);
-		}
+        }
 
-		#endregion Copy<...>(...), Equals<...>(...), Clone<...>(...), ToString<...>(...), 
+        #endregion Copy<...>(...), Equals<...>(...), Clone<...>(...), ToString<...>(...),
 
-		#region CopyCollection<...>(...), CloneCollection<...>(...)
+        #region CopyCollection<...>(...), CloneCollection<...>(...)
 
         /// <summary>
         /// Copies the collection.
@@ -181,8 +181,8 @@ namespace Log4Net.EntityContracts
             T2Collection _retval = new T2Collection();
             CopyCollection<T1Collection, T2Collection, T1, T2>(from, _retval);
             return _retval;
-        } 
+        }
 
-		#endregion CopyCollection<...>(...), CloneCollection<...>(...)
-	}
+        #endregion CopyCollection<...>(...), CloneCollection<...>(...)
+    }
 }

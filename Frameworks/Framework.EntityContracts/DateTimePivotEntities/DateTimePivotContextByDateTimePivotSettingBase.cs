@@ -6,7 +6,7 @@ using System.Text;
 namespace Framework.EntityContracts.DateTimePivotEntities
 {
     /// <summary>
-    /// DateTimePivotContext By DateTimeRangeCriteria 
+    /// DateTimePivotContext By DateTimeRangeCriteria
     /// </summary>
     /// <typeparam name="TCollection">The type of the collection.</typeparam>
     /// <typeparam name="T"></typeparam>

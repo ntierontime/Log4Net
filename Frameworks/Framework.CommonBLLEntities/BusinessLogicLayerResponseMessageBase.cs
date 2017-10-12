@@ -10,24 +10,24 @@ namespace Framework.CommonBLLEntities
     /// base class of all BusinessLogicLayerResponseMessages
     /// </summary>
     /// <typeparam name="TResponse">The type of the response.</typeparam>
-    public class BusinessLogicLayerResponseMessageBase<TResponse>
+    public class BusinessLogicLayerResponseMessageBase<TResponse>: Framework.CommonBLLEntities.IBusinessLogicLayerResponseMessageBase
     {
 
-		#region Constructors
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessLogicLayerResponseMessageBase&lt;TResponse&gt;"/> class.
         /// </summary>
-		public BusinessLogicLayerResponseMessageBase()
+        public BusinessLogicLayerResponseMessageBase()
         {
             //this.Message = new TResponse();
         }
 
-		#endregion Constructors
+        #endregion Constructors
 
-		#region Properties
+        #region Properties
 
-		/// <summary>
+        /// <summary>
         /// Gets or sets the business logic layer response status.
         /// </summary>
         /// <value>
@@ -70,7 +70,7 @@ namespace Framework.CommonBLLEntities
         /// </value>
         public TResponse Message { get; set; }
 
-		/// <summary>
+        /// <summary>
         /// Gets or sets the message in stream. Message is converted to Stream, e.g. LinqToCsv, ClosedXml
         /// </summary>
         /// <value>
@@ -78,21 +78,30 @@ namespace Framework.CommonBLLEntities
         /// </value>
         public Framework.DataStreamServiceResult DataStreamServiceResult { get; set; }
 
-		#endregion Properties
+        #endregion Properties
 
         public string GetStatusMessage()
         {
-            return Framework.Resources.UIStringResource.ResourceManager.GetString(this.BusinessLogicLayerResponseStatus.ToString());
+            return Framework.Resx.UIStringResource.ResourceManager.GetString(this.BusinessLogicLayerResponseStatus.ToString());
+        }
+
+        public override string ToString()
+        {
+            return string.Format("ResponseStatus:{0};PagingResult:{1}"
+                , this.BusinessLogicLayerResponseStatus
+                , this.QueryPagingResult != null ? this.QueryPagingResult.ToString() : ""
+                , this.BusinessLogicLayerRequestID
+                , this.BusinessLogicLayerResponseID
+                , typeof(TResponse));
         }
     }
 
     /// <summary>
     /// Helper class for BusinessLogicLayerResponseMessageBase, to map the data access layer message to business logic layer response message
     /// </summary>
-	public class BusinessLogicLayerResponseMessageBaseHelper
+    public class BusinessLogicLayerResponseMessageBaseHelper
     {
         #region MapDataAccessLayerMessageToBusinessLogicLayerResponseMessage(...)
-
 
         public static void MapDataAccessLayerMessageToBusinessLogicLayerResponseMessage<T, TList>(
             Framework.DataSourceEntities.DataAccessLayerMessageBase<TList> from, BusinessLogicLayerResponseMessageBase<TList> to
@@ -109,12 +118,12 @@ namespace Framework.CommonBLLEntities
                 {
                     to.QueryPagingResult = from.QueryPagingResult.Clone();
                 }
-				to.DataStreamServiceResult = dataStreamServiceProvider.BuildResult(from.Result, dataServiceType);
+                to.DataStreamServiceResult = dataStreamServiceProvider.BuildResult(from.Result, dataServiceType);
             }
             else if (from.DataAccessLayerMessageStatus == Framework.DataSourceEntities.DataAccessLayerMessageStatus.SuccessButNoResult)
             {
                 to.BusinessLogicLayerResponseStatus = BusinessLogicLayerResponseStatus.NoValueFromDataSource;
-				to.DataStreamServiceResult = dataStreamServiceProvider.BuildResult(from.Result, dataServiceType);
+                to.DataStreamServiceResult = dataStreamServiceProvider.BuildResult(from.Result, dataServiceType);
             }
             else
             {
@@ -129,14 +138,14 @@ namespace Framework.CommonBLLEntities
         /// <typeparam name="T">any type</typeparam>
         /// <param name="from">From.</param>
         /// <param name="to">To.</param>
-		public static void MapDataAccessLayerMessageToBusinessLogicLayerResponseMessage<T>(
+        public static void MapDataAccessLayerMessageToBusinessLogicLayerResponseMessage<T>(
             Framework.DataSourceEntities.DataAccessLayerMessageBase<T> from, BusinessLogicLayerResponseMessageBase<T> to)
         {
             if (from.DataAccessLayerMessageStatus == Framework.DataSourceEntities.DataAccessLayerMessageStatus.Success)
             {
                 to.BusinessLogicLayerResponseStatus = BusinessLogicLayerResponseStatus.MessageOK;
                 to.Message = from.Result;
-				if (from.QueryPagingResult != null)
+                if (from.QueryPagingResult != null)
                 {
                     to.QueryPagingResult = from.QueryPagingResult.Clone();
                 }
@@ -161,7 +170,7 @@ namespace Framework.CommonBLLEntities
         /// <param name="to">To.</param>
         public static void MapDataAccessLayerMessageToBusinessLogicLayerResponseMessage<T, TList>(
             Framework.DataSourceEntities.DataAccessLayerMessageBase<T> from, BusinessLogicLayerResponseMessageBase<TList> to
-			, Framework.DataServiceTypes dataServiceType
+            , Framework.DataServiceTypes dataServiceType
             , Framework.IDataStreamServiceProviderBase<TList, T> dataStreamServiceProvider)
             where TList: List<T>, new()
             where T : class, new()
@@ -227,31 +236,31 @@ namespace Framework.CommonBLLEntities
     /// <summary>
     /// Built-In BusinessLogicLayerResponseMessage of NameValuePairCollection
     /// </summary>
-	public class BusinessLogicLayerResponseMessageNameValuePairCollection
+    public class BusinessLogicLayerResponseMessageNameValuePairCollection
         : BusinessLogicLayerResponseMessageBase<Framework.NameValueCollection>
     {
     }
-	
+
     /// <summary>
     /// Built-In BusinessLogicLayerResponseMessage of RssItemCollection
     /// </summary>
-	public class BusinessLogicLayerResponseMessageRssItemCollection
+    public class BusinessLogicLayerResponseMessageRssItemCollection
         : BusinessLogicLayerResponseMessageBase<Framework.RssItemCollection>
     {
     }
-	
+
     /// <summary>
     /// Built-In BusinessLogicLayerResponseMessage of Integer
     /// </summary>
-	public class BusinessLogicLayerResponseMessageInteger
+    public class BusinessLogicLayerResponseMessageInteger
         : BusinessLogicLayerResponseMessageBase<int>
     {
     }
-	
+
     /// <summary>
     /// Built-In BusinessLogicLayerResponseMessage of Boolean
     /// </summary>
-	public class BusinessLogicLayerResponseMessageBoolean
+    public class BusinessLogicLayerResponseMessageBoolean
         : BusinessLogicLayerResponseMessageBase<bool>
     {
     }
@@ -259,7 +268,7 @@ namespace Framework.CommonBLLEntities
     /// <summary>
     ///  Business Logic Layer Response Status
     /// </summary>
-	public enum BusinessLogicLayerResponseStatus
+    public enum BusinessLogicLayerResponseStatus
     {
         ///// <remarks/>
         //Received,
@@ -284,8 +293,8 @@ namespace Framework.CommonBLLEntities
 
         ///// <remarks/>
         //Failed,
-        
-		/// <remarks/>
+
+        /// <remarks/>
         UIProcessReady,
 
         /// <remarks/>
@@ -310,6 +319,7 @@ namespace Framework.CommonBLLEntities
         YouHaveNoPermissionToUpdate,
 
         // <remarks/>
-        YouHaveNoPermissionToDelete,    
-	}
+        YouHaveNoPermissionToDelete,
+    }
 }
+

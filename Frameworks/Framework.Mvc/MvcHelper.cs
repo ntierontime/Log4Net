@@ -8,14 +8,14 @@ namespace Framework.Mvc
 {
     public static class MvcHelper
     {
-	    public static List<SelectListItem> BuildListOfSelectListItem(IList<Framework.NameValuePair> input)
+        public static List<SelectListItem> BuildListOfSelectListItem(IList<Framework.NameValuePair> input)
         {
             List<SelectListItem> selectList = new List<SelectListItem>();
             if (input != null)
             {
                 foreach (Framework.NameValuePair nvp in input)
                 {
-                    selectList.Add(new SelectListItem { Text = nvp.Name, Value = nvp.Value });
+                    selectList.Add(new SelectListItem { Text = nvp.Name, Value = nvp.Value.Trim() });
                 }
             }
             return selectList;
@@ -45,3 +45,4 @@ namespace Framework.Mvc
         }
     }
 }
+

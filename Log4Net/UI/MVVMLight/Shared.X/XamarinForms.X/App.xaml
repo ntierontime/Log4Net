@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Log4Net.MVVMLightViewModels;assembly=Log4Net.MVVMLightViewModels.X"
+    xmlns:fvm="clr-namespace:Framework.Xaml;assembly=Framework.Xaml.X"
+    x:Class="Log4Net.XamarinForms.App">
+    <Application.Resources>
+        <ResourceDictionary x:Name="appMain">
+            <vm:ViewModelLocator x:Key="Locator" />
+            <fvm:EnumToNameValuePairConverter x:Key="EnumToNameValuePairConverter" />
+            <Style x:Key="Heading" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="AntiqueWhite" />
+                <Setter Property="BackgroundColor" Value="Blue" />
+            </Style>
+            <Style x:Key="SubHeading" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="AntiqueWhite" />
+                <Setter Property="BackgroundColor" Value="Blue" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

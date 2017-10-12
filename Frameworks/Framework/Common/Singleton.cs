@@ -32,7 +32,7 @@ namespace Framework
             static SingletonCreator()
             {
             }
-			/// <summary>
+            /// <summary>
             /// return an instance of T
             /// </summary>
             internal static readonly T instance = new T();

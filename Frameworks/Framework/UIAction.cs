@@ -11,7 +11,7 @@ namespace Framework
     public enum UIAction
     {
         Unknown,
-        
+
         ViewDetails,
 
         Navigate,
@@ -33,7 +33,16 @@ namespace Framework
         SelectionChanged,
 
         ClearResult,
-		
+
         Copy,
+
+        /// <summary>
+        /// The search result
+        /// for Xamarin only
+        /// </summary>
+        Result,
+
+        Home,
     }
 }
+

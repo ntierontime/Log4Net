@@ -1,17 +1,17 @@
-@model Log4Net.AspNetMvc40Common.Models.LoginModel
+@model Log4Net.AspNetMvc40Rasor.Models.LoginModel
 @{
-    ViewBag.Title = Framework.Resources.UIStringResource.Account_LogIn_TitleText;
+    ViewBag.Title = Framework.Resx.UIStringResource.Account_LogIn_TitleText;
 }
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
+<hgroup>
+    <h2>@ViewBag.Title.</h2>
 </hgroup>
 <section id="loginForm">
-<h2>@Framework.Resources.UIStringResource.Account_LogIn_Usealocalaccounttologin</h2>
+<h4>@Framework.Resx.UIStringResource.Account_LogIn_Usealocalaccounttologin</h4>
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>@Framework.Resources.UIStringResource.Account_LogIn_Legend</legend>
+        <legend>@Framework.Resx.UIStringResource.Account_LogIn_Legend</legend>
         <ol>
             <li>
                 @Html.LabelFor(m => m.UserName)
@@ -28,17 +28,14 @@
                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
             </li>
         </ol>
-        <input type="submit" value="@Framework.Resources.UIStringResource.Account_LogIn_LoginButtonText" />
+        <input type="submit" value="@Framework.Resx.UIStringResource.Account_LogIn_LoginButtonText" />
     </fieldset>
     <p>
-        @Html.ActionLink("Register", "Register") @Framework.Resources.UIStringResource.Account_LogIn_ifyoudonthaveanaccount
+        @Html.ActionLink("Register", "Register") @Framework.Resx.UIStringResource.Account_LogIn_ifyoudonthaveanaccount
     </p>
 }
 </section>
 <section class="social" id="socialLoginForm">
-    <h2>@Framework.Resources.UIStringResource.Account_LogIn_Useanotherservicetologin</h2>
+    <h4>@Framework.Resx.UIStringResource.Account_LogIn_Useanotherservicetologin</h4>
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 </section>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

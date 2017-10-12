@@ -24,3 +24,4 @@ namespace Log4Net.WPF4App.Pages
         }
     }
 }
+

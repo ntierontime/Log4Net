@@ -10,7 +10,7 @@ namespace Framework.Services
     /// http://www.codeproject.com/Articles/25133/LINQ-to-CSV-library
     /// </summary>
     public static class ClosedXmlHelper
-	{
+    {
         public static string GetCellKey(int row, char cell)
         {
             string cellKey;

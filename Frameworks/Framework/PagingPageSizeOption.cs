@@ -10,29 +10,29 @@ namespace Framework
     /// </summary>
     public class PagingPageSizeOption
     {
-		#region constructors
+        #region constructors
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="PagingPageSizeOption"/> class.
         /// </summary>
         public PagingPageSizeOption()
         {
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="PagingPageSizeOption"/> class.
         /// </summary>
         /// <param name="pageSizeName">Name of the page size.</param>
         /// <param name="pageSize">Size of the page.</param>
-		public PagingPageSizeOption(string pageSizeName, int pageSize)
+        public PagingPageSizeOption(string pageSizeName, int pageSize)
         {
             this.PageSize = pageSize;
             this.PageSizeName = pageSizeName;
         }
 
-		#endregion constructors
+        #endregion constructors
 
-		#region properties
+        #region properties
 
         /// <summary>
         /// Gets or sets the name of the page size.
@@ -50,7 +50,7 @@ namespace Framework
         /// </value>
         public int PageSize { get; set; }
 
-		#endregion properties
+        #endregion properties
     }
 
     /// <summary>
@@ -58,18 +58,18 @@ namespace Framework
     /// </summary>
     public class PagingPageSizeOptionCollection : List<PagingPageSizeOption>
     {
-		#region constructors
+        #region constructors
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="PagingPageSizeOptionCollection"/> class.
         /// </summary>
         public PagingPageSizeOptionCollection()
-        { 
+        {
         }
 
-		#endregion constructors
+        #endregion constructors
 
-		#region Add(...)
+        #region Add(...)
 
         /// <summary>
         /// Adds the specified page size name with page size.
@@ -82,9 +82,9 @@ namespace Framework
             this.Add(_Item);
         }
 
-		#endregion Add(...)
+        #endregion Add(...)
 
-		#region GetDefault()
+        #region GetDefault()
 
         /// <summary>
         /// Gets the default PagingPageSizeOptionCollection.
@@ -100,6 +100,6 @@ namespace Framework
             return _retval;
         }
 
-		#endregion GetDefault()
+        #endregion GetDefault()
     }
 }

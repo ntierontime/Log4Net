@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+        xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:vm="clr-namespace:Log4Net.MVVMLightViewModels;assembly=Log4Net.MVVMLightViewModels.X"
+        xmlns:i18n="clr-namespace:Log4Net.XamarinForms"
+        x:Class="Log4Net.XamarinForms.Pages.HomePage"
+        NavigationPage.HasNavigationBar="False"
+        NavigationPage.HasBackButton="False"
+        >
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+            WinPhone="Assets/LockScreenLogo.scale-100.png" />
+    </ContentPage.Icon>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Gray">
+            <Button Text="Home" TextColor="White" BackgroundColor="Green" Command="{Binding Path=Main.GoHomeCommand, Source={StaticResource Locator}}" />
+            <Frame OutlineColor="Yellow" Padding="1">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="{i18n:Translate Text=Log, ResourceId=Log4Net.Resx.UIStringResourcePerEntityLog}" HorizontalOptions="Start" BackgroundColor="LightGray"  WidthRequest="150" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                    <Button Text="TabbedSearch" TextColor="White" BackgroundColor="Green" Command="{Binding Path=Log4Net_MVVMLightViewModels_WPCommonOfLogVM.LaunchSearchViewCommand, Source={StaticResource Locator}}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

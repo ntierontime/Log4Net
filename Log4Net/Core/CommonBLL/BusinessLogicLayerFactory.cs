@@ -8,22 +8,19 @@ namespace Log4Net.CommonBLL
     /// <summary>
     /// is to factory class to create instances of business layer classes
     /// </summary>
-	public class BusinessLogicLayerFactory : Log4Net.WcfContracts.IBusinessLogicLayerFactory
+    public partial class BusinessLogicLayerFactory : Log4Net.WcfContracts.IBusinessLogicLayerFactory
     {
         #region Entity related
-
 
         /// <summary>
         /// Creates the BLL instance of entity <see cref="Log4Net.Log"/> tables for change notification.
         /// </summary>
         /// <param name="businessLogicLayerContext">The business logic layer context.</param>
-        /// <returns>Instance of BusinessLogicLayerEntityLog</returns>
-        public Log4Net.WcfContracts.ILogWcfService CreateBLLInstanceOfEntityLog(Framework.CommonBLLEntities.BusinessLogicLayerContext businessLogicLayerContext)
+        /// <returns>Instance of LogService</returns>
+        public Log4Net.WcfContracts.ILogService CreateBLLInstanceOfEntityLog(Framework.CommonBLLEntities.BusinessLogicLayerContext businessLogicLayerContext)
         {
-            return new BusinessLogicLayerEntityLog(businessLogicLayerContext);
+            return new LogService(businessLogicLayerContext);
         }
-
-
 
         #endregion Entity related
     }

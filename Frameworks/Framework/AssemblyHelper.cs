@@ -15,7 +15,7 @@ namespace Framework
             var version = Windows.ApplicationModel.Package.Current.Id.Version;
             return string.Format(fmtStd, version.Major, version.Minor, version.Build, version.Revision);
         }
-#else
+#elif SILVERLIGHT
         public static string GetExecutingAssemblyVersionInString()
         {
             return GetAssemblyVersionInString(Assembly.GetExecutingAssembly());
@@ -23,9 +23,34 @@ namespace Framework
 
         public static string GetAssemblyVersionInString(Assembly assembly)
         {
-            Version version   = assembly.GetName().Version;
+            AssemblyName assemblyName = new AssemblyName(assembly.FullName);
+            Version version = assemblyName.Version;
+            return string.Format(fmtStd, version.Major, version.Minor, version.Build, version.Revision);
+        }
+#elif XAMARIN
+        //public static string GetExecutingAssemblyVersionInString()
+        //{
+        //    return GetAssemblyVersionInString(Assembly.GetCallingAssembly());
+        //}
+
+        public static string GetAssemblyVersionInString(Assembly assembly)
+        {
+            AssemblyName assemblyName = new AssemblyName(assembly.FullName);
+            Version version = assemblyName.Version;
+            return string.Format(fmtStd, version.Major, version.Minor, version.Build, version.Revision);
+        }
+#else
+        public static string GetExecutingAssemblyVersionInString()
+        {
+            return GetAssemblyVersionInString(Assembly.GetCallingAssembly());
+        }
+
+        public static string GetAssemblyVersionInString(Assembly assembly)
+        {
+            Version version = assembly.GetName().Version;
             return string.Format(fmtStd, version.Major, version.Minor, version.Build, version.Revision);
         }
 #endif
     }
 }
+

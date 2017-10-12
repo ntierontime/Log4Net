@@ -11,9 +11,9 @@ namespace Framework.EntityContracts
     /// QueryCriteriaBase class for all concrete Query Critieria classes
     /// </summary>
     /// <typeparam name="T">.Net value type</typeparam>
-    public abstract class QueryCriteriaBase<T>
+    public abstract class QueryCriteriaBase<T>: Framework.PropertyChangedNotifier
     {
-		public const string Strings_NotToCompare = "(Not To Compare)";
+        public const string Strings_NotToCompare = "(Not To Compare)";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryCriteriaBase&lt;T&gt;"/> class.
@@ -34,10 +34,26 @@ namespace Framework.EntityContracts
         /// Gets or sets a value indicating whether this instance is to compare.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if this instance is to compare; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance is to compare; otherwise, <c>false</c>.
         /// </value>
         public bool IsToCompare { get; set; }
-        //public abstract bool _Predicate(T input);
+
+        protected static Framework.NameValueCollection GetListWithLocalizedResource(string resourcePrefix, Type type)
+        {
+            string format = "{0}_{2}";
+            var results = new Framework.NameValueCollection();
+            var prefix = string.IsNullOrWhiteSpace(resourcePrefix) ? type.Name : resourcePrefix;
+            foreach (var name in Enum.GetNames(type))
+            {
+                string resourceName = string.Format(format, prefix, null, name);
+                string resourceString = Framework.Resx.UIStringResource.ResourceManager.GetString(resourceName);
+                results.Add(name, resourceString);
+
+            }
+
+            return results;
+        }
+
     }
 
     #endregion QueryCriterias
@@ -48,7 +64,7 @@ namespace Framework.EntityContracts
     /// for all concrete Query Critieria classes which process equals predicate
     /// </summary>
     /// <typeparam name="T">.Net value type</typeparam>
-    public class QueryEqualsCriteriaBase<T> : QueryCriteriaBase<T>
+    public abstract class QueryEqualsCriteriaBase<T> : QueryCriteriaBase<T>
     {
         /// <summary>
         /// Gets or sets the value to compare.
@@ -57,6 +73,8 @@ namespace Framework.EntityContracts
         /// The value to compare.
         /// </value>
         public T ValueToCompare { get; set; }
+
+        public abstract T NullableValueToCompare { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryEqualsCriteriaBase&lt;T&gt;"/> class.
@@ -82,9 +100,9 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.ValueToCompare.Equals(input));
         //}
 
-		#region override string ToString()
+        #region override string ToString()
 
-		/// <summary>
+        /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance.
         /// </summary>
         /// <returns>
@@ -102,41 +120,93 @@ namespace Framework.EntityContracts
             }
         }
 
-		#endregion override string ToString()
+        #endregion override string ToString()
+    }
+
+    public class QueryEqualsCriteriaBaseNullable<T> : QueryEqualsCriteriaBase<T?>
+        where T : struct
+    {
+        public QueryEqualsCriteriaBaseNullable()
+        {
+        }
+
+        public QueryEqualsCriteriaBaseNullable(bool isToCompare, T? valueToCompare)
+            : base(isToCompare, valueToCompare)
+        {
+            //this.IsToCompare = IsToCompare;
+            this.ValueToCompare = valueToCompare;
+        }
+
+        public override T? NullableValueToCompare
+        {
+            get { return ValueToCompare; }
+
+            set
+            {
+                if (!value.Equals(ValueToCompare))
+                {
+                    ValueToCompare = value;
+                    IsToCompare = value.HasValue;
+                }
+            }
+        }
     }
 
     /// <summary>
     /// concrete class for Boolean of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemBooleanEqualsCriteria : QueryEqualsCriteriaBase<System.Boolean>
+    public class QuerySystemBooleanEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Boolean>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemBooleanEqualsCriteria"/> class.
         /// </summary>
         public QuerySystemBooleanEqualsCriteria()
         {
+            ValueToCompare = false;
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemBooleanEqualsCriteria"/> class.
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">if set to <c>true</c> [value to compare].</param>
-        public QuerySystemBooleanEqualsCriteria(bool isToCompare, System.Boolean valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemBooleanEqualsCriteria(bool isToCompare, System.Boolean? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
+            ValueToCompare = valueToCompare ?? false;
         }
 
-		#endregion constructors
+        #endregion constructors
+
+        Framework.EntityContracts.PredefinedBooleanSelectedValues m_PredefinedBooleanSelectedValue;
+        public Framework.EntityContracts.PredefinedBooleanSelectedValues PredefinedBooleanSelectedValue
+        {
+            get
+            {
+                return m_PredefinedBooleanSelectedValue;
+            }
+            set
+            {
+                m_PredefinedBooleanSelectedValue = value;
+                IsToCompare = m_PredefinedBooleanSelectedValue != Framework.EntityContracts.PredefinedBooleanSelectedValues.All;
+                ValueToCompare = m_PredefinedBooleanSelectedValue == Framework.EntityContracts.PredefinedBooleanSelectedValues.True;
+            }
+        }
+
+        public static Framework.NameValueCollection GetList(string resourcePrefix)
+        {
+            Type type = typeof(Framework.EntityContracts.PredefinedBooleanSelectedValues);
+            return GetListWithLocalizedResource(resourcePrefix, type);
+        }
     }
 
     /// <summary>
     /// concrete class for Byte of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemByteEqualsCriteria : QueryEqualsCriteriaBase<System.Byte>
+    public class QuerySystemByteEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Byte>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemByteEqualsCriteria"/> class.
@@ -149,20 +219,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemByteEqualsCriteria(bool isToCompare, System.Byte valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemByteEqualsCriteria(bool isToCompare, System.Byte? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for Char of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemCharEqualsCriteria : QueryEqualsCriteriaBase<System.Char>
+    public class QuerySystemCharEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Char>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemCharEqualsCriteria"/> class.
@@ -175,20 +245,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemCharEqualsCriteria(bool isToCompare, System.Char valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemCharEqualsCriteria(bool isToCompare, System.Char? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for DateTime of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDateTimeEqualsCriteria : QueryEqualsCriteriaBase<System.DateTime>
+    public class QuerySystemDateTimeEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.DateTime>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDateTimeEqualsCriteria"/> class.
@@ -201,20 +271,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemDateTimeEqualsCriteria(bool isToCompare, System.DateTime valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemDateTimeEqualsCriteria(bool isToCompare, System.DateTime? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for DateTimeOffset of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDateTimeOffsetEqualsCriteria : QueryEqualsCriteriaBase<System.DateTimeOffset>
+    public class QuerySystemDateTimeOffsetEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.DateTimeOffset>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDateTimeOffsetEqualsCriteria"/> class.
@@ -227,20 +297,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemDateTimeOffsetEqualsCriteria(bool isToCompare, System.DateTimeOffset valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemDateTimeOffsetEqualsCriteria(bool isToCompare, System.DateTimeOffset? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for Decimal of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDecimalEqualsCriteria : QueryEqualsCriteriaBase<System.Decimal>
+    public class QuerySystemDecimalEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Decimal>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDecimalEqualsCriteria"/> class.
@@ -253,20 +323,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemDecimalEqualsCriteria(bool isToCompare, System.Decimal valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemDecimalEqualsCriteria(bool isToCompare, System.Decimal? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for Double of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDoubleEqualsCriteria : QueryEqualsCriteriaBase<System.Double>
+    public class QuerySystemDoubleEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Double>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDoubleEqualsCriteria"/> class.
@@ -279,20 +349,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemDoubleEqualsCriteria(bool isToCompare, System.Double valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemDoubleEqualsCriteria(bool isToCompare, System.Double? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for Guid of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemGuidEqualsCriteria : QueryEqualsCriteriaBase<System.Guid>
+    public class QuerySystemGuidEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Guid>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemGuidEqualsCriteria"/> class.
@@ -305,20 +375,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemGuidEqualsCriteria(bool isToCompare, System.Guid valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemGuidEqualsCriteria(bool isToCompare, System.Guid? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for Int16 of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt16EqualsCriteria : QueryEqualsCriteriaBase<System.Int16>
+    public class QuerySystemInt16EqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Int16>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemInt16EqualsCriteria"/> class.
@@ -331,20 +401,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemInt16EqualsCriteria(bool isToCompare, System.Int16 valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemInt16EqualsCriteria(bool isToCompare, System.Int16? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for Int32 of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt32EqualsCriteria : QueryEqualsCriteriaBase<System.Int32>
+    public class QuerySystemInt32EqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Int32>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemInt32EqualsCriteria"/> class.
@@ -357,20 +427,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemInt32EqualsCriteria(bool isToCompare, System.Int32 valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemInt32EqualsCriteria(bool isToCompare, System.Int32? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for Int64 of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt64EqualsCriteria : QueryEqualsCriteriaBase<System.Int64>
+    public class QuerySystemInt64EqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Int64>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemInt64EqualsCriteria"/> class.
@@ -383,18 +453,18 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemInt64EqualsCriteria(bool isToCompare, System.Int64 valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemInt64EqualsCriteria(bool isToCompare, System.Int64? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for SByte of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemSByteEqualsCriteria : QueryEqualsCriteriaBase<System.SByte>
+    public class QuerySystemSByteEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.SByte>
     {
         #region constructors
 
@@ -409,7 +479,7 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemSByteEqualsCriteria(bool isToCompare, System.SByte valueToCompare)
+        public QuerySystemSByteEqualsCriteria(bool isToCompare, System.SByte? valueToCompare)
             : base(isToCompare, valueToCompare)
         {
         }
@@ -420,9 +490,9 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Single of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemSingleEqualsCriteria : QueryEqualsCriteriaBase<System.Single>
+    public class QuerySystemSingleEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.Single>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemSingleEqualsCriteria"/> class.
@@ -435,12 +505,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemSingleEqualsCriteria(bool isToCompare, System.Single valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemSingleEqualsCriteria(bool isToCompare, System.Single? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
@@ -448,7 +518,7 @@ namespace Framework.EntityContracts
     /// </summary>
     public class QuerySystemStringEqualsCriteria : QueryEqualsCriteriaBase<System.String>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemStringEqualsCriteria"/> class.
@@ -456,25 +526,37 @@ namespace Framework.EntityContracts
         public QuerySystemStringEqualsCriteria()
         {
         }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemStringEqualsCriteria"/> class.
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
         public QuerySystemStringEqualsCriteria(bool isToCompare, System.String valueToCompare)
-			: base(isToCompare, valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
+
+        public override string NullableValueToCompare
+        {
+            get { return ValueToCompare; }
+
+            set
+            {
+                ValueToCompare = value;
+                IsToCompare = string.IsNullOrWhiteSpace(ValueToCompare);
+            }
+        }
     }
 
     /// <summary>
     /// concrete class for TimeSpan of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemTimeSpanEqualsCriteria : QueryEqualsCriteriaBase<System.TimeSpan>
+    public class QuerySystemTimeSpanEqualsCriteria : QueryEqualsCriteriaBaseNullable<System.TimeSpan>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemTimeSpanEqualsCriteria"/> class.
@@ -482,25 +564,26 @@ namespace Framework.EntityContracts
         public QuerySystemTimeSpanEqualsCriteria()
         {
         }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemTimeSpanEqualsCriteria"/> class.
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemTimeSpanEqualsCriteria(bool isToCompare, System.TimeSpan valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemTimeSpanEqualsCriteria(bool isToCompare, System.TimeSpan? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for UInt16 of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt16EqualsCriteria : QueryEqualsCriteriaBase<System.UInt16>
+    public class QuerySystemUInt16EqualsCriteria : QueryEqualsCriteriaBaseNullable<System.UInt16>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemUInt16EqualsCriteria"/> class.
@@ -514,22 +597,22 @@ namespace Framework.EntityContracts
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
         public QuerySystemUInt16EqualsCriteria(bool isToCompare, System.UInt16 valueToCompare)
-			: base(isToCompare, valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for UInt32 of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt32EqualsCriteria : QueryEqualsCriteriaBase<System.UInt32>
+    public class QuerySystemUInt32EqualsCriteria : QueryEqualsCriteriaBaseNullable<System.UInt32>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QuerySystemUInt32EqualsCriteria"/> class.
+        /// Initializes a new instance of the <see cref="QuerySystemUInt32EqualsCriteria"/> class
         /// </summary>
         public QuerySystemUInt32EqualsCriteria()
         {
@@ -539,20 +622,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemUInt32EqualsCriteria(bool isToCompare, System.UInt32 valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemUInt32EqualsCriteria(bool isToCompare, System.UInt32? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for UInt64 of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt64EqualsCriteria : QueryEqualsCriteriaBase<System.UInt64>
+    public class QuerySystemUInt64EqualsCriteria : QueryEqualsCriteriaBaseNullable<System.UInt64>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemUInt64EqualsCriteria"/> class.
@@ -565,20 +648,20 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
-        public QuerySystemUInt64EqualsCriteria(bool isToCompare, System.UInt64 valueToCompare)
-			: base(isToCompare, valueToCompare)
+        public QuerySystemUInt64EqualsCriteria(bool isToCompare, System.UInt64? valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
     }
 
     /// <summary>
     /// concrete class for Enum of QueryEqualsCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemEnumEqualsCriteria : QueryEqualsCriteriaBase<System.Enum>
+    public class QuerySystemEnumEqualsCriteria : QueryEqualsCriteriaBase<Enum>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemEnumEqualsCriteria"/> class.
@@ -592,13 +675,26 @@ namespace Framework.EntityContracts
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="valueToCompare">The value to compare.</param>
         public QuerySystemEnumEqualsCriteria(bool isToCompare, System.Enum valueToCompare)
-			: base(isToCompare, valueToCompare)
+            : base(isToCompare, valueToCompare)
         {
         }
 
-		#endregion constructors
+        public override Enum NullableValueToCompare
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        #endregion constructors
     }
-		
+
     #endregion Equals Criterias
 
     #region Range Criterias
@@ -613,14 +709,14 @@ namespace Framework.EntityContracts
         /// Gets or sets a value indicating whether this instance is to compare lower bound.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if this instance is to compare lower bound; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance is to compare lower bound; otherwise, <c>false</c>.
         /// </value>
         public bool IsToCompareLowerBound { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this instance is to include lower bound.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if this instance is to include lower bound; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance is to include lower bound; otherwise, <c>false</c>.
         /// </value>
         public bool IsToIncludeLowerBound { get; set; }
         /// <summary>
@@ -634,14 +730,14 @@ namespace Framework.EntityContracts
         /// Gets or sets a value indicating whether this instance is to compare upper bound.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if this instance is to compare upper bound; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance is to compare upper bound; otherwise, <c>false</c>.
         /// </value>
         public bool IsToCompareUpperBound { get; set; }
-		/// <summary>
+        /// <summary>
         /// Gets or sets a value indicating whether this instance is to include upper bound.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if this instance is to include upper bound; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance is to include upper bound; otherwise, <c>false</c>.
         /// </value>
         public bool IsToIncludeUpperBound { get; set; }
         /// <summary>
@@ -651,6 +747,9 @@ namespace Framework.EntityContracts
         /// The upper bound.
         /// </value>
         public T UpperBound { get; set; }
+
+        public abstract T NullableLowerBound { get; set; }
+        public abstract T NullableUpperBound { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryRangeCriteriaBase&lt;T&gt;"/> class.
@@ -743,10 +842,81 @@ namespace Framework.EntityContracts
 
     }
 
+    public abstract class QueryRangeCriteriaBaseNullable<T> : QueryRangeCriteriaBase<T?>
+        where T : struct
+    {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryRangeCriteriaBase&lt;T&gt;"/> class.
+        /// </summary>
+        public QueryRangeCriteriaBaseNullable()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryRangeCriteriaBase&lt;T&gt;"/> class.
+        /// </summary>
+        /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
+        /// <param name="lowerBound">The lower bound.</param>
+        /// <param name="upperBound">The upper bound.</param>
+        public QueryRangeCriteriaBaseNullable(bool isToCompare, T? lowerBound, T? upperBound)
+            : base(isToCompare, isToCompare, lowerBound, isToCompare, upperBound)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryRangeCriteriaBase&lt;T&gt;"/> class.
+        /// </summary>
+        /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
+        /// <param name="isToCompareLowerBound">if set to <c>true</c> [is to compare lower bound].</param>
+        /// <param name="lowerBound">The lower bound.</param>
+        /// <param name="isToCompareUpperBound">if set to <c>true</c> [is to compare upper bound].</param>
+        /// <param name="upperBound">The upper bound.</param>
+        public QueryRangeCriteriaBaseNullable(bool isToCompare, bool isToCompareLowerBound, T? lowerBound, bool isToCompareUpperBound, T? upperBound)
+            : base(isToCompare, isToCompareLowerBound, lowerBound, isToCompareUpperBound, upperBound)
+        {
+            //this.IsToCompare = isToCompare;
+            this.IsToCompareLowerBound = isToCompareLowerBound;
+            this.IsToCompareUpperBound = isToCompareUpperBound;
+            this.LowerBound = lowerBound;
+            this.UpperBound = upperBound;
+            this.IsToIncludeLowerBound = true;
+            this.IsToIncludeUpperBound = false;
+        }
+
+        /// <summary>
+        /// Gets or sets the nullable lower bound.
+        /// </summary>
+        /// <value>
+        /// The nullable lower bound.
+        /// </value>
+        public override T? NullableLowerBound
+        {
+            get { return LowerBound; }
+            set
+            {
+                LowerBound = value;
+                IsToCompareLowerBound = value.HasValue;
+                IsToCompare = IsToCompareLowerBound || IsToCompareUpperBound;
+            }
+        }
+
+        public override T? NullableUpperBound
+        {
+            get { return UpperBound; }
+            set
+            {
+                UpperBound = value;
+                IsToCompareUpperBound = value.HasValue;
+                IsToCompare = IsToCompareLowerBound || IsToCompareUpperBound;
+            }
+        }
+    }
+
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemByteRangeCriteria : QueryRangeCriteriaBase<System.Byte>
+    public class QuerySystemByteRangeCriteria : QueryRangeCriteriaBaseNullable<System.Byte>
     {
         #region constructors
 
@@ -792,11 +962,10 @@ namespace Framework.EntityContracts
         #endregion _Predicate method
     }
 
-
     /// <summary>
     /// concrete class for Char of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemCharRangeCriteria : QueryRangeCriteriaBase<System.Char>
+    public class QuerySystemCharRangeCriteria : QueryRangeCriteriaBaseNullable<System.Char>
     {
         #region constructors
 
@@ -844,7 +1013,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDateTimeRangeCriteria : QueryRangeCriteriaBase<System.DateTime>
+    public class QuerySystemDateTimeRangeCriteria : QueryRangeCriteriaBaseNullable<System.DateTime>
     {
         #region constructors
 
@@ -860,7 +1029,7 @@ namespace Framework.EntityContracts
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="lowerBound">The lower bound.</param>
         /// <param name="upperBound">The upper bound.</param>
-        public QuerySystemDateTimeRangeCriteria(bool isToCompare, System.DateTime lowerBound, System.DateTime upperBound)
+        public QuerySystemDateTimeRangeCriteria(bool isToCompare, System.DateTime? lowerBound, System.DateTime? upperBound)
             : base(isToCompare, lowerBound, upperBound)
         {
         }
@@ -872,68 +1041,259 @@ namespace Framework.EntityContracts
         /// <param name="lowerBound">The lower bound.</param>
         /// <param name="isToCompareUpperBound">if set to <c>true</c> [is to compare upper bound].</param>
         /// <param name="upperBound">The upper bound.</param>
-        public QuerySystemDateTimeRangeCriteria(bool isToCompare, bool isToCompareLowerBound, System.DateTime lowerBound, bool isToCompareUpperBound, System.DateTime upperBound)
+        public QuerySystemDateTimeRangeCriteria(bool isToCompare, bool isToCompareLowerBound, System.DateTime? lowerBound, bool isToCompareUpperBound, System.DateTime? upperBound)
             : base(isToCompare, isToCompare, lowerBound, isToCompare, upperBound)
         {
         }
 
         #endregion constructors
 
-		
+        Framework.EntityContracts.PreDefinedDateTimeRanges m_PreDefinedDateTimeRange = Framework.EntityContracts.PreDefinedDateTimeRanges.Today;
+
+        public Framework.EntityContracts.PreDefinedDateTimeRanges PreDefinedDateTimeRange
+        {
+            get
+            {
+                return m_PreDefinedDateTimeRange;
+            }
+            set
+            {
+                m_PreDefinedDateTimeRange = value;
+                var calculated = GetBounds(value);
+                LowerBound = calculated.LowerBound;
+                UpperBound = calculated.UpperBound;
+                IsCustomEditor = m_PreDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.Custom;
+                RaisePropertyChanged("PreDefinedDateTimeRange");
+                RaisePropertyChanged("IsCustomEditor");
+                RaisePropertyChanged("LowerBound");
+                RaisePropertyChanged("UpperBound");
+            }
+        }
+
+        public bool IsCustomEditor { get; set; }
+
+        public static QuerySystemDateTimeRangeCriteria GetBounds(Framework.EntityContracts.PreDefinedDateTimeRanges preDefinedDateTimeRange)
+        {
+            if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.Custom)
+            {
+                var lowerBound = DateTime.Now;
+                var upperBound = DateTime.Now;
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.LastTenYears)
+            // include this year + 10 years
+            {
+                var lowerBound = DateTime.Now.AddYears(-10);
+                lowerBound = new DateTime(lowerBound.Year, 1, 1);
+                var upperBound = DateTime.Now;
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.LastFiveYears)
+            // include this year + 5 years
+            {
+                var lowerBound = DateTime.Now.AddYears(-5);
+                lowerBound = new DateTime(lowerBound.Year, 1, 1);
+                var upperBound = DateTime.Now;
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.LastYear)
+            // include this year + 1 year
+            {
+                var lowerBound = DateTime.Now.AddYears(-1);
+                lowerBound = new DateTime(lowerBound.Year, 1, 1);
+                var upperBound = DateTime.Now;
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.LastSixMonths)
+            // include this month + 6 month
+            {
+                var lowerBound = DateTime.Now.AddMonths(-6);
+                lowerBound = new DateTime(lowerBound.Year, lowerBound.Month, 1);
+                var upperBound = DateTime.Now;
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.LastThreeMonths)
+            // include this month + 3 month
+            {
+                var lowerBound = DateTime.Now.AddMonths(-3);
+                lowerBound = new DateTime(lowerBound.Year, lowerBound.Month, 1);
+                var upperBound = DateTime.Now;
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.LastMonth)
+                // include this month + 1 month
+            {
+                var lowerBound = DateTime.Now.AddMonths(-1);
+                lowerBound = new DateTime(lowerBound.Year, lowerBound.Month, 1);
+                var upperBound = DateTime.Now;
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.LastWeek)
+                // include this week + 1 week
+            {
+                var lowerBound = DateTime.Now.AddDays(-7);
+                lowerBound = lowerBound.AddDays(-(int)lowerBound.DayOfWeek);// starting from Sunday
+                lowerBound = new DateTime(lowerBound.Year, lowerBound.Month, 1);
+                var upperBound = lowerBound.AddDays(7);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.Yesterday)
+                // exclude today
+            {
+                var lowerBound = DateTime.Now.AddDays(-1);
+                lowerBound = new DateTime(lowerBound.Year, lowerBound.Month, lowerBound.Day, 0, 0, 0);
+                var upperBound = lowerBound.AddDays(1);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.ThisYear)
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, 1, 1);
+                var upperBound = lowerBound.AddYears(1);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.ThisMonth)
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                var upperBound = lowerBound.AddMonths(1);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.ThisWeek)
+            {
+                var lowerBound = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek);
+                var upperBound = lowerBound.AddDays(7);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.Today)
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                var upperBound = lowerBound.AddDays(1);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.Tomorrow)
+            // exclude today
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(1);
+                var upperBound = lowerBound.AddDays(1);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.NextWeek)
+            // exclude this week
+            {
+                var lowerBound = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek).AddDays(7);
+                var upperBound = lowerBound.AddDays(7);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.NextMonth)
+            // exclude this month
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1);
+                var upperBound = lowerBound.AddMonths(1);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.NextThreeMonths)
+            // exclude this month
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1);
+                var upperBound = lowerBound.AddMonths(3);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.NextSixMonths)
+            // exclude this month
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1);
+                var upperBound = lowerBound.AddMonths(6);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.NextYear)
+            // exclude this year
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, 1, 1).AddYears(1);
+                var upperBound = lowerBound.AddYears(1);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.NextFiveYears)
+            // exclude this year
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, 1, 1).AddYears(1);
+                var upperBound = lowerBound.AddYears(5);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+            else if (preDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.NextTenYears)
+            // exclude this year
+            {
+                var lowerBound = new DateTime(DateTime.Now.Year, 1, 1).AddYears(1);
+                var upperBound = lowerBound.AddYears(10);
+                return new QuerySystemDateTimeRangeCriteria(true, lowerBound, upperBound);
+            }
+
+            return new QuerySystemDateTimeRangeCriteria(false, null, null);
+
+        }
+
         #region special constructors
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDateTimeRangeCriteria"/> class.
         /// </summary>
         public QuerySystemDateTimeRangeCriteria(
-            DateTime lowerBound
+            DateTime? lowerBoundNullable
             , Framework.EntityContracts.Queries.DateTimeUnit dateTimeUnitOfInterval
             , System.Int32 interval)
         {
-            DateTime _CurrentCriteriaUpperBound;
-            if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Year)
+            DateTime? _CurrentCriteriaUpperBound;
+            if (lowerBoundNullable.HasValue)
             {
-                _CurrentCriteriaUpperBound = lowerBound.AddYears(interval);
-            }
-            else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Month)
-            {
-                _CurrentCriteriaUpperBound = lowerBound.AddMonths(interval);
-            }
-            else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Week)
-            {
-                _CurrentCriteriaUpperBound = lowerBound.AddDays(interval * 7);
-            }
-            else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Day)
-            {
-                _CurrentCriteriaUpperBound = lowerBound.AddDays(interval);
-            }
-            else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Hour)
-            {
-                _CurrentCriteriaUpperBound = lowerBound.AddHours(interval);
-            }
-            else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Minute)
-            {
-                _CurrentCriteriaUpperBound = lowerBound.AddMinutes(interval);
-            }
-            else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Second)
-            {
-                _CurrentCriteriaUpperBound = lowerBound.AddSeconds(interval);
-            }
-            else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.MilliSecond)
-            {
-                _CurrentCriteriaUpperBound = lowerBound.AddMilliseconds(interval);
-            }
-            else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Tick)
-            {
-                _CurrentCriteriaUpperBound = lowerBound.AddTicks(interval);
+                DateTime lowerBound = lowerBoundNullable.Value;
+
+                if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Year)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddYears(interval);
+                }
+                else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Month)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddMonths(interval);
+                }
+                else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Week)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddDays(interval * 7);
+                }
+                else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Day)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddDays(interval);
+                }
+                else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Hour)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddHours(interval);
+                }
+                else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Minute)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddMinutes(interval);
+                }
+                else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Second)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddSeconds(interval);
+                }
+                else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.MilliSecond)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddMilliseconds(interval);
+                }
+                else if (dateTimeUnitOfInterval == Framework.EntityContracts.Queries.DateTimeUnit.Tick)
+                {
+                    _CurrentCriteriaUpperBound = lowerBound.AddTicks(interval);
+                }
+                else
+                {
+                    _CurrentCriteriaUpperBound = this.UpperBound;
+                }
             }
             else
             {
-                _CurrentCriteriaUpperBound = this.UpperBound;
+                _CurrentCriteriaUpperBound = null;
+
             }
 
             this.UpperBound = _CurrentCriteriaUpperBound;
-            this.LowerBound = lowerBound;
+            this.LowerBound = lowerBoundNullable;
             this.IsToCompare = true;
             this.IsToCompareLowerBound = true;
             this.IsToCompareUpperBound = true;
@@ -942,16 +1302,6 @@ namespace Framework.EntityContracts
         }
 
         #endregion special constructors
-
-        #region _Predicate method toberemoved
-
-        //public override bool _Predicate(System.DateTime input)
-        //{
-        //    return (this.IsToCompare == false) || (this.IsToCompare == true && input > this.LowerBound && input < this.UpperBound);
-        //}
-
-        #endregion _Predicate method
-
 
         #region Get...RangeOf(DateTime dateTime)
 
@@ -999,7 +1349,7 @@ namespace Framework.EntityContracts
             {
                 _retval = new QuerySystemDateTimeRangeCriteria(true, _FirstDay.AddDays(15), _FirstDay.AddMonths(1));
             }
-            
+
             _retval.IsToIncludeUpperBound = false;
             return _retval;
         }
@@ -1044,7 +1394,6 @@ namespace Framework.EntityContracts
 
         #endregion Get...Of(DateTime dateTime)
 
-		
         #region Predicate(DateTime input)
 
         public bool Predicate(DateTime input)
@@ -1083,13 +1432,13 @@ namespace Framework.EntityContracts
 
         #endregion Predicate(DateTime input)
 
-		#region CalculateConsecutiveDistributionCriteria(...)
+        #region CalculateConsecutiveDistributionCriteria(...)
 
         public QuerySystemDateTimeRangeCriteria[] CalculateConsecutiveDistributionCriteria(Framework.EntityContracts.Queries.DateTimeUnit dateTimeUnitOfInterval, int interval)
         {
             List<QuerySystemDateTimeRangeCriteria> _retval = new List<QuerySystemDateTimeRangeCriteria>();
 
-            DateTime _CurrentCriteriaLowerBound = this.LowerBound;
+            DateTime? _CurrentCriteriaLowerBound = this.LowerBound;
             while (_CurrentCriteriaLowerBound < this.UpperBound)
             {
                 QuerySystemDateTimeRangeCriteria _OneCriteria = new QuerySystemDateTimeRangeCriteria(_CurrentCriteriaLowerBound, dateTimeUnitOfInterval, interval);
@@ -1098,17 +1447,22 @@ namespace Framework.EntityContracts
                 _retval.Add(_OneCriteria);
             }
 
-
             return _retval.ToArray();
         }
 
         #endregion CalculateConsecutiveDistributionCriteria(...)
+
+        public static Framework.NameValueCollection GetList(string resourcePrefix)
+        {
+            Type type = typeof(Framework.EntityContracts.PreDefinedDateTimeRanges);
+            return GetListWithLocalizedResource(resourcePrefix, type);
+        }
     }
 
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDateTimeOffsetRangeCriteria : QueryRangeCriteriaBase<System.DateTimeOffset>
+    public class QuerySystemDateTimeOffsetRangeCriteria : QueryRangeCriteriaBaseNullable<System.DateTimeOffset>
     {
         #region constructors
 
@@ -1156,7 +1510,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDecimalRangeCriteria : QueryRangeCriteriaBase<System.Decimal>
+    public class QuerySystemDecimalRangeCriteria : QueryRangeCriteriaBaseNullable<System.Decimal>
     {
         #region constructors
 
@@ -1203,7 +1557,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDoubleRangeCriteria : QueryRangeCriteriaBase<System.Double>
+    public class QuerySystemDoubleRangeCriteria : QueryRangeCriteriaBaseNullable<System.Double>
     {
         #region constructors
 
@@ -1251,7 +1605,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt16RangeCriteria : QueryRangeCriteriaBase<System.Int16>
+    public class QuerySystemInt16RangeCriteria : QueryRangeCriteriaBaseNullable<System.Int16>
     {
         #region constructors
 
@@ -1299,7 +1653,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt32RangeCriteria : QueryRangeCriteriaBase<System.Int32>
+    public class QuerySystemInt32RangeCriteria : QueryRangeCriteriaBaseNullable<System.Int32>
     {
         #region constructors
 
@@ -1347,7 +1701,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt64RangeCriteria : QueryRangeCriteriaBase<System.Int64>
+    public class QuerySystemInt64RangeCriteria : QueryRangeCriteriaBaseNullable<System.Int64>
     {
         #region constructors
 
@@ -1395,7 +1749,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemSByteRangeCriteria : QueryRangeCriteriaBase<System.SByte>
+    public class QuerySystemSByteRangeCriteria : QueryRangeCriteriaBaseNullable<System.SByte>
     {
         #region constructors
 
@@ -1443,7 +1797,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Byte of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemSingleRangeCriteria : QueryRangeCriteriaBase<System.Single>
+    public class QuerySystemSingleRangeCriteria : QueryRangeCriteriaBaseNullable<System.Single>
     {
         #region constructors
 
@@ -1526,6 +1880,36 @@ namespace Framework.EntityContracts
 
         #endregion constructors
 
+        public override string NullableLowerBound
+        {
+            get
+            {
+                return LowerBound;
+            }
+
+            set
+            {
+                LowerBound = value;
+                IsToCompareLowerBound = !string.IsNullOrWhiteSpace(value);
+                IsToCompare = IsToCompareLowerBound || IsToCompareUpperBound;
+            }
+        }
+
+        public override string NullableUpperBound
+        {
+            get
+            {
+                return UpperBound;
+            }
+
+            set
+            {
+                UpperBound = value;
+                IsToCompareUpperBound = !string.IsNullOrWhiteSpace(value);
+                IsToCompare = IsToCompareLowerBound || IsToCompareUpperBound;
+            }
+        }
+
         #region _Predicate method toberemoved
 
         //public override bool _Predicate(System.String input)
@@ -1539,7 +1923,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for TimeSpan of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemTimeSpanRangeCriteria : QueryRangeCriteriaBase<System.TimeSpan>
+    public class QuerySystemTimeSpanRangeCriteria : QueryRangeCriteriaBaseNullable<System.TimeSpan>
     {
         #region constructors
 
@@ -1587,7 +1971,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for UInt16 of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt16RangeCriteria : QueryRangeCriteriaBase<System.UInt16>
+    public class QuerySystemUInt16RangeCriteria : QueryRangeCriteriaBaseNullable<System.UInt16>
     {
         #region constructors
 
@@ -1635,7 +2019,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for UInt32 of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt32RangeCriteria : QueryRangeCriteriaBase<System.UInt32>
+    public class QuerySystemUInt32RangeCriteria : QueryRangeCriteriaBaseNullable<System.UInt32>
     {
         #region constructors
 
@@ -1683,7 +2067,7 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for UInt64 of QueryRangeCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt64RangeCriteria : QueryRangeCriteriaBase<System.UInt64>
+    public class QuerySystemUInt64RangeCriteria : QueryRangeCriteriaBaseNullable<System.UInt64>
     {
         #region constructors
 
@@ -1766,14 +2150,12 @@ namespace Framework.EntityContracts
         }
     }
 
-
-
     /// <summary>
     /// concrete class for Byte of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemByteInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Byte>
+    public class QuerySystemByteInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Byte?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemByteInSelectedListCriteria"/> class.
@@ -1786,29 +2168,29 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemByteInSelectedListCriteria(bool isToCompare, System.Byte[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemByteInSelectedListCriteria(bool isToCompare, System.Byte?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
-		#region _Predicate method toberemoved
+        #region _Predicate method toberemoved
 
         //public override bool _Predicate(System.Byte input)
         //{
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for Char of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemCharInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Char>
+    public class QuerySystemCharInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Char?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemCharInSelectedListCriteria"/> class.
@@ -1821,12 +2203,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemCharInSelectedListCriteria(bool isToCompare, System.Char[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemCharInSelectedListCriteria(bool isToCompare, System.Char?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate methodtoberemoved
 
@@ -1835,15 +2217,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for DateTime of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDateTimeInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.DateTime>
+    public class QuerySystemDateTimeInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.DateTime?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDateTimeInSelectedListCriteria"/> class.
@@ -1856,12 +2238,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemDateTimeInSelectedListCriteria(bool isToCompare, System.DateTime[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemDateTimeInSelectedListCriteria(bool isToCompare, System.DateTime?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -1870,15 +2252,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for DateTimeOffset of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDateTimeOffsetInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.DateTimeOffset>
+    public class QuerySystemDateTimeOffsetInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.DateTimeOffset?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDateTimeOffsetInSelectedListCriteria"/> class.
@@ -1891,12 +2273,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemDateTimeOffsetInSelectedListCriteria(bool isToCompare, System.DateTimeOffset[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemDateTimeOffsetInSelectedListCriteria(bool isToCompare, System.DateTimeOffset?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -1905,15 +2287,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for Decimal of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDecimalInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Decimal>
+    public class QuerySystemDecimalInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Decimal?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDecimalInSelectedListCriteria"/> class.
@@ -1926,12 +2308,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemDecimalInSelectedListCriteria(bool isToCompare, System.Decimal[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemDecimalInSelectedListCriteria(bool isToCompare, System.Decimal?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -1940,15 +2322,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for Double of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemDoubleInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Double>
+    public class QuerySystemDoubleInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Double?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemDoubleInSelectedListCriteria"/> class.
@@ -1961,12 +2343,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemDoubleInSelectedListCriteria(bool isToCompare, System.Double[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemDoubleInSelectedListCriteria(bool isToCompare, System.Double?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -1975,15 +2357,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for Guid of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemGuidInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Guid>
+    public class QuerySystemGuidInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Guid?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemGuidInSelectedListCriteria"/> class.
@@ -1996,12 +2378,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemGuidInSelectedListCriteria(bool isToCompare, System.Guid[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemGuidInSelectedListCriteria(bool isToCompare, System.Guid?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2010,15 +2392,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for Int16 of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt16InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Int16>
+    public class QuerySystemInt16InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Int16?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemInt16InSelectedListCriteria"/> class.
@@ -2031,12 +2413,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemInt16InSelectedListCriteria(bool isToCompare, System.Int16[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemInt16InSelectedListCriteria(bool isToCompare, System.Int16?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2045,15 +2427,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for Int32 of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt32InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Int32>
+    public class QuerySystemInt32InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Int32?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemInt32InSelectedListCriteria"/> class.
@@ -2066,12 +2448,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemInt32InSelectedListCriteria(bool isToCompare, System.Int32[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemInt32InSelectedListCriteria(bool isToCompare, System.Int32?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2080,15 +2462,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for Int64 of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemInt64InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Int64>
+    public class QuerySystemInt64InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Int64?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemInt64InSelectedListCriteria"/> class.
@@ -2101,12 +2483,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemInt64InSelectedListCriteria(bool isToCompare, System.Int64[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemInt64InSelectedListCriteria(bool isToCompare, System.Int64?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2115,13 +2497,13 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for SByte of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemSByteInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.SByte>
+    public class QuerySystemSByteInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.SByte?>
     {
         #region constructors
 
@@ -2136,7 +2518,7 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemSByteInSelectedListCriteria(bool isToCompare, System.SByte[] selectedList)
+        public QuerySystemSByteInSelectedListCriteria(bool isToCompare, System.SByte?[] selectedList)
             : base(isToCompare, selectedList)
         {
         }
@@ -2156,9 +2538,9 @@ namespace Framework.EntityContracts
     /// <summary>
     /// concrete class for Single of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemSingleInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Single>
+    public class QuerySystemSingleInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Single?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemSingleInSelectedListCriteria"/> class.
@@ -2171,12 +2553,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemSingleInSelectedListCriteria(bool isToCompare, System.Single[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemSingleInSelectedListCriteria(bool isToCompare, System.Single?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2185,7 +2567,7 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
@@ -2193,7 +2575,7 @@ namespace Framework.EntityContracts
     /// </summary>
     public class QuerySystemStringInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.String>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemStringInSelectedListCriteria"/> class.
@@ -2207,11 +2589,11 @@ namespace Framework.EntityContracts
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
         public QuerySystemStringInSelectedListCriteria(bool isToCompare, System.String[] selectedList)
-			: base(isToCompare, selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2220,15 +2602,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for TimeSpan of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemTimeSpanInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.TimeSpan>
+    public class QuerySystemTimeSpanInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.TimeSpan?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemTimeSpanInSelectedListCriteria"/> class.
@@ -2241,12 +2623,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemTimeSpanInSelectedListCriteria(bool isToCompare, System.TimeSpan[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemTimeSpanInSelectedListCriteria(bool isToCompare, System.TimeSpan?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2255,15 +2637,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for UInt16 of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt16InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.UInt16>
+    public class QuerySystemUInt16InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.UInt16?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemUInt16InSelectedListCriteria"/> class.
@@ -2276,12 +2658,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemUInt16InSelectedListCriteria(bool isToCompare, System.UInt16[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemUInt16InSelectedListCriteria(bool isToCompare, System.UInt16?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2290,15 +2672,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for UInt32 of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt32InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.UInt32>
+    public class QuerySystemUInt32InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.UInt32?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemUInt32InSelectedListCriteria"/> class.
@@ -2311,12 +2693,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemUInt32InSelectedListCriteria(bool isToCompare, System.UInt32[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemUInt32InSelectedListCriteria(bool isToCompare, System.UInt32?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2325,15 +2707,15 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
     /// concrete class for UInt64 of QueryInSelectedListCriteriaBase&lt;T&gt;
     /// </summary>
-    public class QuerySystemUInt64InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.UInt64>
+    public class QuerySystemUInt64InSelectedListCriteria : QueryInSelectedListCriteriaBase<System.UInt64?>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemUInt64InSelectedListCriteria"/> class.
@@ -2346,12 +2728,12 @@ namespace Framework.EntityContracts
         /// </summary>
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
-        public QuerySystemUInt64InSelectedListCriteria(bool isToCompare, System.UInt64[] selectedList)
-			: base(isToCompare, selectedList)
+        public QuerySystemUInt64InSelectedListCriteria(bool isToCompare, System.UInt64?[] selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2360,7 +2742,7 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     /// <summary>
@@ -2368,7 +2750,7 @@ namespace Framework.EntityContracts
     /// </summary>
     public class QuerySystemEnumInSelectedListCriteria : QueryInSelectedListCriteriaBase<System.Enum>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySystemEnumInSelectedListCriteria"/> class.
@@ -2382,11 +2764,11 @@ namespace Framework.EntityContracts
         /// <param name="isToCompare">if set to <c>true</c> [is to compare].</param>
         /// <param name="selectedList">The selected list.</param>
         public QuerySystemEnumInSelectedListCriteria(bool isToCompare, System.Enum[] selectedList)
-			: base(isToCompare, selectedList)
+            : base(isToCompare, selectedList)
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
         #region _Predicate method toberemoved
 
@@ -2395,7 +2777,7 @@ namespace Framework.EntityContracts
         //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.SelectedList.Contains(input));
         //}
 
-		#endregion _Predicate method
+        #endregion _Predicate method
     }
 
     #endregion InSelectedList Criterias
@@ -2415,6 +2797,8 @@ namespace Framework.EntityContracts
         /// The value to be contained.
         /// </value>
         public T ValueToBeContained { get; set; }
+
+        public abstract T NullableValueToBeContained { get; set; }
 
         #region constructors
 
@@ -2463,57 +2847,18 @@ namespace Framework.EntityContracts
         }
 
         #endregion constructors toberemoved
+        public override string NullableValueToBeContained
+        {
+            get { return ValueToBeContained; }
 
-        //public override bool _Predicate(string input)
-        //{
-        //    return (this.IsToCompare == false) || (this.IsToCompare == true && this.ValueToBeContained.Contains(input));
-        //}
+            set
+            {
+                ValueToBeContained = value;
+                IsToCompare = !string.IsNullOrWhiteSpace(value);
+            }
+        }
     }
 
     #endregion string contains criteria
-
-    #region QueryPredicates
-
-    /// <summary>
-    /// ??
-    /// </summary>
-    /// <typeparam name="TCriteria">The type of the criteria.</typeparam>
-    /// <typeparam name="TInput">is the Entity Type</typeparam>
-    [Obsolete("The original purpose is the utilize LinqKit predicate builder, retired.")]
-    public abstract class QueryPredicateBase<TCriteria, TInput>
-    {
-        /// <summary>
-        /// Gets or sets the criteria.
-        /// </summary>
-        /// <value>
-        /// The criteria.
-        /// </value>
-        public TCriteria Criteria {get;set;}
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QueryPredicateBase&lt;TCriteria, TInput&gt;"/> class.
-        /// </summary>
-        public QueryPredicateBase()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QueryPredicateBase&lt;TCriteria, TInput&gt;"/> class.
-        /// </summary>
-        /// <param name="criteria">The criteria.</param>
-        public QueryPredicateBase(TCriteria criteria)
-        {
-            this.Criteria = criteria;
-        }
-
-        /// <summary>
-        /// Predicates the specified input.
-        /// </summary>
-        /// <param name="input">The input.</param>
-        /// <returns>true if meets criteria, otherwise false</returns>
-        public abstract bool Predicate(TInput input);
-    }
-
-     #endregion QueryPredicates
-
 }
+

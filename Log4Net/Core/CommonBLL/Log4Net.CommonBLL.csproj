@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7EC43E78-05C1-453A-80E5-FAA95270FDE9}</ProjectGuid>
+    <ProjectGuid>{873915A5-57B2-409A-BD2C-80A3016DF441}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.CommonBLL</RootNamespace>
     <AssemblyName>Log4Net.CommonBLL</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,40 +32,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
-    <Compile Include="BusinessLogicLayerEntity\BusinessLogicLayerEntityLog.cs" />
+    <Compile Include="Services\LogService.cs" />
     <Compile Include="BusinessLogicLayerFactory.cs" />
-    <Compile Include="Charting\ChartBuilderLog.cs" />
-    <Compile Include="DataStreamServiceProviders\DataStreamServiceProviderLog.cs" />
-    <Content Include="Maps\map.2.B.2.vsd" />
-    <Content Include="Maps\map.2.B.2.vsd.png" />
+    <Compile Include="ChartingService\LogChartBuilder.cs" />
+    <Compile Include="DataStreamServiceProviders\LogDataStreamService.cs" />
+    <Compile Include="SyndicationFeedFacade.cs" />
+    <None Include="map.2.B.2.vsd" />
+    <None Include="map.2.B.2.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonBLLEntities\Log4Net.CommonBLLEntities.csproj">
-      <Project>{c00c3b58-ddc5-4e88-a1bb-b65648eff4f5}</Project>
+      <Project>{dba6156f-feac-4924-a3dc-e0ee135ae454}</Project>
       <Name>Log4Net.CommonBLLEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\DALContracts\Log4Net.DALContracts.csproj">
-      <Project>{294bb9e1-4944-4af5-8f69-ee6f2ff6bd4d}</Project>
+      <Project>{0d49d6e7-177b-4069-b73c-ec964569182f}</Project>
       <Name>Log4Net.DALContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
-      <Project>{31fcf08f-9c3b-453b-968b-24bec2d2937e}</Project>
+      <Project>{ca3bfcf9-23e5-4d02-8e64-9da24746c708}</Project>
       <Name>Log4Net.DataSourceEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntityContracts\Log4Net.EntityContracts.csproj">
-      <Project>{08b15ffc-2581-4aab-b7e4-9bf1d2dfd6b6}</Project>
+      <Project>{6ab0ea24-e204-4ac9-ad3c-3174193ccf9b}</Project>
       <Name>Log4Net.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework\Framework.csproj">
@@ -75,6 +66,10 @@
     <ProjectReference Include="..\..\..\Frameworks\Framework.Charting\Framework.Charting.csproj">
       <Project>{51d5f233-02f2-45f7-b4f2-60d18ef3dec5}</Project>
       <Name>Framework.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks\Framework.CommonBLLEntities\Framework.CommonBLLEntities.csproj">
+      <Project>{ba8c8c0b-470a-4d3c-b3da-9e28599799b5}</Project>
+      <Name>Framework.CommonBLLEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework.DAL\Framework.DAL.csproj">
       <Project>{525678c4-fdc1-4a5d-9d8a-d7e78309335f}</Project>
@@ -92,48 +87,36 @@
       <Project>{3ef91dc7-12c9-47f3-bb18-ad3d85d1b624}</Project>
       <Name>Framework.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LinqDAL\Log4Net.LinqDAL.csproj">
-      <Project>{3c1c41b0-af63-4646-b9a6-4331fcd934c3}</Project>
-      <Name>Log4Net.LinqDAL</Name>
+    <ProjectReference Include="..\..\..\Frameworks\Framework.Web\Framework.Web.csproj">
+      <Project>{950b9cdb-9286-4a1a-8d88-1df6954a45e3}</Project>
+      <Name>Framework.Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LinqToSqlContexts\Log4Net.LinqToSqlContexts.csproj">
-      <Project>{6cb8c531-2fae-48eb-908a-7633fd72db53}</Project>
-      <Name>Log4Net.LinqToSqlContexts</Name>
+    <ProjectReference Include="..\Resx\Log4Net.Resx.csproj">
+      <Project>{0f11974a-3ed8-46d1-b8cc-6f1ff1c45a11}</Project>
+      <Name>Log4Net.Resx</Name>
     </ProjectReference>
     <ProjectReference Include="..\WcfContracts\Log4Net.WcfContracts.csproj">
-      <Project>{f212ecd6-cd23-4f20-9e47-fc6c37894804}</Project>
+      <Project>{0542e826-5a2b-41f5-8aa7-f2dd3983a540}</Project>
       <Name>Log4Net.WcfContracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Frameworks\Framework.CommonBLLEntities\Framework.CommonBLLEntities.csproj">
-      <Project>{ba8c8c0b-470a-4d3c-b3da-9e28599799b5}</Project>
-      <Name>Framework.CommonBLLEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.DataVisualization" />
-    <Reference Include="System.Web.DataVisualization.Design" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ClosedXML">
-      <HintPath>..\..\..\packages\ClosedXML.0.75.0\lib\net40-client\ClosedXML.dll</HintPath>
+    <Reference Include="ClosedXML, Version=0.87.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ClosedXML.0.87.1\lib\net40\ClosedXML.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="LINQtoCSV">
-      <HintPath>..\..\..\packages\LINQtoCSV.1.5.0.0\lib\net35\LINQtoCSV.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <PropertyGroup>

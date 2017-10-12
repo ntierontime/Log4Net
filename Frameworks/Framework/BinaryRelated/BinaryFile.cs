@@ -10,10 +10,10 @@ namespace Framework
     /// BinaryFile class is a container of byte array.
     /// </summary>
     [DataContract]
-	public class BinaryFile
+    public class BinaryFile
     {
         #region constructors
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BinaryFile"/> class.
         /// </summary>
@@ -107,7 +107,6 @@ namespace Framework
 
         #region properties
 
-
         /// <summary>
         /// Gets or sets the name of the file.
         /// </summary>
@@ -116,7 +115,7 @@ namespace Framework
         /// </value>
         [DataMember]
         public string FileName { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the type of the MIME.
         /// </summary>
@@ -134,7 +133,7 @@ namespace Framework
         /// </value>
         [DataMember]
         public string PhysicalFileName { get; set; }
-		
+
         /// <summary>
         /// Gets or sets the length of the PhysicalFile content.
         /// </summary>
@@ -166,24 +165,24 @@ namespace Framework
     /// <summary>
     /// BinaryFileActionTypes is enumeration of BinaryFile Actions
     /// </summary>
-	[DataContract(Name = "BinaryFileActionTypes")]
-	public enum BinaryFileActionTypes
+    [DataContract(Name = "BinaryFileActionTypes")]
+    public enum BinaryFileActionTypes
     {
-		[EnumMember]
+        [EnumMember]
         Load,
-		[EnumMember]
+        [EnumMember]
         Save,
-		[EnumMember]
+        [EnumMember]
         Delete,
     }
-	
+
     /// <summary>
     /// BinaryFileResponseMessage is a message container of BinaryFile
     /// </summary>
     [DataContract]
-	public class BinaryFileResponseMessage
+    public class BinaryFileResponseMessage
     {
-		#region properties
+        #region properties
 
         /// <summary>
         /// Gets or sets the type of the binary file action.
@@ -198,7 +197,7 @@ namespace Framework
         /// Gets or sets a value indicating whether this instance is binary file action success.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if this instance is binary file action success; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance is binary file action success; otherwise, <c>false</c>.
         /// </value>
         [DataMember]
         public bool IsBinaryFileActionSuccess { get; set; }
@@ -221,9 +220,8 @@ namespace Framework
         [DataMember]
         public BinaryFile BinaryFile { get; set; }
 
-		#endregion properties
+        #endregion properties
 
     }
 }
-
 

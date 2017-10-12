@@ -3,15 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:Log4Net.ViewModels;assembly=Log4Net.ViewModels"
+             xmlns:vm="clr-namespace:Log4Net.MVVMLightViewModels;assembly=Log4Net.MVVMLightViewModels"
+             xmlns:fvm="clr-namespace:Framework.Xaml;assembly=Framework.Xaml"
              StartupUri="MainWindow.xaml"
              mc:Ignorable="d">
     <Application.Resources>
-        <ResourceDictionary x:Key="appMain">
+        <ResourceDictionary x:Name="appMain">
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
             <vm:LocalizedStrings x:Key="LocalizedStrings" />
+            <fvm:EnumToNameValuePairConverter x:Key="EnumToNameValuePairConverter" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="AppResourceDictionary.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

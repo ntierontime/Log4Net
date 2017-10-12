@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{08B15FFC-2581-4AAB-B7E4-9BF1D2DFD6B6}</ProjectGuid>
+    <ProjectGuid>{6AB0EA24-E204-4AC9-AD3C-3174193CCF9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.EntityContracts</RootNamespace>
     <AssemblyName>Log4Net.EntityContracts</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,24 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
     <Compile Include="Contracts\ILog.cs" />
     <Compile Include="EntityContractHelpers\ILogHelper.cs" />
     <Compile Include="IdentifierContracts\ILogIdentifier.cs" />
     <Compile Include="IdentifierContractHelpers\ILogIdentifierHelper.cs" />
-    <Content Include="Maps\map.2.B.3.vsd" />
-    <Content Include="Maps\map.2.B.3.vsd.png" />
+    <None Include="map.2.B.3.vsd" />
+    <None Include="map.2.B.3.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Frameworks\Framework\Framework.csproj">
@@ -70,15 +60,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

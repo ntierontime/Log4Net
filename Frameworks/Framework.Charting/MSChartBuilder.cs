@@ -11,13 +11,13 @@ namespace Framework.Charting
 {
     /// <summary>
     /// Developer should implement CreatePoint(T item) method in concrete class with code snippet:
-    /// 
+    ///
     /// </summary>
     public abstract class MSChartBuilder<TCollection, T>
         where TCollection : IList<T>, new()
     {
         #region properties
-        
+
         public Framework.Charting.MSChartConfiguration ChartConfiguration { get; set; }
 
         #endregion properties
@@ -31,7 +31,7 @@ namespace Framework.Charting
         {
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="MSChartBuilder{TCollection, T}"/> class.
         /// </summary>
         public MSChartBuilder(MSChartConfiguration msChartConfiguration)
@@ -133,7 +133,7 @@ namespace Framework.Charting
             chart.TextAntiAliasingQuality = TextAntiAliasingQuality.Normal;
             return chart;
         }
-        
+
         #endregion
 
         #region 2. Creates the chart title.
@@ -189,7 +189,7 @@ namespace Framework.Charting
         }
 
         #endregion
-		
+
         #region 4. Creates the chart series.
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace Framework.Charting
 
             return area;
         }
-        
+
         /// <summary>
         /// 5.1. Customizes the chart area.
         /// </summary>

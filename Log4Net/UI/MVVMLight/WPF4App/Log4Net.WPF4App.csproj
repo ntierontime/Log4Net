@@ -1,23 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{89E2E011-ED94-42A6-B4DF-10B2E4BB9F46}</ProjectGuid>
+    <ProjectGuid>{6BD7818D-F6AE-4912-B0C3-78FA4275D423}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.WPF4App</RootNamespace>
     <AssemblyName>Log4Net.WPF4App</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DispatcherHelperWrapper.cs" />
     <None Include="app.config" />
     <Page Include="AppResourceDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -138,10 +137,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-      <SubType>RESXCodeBehind</SubType>
     </Compile>
     <None Include="Properties\Settings.settings" />
     <Compile Include="Properties\Settings.designer.cs">
@@ -162,20 +164,28 @@
     <Compile Include="UserControls\UCCommonOfLog.xaml.cs">
       <DependentUpon>UCCommonOfLog.xaml</DependentUpon>
     </Compile>
-    <Content Include="Maps\map.2.D.2.vsd" />
-    <Content Include="Maps\map.2.D.2.vsd.png" />
+    <None Include="map.2.D.2.vsd" />
+    <None Include="map.2.D.2.vsd.png" />
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\IconsNonShared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\CommonBLLEntities\Log4Net.CommonBLLEntities.csproj">
-      <Project>{c00c3b58-ddc5-4e88-a1bb-b65648eff4f5}</Project>
+      <Project>{dba6156f-feac-4924-a3dc-e0ee135ae454}</Project>
       <Name>Log4Net.CommonBLLEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Core\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
-      <Project>{31fcf08f-9c3b-453b-968b-24bec2d2937e}</Project>
+      <Project>{ca3bfcf9-23e5-4d02-8e64-9da24746c708}</Project>
       <Name>Log4Net.DataSourceEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Core\EntityContracts\Log4Net.EntityContracts.csproj">
-      <Project>{08b15ffc-2581-4aab-b7e4-9bf1d2dfd6b6}</Project>
+      <Project>{6ab0ea24-e204-4ac9-ad3c-3174193ccf9b}</Project>
       <Name>Log4Net.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Frameworks\Framework\Framework.csproj">
@@ -194,33 +204,33 @@
       <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
       <Name>Framework.EntityContracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Frameworks\Framework.Resources\Framework.Resources.csproj">
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.Resx\Framework.Resx.csproj">
       <Project>{c72b898b-b53b-42d5-9f4f-673f84bb485b}</Project>
-      <Name>Framework.Resources</Name>
+      <Name>Framework.Resx</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Frameworks\Framework.WcfClient\Framework.WcfClient.csproj">
-      <Project>{3ac70e9c-5e33-44af-8319-2e4f68da86cb}</Project>
-      <Name>Framework.WcfClient</Name>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.ViewModels\Framework.ViewModels.csproj">
+      <Project>{2cc97c32-9ffa-4da4-a6c0-83f300404ec3}</Project>
+      <Name>Framework.ViewModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Frameworks\Framework.Xaml\Framework.Xaml.csproj">
       <Project>{e5302713-0022-4657-85d8-9620818071df}</Project>
       <Name>Framework.Xaml</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Shared\ViewModels\Log4Net.ViewModels.csproj">
-      <Project>{50a7fb2b-4cb0-4a27-a47f-f13bbff70eea}</Project>
-      <Name>Log4Net.ViewModels</Name>
+    <ProjectReference Include="..\Shared\MVVMLightViewModels\Log4Net.MVVMLightViewModels.csproj">
+      <Project>{54025149-9eb6-4c74-a099-643b1f0f2d74}</Project>
+      <Name>Log4Net.MVVMLightViewModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Core\Resources\Log4Net.Resources.csproj">
-      <Project>{2f279948-a66f-4750-82e0-3f64bba3da6b}</Project>
-      <Name>Log4Net.Resources</Name>
+    <ProjectReference Include="..\..\..\Core\Resx\Log4Net.Resx.csproj">
+      <Project>{0f11974a-3ed8-46d1-b8cc-6f1ff1c45a11}</Project>
+      <Name>Log4Net.Resx</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Wcf\WcfClientBLL\Log4Net.WcfClientBLL.csproj">
-      <Project>{925dc818-f488-447a-bb20-72b3e528eb81}</Project>
-      <Name>Log4Net.WcfClientBLL</Name>
+    <ProjectReference Include="..\..\..\Core\ViewModelData\Log4Net.ViewModelData.csproj">
+      <Project>{588a9f26-4123-43d0-a978-202e1fbba7ac}</Project>
+      <Name>Log4Net.ViewModelData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Core\WcfContracts\Log4Net.WcfContracts.csproj">
-      <Project>{f212ecd6-cd23-4f20-9e47-fc6c37894804}</Project>
-      <Name>Log4Net.WcfContracts</Name>
+    <ProjectReference Include="..\..\Web\WebApiClient\Log4Net.WebApiClient.csproj">
+      <Project>{4d68468b-a589-492f-ad80-004d9737590b}</Project>
+      <Name>Log4Net.WebApiClient</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -228,45 +238,84 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="GalaSoft.MvvmLight, Version=4.4.32.39728, Culture=neutral, PublicKeyToken=eabbf6a5f5af5004, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\MvvmLightLibs.4.4.32.7\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Extras, Version=4.4.32.39728, Culture=neutral, PublicKeyToken=0e27b6f8be9b2ef7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\MvvmLightLibs.4.4.32.7\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\MahApps.Metro.IconPacks.1.9.0\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Ninject">
-      <HintPath>..\..\..\..\packages\Ninject.3.0.1.10\lib\sl5\Ninject.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\MvvmLightLibs.4.4.32.7\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\..\..\..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
   <!--
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

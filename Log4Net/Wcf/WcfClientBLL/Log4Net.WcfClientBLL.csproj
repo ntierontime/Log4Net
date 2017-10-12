@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{925DC818-F488-447A-BB20-72B3E528EB81}</ProjectGuid>
+    <ProjectGuid>{56BF9799-EC6F-463E-8198-02785FEC9DD4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.WcfClientBLL</RootNamespace>
     <AssemblyName>Log4Net.WcfClientBLL</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,40 +32,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
     <None Include="App.config" />
     <Compile Include="WcfClientEntityLog.cs" />
     <Compile Include="WcfClientEntityAsynLog.cs" />
     <Compile Include="WcfClientFactory.cs" />
-    <Content Include="Maps\map.2.A.3.vsd" />
-    <Content Include="Maps\map.2.A.3.vsd.png" />
+    <None Include="map.2.A.3.vsd" />
+    <None Include="map.2.A.3.vsd.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Frameworks\Framework.DataSourceEntities\Framework.DataSourceEntities.csproj">
-      <Project>{f85a14d5-64e0-4cfc-88da-27fe9d0dd664}</Project>
-      <Name>Framework.DataSourceEntities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Core\CommonBLLEntities\Log4Net.CommonBLLEntities.csproj">
-      <Project>{c00c3b58-ddc5-4e88-a1bb-b65648eff4f5}</Project>
+      <Project>{dba6156f-feac-4924-a3dc-e0ee135ae454}</Project>
       <Name>Log4Net.CommonBLLEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
-      <Project>{31fcf08f-9c3b-453b-968b-24bec2d2937e}</Project>
+      <Project>{ca3bfcf9-23e5-4d02-8e64-9da24746c708}</Project>
       <Name>Log4Net.DataSourceEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\EntityContracts\Log4Net.EntityContracts.csproj">
-      <Project>{08b15ffc-2581-4aab-b7e4-9bf1d2dfd6b6}</Project>
+      <Project>{6ab0ea24-e204-4ac9-ad3c-3174193ccf9b}</Project>
       <Name>Log4Net.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework\Framework.csproj">
@@ -76,12 +62,16 @@
       <Project>{ba8c8c0b-470a-4d3c-b3da-9e28599799b5}</Project>
       <Name>Framework.CommonBLLEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks\Framework.DataSourceEntities\Framework.DataSourceEntities.csproj">
+      <Project>{f85a14d5-64e0-4cfc-88da-27fe9d0dd664}</Project>
+      <Name>Framework.DataSourceEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework.EntityContracts\Framework.EntityContracts.csproj">
       <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
       <Name>Framework.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\WcfContracts\Log4Net.WcfContracts.csproj">
-      <Project>{f212ecd6-cd23-4f20-9e47-fc6c37894804}</Project>
+      <Project>{0542e826-5a2b-41f5-8aa7-f2dd3983a540}</Project>
       <Name>Log4Net.WcfContracts</Name>
     </ProjectReference>
   </ItemGroup>

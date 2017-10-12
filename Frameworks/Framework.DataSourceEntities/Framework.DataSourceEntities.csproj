@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Framework.DataSourceEntities</RootNamespace>
     <AssemblyName>Framework.DataSourceEntities</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,22 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
     <Compile Include="DataAccessLayerMessageBase.cs" />
     <Compile Include="StatusChangeLinqQueryResultBase.cs" />
-    <Content Include="Maps\map.1.B.3.vsd" />
-    <Content Include="Maps\map.1.B.3.vsd.png" />
+    <None Include="map.1.B.3.vsd" />
+    <None Include="map.1.B.3.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.csproj">
@@ -61,13 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

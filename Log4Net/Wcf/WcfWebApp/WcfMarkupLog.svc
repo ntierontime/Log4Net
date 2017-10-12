@@ -1,1 +1,1 @@
-<%@ ServiceHost Language="C#" Debug="true" Service="Log4Net.CommonBLL.BusinessLogicLayerEntityLog, Log4Net.CommonBLL" %>
+<%@ ServiceHost Language="C#" Debug="true" Service="Log4Net.CommonBLL.LogService, Log4Net.CommonBLL" %>

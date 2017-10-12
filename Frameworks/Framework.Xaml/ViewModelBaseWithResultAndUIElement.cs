@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 namespace Framework.Xaml
 {
     public abstract class ViewModelBaseWithResultAndUIElement<TSearchCriteria, TSearchResultEntityCollection, TSearchResultEntityItem>
-        : GalaSoft.MvvmLight.ViewModelBase, Framework.EntityContracts.IViewModelBase<TSearchCriteria>
+        : GalaSoft.MvvmLight.ViewModelBase, Framework.ViewModels.IViewModelBase<TSearchCriteria>
         where TSearchCriteria : class, new()
         where TSearchResultEntityCollection : List<TSearchResultEntityItem>, new()
         where TSearchResultEntityItem : class, new()
@@ -19,55 +19,44 @@ namespace Framework.Xaml
         public ViewModelBaseWithResultAndUIElement()
             : base()
         {
-            this.SelectionChangedCommand = new RelayCommand(SelectionChanged);
-            this.RefreshCurrentEditingItemCommand = new RelayCommand(this.RefreshCurrentEditingItem);
+            //this.ContentData = new Framework.EntityContracts.ContentData();
+
             this.ClearSearchResultCommand = new RelayCommand(ClearSearchResult, CanClearSearchResult);
-            this.RefreshNewItemCommand = new RelayCommand(this.RefreshNewItem);
-			
-			this.LaunchCopyViewCommand = new RelayCommand(LaunchCopyView);
-            
-			this.LaunchViewDetailsViewCommand = new RelayCommand(LaunchViewDetailsView);
-            this.CloseViewDetailsViewCommand = new RelayCommand(CloseViewDetailsView);
 
-            this.LaunchEditViewCommand = new RelayCommand(LaunchEditView);
-            this.CloseEditViewCommand = new RelayCommand(CloseEditView);
-            this.SaveCommand = new RelayCommand(Save, CanSave);
+            this.Criteria = new TSearchCriteria();
 
-            this.LaunchCreateViewCommand = new RelayCommand(LaunchCreateView);
-            this.CloseCreateViewCommand = new RelayCommand(CloseCreateView);
-            this.AddCommand = new RelayCommand(Add, CanAdd);
+            this.LaunchSearchViewCommand = new RelayCommand(this.LaunchSearchView);
+            this.CloseSearchViewCommand = new RelayCommand(this.CloseSearchView);
+            this.LaunchResultViewCommand = new RelayCommand(this.LaunchResultView);
+            this.CloseResultViewCommand = new RelayCommand(this.CloseResultView);
+            this.SearchCommand = new RelayCommand(this.Search, this.CanSearch);
+            this.LoadMoreCommand = new RelayCommand(this.LoadMore, this.CanSearch);
 
-            this.LaunchDeleteViewCommand = new RelayCommand(LaunchDeleteView);
-            this.CloseDeleteViewCommand = new RelayCommand(CloseDeleteView);
-            this.DeleteCommand = new RelayCommand(Delete, CanDelete);
-
-			this.Criteria = new TSearchCriteria();
-
-			this.LaunchSearchViewCommand = new RelayCommand(this.LaunchSearchView);
-			this.CloseSearchViewCommand = new RelayCommand(this.CloseSearchView);
-			this.SearchCommand = new RelayCommand(this.Search, this.CanSearch);
-
-#if WINDOWS_PHONE
-
-            this.InfinityScrollingSearchCommand = new RelayCommand(this.InfinityScrollingSearch);
-
-#endif
             PopulateAllUIElements(this, 1);
 
-            this.PaginationFirstPageCommand = new RelayCommand(PaginationFirstPage, CanPaginationFirstPage);
-            this.PaginationPreviousPageCommand = new RelayCommand(PaginationPreviousPage, CanPaginationPreviousPage);
-            this.PaginationNextPageCommand = new RelayCommand(PaginationNextPage, CanPaginationNextPage);
-            this.PaginationLastPageCommand = new RelayCommand(PaginationLastPage, CanPaginationLastPage);
+            this.PaginationFirstPageCommand = new RelayCommand(PaginationFirstPage);
+            this.PaginationPreviousPageCommand = new RelayCommand(PaginationPreviousPage);
+            this.PaginationNextPageCommand = new RelayCommand(PaginationNextPage);
+            this.PaginationLastPageCommand = new RelayCommand(PaginationLastPage);
+
+            SuppressMVVMLightEventToCommandMessage = false;
         }
 
         #endregion constructor
 
-        #region Business Entity Collection + Current Selected or editing Entity
+        #region Suppress MVVMLight EventToCommand Message
+
+        public bool SuppressMVVMLightEventToCommandMessage { get; set; }
+
+        #endregion Suppress MVVMLight EventToCommand Message
+
+        #region Business Entity Collection
 
         protected ObservableCollection<TSearchResultEntityItem> m_EntityCollection;
 
         /// <summary>
         /// Gets or sets the DataSourceEntities list.
+        /// should investigate whether can remove RaisePropertyChanged
         /// </summary>
         /// <value>The DataSourceEntities list.</value>
         public ObservableCollection<TSearchResultEntityItem> EntityCollection
@@ -80,57 +69,18 @@ namespace Framework.Xaml
             }
         }
 
-        protected TSearchResultEntityItem m_CurrentInEditing;
-        public TSearchResultEntityItem CurrentInEditing
-        {
-            get { return m_CurrentInEditing; }
-            set
-            {
-                if (m_CurrentInEditing != value)
-                {
-                    m_CurrentInEditing = value;
-                    RaisePropertyChanged("CurrentInEditing");
-                }
-            }
-        }
-
-        protected TSearchResultEntityItem m_Current;
-        public TSearchResultEntityItem Current
-        {
-            get { return m_Current; }
-            set
-            {
-                if (m_Current != value)
-                {
-                    m_Current = value;
-                    this.RefreshCurrentEditingItem();
-                    RaisePropertyChanged("Current");
-                }
-            }
-        }
-
-        protected TSearchResultEntityItem m_NewItem;
-        public TSearchResultEntityItem NewItem
-        {
-            get { return m_NewItem; }
-            set
-            {
-                m_NewItem = value;
-                RaisePropertyChanged("NewItem");
-            }
-        }
-
-        #endregion Business Entity Collection + Current Selected or editing Entity
+        #endregion Business Entity Collection
 
         #region SearchStatus
 
         public Framework.EntityContracts.SearchStatus m_SearchStatus;
-        public Framework.EntityContracts.SearchStatus SearchStatus 
-        { 
+        // should investigate whether can remove RaisePropertyChanged
+        public Framework.EntityContracts.SearchStatus SearchStatus
+        {
             get
             {
                 return this.m_SearchStatus;
-            } 
+            }
             set
             {
                 if(this.m_SearchStatus != value)
@@ -151,11 +101,7 @@ namespace Framework.Xaml
 
         #region ViewNames
 
-        public const string ViewName_Edit = "Edit";
-        public const string ViewName_Create = "Create";
-        public const string ViewName_Delete = "Delete";
-        public const string ViewName_Details = "Details";
-        public const string ViewName_SearchResult = "SearchResult";
+        public abstract string ViewName { get; }
 
         #endregion ViewNames
 
@@ -173,14 +119,21 @@ namespace Framework.Xaml
             get { return m_QueryPagingSetting; }
             set
             {
-                m_QueryPagingSetting = value;
-                RaisePropertyChanged("QueryPagingSetting");
+                if (m_QueryPagingSetting != value)
+                {
+                    m_QueryPagingSetting = value;
+                    RaisePropertyChanged("QueryPagingSetting");
+                }
             }
         }
 
         public virtual Framework.EntityContracts.QueryPagingSetting GetDefaultQueryPagingSetting()
         {
             Framework.EntityContracts.QueryPagingSetting queryPagingSetting = new Framework.EntityContracts.QueryPagingSetting();
+            if (queryPagingSetting.CountOfPages == 0 || queryPagingSetting.CountOfRecords == 0)
+            {
+                queryPagingSetting.CurrentPage = 0;
+            }
             return queryPagingSetting;
         }
 
@@ -205,12 +158,7 @@ namespace Framework.Xaml
         protected void PaginationFirstPage()
         {
             this.QueryPagingSetting.CurrentPage = 1;
-            this.Search();
-        }
-
-        protected bool CanPaginationFirstPage()
-        {
-            return this.SearchStatus != Framework.EntityContracts.SearchStatus.Searching && this.QueryPagingSetting != null && this.QueryPagingSetting.IsMoreThanOnePage && !this.QueryPagingSetting.IsCurrentPageIsFirstPage;
+            this.DoSearch(true);
         }
 
         public RelayCommand PaginationPreviousPageCommand { get; protected set; }
@@ -218,12 +166,7 @@ namespace Framework.Xaml
         protected void PaginationPreviousPage()
         {
             this.QueryPagingSetting.CurrentPage -= 1;
-            this.Search();
-        }
-
-        protected bool CanPaginationPreviousPage()
-        {
-            return this.SearchStatus != Framework.EntityContracts.SearchStatus.Searching && this.QueryPagingSetting != null && this.QueryPagingSetting.IsMoreThanOnePage && !this.QueryPagingSetting.IsCurrentPageIsFirstPage;
+            this.DoSearch(true);
         }
 
         public RelayCommand PaginationNextPageCommand { get; protected set; }
@@ -231,12 +174,7 @@ namespace Framework.Xaml
         protected void PaginationNextPage()
         {
             this.QueryPagingSetting.CurrentPage += 1;
-            this.Search();
-        }
-
-        protected bool CanPaginationNextPage()
-        {
-            return this.SearchStatus != Framework.EntityContracts.SearchStatus.Searching && this.QueryPagingSetting != null && this.QueryPagingSetting.IsMoreThanOnePage && !this.QueryPagingSetting.IsCurrentPageIsLastPage;
+            this.DoSearch(true);
         }
 
         public RelayCommand PaginationLastPageCommand { get; protected set; }
@@ -244,25 +182,26 @@ namespace Framework.Xaml
         protected void PaginationLastPage()
         {
             this.QueryPagingSetting.CurrentPage = this.QueryPagingSetting.CountOfPages;
-            this.Search();
-        }
-
-        protected bool CanPaginationLastPage()
-        {
-            return this.SearchStatus != Framework.EntityContracts.SearchStatus.Searching && this.QueryPagingSetting != null && this.QueryPagingSetting.IsMoreThanOnePage && !this.QueryPagingSetting.IsCurrentPageIsLastPage;
+            this.DoSearch(true);
         }
 
         #endregion Pagination Commands - First Page, Previous Page, Next Page, and Last Page
 
         #region QueryOrderBySettingCollection
 
-
         protected string m_QueryOrderBySettingCollecionInString;
 
         public string QueryOrderBySettingCollecionInString
         {
             get
-            { return this.m_QueryOrderBySettingCollecionInString; }
+            {
+                if(string.IsNullOrWhiteSpace(this.m_QueryOrderBySettingCollecionInString) && this.ListOfQueryOrderBySettingCollecionInString != null && this.ListOfQueryOrderBySettingCollecionInString.Count > 0)
+                    // select first order by.
+                {
+                    this.m_QueryOrderBySettingCollecionInString = this.ListOfQueryOrderBySettingCollecionInString[0].Value;
+                }
+                return this.m_QueryOrderBySettingCollecionInString;
+            }
             set
             {
                 if (this.m_QueryOrderBySettingCollecionInString != value)
@@ -295,7 +234,7 @@ namespace Framework.Xaml
         public Framework.NameValueCollection ListOfQueryOrderBySettingCollecionInString { get; set; }
 
         protected Framework.EntityContracts.QueryOrderBySettingCollection m_QueryOrderBySettingCollection;
-		/// <summary>
+        /// <summary>
         /// Gets or sets the query order by setting collection.
         /// </summary>
         /// <value>
@@ -332,10 +271,10 @@ namespace Framework.Xaml
 
         #region GetPrimaryInformationEntity()
 
-        public Framework.EntityContracts.IViewModelBase<TSearchCriteria> GetPrimaryInformationEntity()
+        public Framework.ViewModels.IViewModelBase<TSearchCriteria> GetPrimaryInformationEntity()
         {
-            Framework.EntityContracts.ViewModelBase<TSearchCriteria> vm;
-            vm = new Framework.EntityContracts.ViewModelBase<TSearchCriteria>
+            Framework.ViewModels.ViewModelBase<TSearchCriteria> vm;
+            vm = new Framework.ViewModels.ViewModelBase<TSearchCriteria>
             {
                 Criteria = this.Criteria,
                 ListOfQueryOrderBySettingCollecionInString = this.ListOfQueryOrderBySettingCollecionInString,
@@ -351,7 +290,7 @@ namespace Framework.Xaml
 
         #region PopulateAllUIElements(...)
 
-        public virtual void PopulateAllUIElements(Framework.EntityContracts.IViewModelBase<TSearchCriteria> vmFromTempData, int currentPage)
+        public virtual void PopulateAllUIElements(Framework.ViewModels.IViewModelBase<TSearchCriteria> vmFromTempData, int currentPage)
         {
             // 1. Criteria
             if (this.Criteria == null)
@@ -453,36 +392,6 @@ namespace Framework.Xaml
 
         #endregion PopulateAllUIElements(...)
 
-        #region SelectionChanged
-
-        public RelayCommand SelectionChangedCommand { get; protected set; }
-
-        protected void SelectionChanged()
-        {
-            string viewName = ViewName_SearchResult;
-            Framework.UIAction uiAction = Framework.UIAction.SelectionChanged;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Success));
-        }
-
-        #endregion SelectionChanged
-
-        #region RefreshCurrentEditingItem
-
-        public RelayCommand RefreshCurrentEditingItemCommand { get; protected set; }
-
-        protected abstract void RefreshCurrentEditingItem();
-
-        #endregion RefreshCurrentEditingItem
-
-        #region RefreshNewItem
-
-        public RelayCommand RefreshNewItemCommand { get; protected set; }
-
-        protected abstract void RefreshNewItem();
-
-        #endregion RefreshNewItem
-
         #region ClearSearchResult
 
         public RelayCommand ClearSearchResultCommand { get; protected set; }
@@ -496,7 +405,7 @@ namespace Framework.Xaml
         /// Determines whether you can clear search result
         /// </summary>
         /// <returns>
-        /// 	<c>true</c> if you can; otherwise, <c>false</c>.
+        ///     <c>true</c> if you can; otherwise, <c>false</c>.
         /// </returns>
         protected bool CanClearSearchResult()
         {
@@ -504,171 +413,6 @@ namespace Framework.Xaml
         }
 
         #endregion ClearSearchResult
-
-        #region ViewDetails
-
-        public RelayCommand LaunchViewDetailsViewCommand { get; protected set; }
-
-        protected void LaunchViewDetailsView()
-        {
-            string viewName = ViewName_Details;
-            Framework.UIAction uiAction = Framework.UIAction.ViewDetails;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Launch));
-        }
-
-        public RelayCommand CloseViewDetailsViewCommand { get; protected set; }
-
-        protected void CloseViewDetailsView()
-        {
-            string viewName = ViewName_Details;
-            Framework.UIAction uiAction = Framework.UIAction.ViewDetails;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Close));
-        }
-
-        #endregion ViewDetails
-		
-        #region Copy
-
-        public RelayCommand LaunchCopyViewCommand { get; protected set; }
-
-        protected void LaunchCopyView()
-        {
-            string viewName = ViewName_Details;
-            Framework.UIAction uiAction = Framework.UIAction.Copy;
-
-            this.PrepareCopyView();
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Launch));
-        }
-
-        protected abstract void PrepareCopyView();
-
-        #endregion Copy
-
-        #region Save
-
-        public RelayCommand LaunchEditViewCommand { get; protected set; }
-
-        protected void LaunchEditView()
-        {
-            string viewName = ViewName_Details;
-            Framework.UIAction uiAction = Framework.UIAction.Update;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Launch));
-        }
-
-        public RelayCommand CloseEditViewCommand { get; protected set; }
-
-        protected void CloseEditView()
-        {
-            string viewName = ViewName_Edit;
-            Framework.UIAction uiAction = Framework.UIAction.Update;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Close));
-        }
-
-        public RelayCommand SaveCommand { get; protected set; }
-
-        /// <summary>
-        /// update an Entity
-        /// </summary>
-        protected abstract void Save();
-
-        /// <summary>
-        /// Determines whether you can save Entity
-        /// </summary>
-        /// <returns>
-        /// 	<c>true</c> if you can; otherwise, <c>false</c>.
-        /// </returns>
-        protected abstract bool CanSave();
-
-        #endregion Save
-
-        #region Add
-
-        public RelayCommand LaunchCreateViewCommand { get; protected set; }
-
-        protected void LaunchCreateView()
-        {
-            string viewName = ViewName_SearchResult;
-            Framework.UIAction uiAction = Framework.UIAction.Create;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Launch));
-        }
-
-        public RelayCommand CloseCreateViewCommand { get; protected set; }
-
-        protected void CloseCreateView()
-        {
-            string viewName = ViewName_Create;
-            Framework.UIAction uiAction = Framework.UIAction.Create;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Close));
-        }
-
-        public RelayCommand AddCommand { get; protected set; }
-
-        /// <summary>
-        /// Adds a Entity to the list and repo.
-        /// </summary>
-        protected abstract void Add();
-
-        /// <summary>
-        /// Determines whether you can create a CustomerInformation.DataSourceEntities.CustomerProduct.
-        /// </summary>
-        /// <returns>
-        /// 	<c>true</c> if you can; otherwise, <c>false</c>.
-        /// </returns>
-        protected bool CanAdd()
-        {
-            return true;
-        }
-
-        #endregion Add
-
-        #region Delete
-
-        public RelayCommand LaunchDeleteViewCommand { get; protected set; }
-
-        protected void LaunchDeleteView()
-        {
-            string viewName = ViewName_Details;
-            Framework.UIAction uiAction = Framework.UIAction.Delete;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Launch));
-        }
-
-        public RelayCommand CloseDeleteViewCommand { get; protected set; }
-
-        protected void CloseDeleteView()
-        {
-            string viewName = ViewName_Delete;
-            Framework.UIAction uiAction = Framework.UIAction.Delete;
-
-            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Close));
-        }
-
-        public RelayCommand DeleteCommand { get; protected set; }
-
-        /// <summary>,
-        /// delete a CustomerInformation.DataSourceEntities.CustomerProduct.
-        /// </summary>
-        protected abstract void Delete();
-
-        /// <summary>
-        /// Determines whether you can delete an Entity
-        /// </summary>
-        /// <returns>
-        /// 	<c>true</c> if you can; otherwise, <c>false</c>.
-        /// </returns>
-        protected abstract bool CanDelete();
-
-        #endregion Delete
-
-
-        #region Search
 
         protected TSearchCriteria m_Criteria;
 
@@ -686,7 +430,7 @@ namespace Framework.Xaml
 
         protected void LaunchSearchView()
         {
-            string viewName = ViewName_SearchResult;
+            string viewName = ViewName;
             Framework.UIAction uiAction = Framework.UIAction.Search;
 
             Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Launch));
@@ -696,7 +440,7 @@ namespace Framework.Xaml
 
         protected void CloseSearchView()
         {
-            string viewName = ViewName_SearchResult;
+            string viewName = ViewName;
             Framework.UIAction uiAction = Framework.UIAction.Search;
 
             Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Close));
@@ -704,45 +448,82 @@ namespace Framework.Xaml
 
         public RelayCommand SearchCommand { get; protected set; }
 
-        /// <summary>
-        /// GetCollectionOfEntityOfCommon
-        /// </summary>
-        protected abstract void Search();
+        protected void Search()
+        {
+            if (this.QueryPagingSetting != null && this.QueryPagingSetting.CurrentPage == 0)
+            {
+                this.QueryPagingSetting.CurrentPage = 1;
+            }
+
+            this.DoSearch(true);
+        }
 
         protected bool CanSearch()
         {
-            return this.QueryPagingSetting == null || !(this.SearchStatus == Framework.EntityContracts.SearchStatus.Searching);
+            return true; // !(this.SearchStatus == Framework.EntityContracts.SearchStatus.Searching);
         }
 
-        #endregion Search
+        public RelayCommand LoadMoreCommand { get; protected set; }
 
-#if WINDOWS_PHONE
-
-        #region InfinityScrollingSearch
-
-        protected bool IsToClearExistingCollection { get; set; }
-
-        public RelayCommand InfinityScrollingSearchCommand { get; protected set; }
-        /// <summary>
-        /// GetCollectionOfEntityOfCommon
-        /// </summary>
-        protected void InfinityScrollingSearch()
+        protected void LoadMore()
         {
-            IsToClearExistingCollection = false;
-            this.Search();
+            if (this.QueryPagingSetting.CurrentPage == 0)
+            {
+                this.QueryPagingSetting.CurrentPage = 1;
+                this.DoSearch(false);
+            }
+            else
+            {
+                this.QueryPagingSetting.CurrentPage += 1;
+                this.DoSearch(false);
+            }
         }
 
-        #endregion InfinityScrollingSearch
+        protected abstract void DoSearch(bool isToClearExistingResult);
 
-#endif
-		
+        #region Search Result
+
+        public RelayCommand LaunchResultViewCommand { get; protected set; }
+
+        protected void LaunchResultView()
+        {
+            this.QueryPagingSetting.CurrentPage = 0; // to re-do search when switch to ResultView Page
+            string viewName = ViewName;
+            Framework.UIAction uiAction = Framework.UIAction.Result;
+
+            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Launch));
+        }
+
+        public RelayCommand CloseResultViewCommand { get; protected set; }
+
+        protected void CloseResultView()
+        {
+            string viewName = ViewName;
+            Framework.UIAction uiAction = Framework.UIAction.Result;
+
+            Messenger.Default.Send<Framework.UIActionStatusMessage>(new Framework.UIActionStatusMessage(EntityName, viewName, uiAction, Framework.UIActionStatus.Close));
+        }
+
+        #endregion Search Result
+
+        public Framework.EntityContracts.ContentData ContentData { get; set; }
+
         #region Cleanup()
 
-        public virtual void Cleanup()
+        public override void Cleanup()
         {
+            base.Cleanup();
         }
 
         #endregion Cleanup()
+
+        #region not implements and not used
+
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseStatus StatusOfResult { get; set; }
+
+        public string StatusMessageOfResult { get; set; }
+
+        #endregion not implements and not used
     }
 
     public abstract class ViewModelBaseWithResultAndUIElement<TSearchCriteria, TSearchResultEntityCollection, TSearchResultEntityItem, TSearchResultDataViewCollection, TSearchResultDataViewItem>
@@ -762,13 +543,11 @@ namespace Framework.Xaml
 
         #endregion constructor
 
-
-        #region DataView Collection + Current Selected or editing Entity for Current workspace and CURD
-
         protected ObservableCollection<TSearchResultDataViewItem> m_EntityCollectionDefault;
 
         /// <summary>
         /// Gets or sets the Default DataView Item list.
+        /// should investigate whether can remove RaisePropertyChanged
         /// </summary>
         /// <value>The Default DataView Item list.</value>
         public ObservableCollection<TSearchResultDataViewItem> EntityCollectionDefault
@@ -781,46 +560,14 @@ namespace Framework.Xaml
             }
         }
 
-        protected TSearchResultDataViewItem m_CurrentInEditingDefault;
-        public TSearchResultDataViewItem CurrentInEditingDefault
+        #region Cleanup()
+
+        public override  void Cleanup()
         {
-            get { return m_CurrentInEditingDefault; }
-            set
-            {
-                if (m_CurrentInEditingDefault != value)
-                {
-                    m_CurrentInEditingDefault = value;
-                    RaisePropertyChanged("CurrentInEditingDefault");
-                }
-            }
+            base.Cleanup();
         }
 
-        protected TSearchResultDataViewItem m_CurrentDefault;
-        public TSearchResultDataViewItem CurrentDefault
-        {
-            get { return m_CurrentDefault; }
-            set
-            {
-                if (m_CurrentDefault != value)
-                {
-                    m_CurrentDefault = value;
-                    this.RefreshCurrentEditingItem();
-                    RaisePropertyChanged("CurrentDefault");
-                }
-            }
-        }
-
-        protected TSearchResultDataViewItem m_NewItemDefault;
-        public TSearchResultDataViewItem NewItemDefault
-        {
-            get { return m_NewItemDefault; }
-            set
-            {
-                m_NewItemDefault = value;
-                RaisePropertyChanged("NewItemDefault");
-            }
-        }
-
-        #endregion Business Entity Collection + Current Selected or editing Entity
+        #endregion Cleanup()
     }
 }
+

@@ -9,8 +9,8 @@ namespace Framework.EntityContracts
     /// pull data according Paging setting.
     /// </summary>
     public class QueryPagingSetting : Framework.PropertyChangedNotifier
-	{
-		#region constructors
+    {
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryPagingSetting"/> class.
@@ -33,10 +33,10 @@ namespace Framework.EntityContracts
             this.PageSize = this.OriginalPageSize = pageSize;
             this.PageSizeSelectionList = new Framework.NameValueCollection();
 
-            this.PageSizeSelectionList.Add(10, "10");
-            this.PageSizeSelectionList.Add(20, "20");
-            this.PageSizeSelectionList.Add(50, "50");
-            this.PageSizeSelectionList.Add(100, "100");
+            this.PageSizeSelectionList.Add("10", "10");
+            this.PageSizeSelectionList.Add("20", "20");
+            this.PageSizeSelectionList.Add("50", "50");
+            this.PageSizeSelectionList.Add("100", "100");
 
         }
 
@@ -44,6 +44,7 @@ namespace Framework.EntityContracts
 
         #region properties
 
+        [Newtonsoft.Json.JsonIgnore]
         public bool IsEmptyResult
         {
             get
@@ -52,6 +53,7 @@ namespace Framework.EntityContracts
             }
         }
 
+        [Newtonsoft.Json.JsonIgnore]
         public bool IsOnlyOnePage
         {
             get
@@ -60,6 +62,16 @@ namespace Framework.EntityContracts
             }
         }
 
+        [Newtonsoft.Json.JsonIgnore]
+        public bool CanChangeCurrentPage
+        {
+            get
+            {
+                return !(this.IsEmptyResult || this.IsOnlyOnePage);
+            }
+        }
+
+        [Newtonsoft.Json.JsonIgnore]
         public bool IsMoreThanOnePage
         {
             get
@@ -68,6 +80,7 @@ namespace Framework.EntityContracts
             }
         }
 
+        [Newtonsoft.Json.JsonIgnore]
         public bool IsCurrentPageIsFirstPage
         {
             get
@@ -76,6 +89,7 @@ namespace Framework.EntityContracts
             }
         }
 
+        [Newtonsoft.Json.JsonIgnore]
         public bool IsCurrentPageIsLastPage
         {
             get
@@ -84,7 +98,7 @@ namespace Framework.EntityContracts
             }
         }
 
-        public int m_CurrentPage;
+        int m_CurrentPage;
         /// <summary>
         /// Gets or sets the index of the current page index.
         /// start from 1
@@ -92,15 +106,28 @@ namespace Framework.EntityContracts
         /// <value>
         /// The index of the current page index.
         /// </value>
-        public int CurrentPage 
+        public int CurrentPage
         {
             get { return this.m_CurrentPage; }
-            set 
+            set
             {
                 if (this.m_CurrentPage != value)
                 {
                     this.m_CurrentPage = value;
                     RaisePropertyChanged("CurrentPage");
+                    RaisePropertyChanged("IsEmptyResult");
+                    RaisePropertyChanged("IsOnlyOnePage");
+                    RaisePropertyChanged("CanChangeCurrentPage");
+                    RaisePropertyChanged("IsMoreThanOnePage");
+                    RaisePropertyChanged("IsCurrentPageIsFirstPage");
+                    RaisePropertyChanged("IsCurrentPageIsLastPage");
+                    RaisePropertyChanged("CurrentIndex");
+                    RaisePropertyChanged("EndIndex");
+                    RaisePropertyChanged("PageSizeChanged");
+                    RaisePropertyChanged("CountOfPages");
+                    RaisePropertyChanged("RecordCountOfCurrentPage");
+                    RaisePropertyChanged("CanGoForeward");
+                    RaisePropertyChanged("CanGoBackward");
                 }
             }
         }
@@ -111,6 +138,7 @@ namespace Framework.EntityContracts
         /// <value>
         /// The index of the current page index.
         /// </value>
+        [Newtonsoft.Json.JsonIgnore]
         public int CurrentIndex
         {
             get
@@ -119,6 +147,7 @@ namespace Framework.EntityContracts
             }
         }
 
+        [Newtonsoft.Json.JsonIgnore]
         public int EndIndex
         {
             get
@@ -127,22 +156,47 @@ namespace Framework.EntityContracts
             }
         }
 
+        int m_PageSize;
         /// <summary>
         /// Gets or sets the size of the page.
         /// </summary>
         /// <value>
         /// The size of the page.
         /// </value>
-        public int PageSize { get; set; }
+        public int PageSize
+        {
+            get { return this.m_PageSize; }
+            set
+            {
+                if (this.m_PageSize != value)
+                {
+                    this.m_PageSize = value;
+                    RaisePropertyChanged("PageSize");
+                }
+            }
+        }
 
+        int m_OriginalPageSize;
         /// <summary>
         /// Gets or sets the size of the original page.
         /// </summary>
         /// <value>
         /// The size of the original page.
         /// </value>
-        public int OriginalPageSize { get; set; }
+        public int OriginalPageSize
+        {
+            get { return this.m_OriginalPageSize; }
+            set
+            {
+                if (this.m_OriginalPageSize != value)
+                {
+                    this.m_OriginalPageSize = value;
+                    RaisePropertyChanged("OriginalPageSize");
+                }
+            }
+        }
 
+        [Newtonsoft.Json.JsonIgnore]
         public bool PageSizeChanged
         {
             get
@@ -151,13 +205,25 @@ namespace Framework.EntityContracts
             }
         }
 
+        int m_CountOfRecords;
         /// <summary>
         /// Gets or sets the count of records.
         /// </summary>
         /// <value>
         /// The count of records.
         /// </value>
-        public int CountOfRecords { get; set; }
+        public int CountOfRecords
+        {
+            get { return this.m_CountOfRecords; }
+            set
+            {
+                if (this.m_CountOfRecords != value)
+                {
+                    this.m_CountOfRecords = value;
+                    RaisePropertyChanged("CountOfRecords");
+                }
+            }
+        }
 
         /// <summary>
         /// Gets or sets the count of pages.
@@ -165,6 +231,7 @@ namespace Framework.EntityContracts
         /// <value>
         /// The count of pages.
         /// </value>
+        [Newtonsoft.Json.JsonIgnore]
         public int CountOfPages
         {
             get
@@ -201,14 +268,44 @@ namespace Framework.EntityContracts
         {
             if (this.RecordCountOfCurrentPage == 0)
             {
-                return string.Format("0 Record in Current Page");
+                return string.Format(Framework.Resx.UIStringResource.Pagination_NoData);
             }
             else
             {
-                return string.Format("Total Pages: {4}. {0} Record in Current Page: ({1} - {2}) / {3}", this.RecordCountOfCurrentPage, this.CurrentIndex + 1, this.EndIndex, this.CountOfRecords, this.CountOfPages);
+
+                return string.Format(Framework.Resx.UIStringResource.Pagination_PagingInformation, this.RecordCountOfCurrentPage, this.CurrentIndex + 1, this.EndIndex, this.CountOfRecords, this.CountOfPages, this.CurrentPage);
+            }
+        }
+
+        [Newtonsoft.Json.JsonIgnore]
+        public bool CanGoForeward
+        {
+            get
+            {
+                return this.CountOfPages > 0 && !this.IsCurrentPageIsLastPage;
+            }
+        }
+
+        [Newtonsoft.Json.JsonIgnore]
+        public bool CanGoBackward
+        {
+            get
+            {
+                return this.CountOfPages > 0 && !this.IsCurrentPageIsFirstPage;
             }
         }
 
         #endregion properties
+
+        public override string ToString()
+        {
+            return GetPagingInformationString();
+        }
+
+        public static QueryPagingSetting GetDefault()
+        {
+            return new QueryPagingSetting(1, 10);
+        }
     }
 }
+

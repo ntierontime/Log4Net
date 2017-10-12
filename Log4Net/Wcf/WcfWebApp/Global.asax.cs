@@ -17,35 +17,32 @@ namespace Log4Net.WcfWebApp
 {
     public class Global : System.Web.HttpApplication
     {
-		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            string log4netConfig = Server.MapPath("~/log4net.config");
 
-			Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Clear();
+            Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Clear();
             Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Register<Log4Net.WcfContracts.IBusinessLogicLayerFactory, Log4Net.CommonBLL.BusinessLogicLayerFactory>();
             Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Register<Framework.CommonBLLEntities.IBusinessLogicLayerContextContainer, Framework.Web.WebFormApplicationSessionVariablesIoCContainer>();
-            Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Register<Log4Net.DALContracts.DataAccessLayerFactoryContract, Log4Net.LinqDAL.LinqToSqlDataAccessLayerFactory>();
+            Framework.IoCContainerWrapperSingleton.Instance.IoCContainer.Register<Log4Net.DALContracts.DataAccessLayerFactoryContract, Log4Net.EntityFrameworkDAL.EFDataAccessLayerFactory>();
 
-			log.Info(Framework.LoggingOptions.Application_Started.ToString());
-			Framework.Web.WebFormApplicationApplicationVariables.GetDefault();
+            log.Info(Framework.LoggingOptions.Application_Started.ToString());
+            Framework.Web.WebFormApplicationApplicationVariables.GetDefault();
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-			log.Info(Framework.LoggingOptions.Session_Started.ToString());
-
+            log.Info(Framework.LoggingOptions.Session_Started.ToString());
 
             Framework.CommonBLLEntities.BusinessLogicLayerMemberShip _BusinessLogicLayerMemberShip = new Framework.CommonBLLEntities.BusinessLogicLayerMemberShip();
-            //Framework.Web.WebFormApplicationSessionVariables.BusinessLogicLayerContext = new Framework.CommonBLLEntities.BusinessLogicLayerContext(
-            //    _BusinessLogicLayerMemberShip 
-            //    , Log4Net.LinqDAL.LinqToSqlDataAccessLayerFactorySingleton.Instance);
             List<Framework.CommonBLLEntities.BusinessLogicLayerContextSetting> _BusinessLogicLayerContextSettingCollection = new List<Framework.CommonBLLEntities.BusinessLogicLayerContextSetting>();
             _BusinessLogicLayerContextSettingCollection.Add(new Framework.CommonBLLEntities.BusinessLogicLayerContextSetting(
-				"Log4Net"
-				, typeof(Framework.Web.WebFormApplicationSessionVariables)
-				, typeof(Framework.CommonBLLEntities.BusinessLogicLayerContext)
-				, typeof(Log4Net.LinqDAL.LinqToSqlDataAccessLayerFactory)));
+                "Log4Net"
+                , typeof(Framework.Web.WebFormApplicationSessionVariables)
+                , typeof(Framework.CommonBLLEntities.BusinessLogicLayerContext)
+                , typeof(Log4Net.EntityFrameworkDAL.EFDataAccessLayerFactory)));
             foreach (Framework.CommonBLLEntities.BusinessLogicLayerContextSetting _BusinessLogicLayerContextSetting in _BusinessLogicLayerContextSettingCollection)
             {
                 object[] _Params = new object[] {_BusinessLogicLayerMemberShip };
@@ -79,5 +76,6 @@ namespace Log4Net.WcfWebApp
             Framework.Web.WebFormApplicationApplicationVariables.MIMEContentTypeToFileExtensionMappingCollection = null;
             log.Info(Framework.LoggingOptions.Application_Ended.ToString());
         }
-	}
+    }
 }
+

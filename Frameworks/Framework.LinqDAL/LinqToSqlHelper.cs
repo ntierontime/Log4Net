@@ -12,7 +12,7 @@ namespace Framework.LinqDAL
     /// </summary>
     public static class LinqToSqlHelper
     {
-		/// <summary>
+        /// <summary>
         /// Combines the linq expression.
         /// </summary>
         /// <typeparam name="T">entity class</typeparam>

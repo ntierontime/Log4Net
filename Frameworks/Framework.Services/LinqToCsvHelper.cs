@@ -11,7 +11,7 @@ namespace Framework.Services
     /// http://www.codeproject.com/Articles/25133/LINQ-to-CSV-library
     /// </summary>
     public static class LinqToCsvHelper
-	{
+    {
         public static Stream WriteToStream<TCollection, TItem>(TCollection input)
             where TCollection : List<TItem>
             where TItem: class, new()

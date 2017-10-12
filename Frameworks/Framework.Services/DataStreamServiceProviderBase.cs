@@ -81,7 +81,6 @@ namespace Framework.Services
 
         #endregion Write to stream
 
-
         #region Read from stream
 
         public TCollection GetCollectionFromStream(Framework.DataStreamServiceResult input)

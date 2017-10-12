@@ -12,7 +12,65 @@ namespace Framework
     [DataContract]
     public class RssItem
     {
-		#region properties
+        #region constructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RssItem"/> class.
+        /// </summary>
+        public RssItem()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RssItem"/> class.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="description">The description.</param>
+        /// <param name="author">The author.</param>
+        /// <param name="comments">The comments.</param>
+        /// <param name="link">The link.</param>
+        /// <param name="pubDate">The pub date.</param>
+        /// <param name="identifierInString">The identifier in string.</param>
+        /// <param name="createdByUserName">Name of the created by user.</param>
+        /// <param name="createdByIdentifier">The created by identifier.</param>
+        /// <param name="dateCreated">The date created.</param>
+        /// <param name="lastModifiedByUserName">Last name of the modified by user.</param>
+        /// <param name="lastModifiedByIdentifier">The last modified by identifier.</param>
+        /// <param name="dateLastModified">The date last modified.</param>
+        public RssItem(
+            System.String title,
+            System.String description,
+            System.String author,
+            System.String comments,
+            System.String link,
+            System.DateTime pubDate,
+            System.String identifierInString,
+            System.String createdByUserName,
+            System.Guid createdByIdentifier,
+            System.DateTime dateCreated,
+            System.String lastModifiedByUserName,
+            System.Guid lastModifiedByIdentifier,
+            System.DateTime dateLastModified)
+            : base()
+        {
+            this.Title=title;
+            this.Description=description;
+            this.Author=author;
+            this.Comments=comments;
+            this.Link=link;
+            this.PubDate=pubDate;
+            this.IdentifierInString=identifierInString;
+            this.CreatedByUserName=createdByUserName;
+            this.CreatedByIdentifier=createdByIdentifier;
+            this.DateCreated=dateCreated;
+            this.LastModifiedByUserName=lastModifiedByUserName;
+            this.LastModifiedByIdentifier=lastModifiedByIdentifier;
+            this.DateLastModified=dateLastModified;
+        }
+
+        #endregion constructors
+
+        #region properties
 
         /// <summary>
         /// Gets or sets the title.
@@ -21,10 +79,6 @@ namespace Framework
         /// The title.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public string Title { get; set; }
         /// <summary>
         /// Gets or sets the description.
@@ -33,10 +87,6 @@ namespace Framework
         /// The description.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public string Description { get; set; }
         /// <summary>
         /// Gets or sets the author.
@@ -45,10 +95,6 @@ namespace Framework
         /// The author.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public string Author { get; set; }
         /// <summary>
         /// Gets or sets the comments.
@@ -57,10 +103,6 @@ namespace Framework
         /// The comments.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public string Comments { get; set; }
         /// <summary>
         /// Gets or sets the link.
@@ -69,10 +111,6 @@ namespace Framework
         /// The link.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public string Link { get; set; }
         /// <summary>
         /// Gets or sets the pub date.
@@ -81,10 +119,6 @@ namespace Framework
         /// The pub date.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public DateTime PubDate { get; set; }
 
         /// <summary>
@@ -94,10 +128,6 @@ namespace Framework
         /// The identifier in string.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public string IdentifierInString { get; set; }
         /// <summary>
         /// Gets or sets the name of the created by user.
@@ -106,10 +136,6 @@ namespace Framework
         /// The name of the created by user.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public System.String CreatedByUserName { get; set; }
         /// <summary>
         /// Gets or sets the created by identifier.
@@ -118,10 +144,6 @@ namespace Framework
         /// The created by identifier.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn(OutputFormat = "D")]
-#endif
         public System.Guid CreatedByIdentifier { get; set; }
         /// <summary>
         /// Gets or sets the date created.
@@ -130,10 +152,6 @@ namespace Framework
         /// The date created.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public System.DateTime DateCreated { get; set; }
         /// <summary>
         /// Gets or sets the last name of the modified by user.
@@ -142,10 +160,6 @@ namespace Framework
         /// The last name of the modified by user.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public System.String LastModifiedByUserName { get; set; }
         /// <summary>
         /// Gets or sets the last modified by identifier.
@@ -154,10 +168,6 @@ namespace Framework
         /// The last modified by identifier.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn(OutputFormat = "D")]
-#endif
         public System.Guid LastModifiedByIdentifier { get; set; }
         /// <summary>
         /// Gets or sets the date last modified.
@@ -166,17 +176,21 @@ namespace Framework
         /// The date last modified.
         /// </value>
         [DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
         public System.DateTime DateLastModified { get; set; }
 
-		#endregion properties
+        #endregion properties
 
-	}
+        #region override string ToString()
 
-	/// <summary>
+        public override string ToString()
+        {
+            return string.Format("Title:{0};Description:{1};Author:{2};Comments:{3};Link:{4};PubDate:{5};IdentifierInString:{6};CreatedByUserName:{7};CreatedByIdentifier:{8};DateCreated:{9};LastModifiedByUserName:{10};", this.Title, this.Description, this.Author, this.Comments, this.Link, this.PubDate, this.IdentifierInString, this.CreatedByUserName, this.CreatedByIdentifier, this.DateCreated, this.LastModifiedByUserName);
+        }
+
+        #endregion override string ToString()
+    }
+
+    /// <summary>
     /// matches Rss schema
     /// </summary>
     public class RssItemCollection : List< RssItem>
@@ -201,6 +215,6 @@ namespace Framework
         }
 
         #endregion Constructors
-
     }
 }
+

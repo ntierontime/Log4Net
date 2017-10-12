@@ -8,8 +8,8 @@ namespace Framework.CommonBLLEntities
     /// <summary>
     /// Session variables
     /// </summary>
-	public class SessionVariablesCommon 
-	{
+    public class SessionVariablesCommon
+    {
         /// <summary>
         /// Gets or sets the business logic layer context.
         /// </summary>

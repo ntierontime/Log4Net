@@ -14,7 +14,7 @@ namespace Log4Net.WcfClientBLL
     /// *4. Channel definition interface, defined in WcfClientBusinessLogicLayer(this) project
     /// 5. WcfClient class, defined in WcfClientBusinessLogicLayer(this) project
     /// </summary>
-    public interface WcfClientEntityLogChannel : Log4Net.WcfContracts.ILogWcfService, System.ServiceModel.IClientChannel {
+    public interface WcfClientEntityLogChannel : Log4Net.WcfContracts.ILogService, System.ServiceModel.IClientChannel {
     }
 
     /// <summary>
@@ -25,53 +25,53 @@ namespace Log4Net.WcfClientBLL
     /// 4. Channel definition interface, defined in WcfClientBusinessLogicLayer(this) project
     /// *5. WcfClient class, defined in WcfClientBusinessLogicLayer(this) project
     /// </summary>
-    public partial class WcfClientEntityLog : System.ServiceModel.ClientBase<Log4Net.WcfContracts.ILogWcfService>, Log4Net.WcfContracts.ILogWcfService {
+    public partial class WcfClientEntityLog : System.ServiceModel.ClientBase<Log4Net.WcfContracts.ILogService>, Log4Net.WcfContracts.ILogService {
 
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WcfClientEntityLog"/> class.
         /// </summary>
         public WcfClientEntityLog() {
         }
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="WcfClientEntityLog"/> class.
         /// </summary>
         /// <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
-        public WcfClientEntityLog(string endpointConfigurationName) : 
+        public WcfClientEntityLog(string endpointConfigurationName) :
                 base(endpointConfigurationName) {
         }
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="WcfClientEntityLog"/> class.
         /// </summary>
         /// <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
         /// <param name="remoteAddress">The remote address.</param>
-        public WcfClientEntityLog(string endpointConfigurationName, string remoteAddress) : 
+        public WcfClientEntityLog(string endpointConfigurationName, string remoteAddress) :
                 base(endpointConfigurationName, remoteAddress) {
         }
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="WcfClientEntityLog"/> class.
         /// </summary>
         /// <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
         /// <param name="remoteAddress">The remote address.</param>
-		public WcfClientEntityLog(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public WcfClientEntityLog(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(endpointConfigurationName, remoteAddress) {
         }
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="WcfClientEntityLog"/> class.
         /// </summary>
         /// <param name="binding">The binding.</param>
         /// <param name="remoteAddress">The remote address.</param>
-        public WcfClientEntityLog(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public WcfClientEntityLog(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(binding, remoteAddress) {
         }
 
-		#endregion constructors
-        
+        #endregion constructors
+
         #region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog InsertEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn InsertEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.InsertEntity(request);
         }
@@ -89,7 +89,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog UpdateEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn UpdateEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.UpdateEntity(request);
         }
@@ -99,7 +99,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog DeleteEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn DeleteEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.DeleteEntity(request);
         }
@@ -109,7 +109,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="id">The id.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog DeleteByIdentifierEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInOfIdentifierLog id)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn DeleteByIdentifierEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltInOfIdentifier id)
         {
             return base.Channel.DeleteByIdentifierEntity(id);
         }
@@ -119,7 +119,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog BatchInsert(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn BatchInsert(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.BatchInsert(request);
         }
@@ -129,7 +129,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog BatchDelete(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn BatchDelete(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.InsertEntity(request);
         }
@@ -139,18 +139,14 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog BatchUpdate(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn BatchUpdate(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.BatchUpdate(request);
-        }		
+        }
 
         #endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
-
-
-
-
-        #region Query Methods Of Entity of Common 
+        #region Query Methods Of Entity of Common
 
         /// <summary>
         /// Gets the count of entity of "Common".
@@ -158,7 +154,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfEntityOfCommon(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             return base.Channel.GetCountOfEntityOfCommon(request);
         }
@@ -167,20 +163,20 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "Common".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfEntityOfCommon(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             return base.Channel.ExistsOfEntityOfCommon(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "Common".
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetCollectionOfEntityOfCommon(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetCollectionOfEntityOfCommon(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             return base.Channel.GetCollectionOfEntityOfCommon(request);
         }
@@ -190,18 +186,15 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetSingleOfEntityOfCommon(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetSingleOfEntityOfCommon(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             return base.Channel.GetSingleOfEntityOfCommon(request);
-		}
+        }
 
-        #endregion Query Methods Of Entity of Common 
+        #endregion Query Methods Of Entity of Common
 
-
-
-
-        #region Query Methods Of Entity of All 
+        #region Query Methods Of Entity of All
 
         /// <summary>
         /// Gets the count of entity of "All".
@@ -209,7 +202,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfEntityOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetCountOfEntityOfAll(request);
         }
@@ -218,20 +211,20 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "All".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfEntityOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.ExistsOfEntityOfAll(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "All".
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetCollectionOfEntityOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetCollectionOfEntityOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetCollectionOfEntityOfAll(request);
         }
@@ -241,18 +234,15 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetSingleOfEntityOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetSingleOfEntityOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetSingleOfEntityOfAll(request);
-		}
+        }
 
-        #endregion Query Methods Of Entity of All 
+        #endregion Query Methods Of Entity of All
 
-
-
-
-        #region Query Methods Of NameValuePair of All 
+        #region Query Methods Of NameValuePair of All
 
         /// <summary>
         /// Gets the count of entity of "All".
@@ -260,7 +250,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfNameValuePairOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetCountOfNameValuePairOfAll(request);
         }
@@ -269,12 +259,12 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "All".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfNameValuePairOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.ExistsOfNameValuePairOfAll(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "All".
@@ -282,7 +272,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns></returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection GetCollectionOfNameValuePairOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetCollectionOfNameValuePairOfAll(request);
         }
@@ -293,17 +283,62 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns></returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection GetSingleOfNameValuePairOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetSingleOfNameValuePairOfAll(request);
-		}
+        }
 
-        #endregion Query Methods Of NameValuePair of All 
+        #endregion Query Methods Of NameValuePair of All
 
+        #region Query Methods Of RssItem of All
 
+        /// <summary>
+        /// Gets the count of entity of "All".
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>the count</returns>
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfRssItemOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            return base.Channel.GetCountOfRssItemOfAll(request);
+        }
 
+        /// <summary>
+        /// Exists the of entity of "All".
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>true if exists any, otherwise false</returns>
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfRssItemOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            return base.Channel.ExistsOfRssItemOfAll(request);
+        }
 
-        #region Query Methods Of Entity of ByIdentifier 
+        /// <summary>
+        /// Gets the collection of entity of "All".
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection GetCollectionOfRssItemOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            return base.Channel.GetCollectionOfRssItemOfAll(request);
+        }
+
+        /// <summary>
+        /// Gets the single of entity of "All".
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection GetSingleOfRssItemOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            return base.Channel.GetSingleOfRssItemOfAll(request);
+        }
+
+        #endregion Query Methods Of RssItem of All
+
+        #region Query Methods Of Entity of ByIdentifier
 
         /// <summary>
         /// Gets the count of entity of "ByIdentifier".
@@ -311,7 +346,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfEntityOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetCountOfEntityOfByIdentifier(request);
         }
@@ -320,20 +355,20 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "ByIdentifier".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfEntityOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.ExistsOfEntityOfByIdentifier(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "ByIdentifier".
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetCollectionOfEntityOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetCollectionOfEntityOfByIdentifier(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetCollectionOfEntityOfByIdentifier(request);
         }
@@ -343,18 +378,15 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetSingleOfEntityOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetSingleOfEntityOfByIdentifier(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetSingleOfEntityOfByIdentifier(request);
-		}
+        }
 
-        #endregion Query Methods Of Entity of ByIdentifier 
+        #endregion Query Methods Of Entity of ByIdentifier
 
-
-
-
-        #region Query Methods Of KeyInformation of ByIdentifier 
+        #region Query Methods Of KeyInformation of ByIdentifier
 
         /// <summary>
         /// Gets the count of entity of "ByIdentifier".
@@ -362,7 +394,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfKeyInformationOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetCountOfKeyInformationOfByIdentifier(request);
         }
@@ -371,20 +403,20 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "ByIdentifier".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfKeyInformationOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.ExistsOfKeyInformationOfByIdentifier(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "ByIdentifier".
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation GetCollectionOfKeyInformationOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation GetCollectionOfKeyInformationOfByIdentifier(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetCollectionOfKeyInformationOfByIdentifier(request);
         }
@@ -394,27 +426,21 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation GetSingleOfKeyInformationOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation GetSingleOfKeyInformationOfByIdentifier(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetSingleOfKeyInformationOfByIdentifier(request);
-		}
+        }
 
-        #endregion Query Methods Of KeyInformation of ByIdentifier 
+        #endregion Query Methods Of KeyInformation of ByIdentifier
 
-
-
-
-
-
-
-		
 #if WINDOWS_PHONE
-        protected override Log4Net.WcfContracts.ILogWcfService CreateChannel()
+        protected override Log4Net.WcfContracts.ILogService CreateChannel()
         {
             throw new NotImplementedException();
         }
 #else
 #endif
-	}
+    }
 }
+

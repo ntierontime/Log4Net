@@ -4,12 +4,12 @@ using System.Runtime.Serialization;
 namespace Log4Net.EntityContracts
 {
 
-	public interface ILogIdentifier
-	{ 
+    public partial interface ILogIdentifier
+    {
 
         System.Int64 Id { get; set; }
 
-	}
+    }
 
     public class QueryPredicateLogByIdentifier<T>
         where T : ILog
@@ -30,11 +30,10 @@ namespace Log4Net.EntityContracts
         }
     }
 
-
     /// <summary>
     ///  a property defined when <see cref="LogIdentifier"/> is used in other classes.
     /// </summary>
-    public interface WithIdentifierContractLog<T>
+    public partial interface WithIdentifierContractLog<T>
         where T : ILogIdentifier
     {
         T LogIdentifier { get; set; }

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{165A059F-AC25-4C1D-896D-3F0981BFD5A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Log4Net.ViewModelData</RootNamespace>
+    <AssemblyName>Log4Net.ViewModelData.X</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;XAMARIN;__MOBILE__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;XAMARIN;__MOBILE__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <None Include="map.2.B.2.vsd" />
+    <None Include="map.2.B.2.vsd.png" />
+    <Compile Include="..\..\Core\ViewModelData\OrderByLists.cs">
+      <Link>OrderByLists.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\ViewModelData\LogItemVM.cs">
+      <Link>LogItemVM.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\ViewModelData\LogWorkspaceVM.cs">
+      <Link>LogWorkspaceVM.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonBLLEntities.X\Log4Net.CommonBLLEntities.X.csproj">
+      <Project>{9ad9808d-9e3b-4158-91f2-6fe392431c33}</Project>
+      <Name>Log4Net.CommonBLLEntities.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSourceEntities.X\Log4Net.DataSourceEntities.X.csproj">
+      <Project>{8458fe75-5181-400f-b11e-2c49eaa7e136}</Project>
+      <Name>Log4Net.DataSourceEntities.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityContracts.X\Log4Net.EntityContracts.X.csproj">
+      <Project>{41102cc0-c48d-4e02-ace0-a47259649ac8}</Project>
+      <Name>Log4Net.EntityContracts.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.X\Framework.X.csproj">
+      <Project>{68218f7a-7603-418f-99c8-1b6e1fc426e0}</Project>
+      <Name>Framework.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.CommonBLLEntities.X\Framework.CommonBLLEntities.X.csproj">
+      <Project>{bfb74635-4b67-41a5-abd3-e7b286d77cfc}</Project>
+      <Name>Framework.CommonBLLEntities.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.DataSourceEntities.X\Framework.DataSourceEntities.X.csproj">
+      <Project>{5275528b-918a-474b-8825-0d05266b2df0}</Project>
+      <Name>Framework.DataSourceEntities.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.EntityContracts.X\Framework.EntityContracts.X.csproj">
+      <Project>{52f99887-9acc-421f-83ca-1c98df00233f}</Project>
+      <Name>Framework.EntityContracts.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.Resx.X\Framework.Resx.X.csproj">
+      <Project>{da5209fe-248e-46d6-8e4d-2a6fc218bd94}</Project>
+      <Name>Framework.Resx.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.ViewModels.X\Framework.ViewModels.X.csproj">
+      <Project>{7b095edc-5611-454f-9e70-418a45acbd0e}</Project>
+      <Name>Framework.ViewModels.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resx.X\Log4Net.Resx.X.csproj">
+      <Project>{3a057e41-27a8-4386-9ef8-0e9eab238027}</Project>
+      <Name>Log4Net.Resx.X</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

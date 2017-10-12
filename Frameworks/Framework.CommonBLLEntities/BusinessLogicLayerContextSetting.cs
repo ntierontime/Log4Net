@@ -6,15 +6,15 @@ using System.Text;
 namespace Framework.CommonBLLEntities
 {
     /// <summary>
-    /// System.Attribute for <see cref="BusinessLogicLayerContextSetting"/> 
+    /// System.Attribute for <see cref="BusinessLogicLayerContextSetting"/>
     /// for DI/IoC purpose
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public class BusinessLogicLayerContextSettingAttribute : Attribute
     {
-		#region constructors
+        #region constructors
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="BusinessLogicLayerContextSetting"/> class.
         /// </summary>
         /// <param name="key">The key.</param>
@@ -25,11 +25,11 @@ namespace Framework.CommonBLLEntities
             this.BusinessLogicLayerContextSetting = new BusinessLogicLayerContextSetting(key, null, typeOfBusinessLogicLayerContext, typeOfLinqToSqlDataAccessLayerFactory);
         }
 
-		#endregion constructors
+        #endregion constructors
 
-		#region properties
+        #region properties
 
-		/// <summary>
+        /// <summary>
         /// Gets or sets the business logic layer context setting.
         /// </summary>
         /// <value>
@@ -37,7 +37,7 @@ namespace Framework.CommonBLLEntities
         /// </value>
         BusinessLogicLayerContextSetting BusinessLogicLayerContextSetting { get; set; }
 
-		#endregion properties
+        #endregion properties
 
     }
 
@@ -46,7 +46,7 @@ namespace Framework.CommonBLLEntities
     /// </summary>
     public class BusinessLogicLayerContextSetting
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessLogicLayerContextSetting"/> class.
@@ -63,9 +63,9 @@ namespace Framework.CommonBLLEntities
             this.TypeOfLinqToSqlDataAccessLayerFactory = typeOfLinqToSqlDataAccessLayerFactory;
         }
 
-		#endregion constructors
+        #endregion constructors
 
-		#region properties
+        #region properties
 
         /// <summary>
         /// Gets or sets the key.
@@ -83,7 +83,7 @@ namespace Framework.CommonBLLEntities
         /// </value>
         public Type TypeOfTargetUser { get; set; }
 
-		/// <summary>
+        /// <summary>
         /// Gets or sets the type of business logic layer context.
         /// </summary>
         /// <value>
@@ -98,7 +98,7 @@ namespace Framework.CommonBLLEntities
         /// The type of linq to SQL data access layer factory.
         /// </value>
         public Type TypeOfLinqToSqlDataAccessLayerFactory { get; set; }
-		
-		#endregion properties
+
+        #endregion properties
     }
 }

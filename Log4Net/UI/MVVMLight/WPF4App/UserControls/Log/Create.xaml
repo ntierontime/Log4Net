@@ -5,40 +5,40 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             mc:Ignorable="d"
-		    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras"
-		    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-		    xmlns:vm="clr-namespace:Log4Net.ViewModels;assembly=Log4Net.ViewModels"
-			xmlns:fresx="clr-namespace:Framework.Resources;assembly=Framework.Resources"
-			xmlns:eresx="clr-namespace:Log4Net.Resources;assembly=Log4Net.Resources"
+            xmlns:cmd="http://www.galasoft.ch/mvvmlight"
+            xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+            xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+            xmlns:vm="clr-namespace:Log4Net.MVVMLightViewModels;assembly=Log4Net.MVVMLightViewModels"
             >
-    <Grid DataContext="{Binding Log4Net_ViewModels_WPCommonOfLogVM.NewItem, Source={StaticResource Locator}}">
+    <Grid DataContext="{Binding Log4Net_MVVMLightViewModels_ItemVMLog.Item, Source={StaticResource Locator}}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition   Width="Auto" />
-            <ColumnDefinition   Width="Auto" />
+            <ColumnDefinition   Width="150" />
+            <ColumnDefinition   Width="*" MaxWidth="750"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition   Height="Auto" />
-            <RowDefinition   Height="Auto" />
-            <RowDefinition   Height="Auto" />
-            <RowDefinition   Height="Auto" />
-            <RowDefinition   Height="Auto" />
-            <RowDefinition   Height="Auto" />
-            <RowDefinition   Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition   Height="35" />
+            <RowDefinition   Height="35" />
+            <RowDefinition   Height="35" />
+            <RowDefinition   Height="35" />
+            <RowDefinition   Height="35" />
+            <RowDefinition   Height="35" />
+            <RowDefinition   Height="35" />
+            <RowDefinition   Height="35" />
         </Grid.RowDefinitions>
-		<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Id, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="0" />
-		<TextBlock Text="{Binding Path=Id, Mode=TwoWay}" Grid.Column="1" Grid.Row="0" />
-		<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Date, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="1" />
-		<DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" SelectedDate="{Binding Path=Date, Mode=TwoWay}" SelectedDateFormat="Long" CalendarStyle="{StaticResource GridEditStyle}" DisplayDateEnd="1/1/2300" DisplayDateStart="1/1/1900" FirstDayOfWeek="Sunday" />
-		<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Thread, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="2" />
-		<TextBox Text="{Binding Path=Thread, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" />
-		<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Level, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="3" />
-		<TextBox Text="{Binding Path=Level, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
-		<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Logger, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="4" />
-		<TextBox Text="{Binding Path=Logger, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="4" />
-		<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Message, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="5" />
-		<TextBox Text="{Binding Path=Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5" />
-		<TextBlock Text="{Binding Path=Log4Net_Resources_UIStringResourcePerEntityLog.Exception, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="6" />
-		<TextBox Text="{Binding Path=Exception, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="6" />
+        <TextBlock Text="{Binding Path=Log4Net_Resx_UIStringResourcePerEntityLog.Id, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="1" />
+        <TextBlock Text="{Binding Path=Id, Mode=OneWay}" Grid.Column="1" Grid.Row="1" />
+        <TextBlock Text="{Binding Path=Log4Net_Resx_UIStringResourcePerEntityLog.Date, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="2" />
+        <DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" SelectedDate="{Binding Path=Date, Mode=TwoWay}" SelectedDateFormat="Long" CalendarStyle="{StaticResource GridEditStyle}" DisplayDateEnd="1/1/2300" DisplayDateStart="1/1/1900" FirstDayOfWeek="Sunday" />
+        <TextBlock Text="{Binding Path=Log4Net_Resx_UIStringResourcePerEntityLog.Thread, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="3" />
+        <TextBox Text="{Binding Path=Thread, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" />
+        <TextBlock Text="{Binding Path=Log4Net_Resx_UIStringResourcePerEntityLog.Level, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="4" />
+        <TextBox Text="{Binding Path=Level, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="4" />
+        <TextBlock Text="{Binding Path=Log4Net_Resx_UIStringResourcePerEntityLog.Logger, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="5" />
+        <TextBox Text="{Binding Path=Logger, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="5" />
+        <TextBlock Text="{Binding Path=Log4Net_Resx_UIStringResourcePerEntityLog.Message, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="6" />
+        <TextBox Text="{Binding Path=Message, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="6" />
+        <TextBlock Text="{Binding Path=Log4Net_Resx_UIStringResourcePerEntityLog.Exception, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="7" />
+        <TextBox Text="{Binding Path=Exception, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="7" />
     </Grid>
 </UserControl>

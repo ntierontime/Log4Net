@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <data name="Account_ChangePassword_TitleText" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Account_ChangePassword_LegendText" xml:space="preserve">
+    <value>Change Password Form</value>
+  </data>
+  <data name="Account_ChangePassword_SubmitValue" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_Button_CheckUserNameAvailabilityText" xml:space="preserve">
+    <value>Check Availability</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_ThisUserNameIsNotAvailableLabelText" xml:space="preserve">
+    <value>This UserName is not Available, please try another one.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_TitleText" xml:space="preserve">
+    <value>Create New User Wizard</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_DuiplicateEmail" xml:space="preserve">
+    <value>The password provided is invalid. Please enter a valid password value.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_InvalidPassword" xml:space="preserve">
+    <value>The password provided is invalid. Please enter a valid password value.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_InvalidEmail" xml:space="preserve">
+    <value>The e-mail address provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_InvalidAnswer" xml:space="preserve">
+    <value>The password retrieval answer provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_InvalidQuestion" xml:space="preserve">
+    <value>The password retrieval question provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_InvalidUserName" xml:space="preserve">
+    <value>The user name provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_ProviderError" xml:space="preserve">
+    <value>The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_UserRejected" xml:space="preserve">
+    <value>The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="Account_CreateNewUserWizard_UnknownError" xml:space="preserve">
+    <value>An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="Account_ExternalLogin_TitleText" xml:space="preserve">
+    <value>Log in using another service</value>
+  </data>
+  <data name="Account_ExternalLogin_DescriptionText" xml:space="preserve">
+    <value>Log in using your {0} account.</value>
+  </data>
+  <data name="Account_ExternalLogin_NoExternalLoginText" xml:space="preserve">
+    <value>There are no external authentication services configured.</value>
+  </data>
+  <data name="Account_ExternalLogin_RemovedExternalLoginTitle" xml:space="preserve">
+    <value>Remove this {0} credential from your account</value>
+  </data>
+  <data name="Account_ExternalLogin_AssociateExternalLoginTitle" xml:space="preserve">
+    <value>Associate your {0} account.</value>
+  </data>
+  <data name="Account_ExternalLogin_AssociateExternalLoginLegend" xml:space="preserve">
+    <value>Association Form</value>
+  </data>
+  <data name="Account_ExternalLogin_AssociateExternalLoginSuccess" xml:space="preserve">
+    <value>You've successfully authenticated with &lt;strong&gt;{0}&lt;/strong&gt;. Please enter a user name for this site below and click the Confirm button to finish logging in.</value>
+  </data>
+  <data name="Account_ExternalLogin_SetPasswordLegend" xml:space="preserve">
+    <value>Set Password Form</value>
+  </data>
+  <data name="Account_ExternalLogin_SetPasswordDescription" xml:space="preserve">
+    <value>ou do not have a local password for this site. Add a local password so you can log in without an external login.</value>
+  </data>
+  <data name="Account_ExternalLogin_SetPasswordSubmitValue" xml:space="preserve">
+    <value>Set Password</value>
+  </data>
+  <data name="Account_ExternalLogin_LoginFailureTitle" xml:space="preserve">
+    <value>Login Failure</value>
+  </data>
+  <data name="Account_ExternalLogin_LoginFailureDescription" xml:space="preserve">
+    <value>Unsuccessful login with service.</value>
+  </data>
+  <data name="Account_ExternalLogin_Registeredexternallogins" xml:space="preserve">
+    <value>Registered external logins.</value>
+  </data>
+  <data name="Account_ExternalLogin_AssociationTitleText" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Account_ExternalLogin_AssociationSubmitValue" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Account_LogIn_FailureText" xml:space="preserve">
+    <value>Your login attempt was not successful. Please try again.</value>
+  </data>
+  <data name="Account_LogIn_InstructionText" xml:space="preserve">
+    <value>Login InstructionText</value>
+  </data>
+  <data name="Account_LogIn_LoginButtonText" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="Account_LogIn_RememberMeText" xml:space="preserve">
+    <value>Remember me next time.</value>
+  </data>
+  <data name="Account_LogIn_TitleText" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="Account_LogIn_Useanotherservicetologin" xml:space="preserve">
+    <value>Use another service to log in.</value>
+  </data>
+  <data name="Account_LogIn_Usealocalaccounttologin" xml:space="preserve">
+    <value>Use a local account to log in.</value>
+  </data>
+  <data name="Account_LogIn_Legend" xml:space="preserve">
+    <value>Log in Form</value>
+  </data>
+  <data name="Account_LogIn_ifyoudonthaveanaccount" xml:space="preserve">
+    <value>if you don't have an account.</value>
+  </data>
+  <data name="Account_LogInStatus_LoginText" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Account_LogInStatus_LogoutText" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Account_Manage_TitleText" xml:space="preserve">
+    <value>Manage Account</value>
+  </data>
+  <data name="Account_Manage_Youreloggedinas" xml:space="preserve">
+    <value>You're logged in as </value>
+  </data>
+  <data name="Account_Manage_Addanexternallogin" xml:space="preserve">
+    <value>Add an external login.</value>
+  </data>
+  <data name="Account_Register_TitleText" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Account_Register_Legend" xml:space="preserve">
+    <value>Registration Form</value>
+  </data>
+  <data name="Account_Register_DescriptionText" xml:space="preserve">
+    <value>Create a new account.</value>
+  </data>
+  <data name="Account_Register_SubmitValue" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Account_PasswordRecovery_GeneralFailureText" xml:space="preserve">
+    <value>Your attempt to retrieve your password was not successful. Please try again.</value>
+  </data>
+  <data name="Account_PasswordRecovery_QuestionFailureText" xml:space="preserve">
+    <value>Your answer could not be verified. Please try again.</value>
+  </data>
+  <data name="Account_PasswordRecovery_QuestionInstructionText" xml:space="preserve">
+    <value>Answer the following question to receive your password.</value>
+  </data>
+  <data name="Account_PasswordRecovery_QuestionTitle" xml:space="preserve">
+    <value>Identity Confirmation</value>
+  </data>
+  <data name="Account_PasswordRecovery_SuccessText" xml:space="preserve">
+    <value>Your password has been sent to you.</value>
+  </data>
+  <data name="Account_PasswordRecovery_TitleText" xml:space="preserve">
+    <value>Forgot Your Password</value>
+  </data>
+  <data name="Account_PasswordRecovery_UserNameFailureText" xml:space="preserve">
+    <value>We were unable to access your information. Please try again.</value>
+  </data>
+  <data name="Account_PasswordRecovery_UserNameInstructionText" xml:space="preserve">
+    <value>Enter your User Name to receive your password.</value>
+  </data>
+  <data name="Account_PasswordRecovery_UserNameTitleText" xml:space="preserve">
+    <value>Forgot Your Password?</value>
+  </data>
+  <data name="Account_ChangePasswordSuccess" xml:space="preserve">
+    <value>Your password has been changed.</value>
+  </data>
+  <data name="Account_SetPasswordSuccess" xml:space="preserve">
+    <value>Your password has been set.</value>
+  </data>
+  <data name="Account_RemoveLoginSucess" xml:space="preserve">
+    <value>The external login was removed.</value>
+  </data>
+  <data name="Account__ChangePasswordPartial_Youreloggedinas" xml:space="preserve">
+    <value>You're logged in as </value>
+  </data>
+  <data name="Account__ChangePasswordPartial_Description" xml:space="preserve">
+    <value>Change Password Form </value>
+  </data>
+  <data name="Account__ChangePasswordPartial_SubmitValue" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Account__ExternalLoginsListPartial_Useanotherservicetologin" xml:space="preserve">
+    <value>Use another service to log in.</value>
+  </data>
+  <data name="Account__ExternalLoginsListPartial_Description" xml:space="preserve">
+    <value>There are no external authentication services configured. See &lt;a href="http://go.microsoft.com/fwlink/?LinkId=313242"&gt;this article&lt;/a&gt; for details on setting up this ASP.NET application to support logging in via external services.</value>
+  </data>
+  <data name="Account__ExternalLoginsListPartial_Loginusingyouraccountas" xml:space="preserve">
+    <value>Log in using your account as .</value>
+  </data>
+  <data name="Account__RemoveAccountPartial_Title" xml:space="preserve">
+    <value>Registered Logins</value>
+  </data>
+  <data name="Account__RemoveAccountPartial_ButtonText" xml:space="preserve">
+    <value>Remove login from your account:</value>
+  </data>
+  <data name="Account__SetPasswordPartial_Description" xml:space="preserve">
+    <value>You do not have a local username/password for this site. Add a local account so you can log in without an external login.</value>
+  </data>
+  <data name="Account__SetPasswordPartial_Title" xml:space="preserve">
+    <value>Create Local Login</value>
+  </data>
+  <data name="Account__SetPasswordPartial_SubmitValue" xml:space="preserve">
+    <value>Set password</value>
+  </data>
+  <data name="Account_ConfirmEmail_ConfirmAccount" xml:space="preserve">
+    <value>Confirm Account</value>
+  </data>
+  <data name="Account_ConfirmEmail_ThankyouforconfirmingyouraccountPlease" xml:space="preserve">
+    <value>Thank you for confirming your account. Please</value>
+  </data>
+  <data name="Account_ConfirmEmail_ClickHereToLogIn" xml:space="preserve">
+    <value>Click Here To Log In</value>
+  </data>
+  <data name="Account_ExternalLoginConfirmation_Title" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Account_ExternalLoginConfirmation_SuccessDescripionPart1" xml:space="preserve">
+    <value>You've successfully authenticated with </value>
+  </data>
+  <data name="Account_ExternalLoginConfirmation_SuccessDescripionPart2" xml:space="preserve">
+    <value>Please enter a user name for this site below and click the Register button to finish logging in. </value>
+  </data>
+  <data name="Account_ExternalLoginConfirmation_Associateyouraccountof" xml:space="preserve">
+    <value>Associate your account of </value>
+  </data>
+  <data name="Account_ExternalLoginConfirmation_SubmitValue" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Account_ExternalLoginFailure_Description" xml:space="preserve">
+    <value>Unsuccessful login with service.</value>
+  </data>
+  <data name="Account_ExternalLoginFailure_Title" xml:space="preserve">
+    <value>Login Failure</value>
+  </data>
+  <data name="Account_ForgotPassword_Title" xml:space="preserve">
+    <value>Forget your email.</value>
+  </data>
+  <data name="Account_ForgotPassword_Description" xml:space="preserve">
+    <value>Enter your email.</value>
+  </data>
+  <data name="Account_ForgotPassword_SubmitValue" xml:space="preserve">
+    <value>Continue.</value>
+  </data>
+  <data name="Account_ForgotPasswordConfirmation_Description" xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
+  <data name="Account_ForgotPasswordConfirmation_Title" xml:space="preserve">
+    <value>Forgot Password Confirmation</value>
+  </data>
+  <data name="Account_LogIn_Registerasanewuser" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="Account_LogIn_Enablethisonceyouhaveaccountconfirmationenabledforpasswordresetfunctionality" xml:space="preserve">
+    <value>Enable this once you have account confirmation enabled for password reset functionality</value>
+  </data>
+  <data name="Account_LogIn_Description" xml:space="preserve">
+    <value>Use a local account to log in.</value>
+  </data>
+  <data name="Account_ResetPassword_Title" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="Account_ResetPassword_Description" xml:space="preserve">
+    <value>Reset your password.</value>
+  </data>
+  <data name="Account_ResetPassword_SubmitValue" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Account_ResetPasswordConfirmation_Title" xml:space="preserve">
+    <value>Reset password confirmation</value>
+  </data>
+  <data name="Account_ResetPasswordConfirmation_Description" xml:space="preserve">
+    <value>Your password has been reset. Please </value>
+  </data>
+  <data name="Account_ResetPasswordConfirmation_clickheretologin" xml:space="preserve">
+    <value>click here to log in</value>
+  </data>
+  <data name="BacktoList" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
+  <data name="Common_AnswerErrorMessage" xml:space="preserve">
+    <value>Answer cannot be same as Question</value>
+  </data>
+  <data name="Common_AnswerLabelText" xml:space="preserve">
+    <value>Answer:</value>
+  </data>
+  <data name="Common_AnswerRequiredErrorMessage" xml:space="preserve">
+    <value>Answer is required.</value>
+  </data>
+  <data name="Common_ConfirmPasswordLabelText" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Common_ConfirmPasswordNotMatchErrorMessage" xml:space="preserve">
+    <value>Passwords do not match!</value>
+  </data>
+  <data name="Common_ConfirmPasswordRequiredErrorMessage" xml:space="preserve">
+    <value>Confirm Password is required.</value>
+  </data>
+  <data name="Common_EmailFormatErrorMessage" xml:space="preserve">
+    <value>Email format is not correct.</value>
+  </data>
+  <data name="Common_EmailLabelText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Common_EmailRequiredErrorMessage" xml:space="preserve">
+    <value>Email is required.</value>
+  </data>
+  <data name="Common_CurrentPasswordLabelText" xml:space="preserve">
+    <value>Current Password:</value>
+  </data>
+  <data name="Common_NewPasswordLabelText" xml:space="preserve">
+    <value>New Password:</value>
+  </data>
+  <data name="Common_PasswordLabelText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Common_PasswordRequiredErrorMessage" xml:space="preserve">
+    <value>Password is required.</value>
+  </data>
+  <data name="Common_PasswordLengthErrorMessage" xml:space="preserve">
+    <value>Password length: 6-20 characters.</value>
+  </data>
+  <data name="Common_PasswordErrorMessage" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="Common_QuestionLabelText" xml:space="preserve">
+    <value>Question:</value>
+  </data>
+  <data name="Common_QuestionRequiredErrorMessage" xml:space="preserve">
+    <value>Question is required.</value>
+  </data>
+  <data name="Common_SubmitValue" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Common_UserNameLabelText" xml:space="preserve">
+    <value>User Name:</value>
+  </data>
+  <data name="Common_UserNameRequiredErrorMessage" xml:space="preserve">
+    <value>User Name is required.</value>
+  </data>
+  <data name="Common_WelcomeToNTIERONTIME" xml:space="preserve">
+    <value>Welcome to nTier on Time.</value>
+  </data>
+  <data name="Common_AboutPageTitle" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Common_ContactPageTitle" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="Common_Nodatawasreturned" xml:space="preserve">
+    <value>No data was returned.</value>
+  </data>
+  <data name="Common_Url_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Common_Url_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Common_Url_Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Common_Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="Common_Workspaces" xml:space="preserve">
+    <value>Workspaces</value>
+  </data>
+  <data name="Common_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Contact_PhoneText" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Contact_AddressText" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Contact_EmailText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Home_TitleText" xml:space="preserve">
+    <value>Home Page</value>
+  </data>
+  <data name="Home_DescriptionText" xml:space="preserve">
+    <value>Home Page</value>
+  </data>
+  <data name="Error_TitleText" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error_DescriptionText" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="Warning_Areyousureyouwanttodeletethis" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="Workspace_DescriptionText" xml:space="preserve">
+    <value>Workspace</value>
+  </data>
+  <data name="On_DescriptionText" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Off_DescriptionText" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Common_Pagination_ItemsPerPage" xml:space="preserve">
+    <value>Items Per Page</value>
+  </data>
+  <data name="Common_Pagination_SortBy" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="Data_Import_DescriptionText" xml:space="preserve">
+    <value>You can import .csv and .xlsx with first heading row in following format:</value>
+  </data>
+  <data name="Data_Import_Success" xml:space="preserve">
+    <value>Data Import Success</value>
+  </data>
+  <data name="Data_Import_NoRecordInSourceFile" xml:space="preserve">
+    <value>No Record In Source File</value>
+  </data>
+  <data name="Data_Import_Notaproperfile" xml:space="preserve">
+    <value>File Format or File Content is wrong</value>
+  </data>
+  <data name="Received" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="BeingProcessed" xml:space="preserve">
+    <value>BeingProcessed</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="Accepted" xml:space="preserve">
+    <value>Accepted</value>
+  </data>
+  <data name="Succeeded" xml:space="preserve">
+    <value>Succeeded</value>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>OnHold</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="RequestError" xml:space="preserve">
+    <value>Request Error</value>
+  </data>
+  <data name="MessageOK" xml:space="preserve">
+    <value>Message OK</value>
+  </data>
+  <data name="NoValueFromDataSource" xml:space="preserve">
+    <value>No Value From DataSource</value>
+  </data>
+  <data name="MessageErrorDetected" xml:space="preserve">
+    <value>Message Error Detected</value>
+  </data>
+  <data name="YouHaveNoPermissionToView" xml:space="preserve">
+    <value>You Have No Permission To View</value>
+  </data>
+  <data name="YouHaveNoPermissionToInsert" xml:space="preserve">
+    <value>You Have NoPermissionTo Insert</value>
+  </data>
+  <data name="YouHaveNoPermissionToUpdate" xml:space="preserve">
+    <value>You Have No Permission To Update</value>
+  </data>
+  <data name="YouHaveNoPermissionToDelete" xml:space="preserve">
+    <value>You Have No Permission To Delete</value>
+  </data>
+  <data name="Pagination_ItemsPerPage" xml:space="preserve">
+    <value>Items per page : </value>
+  </data>
+  <data name="Pagination_SortBy" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="Pagination_NoData" xml:space="preserve">
+    <value>0 Record in Current Page</value>
+  </data>
+  <data name="Pagination_PagingInformation" xml:space="preserve">
+    <value>Page# {5} out of {4}. {0} Records: ({1} - {2}) out of {3}</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Quit" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="QuitApplication" xml:space="preserve">
+    <value>Quit Application</value>
+  </data>
+  <data name="QuitApplicationMessage" xml:space="preserve">
+    <value>Do you want to quit application?</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_LastTenYears" xml:space="preserve">
+    <value>Last Ten Years</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_LastFiveYears" xml:space="preserve">
+    <value>Last Five Years</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_LastYear" xml:space="preserve">
+    <value>Last Year</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_LastSixMonths" xml:space="preserve">
+    <value>Last Six Months</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_LastThreeMonths" xml:space="preserve">
+    <value>Last Three Months</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_LastMonth" xml:space="preserve">
+    <value>Last Month</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_LastWeek" xml:space="preserve">
+    <value>Last Week</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_Yesterday" xml:space="preserve">
+    <value>Yesterday</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_ThisYear" xml:space="preserve">
+    <value>This Year</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_ThisMonth" xml:space="preserve">
+    <value>This Month</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_ThisWeek" xml:space="preserve">
+    <value>This Week</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_Today" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_Tomorrow" xml:space="preserve">
+    <value>Tomorrow</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_NextWeek" xml:space="preserve">
+    <value>Next Week</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_NextMonth" xml:space="preserve">
+    <value>Next Month</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_NextThreeMonths" xml:space="preserve">
+    <value>Next Three Months</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_NextSixMonths" xml:space="preserve">
+    <value>Next Six Months</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_NextYear" xml:space="preserve">
+    <value>Next Year</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_NextFiveYears" xml:space="preserve">
+    <value>Next Five Years</value>
+  </data>
+  <data name="PreDefinedDateTimeRanges_NextTenYears" xml:space="preserve">
+    <value>Next Ten Years</value>
+  </data>
+  <data name="PredefinedBooleanSelectedValues_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="PredefinedBooleanSelectedValues_True" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="PredefinedBooleanSelectedValues_False" xml:space="preserve">
+    <value>False</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="AllCaption" xml:space="preserve">
+    <value>-- All --</value>
+  </data>
+  <data name="SelectCaption" xml:space="preserve">
+    <value>-- Select --</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Attachment" xml:space="preserve">
+    <value>Attachment</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Bookmark" xml:space="preserve">
+    <value>Bookmark</value>
+  </data>
+  <data name="Calendar" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Chart" xml:space="preserve">
+    <value>Chart</value>
+  </data>
+  <data name="Checkbox_Checked" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="Checkbox_Unchecked" xml:space="preserve">
+    <value>Unchecked</value>
+  </data>
+  <data name="Clock" xml:space="preserve">
+    <value>Clock</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CreateUser" xml:space="preserve">
+    <value>Create User</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportToExcel" xml:space="preserve">
+    <value>Export To Excel</value>
+  </data>
+  <data name="Favorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="FileReplace" xml:space="preserve">
+    <value>File Replace</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="FullDetails" xml:space="preserve">
+    <value>Full Details</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="GotoSearch" xml:space="preserve">
+    <value>Goto Search</value>
+  </data>
+  <data name="Heart" xml:space="preserve">
+    <value>Heart</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Insert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="LoadFile" xml:space="preserve">
+    <value>Load File</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="MailLock" xml:space="preserve">
+    <value>Mail Lock</value>
+  </data>
+  <data name="MailReceive" xml:space="preserve">
+    <value>Mail Receive</value>
+  </data>
+  <data name="MailSearch" xml:space="preserve">
+    <value>Mail Search</value>
+  </data>
+  <data name="MailSend" xml:space="preserve">
+    <value>Mail Send</value>
+  </data>
+  <data name="Minus" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="Money" xml:space="preserve">
+    <value>Money</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="NewFile" xml:space="preserve">
+    <value>New File</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NumericDown" xml:space="preserve">
+    <value>Numeric Down</value>
+  </data>
+  <data name="NumericUp" xml:space="preserve">
+    <value>Numeric Up</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="PageSize" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="PasswordRecovery" xml:space="preserve">
+    <value>Password Recovery</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="PieChart" xml:space="preserve">
+    <value>Pie Chart</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="Plus" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Process" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Promotion</value>
+  </data>
+  <data name="Protection" xml:space="preserve">
+    <value>Protection</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="Record" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="Recycle" xml:space="preserve">
+    <value>Recycle</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Repeat" xml:space="preserve">
+    <value>Repeat</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="Rss" xml:space="preserve">
+    <value>Rss</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchPage" xml:space="preserve">
+    <value>Search Page</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="ShoppingCart" xml:space="preserve">
+    <value>Shopping Cart</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="TagBlue" xml:space="preserve">
+    <value>Tag Blue</value>
+  </data>
+  <data name="TagGreen" xml:space="preserve">
+    <value>Tag Green</value>
+  </data>
+  <data name="TextPage" xml:space="preserve">
+    <value>Text Page</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="ToggleButton_Checked" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="ToggleButton_Unchecked" xml:space="preserve">
+    <value>Unchecked</value>
+  </data>
+  <data name="Tutorial" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+
+</root>
+

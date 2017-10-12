@@ -72,7 +72,7 @@ namespace Framework
         /// <value>
         /// The sender.
         /// </value>
-		public string SenderView { get; set; }
+        public string SenderView { get; set; }
 
         /// <summary>
         /// Gets or sets the UI action.
@@ -80,7 +80,7 @@ namespace Framework
         /// <value>
         /// The UI action.
         /// </value>
-		public UIAction UIAction { get; set; }
+        public UIAction UIAction { get; set; }
 
         /// <summary>
         /// Gets or sets the UI action status.
@@ -106,5 +106,5 @@ namespace Framework
         }
 
         #endregion override string ToString()
-	}
+    }
 }

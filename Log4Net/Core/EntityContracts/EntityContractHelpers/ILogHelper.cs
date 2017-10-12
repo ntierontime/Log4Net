@@ -5,12 +5,12 @@ using System.Runtime.Serialization;
 namespace Log4Net.EntityContracts
 {
     /// <summary>
-    /// provides common methods/actions/stubs on an entity. 
+    /// provides common methods/actions/stubs on an entity.
     /// </summary>
-	public static class ILogHelper
-	{
+    public static partial class ILogHelper
+    {
 
-		#region Copy<...>(...), Equals<...>(...), Clone<...>(...), ToString<...>(...), 
+        #region Copy<...>(...), Equals<...>(...), Clone<...>(...), ToString<...>(...),
 
         /// <summary>
         /// Copies the specified from.
@@ -23,22 +23,18 @@ namespace Log4Net.EntityContracts
             where T1 : ILog
             where T2 : ILog
         {
-			to.Id = from.Id;
-			to.Date = from.Date;
-			to.Thread = from.Thread;
-			to.Level = from.Level;
-			to.Logger = from.Logger;
-			to.Message = from.Message;
-			to.Exception = from.Exception;
-        } 
+            to.Id = from.Id;
+            to.Date = from.Date;
+            to.Thread = from.Thread;
+            to.Level = from.Level;
+            to.Logger = from.Logger;
+            to.Message = from.Message;
+            to.Exception = from.Exception;
+        }
 
+        #region special copy
 
-		#region special copy
-
-
-
-
-		#endregion special copy
+        #endregion special copy
 
         /// <summary>
         /// Equals the specified from.
@@ -52,15 +48,15 @@ namespace Log4Net.EntityContracts
             where T1 : ILog
             where T2 : ILog
         {
-			bool _retval = true;
-			_retval = _retval && to.Id == from.Id;
-			_retval = _retval && to.Date == from.Date;
-			_retval = _retval && to.Thread == from.Thread;
-			_retval = _retval && to.Level == from.Level;
-			_retval = _retval && to.Logger == from.Logger;
-			_retval = _retval && to.Message == from.Message;
-			_retval = _retval && to.Exception == from.Exception;
-			return _retval;
+            bool _retval = true;
+            _retval = _retval && to.Id == from.Id;
+            _retval = _retval && to.Date == from.Date;
+            _retval = _retval && to.Thread == from.Thread;
+            _retval = _retval && to.Level == from.Level;
+            _retval = _retval && to.Logger == from.Logger;
+            _retval = _retval && to.Message == from.Message;
+            _retval = _retval && to.Exception == from.Exception;
+            return _retval;
         }
 
         /// <summary>
@@ -78,8 +74,7 @@ namespace Log4Net.EntityContracts
             return _retval;
         }
 
-
-		static string m_Format = "Id:{0};Date:{1};Thread:{2};Level:{3};Logger:{4};Message:{5};Exception:{6};";
+        static string m_Format = "Id:{0};Date:{1};Thread:{2};Level:{3};Logger:{4};Message:{5};Exception:{6};";
         /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance.
         /// </summary>
@@ -92,19 +87,19 @@ namespace Log4Net.EntityContracts
             where T : ILog
         {
             return string.Format(m_Format
-				, input.Id
-				, input.Date
-				, input.Thread
-				, input.Level
-				, input.Logger
-				, input.Message
-				, input.Exception
-				);
+                , input.Id
+                , input.Date
+                , input.Thread
+                , input.Level
+                , input.Logger
+                , input.Message
+                , input.Exception
+                );
         }
 
-		#endregion Copy<...>(...), Equals<...>(...), Clone<...>(...), ToString<...>(...), 
+        #endregion Copy<...>(...), Equals<...>(...), Clone<...>(...), ToString<...>(...),
 
-		#region CopyCollection<...>(...), CloneCollection<...>(...)
+        #region CopyCollection<...>(...), CloneCollection<...>(...)
 
         /// <summary>
         /// Copies the collection.
@@ -146,9 +141,9 @@ namespace Log4Net.EntityContracts
             T2Collection _retval = new T2Collection();
             CopyCollection<T1Collection, T2Collection, T1, T2>(from, _retval);
             return _retval;
-        } 
+        }
 
-		#endregion CopyCollection<...>(...), CloneCollection<...>(...)
+        #endregion CopyCollection<...>(...), CloneCollection<...>(...)
 
         #region GetDefaultValue<T>()
 
@@ -162,17 +157,12 @@ namespace Log4Net.EntityContracts
         {
             T _retval = new T();
 
-
-
-
             return _retval;
         }
 
         #endregion GetDefaultValue<T>()
 
         #region NameValuePair related method
-
-
 
         /// <summary>
         /// Builds the name of name value pair.
@@ -185,7 +175,6 @@ namespace Log4Net.EntityContracts
         {
             return string.Format("{0}", input.Thread);
         }
-
 
         /// <summary>
         /// Builds the name value pair.
@@ -200,15 +189,12 @@ namespace Log4Net.EntityContracts
             return _retval;
         }
 
-
-
         #endregion NameValuePair related method
 
-		#region Binary In File System,  BuildPhysicalFileFullPathOfProperty...<T>(T input)
+        #region Binary In File System,  BuildPhysicalFileFullPathOfProperty...<T>(T input)
 
+        #endregion Binary In File System,  BuildPhysicalFileFullPathOfProperty...<T>(T input)
 
-		#endregion Binary In File System,  BuildPhysicalFileFullPathOfProperty...<T>(T input)
-
-	}
+    }
 }
 

@@ -26,3 +26,4 @@ namespace Log4Net.WPF4App.UserControls.Log
         }
     }
 }
+

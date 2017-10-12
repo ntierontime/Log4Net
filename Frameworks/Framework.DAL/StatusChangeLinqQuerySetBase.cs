@@ -16,11 +16,10 @@ namespace Framework.DAL
     {
         #region Constructors
 
-
         /// <summary>
         /// Initializes a new instance of the <see cref="StatusChangeLinqQuerySetBase&lt;TCollection, T&gt;"/> class.
         /// </summary>
-		public StatusChangeLinqQuerySetBase()
+        public StatusChangeLinqQuerySetBase()
         {
         }
 
@@ -61,7 +60,7 @@ namespace Framework.DAL
         public Dictionary<short, IQueryable<T>> LinqQuerySet { get; set; }
 
     }
-
+/*
     /// <summary>
     ///  ??
     /// </summary>
@@ -75,12 +74,12 @@ namespace Framework.DAL
     /// <typeparam name="TDataContext">The type of the data context.</typeparam>
     public abstract class StatusChangeLinqQuerySetBase<
             TResult, TCollection, T
-			, TProcessStatus
+            , TProcessStatus
             , TRawStatusChangeLinqQuerySet
             , TRawCollection, TRaw, TDataContext>
         : StatusChangeLinqQuerySetBase<TCollection, T>
         where TResult : Framework.DataSourceEntities.StatusChangeLinqQueryResultBase<TCollection, T, TProcessStatus>, new()
-		where TProcessStatus : Framework.DataSourceEntities.IProcessStatus, new()
+        where TProcessStatus : Framework.DataSourceEntities.IProcessStatus, new()
         where TCollection : List<T>, new()
         where T : new()
         where TRawStatusChangeLinqQuerySet : StatusChangeLinqQuerySetBase<TRawCollection, TRaw>, new()
@@ -110,8 +109,8 @@ namespace Framework.DAL
         }
 
         #endregion Constructors
-		
-		#region properties
+
+        #region properties
 
         /// <summary>
         /// Gets or sets the raw status change linq query set.
@@ -128,50 +127,50 @@ namespace Framework.DAL
         /// </value>
         public TDataContext DataContext { get; set; }
 
-		#endregion properties
+        #endregion properties
 
-		#region abstract void BuildQuery();
+        #region abstract void BuildQuery();
 
         /// <summary>
         /// Builds the query.
         /// </summary>
         public abstract void BuildQuery();
 
-		#endregion abstract void BuildQuery();
+        #endregion abstract void BuildQuery();
 
-		#region TResult RunQuery()
+        #region TResult RunQuery()
 
         /// <summary>
         /// Runs the query.
         /// </summary>
         /// <returns>Result</returns>
-		public TResult RunQuery()
+        public TResult RunQuery()
         {
             TResult _TResult = new TResult();
-			_TResult.ProcessStatus = new TProcessStatus();
+            _TResult.ProcessStatus = new TProcessStatus();
             foreach (KeyValuePair<short, IQueryable<T>> _KVPair in this.LinqQuerySet)
             {
                 if (_KVPair.Key == 0)
                 {
                     _TResult.CollectionForRemovedEntries = new TCollection();
                     _TResult.CollectionForRemovedEntries.AddRange(_KVPair.Value.ToArray());
-					_TResult.ProcessStatus.CountForRemovedEntries = _TResult.CollectionForRemovedEntries.Count();
+                    _TResult.ProcessStatus.CountForRemovedEntries = _TResult.CollectionForRemovedEntries.Count();
                 }
                 else if (_KVPair.Key == 1)
                 {
                     _TResult.CollectionForNewEntries = new TCollection();
                     _TResult.CollectionForNewEntries.AddRange(_KVPair.Value.ToArray());
-					_TResult.ProcessStatus.CountForNewEntries = _TResult.CollectionForNewEntries.Count();
+                    _TResult.ProcessStatus.CountForNewEntries = _TResult.CollectionForNewEntries.Count();
                 }
                 else if (_KVPair.Key == 2)
                 {
                     _TResult.CollectionForRefoundEntries = new TCollection();
                     _TResult.CollectionForRefoundEntries.AddRange(_KVPair.Value.ToArray());
-					_TResult.ProcessStatus.CountForReFoundEntries = _TResult.CollectionForRefoundEntries.Count();
+                    _TResult.ProcessStatus.CountForReFoundEntries = _TResult.CollectionForRefoundEntries.Count();
                 }
                 else if (_KVPair.Key == 3)
                 {
-					_TResult.ProcessStatus.CountForNotUpdatedEntries = _KVPair.Value.Count();
+                    _TResult.ProcessStatus.CountForNotUpdatedEntries = _KVPair.Value.Count();
                 }
                 else
                 {
@@ -180,20 +179,22 @@ namespace Framework.DAL
                         _TResult.CollectionForUpdatedEntries = new TCollection();
                     }
                     _TResult.CollectionForUpdatedEntries.AddRange(_KVPair.Value.ToArray());
-					_TResult.ProcessStatus.CountForUpdatedEntries += _TResult.CollectionForUpdatedEntries.Count();
+                    _TResult.ProcessStatus.CountForUpdatedEntries += _TResult.CollectionForUpdatedEntries.Count();
                 }
-				_TResult.ProcessStatus.TotalCount = 
-					_TResult.ProcessStatus.CountForRemovedEntries +
-					_TResult.ProcessStatus.CountForNewEntries +
-					_TResult.ProcessStatus.CountForReFoundEntries +
-					_TResult.ProcessStatus.CountForNotUpdatedEntries +
-					_TResult.ProcessStatus.CountForUpdatedEntries;
+                _TResult.ProcessStatus.TotalCount =
+                    _TResult.ProcessStatus.CountForRemovedEntries +
+                    _TResult.ProcessStatus.CountForNewEntries +
+                    _TResult.ProcessStatus.CountForReFoundEntries +
+                    _TResult.ProcessStatus.CountForNotUpdatedEntries +
+                    _TResult.ProcessStatus.CountForUpdatedEntries;
             }
 
             return _TResult;
-	    }
+        }
 
-		#endregion TResult RunQuery()
+        #endregion TResult RunQuery()
 
     }
+*/
 }
+

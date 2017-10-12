@@ -3,32 +3,113 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:Log4Net.ViewModels;assembly=Log4Net.ViewModels"
-	xmlns:fvm="clr-namespace:Framework.Xaml;assembly=Framework.Xaml"
+    xmlns:vm="clr-namespace:Log4Net.MVVMLightViewModels;assembly=Log4Net.MVVMLightViewModels"
+    xmlns:fvm="clr-namespace:Framework.Xaml;assembly=Framework.Xaml"
     mc:Ignorable="d"
     >
-    <!--Global View Model Locator-->
-    <fvm:BoolToVisibilityConverter x:Key="boolToVis" />
+    <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    <Style x:Key="RectangleStyle" TargetType="Rectangle">
+        <Setter Property = "Stretch" Value="Fill"/>
+        <Setter Property = "Fill" Value="LightBlue"/>
+        <Setter Property = "RadiusX" Value="15"/>
+        <Setter Property = "RadiusY" Value="15"/>
+        <Setter Property = "Width" Value="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}}"/>
+    </Style>
+    <Style x:Key="BorderStyle" TargetType="Border">
+        <Setter Property = "BorderBrush" Value="White"/>
+        <Setter Property = "BorderThickness" Value="2"/>
+        <Setter Property = "Padding" Value="10"/>
+    </Style>
+    <Style x:Key="Heading" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <Style x:Key="SubHeading" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style x:Key="ItemHeaderStyler">
+        <Setter Property="ListBoxItem.Margin" Value="0,2,0,5"/>
+        <Setter Property="ListBoxItem.Padding" Value="2"/>
+        <Setter Property="ListBoxItem.FontFamily" Value="Verdana"/>
+        <Setter Property="ListBoxItem.FontWeight" Value="Bold"/>
+        <Setter Property="ListBoxItem.FontSize" Value="12"/>
+    </Style>
+    <Style x:Key="ImageStyler">
+        <Setter Property="TextBlock.Margin" Value="15"/>
+    </Style>
+    <Style x:Key="HeaderStyle">
+        <Setter Property="TextBlock.FontFamily" Value="Verdana" />
+        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.FontSize" Value="20" />
+        <Setter Property="TextBlock.Margin" Value="10" />
+    </Style>
+    <Style x:Key="SubHeaderStyle">
+        <Setter Property="TextBlock.FontFamily" Value="Verdana" />
+        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.FontSize" Value="16" />
+        <Setter Property="TextBlock.Foreground" Value="#666699" />
+        <Setter Property="TextBlock.Margin" Value="10" />
+    </Style>
+    <Style x:Key="DisStyle">
+        <Setter Property="TextBlock.FontFamily" Value="Verdana" />
+        <Setter Property="TextBlock.FontSize" Value="8" />
+        <Setter Property="TextBlock.Foreground" Value="#999999" />
+        <Setter Property="TextBlock.Margin" Value="5,0,5,0" />
+    </Style>
+    <Style x:Key="MainContentStyle">
+        <Setter Property="TextBlock.FontFamily" Value="Verdana" />
+        <Setter Property="TextBlock.FontSize" Value="11" />
+        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+        <Setter Property="TextBlock.Margin" Value="5,10,5,10" />
+    </Style>
+    <Style x:Key="TocStyle">
+        <Setter Property="TextBlock.FontFamily" Value="Verdana" />
+        <Setter Property="TextBlock.FontSize" Value="11" />
+        <Setter Property="TextBlock.Margin" Value="0" />
+    </Style>
+    <Style x:Key="NoteParagraph">
+        <Setter Property="TextBlock.FontFamily" Value="Verdana" />
+        <Setter Property="TextBlock.FontSize" Value="11" />
+        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+        <Setter Property="TextBlock.Margin" Value="10" />
+        <Setter Property="TextBlock.Background" Value="LightGray" />
+        <Setter Property="TextBlock.HorizontalAlignment" Value="Stretch" />
+    </Style>
     <Style TargetType="{x:Type TextBlock}"
            x:Key="GridBlockStyle">
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Visibility"
-              Value="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}},
-              Converter={StaticResource boolToVis}, ConverterParameter=False}" />
+        <Setter Property="Margin" Value="5,0,5,0" />
     </Style>
     <Style TargetType="{x:Type FrameworkElement}"
            x:Key="GridEditStyle">
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Visibility"
-              Value="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}},
-              Converter={StaticResource boolToVis}, ConverterParameter=True}" />
+        <Setter Property="Margin" Value="5,0,5,0" />
     </Style>
-	<Style TargetType="ToolTip">
-	  <Setter Property = "HorizontalOffset" Value="10"/>
-	  <Setter Property = "VerticalOffset" Value="10"/>
-	  <Setter Property = "Background" Value="LightBlue"/>
-	  <Setter Property = "Foreground" Value="Purple"/>
-	  <Setter Property = "FontSize" Value="14"/>
-	  <Setter Property = "FontWeight" Value="Bold"/>
-	</Style>
+    <Style TargetType="{x:Type ToolBarTray}" x:Key="ToolBarTrayStyle">
+        <Setter Property="Background" Value="LightBlue" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style TargetType="ToolTip">
+      <Setter Property = "HorizontalOffset" Value="10"/>
+      <Setter Property = "VerticalOffset" Value="10"/>
+      <Setter Property = "Background" Value="LightBlue"/>
+      <Setter Property = "Foreground" Value="Purple"/>
+      <Setter Property = "FontSize" Value="14"/>
+      <Setter Property = "FontWeight" Value="Bold"/>
+    </Style>
+    <Style x:Key="LinkButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock TextDecorations="Underline">
+                <ContentPresenter /></TextBlock>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="Blue" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Foreground" Value="Red" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

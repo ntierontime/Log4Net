@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Framework.EntityContracts</RootNamespace>
     <AssemblyName>Framework.EntityContracts</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,16 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
     <Compile Include="AlphabeticalOrderCategory.cs" />
@@ -53,39 +43,41 @@
     <Compile Include="DateTimePivotEntities\DateTimePivotContextByNameValuePairBase.cs" />
     <Compile Include="DateTimePivotEntities\DateTimePivotSetting.cs" />
     <Compile Include="Queries\DateTimeUnit.cs" />
+    <Compile Include="IClone.cs" />
     <Compile Include="KnownMathCalculations.cs" />
+    <Compile Include="Queries\PredefinedBooleanSelectedValues.cs" />
+    <Compile Include="Queries\PreDefinedDateTimeRanges.cs" />
+    <Compile Include="Queries\QueryCriteriaBase.cs" />
     <Compile Include="Queries\QueryPagingResult.cs" />
     <Compile Include="SummaryData.cs" />
-    <Compile Include="ViewModels\IViewModelBase.cs" />
+    <Compile Include="ViewModels\ContentData.cs" />
     <Compile Include="ViewModels\SearchStatus.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="ViewModels\ViewModelItemBase.cs" />
-    <Compile Include="Queries\QueryCriteriaBase.cs" />
     <Compile Include="Queries\QueryOrderBySetting.cs" />
     <Compile Include="Queries\QueryPagingSetting.cs" />
     <Compile Include="Queries\QueryPredicateBase.cs" />
-    <Compile Include="Queries\IQueryPredicate.cs" />
     <Compile Include="Queries\QueryPredicateTypes.cs" />
-    <Content Include="Maps\map.1.B.3.vsd" />
-    <Content Include="Maps\map.1.B.3.vsd.png" />
+    <None Include="map.1.B.3.vsd" />
+    <None Include="map.1.B.3.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.csproj">
       <Project>{6d25aa30-c3af-4ae0-b567-0f2653120cdc}</Project>
       <Name>Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework.Resx\Framework.Resx.csproj">
+      <Project>{c72b898b-b53b-42d5-9f4f-673f84bb485b}</Project>
+      <Name>Framework.Resx</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>rem copy $(TargetPath) $(SolutionDir)BuiltResults\*.* /y</PostBuildEvent>

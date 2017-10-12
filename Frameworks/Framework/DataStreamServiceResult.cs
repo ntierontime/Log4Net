@@ -13,9 +13,6 @@ namespace Framework
         {
         }
 
-
-#if WINDOWS_PHONE
-#else
         public DataStreamServiceResult(string fileName, string mimeType, int contentLength, Stream input)
         {
             this.FileName = fileName;
@@ -37,7 +34,6 @@ namespace Framework
                 this.DataServiceType = Framework.DataServiceTypes.Csv;
             }
         }
-#endif
 
         public Framework.DataServiceTypes DataServiceType { get; set; }
         public int ContentLength { get; set; }
@@ -46,10 +42,7 @@ namespace Framework
         public string FileExtension { get; set; }
         public string TempFilePath { get; set; }
 
-#if WINDOWS_PHONE
-        public byte[] Result { get; set; }
-#else
         public Stream Result { get; set; }
-#endif
     }
 }
+

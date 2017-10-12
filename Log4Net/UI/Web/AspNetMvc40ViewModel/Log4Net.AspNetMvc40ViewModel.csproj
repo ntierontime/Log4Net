@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{60453BE2-59AC-47F7-872D-539754EB2E56}</ProjectGuid>
+    <ProjectGuid>{9C67DACE-DA33-4D40-83EE-865789F62775}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.AspNetMvc40ViewModel</RootNamespace>
     <AssemblyName>Log4Net.AspNetMvc40ViewModel</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,46 +32,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
-    <Compile Include="ItemViewModelLog.cs" />
-    <Compile Include="WorkspaceViewModelLog.cs" />
-    <Content Include="Maps\map.2.D.1.vsd" />
-    <Content Include="Maps\map.2.D.1.vsd.png" />
+    <Compile Include="LogItemVM.cs" />
+    <Compile Include="LogWorkspaceVM.cs" />
+    <None Include="map.2.D.1.vsd" />
+    <None Include="map.2.D.1.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\CommonBLL\Log4Net.CommonBLL.csproj">
-      <Project>{7ec43e78-05c1-453a-80e5-faa95270fde9}</Project>
+      <Project>{873915a5-57b2-409a-bd2c-80a3016df441}</Project>
       <Name>Log4Net.CommonBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Core\CommonBLLEntities\Log4Net.CommonBLLEntities.csproj">
-      <Project>{c00c3b58-ddc5-4e88-a1bb-b65648eff4f5}</Project>
+      <Project>{dba6156f-feac-4924-a3dc-e0ee135ae454}</Project>
       <Name>Log4Net.CommonBLLEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Core\CommonBLLIoC\Log4Net.CommonBLLIoC.csproj">
-      <Project>{7cab410d-b987-490a-bd0f-ee02cfba54fc}</Project>
+      <Project>{34fde63f-9c94-4e26-b27f-2c24eab2c526}</Project>
       <Name>Log4Net.CommonBLLIoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Core\DALContracts\Log4Net.DALContracts.csproj">
-      <Project>{294bb9e1-4944-4af5-8f69-ee6f2ff6bd4d}</Project>
+      <Project>{0d49d6e7-177b-4069-b73c-ec964569182f}</Project>
       <Name>Log4Net.DALContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Core\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
-      <Project>{31fcf08f-9c3b-453b-968b-24bec2d2937e}</Project>
+      <Project>{ca3bfcf9-23e5-4d02-8e64-9da24746c708}</Project>
       <Name>Log4Net.DataSourceEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Core\EntityContracts\Log4Net.EntityContracts.csproj">
-      <Project>{08b15ffc-2581-4aab-b7e4-9bf1d2dfd6b6}</Project>
+      <Project>{6ab0ea24-e204-4ac9-ad3c-3174193ccf9b}</Project>
       <Name>Log4Net.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Frameworks\Framework\Framework.csproj">
@@ -98,164 +88,99 @@
       <Project>{e45a004f-fbef-445c-9607-fbc89d6d4590}</Project>
       <Name>Framework.Mvc</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Frameworks\Framework.Resources\Framework.Resources.csproj">
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.Resx\Framework.Resx.csproj">
       <Project>{c72b898b-b53b-42d5-9f4f-673f84bb485b}</Project>
-      <Name>Framework.Resources</Name>
+      <Name>Framework.Resx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.ViewModels\Framework.ViewModels.csproj">
+      <Project>{2cc97c32-9ffa-4da4-a6c0-83f300404ec3}</Project>
+      <Name>Framework.ViewModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Frameworks\Framework.Web\Framework.Web.csproj">
       <Project>{950b9cdb-9286-4a1a-8d88-1df6954a45e3}</Project>
       <Name>Framework.Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Core\LinqDAL\Log4Net.LinqDAL.csproj">
-      <Project>{3c1c41b0-af63-4646-b9a6-4331fcd934c3}</Project>
-      <Name>Log4Net.LinqDAL</Name>
+    <ProjectReference Include="..\..\..\Core\Resx\Log4Net.Resx.csproj">
+      <Project>{0f11974a-3ed8-46d1-b8cc-6f1ff1c45a11}</Project>
+      <Name>Log4Net.Resx</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Core\LinqToSqlContexts\Log4Net.LinqToSqlContexts.csproj">
-      <Project>{6cb8c531-2fae-48eb-908a-7633fd72db53}</Project>
-      <Name>Log4Net.LinqToSqlContexts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Core\Resources\Log4Net.Resources.csproj">
-      <Project>{2f279948-a66f-4750-82e0-3f64bba3da6b}</Project>
-      <Name>Log4Net.Resources</Name>
+    <ProjectReference Include="..\..\..\Core\ViewModelData\Log4Net.ViewModelData.csproj">
+      <Project>{588a9f26-4123-43d0-a978-202e1fbba7ac}</Project>
+      <Name>Log4Net.ViewModelData</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Core\WcfContracts\Log4Net.WcfContracts.csproj">
-      <Project>{f212ecd6-cd23-4f20-9e47-fc6c37894804}</Project>
+      <Project>{0542e826-5a2b-41f5-8aa7-f2dd3983a540}</Project>
       <Name>Log4Net.WcfContracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Routing" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime">
-      <HintPath>..\..\..\..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\DotNetOpenAuth.AspNet.4.0.4.12182\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\DotNetOpenAuth.Core.4.0.4.12182\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\DotNetOpenAuth.OAuth.Core.4.0.4.12182\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.4.12182\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\DotNetOpenAuth.OpenId.Core.4.0.4.12182\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.4.12182\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\..\..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PagedList.Mvc">
-      <HintPath>..\..\..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>..\..\..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http.WebRequest">
-      <HintPath>..\..\..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WebGrease">
-      <HintPath>..\..\..\..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

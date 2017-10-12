@@ -10,7 +10,7 @@ namespace Framework.CommonBLLEntities
     /// </summary>
     public interface BusinessLogicLayerMemberShipContract
     {
-		#region properties
+        #region properties
 
         /// <summary>
         /// Gets or sets the current user GUID.
@@ -36,7 +36,7 @@ namespace Framework.CommonBLLEntities
         /// </value>
         string[] RolesOfCurrentUser { get; set; }
 
-		#endregion properties
+        #endregion properties
     }
 
     /// <summary>
@@ -44,7 +44,7 @@ namespace Framework.CommonBLLEntities
     /// </summary>
     public class BusinessLogicLayerMemberShip: BusinessLogicLayerMemberShipContract
     {
-		#region properties
+        #region properties
 
         /// <summary>
         /// Gets or sets the current user GUID.
@@ -70,6 +70,6 @@ namespace Framework.CommonBLLEntities
         /// </value>
         public string[] RolesOfCurrentUser { get; set; }
 
-		#endregion properties
+        #endregion properties
     }
 }

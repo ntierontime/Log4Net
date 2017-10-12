@@ -12,7 +12,7 @@ namespace Framework.CommonBLLEntities
     /// <typeparam name="TQueryCriteria">The type of the filter/query criteria.</typeparam>
     public class BusinessLogicLayerRequestMessageBase<TQueryCriteria>
     {
-		#region constructors
+        #region constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessLogicLayerRequestMessageBase&lt;TQueryCriteria&gt;"/> class.
@@ -24,15 +24,15 @@ namespace Framework.CommonBLLEntities
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessLogicLayerRequestMessageBase&lt;TQueryCriteria&gt;"/> class.
         /// </summary>
-        /// <param name="businessLogicLayerRequestTypes">The business logic layer request types.</param>        
+        /// <param name="businessLogicLayerRequestTypes">The business logic layer request types.</param>
         /// <param name="businessLogicLayerRequestTypeKey">The business logic layer request type key.</param>
         /// <param name="businessLogicLayerRequestID">The business logic layer request ID.</param>
         public BusinessLogicLayerRequestMessageBase(
             BusinessLogicLayerRequestTypes businessLogicLayerRequestTypes
             , string businessLogicLayerRequestTypeKey
             , string businessLogicLayerRequestID
-			)
-			: this(businessLogicLayerRequestTypes, businessLogicLayerRequestTypeKey, businessLogicLayerRequestID, -1, -1, null)
+            )
+            : this(businessLogicLayerRequestTypes, businessLogicLayerRequestTypeKey, businessLogicLayerRequestID, -1, -1, null)
         {
         }
 
@@ -49,28 +49,28 @@ namespace Framework.CommonBLLEntities
             BusinessLogicLayerRequestTypes businessLogicLayerRequestTypes
             , string businessLogicLayerRequestTypeKey
             , string businessLogicLayerRequestID
-			, int currentIndex
+            , int currentIndex
             , int pageSize
-			, string queryOrderByExpression)
+            , string queryOrderByExpression)
         {
             this.BusinessLogicLayerRequestID = businessLogicLayerRequestID;
             this.BusinessLogicLayerRequestTypeKey = businessLogicLayerRequestTypeKey;
             this.BusinessLogicLayerRequestTypes = businessLogicLayerRequestTypes;
-			this.QueryPagingSetting = new Framework.EntityContracts.QueryPagingSetting(currentIndex, pageSize);
-			this.QueryOrderBySettingCollection = new Framework.EntityContracts.QueryOrderBySettingCollection(queryOrderByExpression);
+            this.QueryPagingSetting = new Framework.EntityContracts.QueryPagingSetting(currentIndex, pageSize);
+            this.QueryOrderBySettingCollection = new Framework.EntityContracts.QueryOrderBySettingCollection(queryOrderByExpression);
         }
 
         #endregion constructors
 
         #region Properties
 
-		/// <summary>
+        /// <summary>
         /// Gets or sets the business logic layer request types.
         /// </summary>
         /// <value>
         /// The business logic layer request types.
         /// </value>
-		[DataMember]
+        [DataMember]
         public BusinessLogicLayerRequestTypes BusinessLogicLayerRequestTypes { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Framework.CommonBLLEntities
         /// <value>
         /// The business logic layer request type key.
         /// </value>
-		[DataMember]
+        [DataMember]
         public string BusinessLogicLayerRequestTypeKey { get; set; }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Framework.CommonBLLEntities
         /// <value>
         /// The business logic layer request ID.
         /// </value>
-		[DataMember]
+        [DataMember]
         public string BusinessLogicLayerRequestID { get; set; }
 
         /// <summary>
@@ -97,27 +97,26 @@ namespace Framework.CommonBLLEntities
         /// <value>
         /// The critieria.
         /// </value>
-		[DataMember]
+        [DataMember]
         public TQueryCriteria Critieria { get; set; }
 
-		/// <summary>
+        /// <summary>
         /// Gets or sets the query order by setting collection.
         /// </summary>
         /// <value>
         /// The query order by setting collection.
         /// </value>
-		[DataMember]
-		public Framework.EntityContracts.QueryOrderBySettingCollection QueryOrderBySettingCollection { get; set; }
+        [DataMember]
+        public Framework.EntityContracts.QueryOrderBySettingCollection QueryOrderBySettingCollection { get; set; }
 
-		/// <summary>
+        /// <summary>
         /// Gets or sets the query paging setting.
         /// </summary>
         /// <value>
         /// The query paging setting.
         /// </value>
-		[DataMember]
-		public Framework.EntityContracts.QueryPagingSetting QueryPagingSetting { get; set; }
-		
+        [DataMember]
+        public Framework.EntityContracts.QueryPagingSetting QueryPagingSetting { get; set; }
 
         /// <summary>
         /// Gets or sets the status change_ date period id_ later.
@@ -125,32 +124,32 @@ namespace Framework.CommonBLLEntities
         /// <value>
         /// The status change_ date period id_ later.
         /// </value>
-		[DataMember]
-		public long StatusChange_DatePeriodId_Later { get; set; }
+        [DataMember]
+        public long StatusChange_DatePeriodId_Later { get; set; }
         /// <summary>
         /// Gets or sets the status change_ date period id_ ealier.
         /// </summary>
         /// <value>
         /// The status change_ date period id_ ealier.
         /// </value>
-		[DataMember]
-		public long StatusChange_DatePeriodId_Ealier { get; set; }
+        [DataMember]
+        public long StatusChange_DatePeriodId_Ealier { get; set; }
         /// <summary>
         /// Gets or sets the status change_ time period id_ later.
         /// </summary>
         /// <value>
         /// The status change_ time period id_ later.
         /// </value>
-		[DataMember]
-		public short StatusChange_TimePeriodId_Later { get; set; }
+        [DataMember]
+        public short StatusChange_TimePeriodId_Later { get; set; }
         /// <summary>
         /// Gets or sets the status change_time period id_ ealier.
         /// </summary>
         /// <value>
         /// The status change_time period id_ ealier.
         /// </value>
-		[DataMember]
-		public short StatusChange_timePeriodId_Ealier { get; set; }
+        [DataMember]
+        public short StatusChange_timePeriodId_Ealier { get; set; }
         /// <summary>
         /// Gets or sets the type of the service.
         /// </summary>
@@ -161,5 +160,16 @@ namespace Framework.CommonBLLEntities
         public Framework.DataServiceTypes DataServiceType { get; set; }
 
         #endregion Properties
+
+        public override string ToString()
+        {
+            return string.Format("ID:{4};Key:{5};RequestType:{0};Type:{1};Paging:{2};Order:{3}"
+                , this.BusinessLogicLayerRequestTypes
+                , typeof(TQueryCriteria)
+                , this.QueryPagingSetting != null ? this.QueryPagingSetting.ToString() : ""
+                , this.QueryOrderBySettingCollection != null ? this.QueryOrderBySettingCollection.GetOrderByExpression() : ""
+                , this.BusinessLogicLayerRequestID
+                , this.BusinessLogicLayerRequestTypeKey);
+        }
     }
 }

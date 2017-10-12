@@ -1,25 +1,21 @@
+@using UrlStringsAlias = Log4Net.AspNetMvc40Rasor.Helpers.UrlStrings;
 @{
-    ViewBag.Title = Log4Net.Resources.UIStringResourcePerEntityLog.Log;
+    ViewBag.Title = Log4Net.Resx.UIStringResourcePerEntityLog.Log;
 }
 @section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>@Log4Net.Resources.UIStringResourcePerEntityLog.Log
-            </p>
-        </div>
-    </section>
+    <h2>@ViewBag.Title</h2>
+    <h4>@ViewBag.Message</h4>
+    <p>@Log4Net.Resx.UIStringResourcePerEntityLog.Log</p>
 }
-<div>
-	<ol>
-		<li>@Html.ActionLink(Framework.Resources.UIStringResource.AddNewAlternativeText, "Create")</li>
-		<li>@Html.ActionLink(Framework.Resources.UIStringResource.DeleteAlternativeText, "Delete") - Please add parameters to load this page </li>
-		<li>@Html.ActionLink(Framework.Resources.UIStringResource.EditAlternativeText, "Edit") - Please add parameters to load this page </li>
-		<li>@Html.ActionLink(Framework.Resources.UIStringResource.DetailsAlternativeText, "Details") - Please add parameters to load this page </li>
-		<li>@Html.ActionLink(Log4Net.Resources.UIStringResourcePerApp.Common_of_Log4Net_Log, "WPCommonOfLog")</li>
-		<li>@Html.ActionLink(Log4Net.Resources.UIStringResourcePerApp.EntityRelated_of_Log4Net_Log, "WPEntityRelatedOfLog")</li>
-	</ol>
+<div class="row">
+    <div class="col-md-12">
+        <ol>
+            <li>@Html.ActionLink(Framework.Resx.UIStringResource.AddNew, UrlStringsAlias.ActionName_Log_AddNew)</li>
+            <li>@Html.ActionLink(Framework.Resx.UIStringResource.Delete, UrlStringsAlias.ActionName_Log_Delete) - Please add parameters to load this page </li>
+            <li>@Html.ActionLink(Framework.Resx.UIStringResource.Edit, UrlStringsAlias.ActionName_Log_Edit) - Please add parameters to load this page </li>
+            <li>@Html.ActionLink(Framework.Resx.UIStringResource.Details, UrlStringsAlias.ActionName_Log_Details) - Please add parameters to load this page </li>
+            <li>@Html.ActionLink(Log4Net.Resx.UIStringResourcePerApp.Common_of_Log4Net_Log, UrlStringsAlias.ActionName_Log_WPCommonOfLog)</li>
+            <li>@Html.ActionLink(Log4Net.Resx.UIStringResourcePerApp.EntityRelated_of_Log4Net_Log, UrlStringsAlias.ActionName_Log_WPEntityRelatedOfLog)</li>
+        </ol>
+    </div>
 </div>

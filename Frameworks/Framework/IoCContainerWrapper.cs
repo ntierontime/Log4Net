@@ -9,9 +9,9 @@ namespace Framework
     /// <summary>
     /// IoCContainerWrapper, now using self developed Dependency Injector Container
     /// </summary>
-	public class IoCContainerWrapper
+    public class IoCContainerWrapper
     {
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="IoCContainerWrapper"/> class.
         /// </summary>
         public IoCContainerWrapper()
@@ -135,7 +135,7 @@ namespace Framework
         #endregion
     }
 
-	/// <summary>
+    /// <summary>
     /// Singleton of <see cref="IoCContainerWrapper"/>
     /// </summary>
     public class IoCContainerWrapperSingleton : Singleton<IoCContainerWrapper>

@@ -7,7 +7,7 @@ namespace Framework.DataSourceEntities
 {
     public class DataAccessLayerMessageBase<T>
     {
-		#region properties
+        #region properties
 
         /// <summary>
         /// Gets or sets the data access layer message status.
@@ -58,8 +58,8 @@ namespace Framework.DataSourceEntities
         /// The message.
         /// </value>
         public string Message { get; set; }
-		
-		#endregion properties
+
+        #endregion properties
     }
 
     /// <summary>
@@ -97,7 +97,7 @@ namespace Framework.DataSourceEntities
     /// <summary>
     /// Built-in DataAccessLayerMessage of RssItemCollection
     /// </summary>
-	public class DataAccessLayerMessageOfRssItemCollection
+    public class DataAccessLayerMessageOfRssItemCollection
         : DataAccessLayerMessageBase<Framework.RssItemCollection>
     {
     }
@@ -126,6 +126,6 @@ namespace Framework.DataSourceEntities
         /// <summary>
         /// no data and no error
         /// </summary>
-		SuccessButNoResult,
+        SuccessButNoResult,
     }
 }

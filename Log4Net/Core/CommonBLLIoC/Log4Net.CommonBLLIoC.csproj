@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7CAB410D-B987-490A-BD0F-EE02CFBA54FC}</ProjectGuid>
+    <ProjectGuid>{34FDE63F-9C94-4E26-B27F-2C24EAB2C526}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.CommonBLLIoC</RootNamespace>
     <AssemblyName>Log4Net.CommonBLLIoC</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,33 +32,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
-    <Compile Include="Static\BusinessLogicLayerEntityStaticLog.cs" />
-    <Content Include="Maps\map.2.C.2.vsd" />
-    <Content Include="Maps\map.2.C.2.vsd.png" />
+    <Compile Include="IoCLog.cs" />
+    <None Include="map.2.C.2.vsd" />
+    <None Include="map.2.C.2.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonBLLEntities\Log4Net.CommonBLLEntities.csproj">
-      <Project>{c00c3b58-ddc5-4e88-a1bb-b65648eff4f5}</Project>
+      <Project>{dba6156f-feac-4924-a3dc-e0ee135ae454}</Project>
       <Name>Log4Net.CommonBLLEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
-      <Project>{31fcf08f-9c3b-453b-968b-24bec2d2937e}</Project>
+      <Project>{ca3bfcf9-23e5-4d02-8e64-9da24746c708}</Project>
       <Name>Log4Net.DataSourceEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntityContracts\Log4Net.EntityContracts.csproj">
-      <Project>{08b15ffc-2581-4aab-b7e4-9bf1d2dfd6b6}</Project>
+      <Project>{6ab0ea24-e204-4ac9-ad3c-3174193ccf9b}</Project>
       <Name>Log4Net.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework\Framework.csproj">
@@ -78,20 +68,12 @@
       <Name>Framework.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\WcfContracts\Log4Net.WcfContracts.csproj">
-      <Project>{f212ecd6-cd23-4f20-9e47-fc6c37894804}</Project>
+      <Project>{0542e826-5a2b-41f5-8aa7-f2dd3983a540}</Project>
       <Name>Log4Net.WcfContracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

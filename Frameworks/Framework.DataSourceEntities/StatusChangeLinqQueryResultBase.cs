@@ -10,9 +10,9 @@ namespace Framework.DataSourceEntities
     /// </summary>
     /// <typeparam name="TCollection">The type of the collection of T.</typeparam>
     /// <typeparam name="T">entity type</typeparam>
-	public class StatusChangeLinqQueryResultBase<TCollection, T>
+    public class StatusChangeLinqQueryResultBase<TCollection, T>
     {
-	
+
         #region result of IQueryable<T> properties
 
         /// <summary>
@@ -34,10 +34,9 @@ namespace Framework.DataSourceEntities
         /// <summary>
         /// Gets the collection for updated entries.
         /// </summary>
-        public TCollection CollectionForUpdatedEntries { get; set; } // 4, 
+        public TCollection CollectionForUpdatedEntries { get; set; } // 4,
 
         #endregion result of IQueryable<T> properties
-
 
         #region result of IQueryable<T> properties // to be removed
 
@@ -52,30 +51,28 @@ namespace Framework.DataSourceEntities
 
     }
 
-
     /// <summary>
     ///  ??
     /// </summary>
     /// <typeparam name="TCollection">The class of the collection of T.</typeparam>
     /// <typeparam name="T">entity class</typeparam>
     /// <typeparam name="TProcessStatus">The type of the process status.</typeparam>
-	public class StatusChangeLinqQueryResultBase<TCollection, T, TProcessStatus>
-		: StatusChangeLinqQueryResultBase<TCollection, T>
+    public class StatusChangeLinqQueryResultBase<TCollection, T, TProcessStatus>
+        : StatusChangeLinqQueryResultBase<TCollection, T>
         where TProcessStatus : IProcessStatus, new()
     {
         /// <summary>
         /// Gets the process status.
         /// </summary>
-        public TProcessStatus ProcessStatus { get; set; } // 4, 
+        public TProcessStatus ProcessStatus { get; set; } // 4,
     }
-
 
     /// <summary>
     /// ??
     /// </summary>
-	public interface IProcessStatus
+    public interface IProcessStatus
     {
-		#region properties
+        #region properties
 
         /// <summary>
         /// Gets or sets a value indicating whether [process success].
@@ -141,7 +138,7 @@ namespace Framework.DataSourceEntities
         /// </value>
         int CountForRemovedEntries { get; set; }
 
-		#endregion properties
+        #endregion properties
 
     }
 }

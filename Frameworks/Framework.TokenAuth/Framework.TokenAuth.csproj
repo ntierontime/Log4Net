@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33C271B9-0A43-408A-8C6A-B1A43ED065A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.TokenAuth</RootNamespace>
+    <AssemblyName>Framework.TokenAuth</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AuthContext.cs" />
+    <Compile Include="AuthRepository.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\RefreshTokensController.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\RefreshToken.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Migrations\201407121205456_AddClientsAndRefreshTokenTables.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\ExternalLoginModels.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Providers\FacebookAuthProvider.cs" />
+    <Compile Include="Providers\GoogleAuthProvider.cs" />
+    <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Providers\SimpleRefreshTokenProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{6d25aa30-c3af-4ae0-b567-0f2653120cdc}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Resx\Framework.Resx.csproj">
+      <Project>{c72b898b-b53b-42d5-9f4f-673f84bb485b}</Project>
+      <Name>Framework.Resx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>rem copy $(TargetPath) $(SolutionDir)BuiltResults\*.* /y</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

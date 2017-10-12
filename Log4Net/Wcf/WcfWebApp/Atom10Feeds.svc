@@ -1,0 +1,2 @@
+<%@ ServiceHost Language="C#" Debug="true" Service="Log4Net.WcfWebApp.Atom10Feeds" CodeBehind="Atom10Feeds.svc.cs" %>
+

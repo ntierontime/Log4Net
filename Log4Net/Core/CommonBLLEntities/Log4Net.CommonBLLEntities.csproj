@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C00C3B58-DDC5-4E88-A1BB-B65648EFF4F5}</ProjectGuid>
+    <ProjectGuid>{DBA6156F-FEAC-4924-A3DC-E0EE135AE454}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.CommonBLLEntities</RootNamespace>
     <AssemblyName>Log4Net.CommonBLLEntities</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,34 +32,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
-    <Compile Include="ChainedQueryCriteria\BusinessLogicLayerChainedQueryCriteriaEntityLog.cs" />
-    <Compile Include="QueryCriteria\BusinessLogicLayerQueryCriteriaEntityLog.cs" />
-    <Compile Include="RequestMessagesBuiltIn\BusinessLogicLayerRequestMessageBuiltInLog.cs" />
-    <Compile Include="RequestMessagesUserDefined\BusinessLogicLayerRequestMessageUserDefinedLog.cs" />
-    <Compile Include="ResponseMessagesBuiltIn\BusinessLogicLayerResponseMessageBuiltInLog.cs" />
-    <Compile Include="ResponseMessagesUserDefined\BusinessLogicLayerResponseMessageUserDefinedLog.cs" />
-    <Content Include="Maps\map.2.B.2.vsd" />
-    <Content Include="Maps\map.2.B.2.vsd.png" />
+    <Compile Include="ChainedQueryCriteria\LogChainedQueryCriteria.cs" />
+    <Compile Include="QueryCriteria\LogQueryCriteria.cs" />
+    <Compile Include="RequestMessagesBuiltIn\LogRequestMessageBuiltIn.cs" />
+    <Compile Include="RequestMessagesUserDefined\LogRequestMessageUserDefined.cs" />
+    <Compile Include="ResponseMessagesBuiltIn\LogResponseMessageBuiltIn.cs" />
+    <Compile Include="ResponseMessagesUserDefined\LogResponseMessageUserDefined.cs" />
+    <None Include="map.2.B.3.vsd" />
+    <None Include="map.2.B.3.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
-      <Project>{31fcf08f-9c3b-453b-968b-24bec2d2937e}</Project>
+      <Project>{ca3bfcf9-23e5-4d02-8e64-9da24746c708}</Project>
       <Name>Log4Net.DataSourceEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntityContracts\Log4Net.EntityContracts.csproj">
-      <Project>{08b15ffc-2581-4aab-b7e4-9bf1d2dfd6b6}</Project>
+      <Project>{6ab0ea24-e204-4ac9-ad3c-3174193ccf9b}</Project>
       <Name>Log4Net.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework\Framework.csproj">
@@ -70,25 +60,17 @@
       <Project>{ba8c8c0b-470a-4d3c-b3da-9e28599799b5}</Project>
       <Name>Framework.CommonBLLEntities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Frameworks\Framework.EntityContracts\Framework.EntityContracts.csproj">
-      <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
-      <Name>Framework.EntityContracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework.DataSourceEntities\Framework.DataSourceEntities.csproj">
       <Project>{f85a14d5-64e0-4cfc-88da-27fe9d0dd664}</Project>
       <Name>Framework.DataSourceEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks\Framework.EntityContracts\Framework.EntityContracts.csproj">
+      <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
+      <Name>Framework.EntityContracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Data" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

@@ -1,18 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1CD793BF-ECB6-4F43-96CD-0837B252A53B}</ProjectGuid>
+    <ProjectGuid>{8B4069DD-B259-4BEC-B1E3-1D23F909E84A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.WcfWebApp</RootNamespace>
     <AssemblyName>Log4Net.WcfWebApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
@@ -67,11 +67,6 @@
     </Reference>
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\assembly\GAC_MSIL\System.Web.Entity\3.5.0.0__b77a5c561934e089\System.Web.Entity.dll</HintPath>
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -98,38 +93,54 @@
     <Content Include="clientaccesspolicy.xml" />
     <Content Include="crossdomain.xml" />
     <Content Include="WcfMarkupLog.svc" />
+    <Content Include="Atom10Feeds.svc" />
+    <Compile Include="Atom10Feeds.svc.cs">
+      <DependentUpon>Atom10Feeds.svc</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Content Include="Global.asax" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IAtom10Feeds.cs" />
+    <Compile Include="IRssFeeds.cs" />
+    <Content Include="RssFeeds.svc" />
+    <Compile Include="RssFeeds.svc.cs">
+      <DependentUpon>RssFeeds.svc</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Content Include="Web.config" />
-    <Content Include="Maps\map.2.C.1.vsd" />
-    <Content Include="Maps\map.2.C.1.vsd.png" />
+    <None Include="map.2.C.1.vsd" />
+    <None Include="map.2.C.1.vsd.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\LinqDAL\Log4Net.LinqDAL.csproj">
-      <Project>{3c1c41b0-af63-4646-b9a6-4331fcd934c3}</Project>
-      <Name>Log4Net.LinqDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Core\CommonBLL\Log4Net.CommonBLL.csproj">
-      <Project>{7ec43e78-05c1-453a-80e5-faa95270fde9}</Project>
+      <Project>{873915a5-57b2-409a-bd2c-80a3016df441}</Project>
       <Name>Log4Net.CommonBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\CommonBLLEntities\Log4Net.CommonBLLEntities.csproj">
-      <Project>{c00c3b58-ddc5-4e88-a1bb-b65648eff4f5}</Project>
+      <Project>{dba6156f-feac-4924-a3dc-e0ee135ae454}</Project>
       <Name>Log4Net.CommonBLLEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\DALContracts\Log4Net.DALContracts.csproj">
-      <Project>{294bb9e1-4944-4af5-8f69-ee6f2ff6bd4d}</Project>
+      <Project>{0d49d6e7-177b-4069-b73c-ec964569182f}</Project>
       <Name>Log4Net.DALContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
-      <Project>{31fcf08f-9c3b-453b-968b-24bec2d2937e}</Project>
+      <Project>{ca3bfcf9-23e5-4d02-8e64-9da24746c708}</Project>
       <Name>Log4Net.DataSourceEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\EntityContracts\Log4Net.EntityContracts.csproj">
-      <Project>{08b15ffc-2581-4aab-b7e4-9bf1d2dfd6b6}</Project>
+      <Project>{6ab0ea24-e204-4ac9-ad3c-3174193ccf9b}</Project>
       <Name>Log4Net.EntityContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\EntityFrameworkContextV6CodeFirst\Log4Net.EntityFrameworkContextV6CodeFirst.csproj">
+      <Project>{3e217c0f-760f-4b96-b2ec-040bc475aa4c}</Project>
+      <Name>Log4Net.EntityFrameworkContextV6CodeFirst</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\EntityFrameworkDALV6CodeFirst\Log4Net.EntityFrameworkDALV6CodeFirst.csproj">
+      <Project>{6989ec3f-ceb3-4fb7-b0ee-8cbe757d0f92}</Project>
+      <Name>Log4Net.EntityFrameworkDALV6CodeFirst</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework\Framework.csproj">
       <Project>{6d25aa30-c3af-4ae0-b567-0f2653120cdc}</Project>
@@ -147,21 +158,22 @@
       <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
       <Name>Framework.EntityContracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Frameworks\Framework.Resources\Framework.Resources.csproj">
+    <ProjectReference Include="..\..\..\Frameworks\Framework.Resx\Framework.Resx.csproj">
       <Project>{c72b898b-b53b-42d5-9f4f-673f84bb485b}</Project>
-      <Name>Framework.Resources</Name>
+      <Name>Framework.Resx</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework.Web\Framework.Web.csproj">
       <Project>{950b9cdb-9286-4a1a-8d88-1df6954a45e3}</Project>
       <Name>Framework.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\WcfContracts\Log4Net.WcfContracts.csproj">
-      <Project>{f212ecd6-cd23-4f20-9e47-fc6c37894804}</Project>
+      <Project>{0542e826-5a2b-41f5-8aa7-f2dd3983a540}</Project>
       <Name>Log4Net.WcfContracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -176,6 +188,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Web.Routing" />
@@ -185,11 +198,97 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Entity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\..\C:\Windows\assembly\GAC_MSIL\System.Web.Entity\3.5.0.0__b77a5c561934e089\System.Web.Entity.dll</HintPath>
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Diagnostics.Process.4.3.0\lib\net461\System.Diagnostics.Process.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Diagnostics.StackTrace.4.3.0\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Diagnostics.TraceSource.4.3.0\lib\net46\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.FileSystem.Watcher.4.3.0\lib\net46\System.IO.FileSystem.Watcher.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.NameResolution, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Net.NameResolution.4.3.0\lib\net46\System.Net.NameResolution.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.TypeExtensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Reflection.TypeExtensions.4.3.0\lib\net462\System.Reflection.TypeExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.InteropServices.4.3.0\lib\net462\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.Serialization.Formatters.4.3.0\lib\net46\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <PropertyGroup>
@@ -221,7 +320,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>10305</DevelopmentServerPort>
+          <DevelopmentServerPort>11805</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

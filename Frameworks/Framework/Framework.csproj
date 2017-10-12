@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Framework</RootNamespace>
     <AssemblyName>Framework</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,18 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
+    <Compile Include="BinaryRelated\BinaryFile.cs" />
+    <Compile Include="DateTimePeriodHelper.cs" />
+    <Compile Include="UISelectedItemChangedMessage.cs" />
     <Compile Include="AssemblyHelper.cs" />
     <Compile Include="DataServiceTypes.cs" />
     <Compile Include="DataStreamServiceResult.cs" />
@@ -54,10 +47,6 @@
     <Compile Include="UIActionStatus.cs" />
     <Compile Include="UIActionStatusMessage.cs" />
     <Compile Include="IoCContainerWrapper.cs" />
-    <Compile Include="BinaryRelated\BinaryFile.cs" />
-    <Compile Include="BinaryRelated\BinaryFileHelper.cs" />
-    <Compile Include="DateTimePeriodHelper.cs" />
-    <Compile Include="Models\MenuTreeItem.cs" />
     <Compile Include="LoggingOptions.cs" />
     <Compile Include="BinaryRelated\MIMEContentTypeToFileExtensionMappingCollection.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
@@ -67,24 +56,25 @@
     <Compile Include="PagingPageSizeOption.cs" />
     <Compile Include="RssItem.cs" />
     <Compile Include="Common\Singleton.cs" />
+    <None Include="map.1.A.1.vsd" />
+    <None Include="map.1.A.1.vsd.png" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="LINQtoCSV">
-      <HintPath>..\..\packages\LINQtoCSV.1.5.0.0\lib\net35\LINQtoCSV.dll</HintPath>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <PropertyGroup>

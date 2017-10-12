@@ -71,7 +71,7 @@ namespace Framework.EntityContracts.DateTimePivotEntities
         /// The category.
         /// </value>
         public TCategory Category { get; set; }
-        
+
         #endregion query configuration
 
         #region result raw data from data source
@@ -109,9 +109,9 @@ namespace Framework.EntityContracts.DateTimePivotEntities
         public TSubSummary SubSummary { get; set; }
 
         #endregion calculated sub summary data
-        
+
         #endregion properties
-        
+
         #region void DistributeEntityCollection(...)
 
         /// <summary>

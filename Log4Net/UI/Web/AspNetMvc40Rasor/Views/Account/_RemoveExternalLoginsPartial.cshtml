@@ -1,10 +1,10 @@
-@model ICollection<Log4Net.AspNetMvc40Common.Models.ExternalLogin>
+@model ICollection<Log4Net.AspNetMvc40Rasor.Models.ExternalLogin>
 @if (Model.Count > 0)
 {
-    <h3>@Framework.Resources.UIStringResource.Account_ExternalLogin_Registeredexternallogins</h3>
+    <h3>@Framework.Resx.UIStringResource.Account_ExternalLogin_Registeredexternallogins</h3>
     <table>
         <tbody>
-        @foreach (Log4Net.AspNetMvc40Common.Models.ExternalLogin externalLogin in Model)
+        @foreach (Log4Net.AspNetMvc40Rasor.Models.ExternalLogin externalLogin in Model)
         {
             <tr>
                 <td>@externalLogin.ProviderDisplayName</td>
@@ -17,7 +17,7 @@
                             <fieldset>
                                 @Html.Hidden("provider", externalLogin.Provider)
                                 @Html.Hidden("providerUserId", externalLogin.ProviderUserId)
-                                <input type="submit" value="Remove" title="@string.Format(Framework.Resources.UIStringResource.Account_ExternalLogin_RemovedExternalLoginTitle, externalLogin.ProviderDisplayName)" />
+                                <input type="submit" value="Remove" title="@string.Format(Framework.Resx.UIStringResource.Account_ExternalLogin_RemovedExternalLoginTitle, externalLogin.ProviderDisplayName)" />
                             </fieldset>
                         }
                     }

@@ -38,7 +38,7 @@ namespace Framework
             return (int)input.TimeOfDay.TotalMinutes;
         }
 
-		/// <summary>
+        /// <summary>
         /// Parses the date time.
         /// </summary>
         /// <param name="inputDateTimeInString">The input date time in string.</param>

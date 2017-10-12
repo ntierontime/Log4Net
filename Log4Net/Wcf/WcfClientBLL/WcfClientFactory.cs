@@ -12,19 +12,15 @@ namespace Log4Net.WcfClientBLL
     {
         #region Entity related
 
-
         /// <summary>
         /// Creates the BLL instance of entity <see cref="Log4Net.Log"/> tables for change notification.
         /// </summary>
         /// <param name="businessLogicLayerContext">The business logic layer context.</param>
-        /// <returns>Instance of Log4Net.WcfContracts.ILogWcfService</returns>
-        public Log4Net.WcfContracts.ILogWcfService CreateBLLInstanceOfEntityLog(Framework.CommonBLLEntities.BusinessLogicLayerContext businessLogicLayerContext)
-		{
-			return new Log4Net.WcfClientBLL.WcfClientEntityLog();
-		}
-
-
-
+        /// <returns>Instance of Log4Net.WcfContracts.ILogService</returns>
+        public Log4Net.WcfContracts.ILogService CreateBLLInstanceOfEntityLog(Framework.CommonBLLEntities.BusinessLogicLayerContext businessLogicLayerContext)
+        {
+            return new Log4Net.WcfClientBLL.WcfClientEntityLog();
+        }
 
         #endregion Entity related
     }
@@ -46,15 +42,13 @@ namespace Log4Net.WcfClientBLL
 #if NETFX_CORE && DEBUG
 //  for WinRT/NETFX_CORE debug, because no app.config file
 
-        public const string Url_Log4Net_WcfClientBLL_WcfClientEntityAsynLog = "http://localhost:10305/WcfMarkupLog.svc";    
-
+        public const string Url_Log4Net_WcfClientBLL_WcfClientEntityAsynLog = "http://localhost:11805/WcfMarkupLog.svc";
 
 #elif NETFX_CORE
 // for WinRT/NETFX_CORE release, because no app.config file
 
-        public const string Url_Log4Net_WcfClientBLL_WcfClientEntityAsynLog = "http://localhost:10305/WcfMarkupLog.svc";    
+        public const string Url_Log4Net_WcfClientBLL_WcfClientEntityAsynLog = "http://localhost:11805/WcfMarkupLog.svc";
 
-    
 #endif
 
         #region Entity related
@@ -63,18 +57,16 @@ namespace Log4Net.WcfClientBLL
         /// Creates the BLL instance of entity <see cref="Log4Net.Log"/> tables for change notification.
         /// </summary>
         /// <param name="businessLogicLayerContext">The business logic layer context.</param>
-        /// <returns>Instance of Log4Net.WcfContracts.WcfServiceContractAsynLog</returns>
-        public Log4Net.WcfContracts.WcfServiceContractAsynLog CreateBLLInstanceOfEntityLog(Framework.CommonBLLEntities.BusinessLogicLayerContext businessLogicLayerContext)
-		{
+        /// <returns>Instance of Log4Net.WcfContracts.ILogServiceAsyn</returns>
+        public Log4Net.WcfContracts.ILogServiceAsyn CreateBLLInstanceOfEntityLog(Framework.CommonBLLEntities.BusinessLogicLayerContext businessLogicLayerContext)
+        {
 #if NETFX_CORE
 // for WinRT/NETFX_CORE release, because no app.config file, initialize WcfClient with Url
             return new Log4Net.WcfClientBLL.WcfClientEntityAsynLog(new System.ServiceModel.BasicHttpBinding(), new System.ServiceModel.EndpointAddress(Url_Log4Net_WcfClientBLL_WcfClientEntityAsynLog));
 #else
-			return new Log4Net.WcfClientBLL.WcfClientEntityAsynLog();
+            return new Log4Net.WcfClientBLL.WcfClientEntityAsynLog();
 #endif
-		}
-
-
+        }
 
         #endregion Entity related
     }
@@ -87,3 +79,4 @@ namespace Log4Net.WcfClientBLL
     {
     }
 }
+

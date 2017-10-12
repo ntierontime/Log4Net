@@ -1,17 +1,17 @@
-@model Log4Net.AspNetMvc40Common.Models.RegisterExternalLoginModel
+@model Log4Net.AspNetMvc40Rasor.Models.RegisterExternalLoginModel
 @{
-    ViewBag.Title = Framework.Resources.UIStringResource.Account_ExternalLogin_AssociationTitleText;
+    ViewBag.Title = Framework.Resx.UIStringResource.Account_ExternalLogin_AssociationTitleText;
 }
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@string.Format(Framework.Resources.UIStringResource.Account_ExternalLogin_AssociateExternalLoginTitle, ViewBag.ProviderDisplayName)</h2>
+<hgroup>
+    <h2>@ViewBag.Title.</h2>
+    <h4>@string.Format(Framework.Resx.UIStringResource.Account_ExternalLogin_AssociateExternalLoginTitle, ViewBag.ProviderDisplayName)</h4>
 </hgroup>
 @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>@Framework.Resources.UIStringResource.Account_ExternalLogin_AssociateExternalLoginLegend</legend>
-        <p>@string.Format(Framework.Resources.UIStringResource.Account_ExternalLogin_AssociateExternalLoginSuccess, ViewBag.ProviderDisplayName)
+        <legend>@Framework.Resx.UIStringResource.Account_ExternalLogin_AssociateExternalLoginLegend</legend>
+        <p>@string.Format(Framework.Resx.UIStringResource.Account_ExternalLogin_AssociateExternalLoginSuccess, ViewBag.ProviderDisplayName)
         </p>
         <ol>
             <li class="name">
@@ -21,7 +21,7 @@
             </li>
         </ol>
         @Html.HiddenFor(m => m.ExternalLoginData)
-        <input type="submit" value="@Framework.Resources.UIStringResource.Account_ExternalLogin_AssociationSubmitValue" />
+        <input type="submit" value="@Framework.Resx.UIStringResource.Account_ExternalLogin_AssociationSubmitValue" />
     </fieldset>
 }
 @section Scripts {

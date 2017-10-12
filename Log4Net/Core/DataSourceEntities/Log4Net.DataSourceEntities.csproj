@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{31FCF08F-9C3B-453B-968B-24BEC2D2937E}</ProjectGuid>
+    <ProjectGuid>{CA3BFCF9-23E5-4D02-8E64-9DA24746C708}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Log4Net.DataSourceEntities</RootNamespace>
     <AssemblyName>Log4Net.DataSourceEntities</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,28 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
     <Compile Include="DataSourceEntity_\Log.cs" />
     <Compile Include="DataSourceEntity_\LogCollection.cs" />
-    <Compile Include="DataSourceEntityHelpers\DataSourceEntityHelperLog.cs" />
+    <Compile Include="DataSourceEntityHelpers\LogHelper.cs" />
     <Compile Include="DataSourceIdentifiers\LogIdentifier.cs" />
-    <Content Include="Maps\map.2.B.3.vsd" />
-    <Content Include="Maps\map.2.B.3.vsd.png" />
+    <None Include="map.2.B.3.vsd" />
+    <None Include="map.2.B.3.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityContracts\Log4Net.EntityContracts.csproj">
-      <Project>{08b15ffc-2581-4aab-b7e4-9bf1d2dfd6b6}</Project>
+      <Project>{6ab0ea24-e204-4ac9-ad3c-3174193ccf9b}</Project>
       <Name>Log4Net.EntityContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\Framework\Framework.csproj">
@@ -68,34 +58,32 @@
       <Project>{f85a14d5-64e0-4cfc-88da-27fe9d0dd664}</Project>
       <Name>Framework.DataSourceEntities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Resources\Log4Net.Resources.csproj">
-      <Project>{2f279948-a66f-4750-82e0-3f64bba3da6b}</Project>
-      <Name>Log4Net.Resources</Name>
+    <ProjectReference Include="..\..\..\Frameworks\Framework.EntityContracts\Framework.EntityContracts.csproj">
+      <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
+      <Name>Framework.EntityContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resx\Log4Net.Resx.csproj">
+      <Project>{0f11974a-3ed8-46d1-b8cc-6f1ff1c45a11}</Project>
+      <Name>Log4Net.Resx</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.DirectoryServices.Protocols" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="LINQtoCSV, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\LINQtoCSV.1.5.0.0\lib\net35\LINQtoCSV.dll</HintPath>
-    </Reference>
-    <Reference Include="LinqToLdap, Version=3.3.2.0, Culture=neutral, PublicKeyToken=d4ffa016fc97ad84, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\LinqToLdap.3.3.2\lib\net45\LinqToLdap.dll</HintPath>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LinqToLdap.Contrib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4ffa016fc97ad84, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\LinqToLdap.3.3.2\lib\net45\LinqToLdap.Contrib.dll</HintPath>
+    <Reference Include="Portable.DataAnnotations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Net46-Portable.DataAnnotations.1.0.2\lib\net46\Portable.DataAnnotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

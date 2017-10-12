@@ -16,7 +16,7 @@ namespace Framework.Web
         /// <value>
         /// The business logic layer context.
         /// </value>
-		public static Framework.CommonBLLEntities.BusinessLogicLayerContext BusinessLogicLayerContext 
+        public static Framework.CommonBLLEntities.BusinessLogicLayerContext BusinessLogicLayerContext
         {
             get
             {
@@ -31,7 +31,7 @@ namespace Framework.Web
                 {
                     if (HttpContext.Current.Session != null)
                     {
-		                HttpContext.Current.Session[SessionKey_BusinessLogicLayerContext] = value;
+                        HttpContext.Current.Session[SessionKey_BusinessLogicLayerContext] = value;
                     }
                 }
                 catch { }

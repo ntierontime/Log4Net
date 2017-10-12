@@ -9,7 +9,7 @@ namespace Framework.EntityContracts
     /// ??
     /// </summary>
     [Obsolete("The original purpose is the utilize LinqKit predicate builder, retired.")]
-	public enum QueryPredicateTypes
+    public enum QueryPredicateTypes
     {
         /// <summary>
         /// Contains

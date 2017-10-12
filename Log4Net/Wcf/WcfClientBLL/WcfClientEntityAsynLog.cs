@@ -11,165 +11,161 @@
 namespace Log4Net.WcfClientBLL
 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface WcfServiceContractAsynLogChannel : Log4Net.WcfContracts.WcfServiceContractAsynLog, System.ServiceModel.IClientChannel {
+    public interface ILogServiceAsynChannel : Log4Net.WcfContracts.ILogServiceAsyn, System.ServiceModel.IClientChannel {
     }
-
 
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WcfClientEntityAsynLog : System.ServiceModel.ClientBase<Log4Net.WcfContracts.WcfServiceContractAsynLog>, Log4Net.WcfContracts.WcfServiceContractAsynLog
+    public partial class WcfClientEntityAsynLog : System.ServiceModel.ClientBase<Log4Net.WcfContracts.ILogServiceAsyn>, Log4Net.WcfContracts.ILogServiceAsyn
     {
 
-		#region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
-	
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class InsertEntityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-			private object[] results;
-        
-			public InsertEntityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-					base(exception, cancelled, userState) {
-				this.results = results;
-			}
-        
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result {
-				get {
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
-	
-	
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class UpdateEntityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-			private object[] results;
-        
-			public UpdateEntityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-					base(exception, cancelled, userState) {
-				this.results = results;
-			}
-        
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result {
-				get {
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
-	
+        #region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class DeleteEntityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-			private object[] results;
-        
-			public DeleteEntityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-					base(exception, cancelled, userState) {
-				this.results = results;
-			}
-        
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result {
-				get {
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
-    
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class DeleteByIdentifierEntityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-			private object[] results;
-        
-			public DeleteByIdentifierEntityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-					base(exception, cancelled, userState) {
-				this.results = results;
-			}
-        
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result {
-				get {
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class InsertEntityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
 
+            private object[] results;
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class BatchInsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-			private object[] results;
-        
-			public BatchInsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-					base(exception, cancelled, userState) {
-				this.results = results;
-			}
-        
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result {
-				get {
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
-    
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class BatchDeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-			private object[] results;
-        
-			public BatchDeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-					base(exception, cancelled, userState) {
-				this.results = results;
-			}
-        
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result {
-				get {
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
-    
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class BatchUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-			private object[] results;
-        
-			public BatchUpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-					base(exception, cancelled, userState) {
-				this.results = results;
-			}
-        
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result {
-				get {
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}	
-	
+            public InsertEntityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                    base(exception, cancelled, userState) {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result {
+                get {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class UpdateEntityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+
+            private object[] results;
+
+            public UpdateEntityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                    base(exception, cancelled, userState) {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result {
+                get {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class DeleteEntityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+
+            private object[] results;
+
+            public DeleteEntityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                    base(exception, cancelled, userState) {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result {
+                get {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class DeleteByIdentifierEntityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+
+            private object[] results;
+
+            public DeleteByIdentifierEntityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                    base(exception, cancelled, userState) {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result {
+                get {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class BatchInsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+
+            private object[] results;
+
+            public BatchInsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                    base(exception, cancelled, userState) {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result {
+                get {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class BatchDeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+
+            private object[] results;
+
+            public BatchDeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                    base(exception, cancelled, userState) {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result {
+                get {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class BatchUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+
+            private object[] results;
+
+            public BatchUpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                    base(exception, cancelled, userState) {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result {
+                get {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
+
         private BeginOperationDelegate onBeginInsertEntityDelegate;
 
         private EndOperationDelegate onEndInsertEntityDelegate;
 
         private System.Threading.SendOrPostCallback onInsertEntityCompletedDelegate;
-		
+
         private BeginOperationDelegate onBeginUpdateEntityDelegate;
 
         private EndOperationDelegate onEndUpdateEntityDelegate;
 
-        private System.Threading.SendOrPostCallback onUpdateEntityCompletedDelegate;		
-		
+        private System.Threading.SendOrPostCallback onUpdateEntityCompletedDelegate;
+
         private BeginOperationDelegate onBeginDeleteEntityDelegate;
 
         private EndOperationDelegate onEndDeleteEntityDelegate;
@@ -199,112 +195,108 @@ namespace Log4Net.WcfClientBLL
         private EndOperationDelegate onEndBatchUpdateDelegate;
 
         private System.Threading.SendOrPostCallback onBatchUpdateCompletedDelegate;
-		
-		#endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
-	
-		#region Binary Columns
 
+        #endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
+        #region Binary Columns
 
         #endregion Binary Columns
 
+        #region DataQueryPerQuerySettingCollection
 
-		#region DataQueryPerQuerySettingCollection
+        #region Query Methods Of Entity of Common
 
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCountOfEntityOfCommonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		#region Query Methods Of Entity of Common 
+            private object[] results;
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCountOfEntityOfCommonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            public GetCountOfEntityOfCommonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			private object[] results;
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
+                }
+            }
+        }
 
-			public GetCountOfEntityOfCommonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class ExistsOfEntityOfCommonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
-				}
-			}
-		}
+            private object[] results;
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class ExistsOfEntityOfCommonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            public ExistsOfEntityOfCommonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			private object[] results;
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
+                }
+            }
+        }
 
-			public ExistsOfEntityOfCommonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCollectionOfEntityOfCommonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
-				}
-			}
-		}
+            private object[] results;
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCollectionOfEntityOfCommonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            public GetCollectionOfEntityOfCommonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			private object[] results;
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
 
-			public GetCollectionOfEntityOfCommonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetSingleOfEntityOfCommonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
+            private object[] results;
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetSingleOfEntityOfCommonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            public GetSingleOfEntityOfCommonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			private object[] results;
-
-			public GetSingleOfEntityOfCommonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
-
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
 
         private BeginOperationDelegate onBeginGetCountOfEntityOfCommonDelegate;
 
@@ -330,102 +322,101 @@ namespace Log4Net.WcfClientBLL
 
         private System.Threading.SendOrPostCallback onGetSingleOfEntityOfCommonCompletedDelegate;
 
-		#endregion Query Methods Of Entity of Common 
+        #endregion Query Methods Of Entity of Common
 
+        #region Query Methods Of Entity of All
 
-		#region Query Methods Of Entity of All 
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCountOfEntityOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCountOfEntityOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetCountOfEntityOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetCountOfEntityOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class ExistsOfEntityOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class ExistsOfEntityOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public ExistsOfEntityOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public ExistsOfEntityOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCollectionOfEntityOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCollectionOfEntityOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetCollectionOfEntityOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetCollectionOfEntityOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
 
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetSingleOfEntityOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetSingleOfEntityOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetSingleOfEntityOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetSingleOfEntityOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
-
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
 
         private BeginOperationDelegate onBeginGetCountOfEntityOfAllDelegate;
 
@@ -451,102 +442,101 @@ namespace Log4Net.WcfClientBLL
 
         private System.Threading.SendOrPostCallback onGetSingleOfEntityOfAllCompletedDelegate;
 
-		#endregion Query Methods Of Entity of All 
+        #endregion Query Methods Of Entity of All
 
+        #region Query Methods Of NameValuePair of All
 
-		#region Query Methods Of NameValuePair of All 
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCountOfNameValuePairOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCountOfNameValuePairOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetCountOfNameValuePairOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetCountOfNameValuePairOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class ExistsOfNameValuePairOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class ExistsOfNameValuePairOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public ExistsOfNameValuePairOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public ExistsOfNameValuePairOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCollectionOfNameValuePairOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCollectionOfNameValuePairOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetCollectionOfNameValuePairOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetCollectionOfNameValuePairOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetSingleOfNameValuePairOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetSingleOfNameValuePairOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetSingleOfNameValuePairOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetSingleOfNameValuePairOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
-
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection)(this.results[0]));
-				}
-			}
-		}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection)(this.results[0]));
+                }
+            }
+        }
 
         private BeginOperationDelegate onBeginGetCountOfNameValuePairOfAllDelegate;
 
@@ -572,102 +562,221 @@ namespace Log4Net.WcfClientBLL
 
         private System.Threading.SendOrPostCallback onGetSingleOfNameValuePairOfAllCompletedDelegate;
 
-		#endregion Query Methods Of NameValuePair of All 
+        #endregion Query Methods Of NameValuePair of All
 
+        #region Query Methods Of RssItem of All
 
-		#region Query Methods Of Entity of ByIdentifier 
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCountOfRssItemOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCountOfEntityOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetCountOfRssItemOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetCountOfEntityOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class ExistsOfRssItemOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class ExistsOfEntityOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public ExistsOfRssItemOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public ExistsOfEntityOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCollectionOfRssItemOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCollectionOfEntityOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetCollectionOfRssItemOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetCollectionOfEntityOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection)(this.results[0]));
+                }
+            }
+        }
 
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetSingleOfRssItemOfAllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetSingleOfEntityOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetSingleOfRssItemOfAllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetSingleOfEntityOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection)(this.results[0]));
+                }
+            }
+        }
 
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(this.results[0]));
-				}
-			}
-		}
+        private BeginOperationDelegate onBeginGetCountOfRssItemOfAllDelegate;
+
+        private EndOperationDelegate onEndGetCountOfRssItemOfAllDelegate;
+
+        private System.Threading.SendOrPostCallback onGetCountOfRssItemOfAllCompletedDelegate;
+
+        private BeginOperationDelegate onBeginExistsOfRssItemOfAllDelegate;
+
+        private EndOperationDelegate onEndExistsOfRssItemOfAllDelegate;
+
+        private System.Threading.SendOrPostCallback onExistsOfRssItemOfAllCompletedDelegate;
+
+        private BeginOperationDelegate onBeginGetCollectionOfRssItemOfAllDelegate;
+
+        private EndOperationDelegate onEndGetCollectionOfRssItemOfAllDelegate;
+
+        private System.Threading.SendOrPostCallback onGetCollectionOfRssItemOfAllCompletedDelegate;
+
+        private BeginOperationDelegate onBeginGetSingleOfRssItemOfAllDelegate;
+
+        private EndOperationDelegate onEndGetSingleOfRssItemOfAllDelegate;
+
+        private System.Threading.SendOrPostCallback onGetSingleOfRssItemOfAllCompletedDelegate;
+
+        #endregion Query Methods Of RssItem of All
+
+        #region Query Methods Of Entity of ByIdentifier
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCountOfEntityOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
+
+            private object[] results;
+
+            public GetCountOfEntityOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
+
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class ExistsOfEntityOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
+
+            private object[] results;
+
+            public ExistsOfEntityOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
+
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCollectionOfEntityOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
+
+            private object[] results;
+
+            public GetCollectionOfEntityOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetSingleOfEntityOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
+
+            private object[] results;
+
+            public GetSingleOfEntityOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
+
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(this.results[0]));
+                }
+            }
+        }
 
         private BeginOperationDelegate onBeginGetCountOfEntityOfByIdentifierDelegate;
 
@@ -693,102 +802,101 @@ namespace Log4Net.WcfClientBLL
 
         private System.Threading.SendOrPostCallback onGetSingleOfEntityOfByIdentifierCompletedDelegate;
 
-		#endregion Query Methods Of Entity of ByIdentifier 
+        #endregion Query Methods Of Entity of ByIdentifier
 
+        #region Query Methods Of KeyInformation of ByIdentifier
 
-		#region Query Methods Of KeyInformation of ByIdentifier 
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCountOfKeyInformationOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCountOfKeyInformationOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetCountOfKeyInformationOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetCountOfKeyInformationOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class ExistsOfKeyInformationOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class ExistsOfKeyInformationOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public ExistsOfKeyInformationOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public ExistsOfKeyInformationOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
+                }
+            }
+        }
 
-			public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetCollectionOfKeyInformationOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetCollectionOfKeyInformationOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetCollectionOfKeyInformationOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetCollectionOfKeyInformationOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation)(this.results[0]));
+                }
+            }
+        }
 
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation)(this.results[0]));
-				}
-			}
-		}
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class GetSingleOfKeyInformationOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+        {
 
-		[System.Diagnostics.DebuggerStepThroughAttribute()]
-		[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-		public partial class GetSingleOfKeyInformationOfByIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-		{
+            private object[] results;
 
-			private object[] results;
+            public GetSingleOfKeyInformationOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+                base(exception, cancelled, userState)
+            {
+                this.results = results;
+            }
 
-			public GetSingleOfKeyInformationOfByIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-				base(exception, cancelled, userState)
-			{
-				this.results = results;
-			}
-
-			public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation Result
-			{
-				get
-				{
-					base.RaiseExceptionIfNecessary();
-					return ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation)(this.results[0]));
-				}
-			}
-		}
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation Result
+            {
+                get
+                {
+                    base.RaiseExceptionIfNecessary();
+                    return ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation)(this.results[0]));
+                }
+            }
+        }
 
         private BeginOperationDelegate onBeginGetCountOfKeyInformationOfByIdentifierDelegate;
 
@@ -814,20 +922,15 @@ namespace Log4Net.WcfClientBLL
 
         private System.Threading.SendOrPostCallback onGetSingleOfKeyInformationOfByIdentifierCompletedDelegate;
 
-		#endregion Query Methods Of KeyInformation of ByIdentifier 
+        #endregion Query Methods Of KeyInformation of ByIdentifier
 
+        #endregion DataQueryPerQuerySettingCollection
 
+        #region GetAscendantAndDescendant
 
-		#endregion DataQueryPerQuerySettingCollection
+        #endregion GetAscendantAndDescendant
 
-		#region GetAscendantAndDescendant
-
-
-
-		#endregion GetAscendantAndDescendant
-
-
-		#region Open and Close
+        #region Open and Close
 
         private BeginOperationDelegate onBeginOpenDelegate;
 
@@ -841,9 +944,9 @@ namespace Log4Net.WcfClientBLL
 
         private System.Threading.SendOrPostCallback onCloseCompletedDelegate;
 
-		#endregion Open and Close
+        #endregion Open and Close
 
-		#region constructors
+        #region constructors
 
         public WcfClientEntityAsynLog()
         {
@@ -869,7 +972,7 @@ namespace Log4Net.WcfClientBLL
         {
         }
 
-		#endregion constructors
+        #endregion constructors
 
 #if WINDOWS_PHONE
         public System.Net.CookieContainer CookieContainer
@@ -903,12 +1006,12 @@ namespace Log4Net.WcfClientBLL
 
 #endif
 
-		#region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
+        #region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
         public event System.EventHandler<InsertEntityCompletedEventArgs> InsertEntityCompleted;
-		
-        public event System.EventHandler<UpdateEntityCompletedEventArgs> UpdateEntityCompleted;		
-		
+
+        public event System.EventHandler<UpdateEntityCompletedEventArgs> UpdateEntityCompleted;
+
         public event System.EventHandler<DeleteEntityCompletedEventArgs> DeleteEntityCompleted;
 
         public event System.EventHandler<DeleteByIdentifierEntityCompletedEventArgs> DeleteByIdentifierEntityCompleted;
@@ -918,20 +1021,16 @@ namespace Log4Net.WcfClientBLL
         public event System.EventHandler<BatchDeleteCompletedEventArgs> BatchDeleteCompleted;
 
         public event System.EventHandler<BatchUpdateCompletedEventArgs> BatchUpdateCompleted;
-		
-		#endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
-		#region Binary Columns
+        #endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
+        #region Binary Columns
 
+        #endregion Binary Columns
 
-		#endregion Binary Columns
+        #region DataQueryPerQuerySettingCollection
 
-		#region DataQueryPerQuerySettingCollection
-
-
-
-		#region Query Methods Of Entity of Common 
+        #region Query Methods Of Entity of Common
 
         public event System.EventHandler<GetCountOfEntityOfCommonCompletedEventArgs> GetCountOfEntityOfCommonCompleted;
 
@@ -941,12 +1040,9 @@ namespace Log4Net.WcfClientBLL
 
         public event System.EventHandler<GetSingleOfEntityOfCommonCompletedEventArgs> GetSingleOfEntityOfCommonCompleted;
 
-		#endregion Query Methods Of Entity of Common 
+        #endregion Query Methods Of Entity of Common
 
-
-
-
-		#region Query Methods Of Entity of All 
+        #region Query Methods Of Entity of All
 
         public event System.EventHandler<GetCountOfEntityOfAllCompletedEventArgs> GetCountOfEntityOfAllCompleted;
 
@@ -956,12 +1052,9 @@ namespace Log4Net.WcfClientBLL
 
         public event System.EventHandler<GetSingleOfEntityOfAllCompletedEventArgs> GetSingleOfEntityOfAllCompleted;
 
-		#endregion Query Methods Of Entity of All 
+        #endregion Query Methods Of Entity of All
 
-
-
-
-		#region Query Methods Of NameValuePair of All 
+        #region Query Methods Of NameValuePair of All
 
         public event System.EventHandler<GetCountOfNameValuePairOfAllCompletedEventArgs> GetCountOfNameValuePairOfAllCompleted;
 
@@ -971,12 +1064,21 @@ namespace Log4Net.WcfClientBLL
 
         public event System.EventHandler<GetSingleOfNameValuePairOfAllCompletedEventArgs> GetSingleOfNameValuePairOfAllCompleted;
 
-		#endregion Query Methods Of NameValuePair of All 
+        #endregion Query Methods Of NameValuePair of All
 
+        #region Query Methods Of RssItem of All
 
+        public event System.EventHandler<GetCountOfRssItemOfAllCompletedEventArgs> GetCountOfRssItemOfAllCompleted;
 
+        public event System.EventHandler<ExistsOfRssItemOfAllCompletedEventArgs> ExistsOfRssItemOfAllCompleted;
 
-		#region Query Methods Of Entity of ByIdentifier 
+        public event System.EventHandler<GetCollectionOfRssItemOfAllCompletedEventArgs> GetCollectionOfRssItemOfAllCompleted;
+
+        public event System.EventHandler<GetSingleOfRssItemOfAllCompletedEventArgs> GetSingleOfRssItemOfAllCompleted;
+
+        #endregion Query Methods Of RssItem of All
+
+        #region Query Methods Of Entity of ByIdentifier
 
         public event System.EventHandler<GetCountOfEntityOfByIdentifierCompletedEventArgs> GetCountOfEntityOfByIdentifierCompleted;
 
@@ -986,12 +1088,9 @@ namespace Log4Net.WcfClientBLL
 
         public event System.EventHandler<GetSingleOfEntityOfByIdentifierCompletedEventArgs> GetSingleOfEntityOfByIdentifierCompleted;
 
-		#endregion Query Methods Of Entity of ByIdentifier 
+        #endregion Query Methods Of Entity of ByIdentifier
 
-
-
-
-		#region Query Methods Of KeyInformation of ByIdentifier 
+        #region Query Methods Of KeyInformation of ByIdentifier
 
         public event System.EventHandler<GetCountOfKeyInformationOfByIdentifierCompletedEventArgs> GetCountOfKeyInformationOfByIdentifierCompleted;
 
@@ -1001,38 +1100,30 @@ namespace Log4Net.WcfClientBLL
 
         public event System.EventHandler<GetSingleOfKeyInformationOfByIdentifierCompletedEventArgs> GetSingleOfKeyInformationOfByIdentifierCompleted;
 
-		#endregion Query Methods Of KeyInformation of ByIdentifier 
+        #endregion Query Methods Of KeyInformation of ByIdentifier
 
+        #endregion DataQueryPerQuerySettingCollection
 
+        #region GetAscendantAndDescendant
 
+        #endregion GetAscendantAndDescendant
 
-		#endregion DataQueryPerQuerySettingCollection
-
-		#region GetAscendantAndDescendant
-
-		
-
-		#endregion GetAscendantAndDescendant
-
-		#region Open and Close
+        #region Open and Close
 
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
 
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
 
-		#endregion Open and Close
+        #endregion Open and Close
 
-		#region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
-
-#if SILVERLIGHT
-#else
+        #region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
         /// <summary>
         /// Inserts the specified input.
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog InsertEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn InsertEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.InsertEntity(request);
         }
@@ -1042,7 +1133,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog UpdateEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn UpdateEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.UpdateEntity(request);
         }
@@ -1052,7 +1143,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog DeleteEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn DeleteEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.DeleteEntity(request);
         }
@@ -1062,7 +1153,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="id">The id.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog DeleteByIdentifierEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInOfIdentifierLog id)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn DeleteByIdentifierEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltInOfIdentifier id)
         {
             return base.Channel.DeleteByIdentifierEntity(id);
         }
@@ -1072,7 +1163,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog BatchInsert(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn BatchInsert(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.BatchInsert(request);
         }
@@ -1082,7 +1173,7 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog BatchDelete(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn BatchDelete(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.InsertEntity(request);
         }
@@ -1092,34 +1183,32 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>a message with action result</returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog BatchUpdate(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn BatchUpdate(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn request)
         {
             return base.Channel.BatchUpdate(request);
-        }		
-
-#endif
+        }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginInsertEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginInsertEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginInsertEntity(input, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndInsertEntity(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndInsertEntity(System.IAsyncResult result)
         {
             return base.Channel.EndInsertEntity(result);
         }
 
         private System.IAsyncResult OnBeginInsertEntity(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog)(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginInsertEntity(input, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input = ((Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn)(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginInsertEntity(input, callback, asyncState);
         }
 
         private object[] OnEndInsertEntity(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndInsertEntity(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndInsertEntity(result);
             return new object[] {
                     retVal};
         }
@@ -1133,12 +1222,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void InsertEntityAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input)
+        public void InsertEntityAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input)
         {
             this.InsertEntityAsync(input, null);
         }
 
-        public void InsertEntityAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, object userState)
+        public void InsertEntityAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, object userState)
         {
             if ((this.onBeginInsertEntityDelegate == null))
             {
@@ -1156,28 +1245,27 @@ namespace Log4Net.WcfClientBLL
                         input}, this.onEndInsertEntityDelegate, this.onInsertEntityCompletedDelegate, userState);
         }
 
-
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginUpdateEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginUpdateEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginUpdateEntity(input, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndUpdateEntity(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndUpdateEntity(System.IAsyncResult result)
         {
             return base.Channel.EndUpdateEntity(result);
         }
 
         private System.IAsyncResult OnBeginUpdateEntity(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog)(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginUpdateEntity(input, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input = ((Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn)(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginUpdateEntity(input, callback, asyncState);
         }
 
         private object[] OnEndUpdateEntity(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndUpdateEntity(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndUpdateEntity(result);
             return new object[] {
                     retVal};
         }
@@ -1191,12 +1279,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void UpdateEntityAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input)
+        public void UpdateEntityAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input)
         {
             this.UpdateEntityAsync(input, null);
         }
 
-        public void UpdateEntityAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, object userState)
+        public void UpdateEntityAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, object userState)
         {
             if ((this.onBeginUpdateEntityDelegate == null))
             {
@@ -1212,30 +1300,29 @@ namespace Log4Net.WcfClientBLL
             }
             base.InvokeAsync(this.onBeginUpdateEntityDelegate, new object[] {
                         input}, this.onEndUpdateEntityDelegate, this.onUpdateEntityCompletedDelegate, userState);
-        }		
-		
+        }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginDeleteEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginDeleteEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginDeleteEntity(input, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndDeleteEntity(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndDeleteEntity(System.IAsyncResult result)
         {
             return base.Channel.EndDeleteEntity(result);
         }
 
         private System.IAsyncResult OnBeginDeleteEntity(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog)(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginDeleteEntity(input, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input = ((Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn)(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginDeleteEntity(input, callback, asyncState);
         }
 
         private object[] OnEndDeleteEntity(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndDeleteEntity(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndDeleteEntity(result);
             return new object[] {
                     retVal};
         }
@@ -1249,12 +1336,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void DeleteEntityAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input)
+        public void DeleteEntityAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input)
         {
             this.DeleteEntityAsync(input, null);
         }
 
-        public void DeleteEntityAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, object userState)
+        public void DeleteEntityAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, object userState)
         {
             if ((this.onBeginDeleteEntityDelegate == null))
             {
@@ -1273,26 +1360,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginDeleteByIdentifierEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInOfIdentifierLog id, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginDeleteByIdentifierEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltInOfIdentifier id, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginDeleteByIdentifierEntity(id, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndDeleteByIdentifierEntity(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndDeleteByIdentifierEntity(System.IAsyncResult result)
         {
             return base.Channel.EndDeleteByIdentifierEntity(result);
         }
 
         private System.IAsyncResult OnBeginDeleteByIdentifierEntity(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInOfIdentifierLog id = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInOfIdentifierLog)(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginDeleteByIdentifierEntity(id, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageBuiltInOfIdentifier id = ((Log4Net.CommonBLLEntities.LogRequestMessageBuiltInOfIdentifier)(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginDeleteByIdentifierEntity(id, callback, asyncState);
         }
 
         private object[] OnEndDeleteByIdentifierEntity(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndDeleteByIdentifierEntity(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndDeleteByIdentifierEntity(result);
             return new object[] {
                     retVal};
         }
@@ -1306,12 +1393,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void DeleteByIdentifierEntityAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInOfIdentifierLog id)
+        public void DeleteByIdentifierEntityAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltInOfIdentifier id)
         {
             this.DeleteByIdentifierEntityAsync(id, null);
         }
 
-        public void DeleteByIdentifierEntityAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInOfIdentifierLog id, object userState)
+        public void DeleteByIdentifierEntityAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltInOfIdentifier id, object userState)
         {
             if ((this.onBeginDeleteByIdentifierEntityDelegate == null))
             {
@@ -1329,29 +1416,27 @@ namespace Log4Net.WcfClientBLL
                         id}, this.onEndDeleteByIdentifierEntityDelegate, this.onDeleteByIdentifierEntityCompletedDelegate, userState);
         }
 
-
-
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginBatchInsert(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginBatchInsert(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginBatchInsert(input, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndBatchInsert(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndBatchInsert(System.IAsyncResult result)
         {
             return base.Channel.EndBatchInsert(result);
         }
 
         private System.IAsyncResult OnBeginBatchInsert(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog)(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginBatchInsert(input, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input = ((Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn)(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginBatchInsert(input, callback, asyncState);
         }
 
         private object[] OnEndBatchInsert(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndBatchInsert(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndBatchInsert(result);
             return new object[] {
                     retVal};
         }
@@ -1365,12 +1450,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void BatchInsertAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input)
+        public void BatchInsertAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input)
         {
             this.BatchInsertAsync(input, null);
         }
 
-        public void BatchInsertAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, object userState)
+        public void BatchInsertAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, object userState)
         {
             if ((this.onBeginBatchInsertDelegate == null))
             {
@@ -1389,26 +1474,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginBatchDelete(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginBatchDelete(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginBatchDelete(input, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndBatchDelete(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndBatchDelete(System.IAsyncResult result)
         {
             return base.Channel.EndBatchDelete(result);
         }
 
         private System.IAsyncResult OnBeginBatchDelete(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog)(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginBatchDelete(input, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input = ((Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn)(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginBatchDelete(input, callback, asyncState);
         }
 
         private object[] OnEndBatchDelete(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndBatchDelete(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndBatchDelete(result);
             return new object[] {
                     retVal};
         }
@@ -1422,12 +1507,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void BatchDeleteAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input)
+        public void BatchDeleteAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input)
         {
             this.BatchDeleteAsync(input, null);
         }
 
-        public void BatchDeleteAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, object userState)
+        public void BatchDeleteAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, object userState)
         {
             if ((this.onBeginBatchDeleteDelegate == null))
             {
@@ -1446,26 +1531,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginBatchUpdate(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginBatchUpdate(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginBatchUpdate(input, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndBatchUpdate(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndBatchUpdate(System.IAsyncResult result)
         {
             return base.Channel.EndBatchUpdate(result);
         }
 
         private System.IAsyncResult OnBeginBatchUpdate(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog)(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginBatchUpdate(input, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input = ((Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn)(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginBatchUpdate(input, callback, asyncState);
         }
 
         private object[] OnEndBatchUpdate(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndBatchUpdate(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndBatchUpdate(result);
             return new object[] {
                     retVal};
         }
@@ -1479,12 +1564,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void BatchUpdateAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input)
+        public void BatchUpdateAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input)
         {
             this.BatchUpdateAsync(input, null);
         }
 
-        public void BatchUpdateAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, object userState)
+        public void BatchUpdateAsync(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, object userState)
         {
             if ((this.onBeginBatchUpdateDelegate == null))
             {
@@ -1500,25 +1585,17 @@ namespace Log4Net.WcfClientBLL
             }
             base.InvokeAsync(this.onBeginBatchUpdateDelegate, new object[] {
                         input}, this.onEndBatchUpdateDelegate, this.onBatchUpdateCompletedDelegate, userState);
-        }		
-		
-		#endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
+        }
 
+        #endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
-		#region Binary Columns
+        #region Binary Columns
 
+        #endregion Binary Columns
 
+        #region DataQueryPerQuerySettingCollection
 
-		#endregion Binary Columns		
-
-		#region DataQueryPerQuerySettingCollection
-
-
-
-		#region Query Methods Of Entity of Common 
-
-#if SILVERLIGHT
-#else
+        #region Query Methods Of Entity of Common
 
         /// <summary>
         /// Gets the count of entity of "Common".
@@ -1526,7 +1603,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfEntityOfCommon(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             return base.Channel.GetCountOfEntityOfCommon(request);
         }
@@ -1535,20 +1612,20 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "Common".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfEntityOfCommon(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             return base.Channel.ExistsOfEntityOfCommon(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "Common".
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetCollectionOfEntityOfCommon(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetCollectionOfEntityOfCommon(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             return base.Channel.GetCollectionOfEntityOfCommon(request);
         }
@@ -1558,35 +1635,33 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetSingleOfEntityOfCommon(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetSingleOfEntityOfCommon(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             return base.Channel.GetSingleOfEntityOfCommon(request);
-		}
-
-#endif
+        }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCountOfEntityOfCommon(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCountOfEntityOfCommon(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCountOfEntityOfCommon(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCountOfEntityOfCommon(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.ILogServiceAsyn.EndGetCountOfEntityOfCommon(System.IAsyncResult result)
         {
             return base.Channel.EndGetCountOfEntityOfCommon(result);
         }
 
         private System.IAsyncResult OnBeginGetCountOfEntityOfCommon(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCountOfEntityOfCommon(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCountOfEntityOfCommon(request, callback, asyncState);
         }
 
         private object[] OnEndGetCountOfEntityOfCommon(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCountOfEntityOfCommon(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCountOfEntityOfCommon(result);
             return new object[] {
                     retVal};
         }
@@ -1600,12 +1675,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCountOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+        public void GetCountOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             this.GetCountOfEntityOfCommonAsync(request, null);
         }
 
-        public void GetCountOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, object userState)
+        public void GetCountOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, object userState)
         {
             if ((this.onBeginGetCountOfEntityOfCommonDelegate == null))
             {
@@ -1624,26 +1699,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginExistsOfEntityOfCommon(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginExistsOfEntityOfCommon(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginExistsOfEntityOfCommon(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.WcfServiceContractAsynLog.EndExistsOfEntityOfCommon(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.ILogServiceAsyn.EndExistsOfEntityOfCommon(System.IAsyncResult result)
         {
             return base.Channel.EndExistsOfEntityOfCommon(result);
         }
 
         private System.IAsyncResult OnBeginExistsOfEntityOfCommon(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginExistsOfEntityOfCommon(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginExistsOfEntityOfCommon(request, callback, asyncState);
         }
 
         private object[] OnEndExistsOfEntityOfCommon(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndExistsOfEntityOfCommon(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndExistsOfEntityOfCommon(result);
             return new object[] {
                     retVal};
         }
@@ -1657,12 +1732,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void ExistsOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+        public void ExistsOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             this.ExistsOfEntityOfCommonAsync(request, null);
         }
 
-        public void ExistsOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, object userState)
+        public void ExistsOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, object userState)
         {
             if ((this.onBeginExistsOfEntityOfCommonDelegate == null))
             {
@@ -1681,26 +1756,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCollectionOfEntityOfCommon(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCollectionOfEntityOfCommon(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCollectionOfEntityOfCommon(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCollectionOfEntityOfCommon(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndGetCollectionOfEntityOfCommon(System.IAsyncResult result)
         {
             return base.Channel.EndGetCollectionOfEntityOfCommon(result);
         }
 
         private System.IAsyncResult OnBeginGetCollectionOfEntityOfCommon(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCollectionOfEntityOfCommon(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCollectionOfEntityOfCommon(request, callback, asyncState);
         }
 
         private object[] OnEndGetCollectionOfEntityOfCommon(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCollectionOfEntityOfCommon(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCollectionOfEntityOfCommon(result);
             return new object[] {
                     retVal};
         }
@@ -1714,12 +1789,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCollectionOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+        public void GetCollectionOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             this.GetCollectionOfEntityOfCommonAsync(request, null);
         }
 
-        public void GetCollectionOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, object userState)
+        public void GetCollectionOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, object userState)
         {
             if ((this.onBeginGetCollectionOfEntityOfCommonDelegate == null))
             {
@@ -1738,26 +1813,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetSingleOfEntityOfCommon(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetSingleOfEntityOfCommon(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetSingleOfEntityOfCommon(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetSingleOfEntityOfCommon(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndGetSingleOfEntityOfCommon(System.IAsyncResult result)
         {
             return base.Channel.EndGetSingleOfEntityOfCommon(result);
         }
 
         private System.IAsyncResult OnBeginGetSingleOfEntityOfCommon(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetSingleOfEntityOfCommon(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetSingleOfEntityOfCommon(request, callback, asyncState);
         }
 
         private object[] OnEndGetSingleOfEntityOfCommon(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetSingleOfEntityOfCommon(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetSingleOfEntityOfCommon(result);
             return new object[] {
                     retVal};
         }
@@ -1771,12 +1846,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetSingleOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request)
+        public void GetSingleOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request)
         {
             this.GetSingleOfEntityOfCommonAsync(request, null);
         }
 
-        public void GetSingleOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, object userState)
+        public void GetSingleOfEntityOfCommonAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, object userState)
         {
             if ((this.onBeginGetSingleOfEntityOfCommonDelegate == null))
             {
@@ -1794,15 +1869,9 @@ namespace Log4Net.WcfClientBLL
                         request}, this.onEndGetSingleOfEntityOfCommonDelegate, this.onGetSingleOfEntityOfCommonCompletedDelegate, userState);
         }
 
-		#endregion Query Methods Of Entity of Common 
+        #endregion Query Methods Of Entity of Common
 
-
-
-
-		#region Query Methods Of Entity of All 
-
-#if SILVERLIGHT
-#else
+        #region Query Methods Of Entity of All
 
         /// <summary>
         /// Gets the count of entity of "All".
@@ -1810,7 +1879,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfEntityOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetCountOfEntityOfAll(request);
         }
@@ -1819,20 +1888,20 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "All".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfEntityOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.ExistsOfEntityOfAll(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "All".
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetCollectionOfEntityOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetCollectionOfEntityOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetCollectionOfEntityOfAll(request);
         }
@@ -1842,35 +1911,33 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetSingleOfEntityOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetSingleOfEntityOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetSingleOfEntityOfAll(request);
-		}
-
-#endif
+        }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCountOfEntityOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCountOfEntityOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCountOfEntityOfAll(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCountOfEntityOfAll(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.ILogServiceAsyn.EndGetCountOfEntityOfAll(System.IAsyncResult result)
         {
             return base.Channel.EndGetCountOfEntityOfAll(result);
         }
 
         private System.IAsyncResult OnBeginGetCountOfEntityOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCountOfEntityOfAll(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCountOfEntityOfAll(request, callback, asyncState);
         }
 
         private object[] OnEndGetCountOfEntityOfAll(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCountOfEntityOfAll(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCountOfEntityOfAll(result);
             return new object[] {
                     retVal};
         }
@@ -1884,12 +1951,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCountOfEntityOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public void GetCountOfEntityOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             this.GetCountOfEntityOfAllAsync(request, null);
         }
 
-        public void GetCountOfEntityOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, object userState)
+        public void GetCountOfEntityOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
         {
             if ((this.onBeginGetCountOfEntityOfAllDelegate == null))
             {
@@ -1908,26 +1975,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginExistsOfEntityOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginExistsOfEntityOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginExistsOfEntityOfAll(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.WcfServiceContractAsynLog.EndExistsOfEntityOfAll(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.ILogServiceAsyn.EndExistsOfEntityOfAll(System.IAsyncResult result)
         {
             return base.Channel.EndExistsOfEntityOfAll(result);
         }
 
         private System.IAsyncResult OnBeginExistsOfEntityOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginExistsOfEntityOfAll(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginExistsOfEntityOfAll(request, callback, asyncState);
         }
 
         private object[] OnEndExistsOfEntityOfAll(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndExistsOfEntityOfAll(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndExistsOfEntityOfAll(result);
             return new object[] {
                     retVal};
         }
@@ -1941,12 +2008,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void ExistsOfEntityOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public void ExistsOfEntityOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             this.ExistsOfEntityOfAllAsync(request, null);
         }
 
-        public void ExistsOfEntityOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, object userState)
+        public void ExistsOfEntityOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
         {
             if ((this.onBeginExistsOfEntityOfAllDelegate == null))
             {
@@ -1965,26 +2032,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCollectionOfEntityOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCollectionOfEntityOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCollectionOfEntityOfAll(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCollectionOfEntityOfAll(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndGetCollectionOfEntityOfAll(System.IAsyncResult result)
         {
             return base.Channel.EndGetCollectionOfEntityOfAll(result);
         }
 
         private System.IAsyncResult OnBeginGetCollectionOfEntityOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCollectionOfEntityOfAll(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCollectionOfEntityOfAll(request, callback, asyncState);
         }
 
         private object[] OnEndGetCollectionOfEntityOfAll(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCollectionOfEntityOfAll(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCollectionOfEntityOfAll(result);
             return new object[] {
                     retVal};
         }
@@ -1998,12 +2065,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCollectionOfEntityOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public void GetCollectionOfEntityOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             this.GetCollectionOfEntityOfAllAsync(request, null);
         }
 
-        public void GetCollectionOfEntityOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, object userState)
+        public void GetCollectionOfEntityOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
         {
             if ((this.onBeginGetCollectionOfEntityOfAllDelegate == null))
             {
@@ -2022,26 +2089,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetSingleOfEntityOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetSingleOfEntityOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetSingleOfEntityOfAll(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetSingleOfEntityOfAll(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndGetSingleOfEntityOfAll(System.IAsyncResult result)
         {
             return base.Channel.EndGetSingleOfEntityOfAll(result);
         }
 
         private System.IAsyncResult OnBeginGetSingleOfEntityOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetSingleOfEntityOfAll(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetSingleOfEntityOfAll(request, callback, asyncState);
         }
 
         private object[] OnEndGetSingleOfEntityOfAll(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetSingleOfEntityOfAll(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetSingleOfEntityOfAll(result);
             return new object[] {
                     retVal};
         }
@@ -2055,12 +2122,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetSingleOfEntityOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public void GetSingleOfEntityOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             this.GetSingleOfEntityOfAllAsync(request, null);
         }
 
-        public void GetSingleOfEntityOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, object userState)
+        public void GetSingleOfEntityOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
         {
             if ((this.onBeginGetSingleOfEntityOfAllDelegate == null))
             {
@@ -2078,15 +2145,9 @@ namespace Log4Net.WcfClientBLL
                         request}, this.onEndGetSingleOfEntityOfAllDelegate, this.onGetSingleOfEntityOfAllCompletedDelegate, userState);
         }
 
-		#endregion Query Methods Of Entity of All 
+        #endregion Query Methods Of Entity of All
 
-
-
-
-		#region Query Methods Of NameValuePair of All 
-
-#if SILVERLIGHT
-#else
+        #region Query Methods Of NameValuePair of All
 
         /// <summary>
         /// Gets the count of entity of "All".
@@ -2094,7 +2155,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfNameValuePairOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetCountOfNameValuePairOfAll(request);
         }
@@ -2103,12 +2164,12 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "All".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfNameValuePairOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.ExistsOfNameValuePairOfAll(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "All".
@@ -2116,7 +2177,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns></returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection GetCollectionOfNameValuePairOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetCollectionOfNameValuePairOfAll(request);
         }
@@ -2127,34 +2188,32 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns></returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection GetSingleOfNameValuePairOfAll(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             return base.Channel.GetSingleOfNameValuePairOfAll(request);
-		}
-
-#endif
+        }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCountOfNameValuePairOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCountOfNameValuePairOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCountOfNameValuePairOfAll(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCountOfNameValuePairOfAll(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.ILogServiceAsyn.EndGetCountOfNameValuePairOfAll(System.IAsyncResult result)
         {
             return base.Channel.EndGetCountOfNameValuePairOfAll(result);
         }
 
         private System.IAsyncResult OnBeginGetCountOfNameValuePairOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCountOfNameValuePairOfAll(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCountOfNameValuePairOfAll(request, callback, asyncState);
         }
 
         private object[] OnEndGetCountOfNameValuePairOfAll(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCountOfNameValuePairOfAll(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCountOfNameValuePairOfAll(result);
             return new object[] {
                     retVal};
         }
@@ -2168,12 +2227,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCountOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public void GetCountOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             this.GetCountOfNameValuePairOfAllAsync(request, null);
         }
 
-        public void GetCountOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, object userState)
+        public void GetCountOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
         {
             if ((this.onBeginGetCountOfNameValuePairOfAllDelegate == null))
             {
@@ -2192,26 +2251,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginExistsOfNameValuePairOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginExistsOfNameValuePairOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginExistsOfNameValuePairOfAll(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.WcfServiceContractAsynLog.EndExistsOfNameValuePairOfAll(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.ILogServiceAsyn.EndExistsOfNameValuePairOfAll(System.IAsyncResult result)
         {
             return base.Channel.EndExistsOfNameValuePairOfAll(result);
         }
 
         private System.IAsyncResult OnBeginExistsOfNameValuePairOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginExistsOfNameValuePairOfAll(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginExistsOfNameValuePairOfAll(request, callback, asyncState);
         }
 
         private object[] OnEndExistsOfNameValuePairOfAll(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndExistsOfNameValuePairOfAll(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndExistsOfNameValuePairOfAll(result);
             return new object[] {
                     retVal};
         }
@@ -2225,12 +2284,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void ExistsOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public void ExistsOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             this.ExistsOfNameValuePairOfAllAsync(request, null);
         }
 
-        public void ExistsOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, object userState)
+        public void ExistsOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
         {
             if ((this.onBeginExistsOfNameValuePairOfAllDelegate == null))
             {
@@ -2249,26 +2308,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCollectionOfNameValuePairOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCollectionOfNameValuePairOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCollectionOfNameValuePairOfAll(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCollectionOfNameValuePairOfAll(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection Log4Net.WcfContracts.ILogServiceAsyn.EndGetCollectionOfNameValuePairOfAll(System.IAsyncResult result)
         {
             return base.Channel.EndGetCollectionOfNameValuePairOfAll(result);
         }
 
         private System.IAsyncResult OnBeginGetCollectionOfNameValuePairOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCollectionOfNameValuePairOfAll(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCollectionOfNameValuePairOfAll(request, callback, asyncState);
         }
 
         private object[] OnEndGetCollectionOfNameValuePairOfAll(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCollectionOfNameValuePairOfAll(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCollectionOfNameValuePairOfAll(result);
             return new object[] {
                     retVal};
         }
@@ -2282,12 +2341,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCollectionOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public void GetCollectionOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             this.GetCollectionOfNameValuePairOfAllAsync(request, null);
         }
 
-        public void GetCollectionOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, object userState)
+        public void GetCollectionOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
         {
             if ((this.onBeginGetCollectionOfNameValuePairOfAllDelegate == null))
             {
@@ -2306,26 +2365,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetSingleOfNameValuePairOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetSingleOfNameValuePairOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetSingleOfNameValuePairOfAll(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetSingleOfNameValuePairOfAll(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection Log4Net.WcfContracts.ILogServiceAsyn.EndGetSingleOfNameValuePairOfAll(System.IAsyncResult result)
         {
             return base.Channel.EndGetSingleOfNameValuePairOfAll(result);
         }
 
         private System.IAsyncResult OnBeginGetSingleOfNameValuePairOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetSingleOfNameValuePairOfAll(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetSingleOfNameValuePairOfAll(request, callback, asyncState);
         }
 
         private object[] OnEndGetSingleOfNameValuePairOfAll(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetSingleOfNameValuePairOfAll(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageNameValuePairCollection retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetSingleOfNameValuePairOfAll(result);
             return new object[] {
                     retVal};
         }
@@ -2339,12 +2398,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetSingleOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request)
+        public void GetSingleOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
         {
             this.GetSingleOfNameValuePairOfAllAsync(request, null);
         }
 
-        public void GetSingleOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, object userState)
+        public void GetSingleOfNameValuePairOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
         {
             if ((this.onBeginGetSingleOfNameValuePairOfAllDelegate == null))
             {
@@ -2362,15 +2421,285 @@ namespace Log4Net.WcfClientBLL
                         request}, this.onEndGetSingleOfNameValuePairOfAllDelegate, this.onGetSingleOfNameValuePairOfAllCompletedDelegate, userState);
         }
 
-		#endregion Query Methods Of NameValuePair of All 
+        #endregion Query Methods Of NameValuePair of All
 
+        #region Query Methods Of RssItem of All
 
+        /// <summary>
+        /// Gets the count of entity of "All".
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>the count</returns>
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfRssItemOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            return base.Channel.GetCountOfRssItemOfAll(request);
+        }
 
+        /// <summary>
+        /// Exists the of entity of "All".
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>true if exists any, otherwise false</returns>
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfRssItemOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            return base.Channel.ExistsOfRssItemOfAll(request);
+        }
 
-		#region Query Methods Of Entity of ByIdentifier 
+        /// <summary>
+        /// Gets the collection of entity of "All".
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection GetCollectionOfRssItemOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            return base.Channel.GetCollectionOfRssItemOfAll(request);
+        }
 
-#if SILVERLIGHT
-#else
+        /// <summary>
+        /// Gets the single of entity of "All".
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection GetSingleOfRssItemOfAll(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            return base.Channel.GetSingleOfRssItemOfAll(request);
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCountOfRssItemOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
+        {
+            return base.Channel.BeginGetCountOfRssItemOfAll(request, callback, asyncState);
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.ILogServiceAsyn.EndGetCountOfRssItemOfAll(System.IAsyncResult result)
+        {
+            return base.Channel.EndGetCountOfRssItemOfAll(result);
+        }
+
+        private System.IAsyncResult OnBeginGetCountOfRssItemOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
+        {
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCountOfRssItemOfAll(request, callback, asyncState);
+        }
+
+        private object[] OnEndGetCountOfRssItemOfAll(System.IAsyncResult result)
+        {
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCountOfRssItemOfAll(result);
+            return new object[] {
+                    retVal};
+        }
+
+        private void OnGetCountOfRssItemOfAllCompleted(object state)
+        {
+            if ((this.GetCountOfRssItemOfAllCompleted != null))
+            {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCountOfRssItemOfAllCompleted(this, new GetCountOfRssItemOfAllCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+
+        public void GetCountOfRssItemOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            this.GetCountOfRssItemOfAllAsync(request, null);
+        }
+
+        public void GetCountOfRssItemOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
+        {
+            if ((this.onBeginGetCountOfRssItemOfAllDelegate == null))
+            {
+                this.onBeginGetCountOfRssItemOfAllDelegate = new BeginOperationDelegate(this.OnBeginGetCountOfRssItemOfAll);
+            }
+            if ((this.onEndGetCountOfRssItemOfAllDelegate == null))
+            {
+                this.onEndGetCountOfRssItemOfAllDelegate = new EndOperationDelegate(this.OnEndGetCountOfRssItemOfAll);
+            }
+            if ((this.onGetCountOfRssItemOfAllCompletedDelegate == null))
+            {
+                this.onGetCountOfRssItemOfAllCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCountOfRssItemOfAllCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCountOfRssItemOfAllDelegate, new object[] {
+                        request}, this.onEndGetCountOfRssItemOfAllDelegate, this.onGetCountOfRssItemOfAllCompletedDelegate, userState);
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginExistsOfRssItemOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
+        {
+            return base.Channel.BeginExistsOfRssItemOfAll(request, callback, asyncState);
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.ILogServiceAsyn.EndExistsOfRssItemOfAll(System.IAsyncResult result)
+        {
+            return base.Channel.EndExistsOfRssItemOfAll(result);
+        }
+
+        private System.IAsyncResult OnBeginExistsOfRssItemOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
+        {
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginExistsOfRssItemOfAll(request, callback, asyncState);
+        }
+
+        private object[] OnEndExistsOfRssItemOfAll(System.IAsyncResult result)
+        {
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndExistsOfRssItemOfAll(result);
+            return new object[] {
+                    retVal};
+        }
+
+        private void OnExistsOfRssItemOfAllCompleted(object state)
+        {
+            if ((this.ExistsOfRssItemOfAllCompleted != null))
+            {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ExistsOfRssItemOfAllCompleted(this, new ExistsOfRssItemOfAllCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+
+        public void ExistsOfRssItemOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            this.ExistsOfRssItemOfAllAsync(request, null);
+        }
+
+        public void ExistsOfRssItemOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
+        {
+            if ((this.onBeginExistsOfRssItemOfAllDelegate == null))
+            {
+                this.onBeginExistsOfRssItemOfAllDelegate = new BeginOperationDelegate(this.OnBeginExistsOfRssItemOfAll);
+            }
+            if ((this.onEndExistsOfRssItemOfAllDelegate == null))
+            {
+                this.onEndExistsOfRssItemOfAllDelegate = new EndOperationDelegate(this.OnEndExistsOfRssItemOfAll);
+            }
+            if ((this.onExistsOfRssItemOfAllCompletedDelegate == null))
+            {
+                this.onExistsOfRssItemOfAllCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnExistsOfRssItemOfAllCompleted);
+            }
+            base.InvokeAsync(this.onBeginExistsOfRssItemOfAllDelegate, new object[] {
+                        request}, this.onEndExistsOfRssItemOfAllDelegate, this.onExistsOfRssItemOfAllCompletedDelegate, userState);
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCollectionOfRssItemOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
+        {
+            return base.Channel.BeginGetCollectionOfRssItemOfAll(request, callback, asyncState);
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection Log4Net.WcfContracts.ILogServiceAsyn.EndGetCollectionOfRssItemOfAll(System.IAsyncResult result)
+        {
+            return base.Channel.EndGetCollectionOfRssItemOfAll(result);
+        }
+
+        private System.IAsyncResult OnBeginGetCollectionOfRssItemOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
+        {
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCollectionOfRssItemOfAll(request, callback, asyncState);
+        }
+
+        private object[] OnEndGetCollectionOfRssItemOfAll(System.IAsyncResult result)
+        {
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCollectionOfRssItemOfAll(result);
+            return new object[] {
+                    retVal};
+        }
+
+        private void OnGetCollectionOfRssItemOfAllCompleted(object state)
+        {
+            if ((this.GetCollectionOfRssItemOfAllCompleted != null))
+            {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCollectionOfRssItemOfAllCompleted(this, new GetCollectionOfRssItemOfAllCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+
+        public void GetCollectionOfRssItemOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            this.GetCollectionOfRssItemOfAllAsync(request, null);
+        }
+
+        public void GetCollectionOfRssItemOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
+        {
+            if ((this.onBeginGetCollectionOfRssItemOfAllDelegate == null))
+            {
+                this.onBeginGetCollectionOfRssItemOfAllDelegate = new BeginOperationDelegate(this.OnBeginGetCollectionOfRssItemOfAll);
+            }
+            if ((this.onEndGetCollectionOfRssItemOfAllDelegate == null))
+            {
+                this.onEndGetCollectionOfRssItemOfAllDelegate = new EndOperationDelegate(this.OnEndGetCollectionOfRssItemOfAll);
+            }
+            if ((this.onGetCollectionOfRssItemOfAllCompletedDelegate == null))
+            {
+                this.onGetCollectionOfRssItemOfAllCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCollectionOfRssItemOfAllCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCollectionOfRssItemOfAllDelegate, new object[] {
+                        request}, this.onEndGetCollectionOfRssItemOfAllDelegate, this.onGetCollectionOfRssItemOfAllCompletedDelegate, userState);
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetSingleOfRssItemOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
+        {
+            return base.Channel.BeginGetSingleOfRssItemOfAll(request, callback, asyncState);
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection Log4Net.WcfContracts.ILogServiceAsyn.EndGetSingleOfRssItemOfAll(System.IAsyncResult result)
+        {
+            return base.Channel.EndGetSingleOfRssItemOfAll(result);
+        }
+
+        private System.IAsyncResult OnBeginGetSingleOfRssItemOfAll(object[] inValues, System.AsyncCallback callback, object asyncState)
+        {
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetSingleOfRssItemOfAll(request, callback, asyncState);
+        }
+
+        private object[] OnEndGetSingleOfRssItemOfAll(System.IAsyncResult result)
+        {
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetSingleOfRssItemOfAll(result);
+            return new object[] {
+                    retVal};
+        }
+
+        private void OnGetSingleOfRssItemOfAllCompleted(object state)
+        {
+            if ((this.GetSingleOfRssItemOfAllCompleted != null))
+            {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetSingleOfRssItemOfAllCompleted(this, new GetSingleOfRssItemOfAllCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+
+        public void GetSingleOfRssItemOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request)
+        {
+            this.GetSingleOfRssItemOfAllAsync(request, null);
+        }
+
+        public void GetSingleOfRssItemOfAllAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, object userState)
+        {
+            if ((this.onBeginGetSingleOfRssItemOfAllDelegate == null))
+            {
+                this.onBeginGetSingleOfRssItemOfAllDelegate = new BeginOperationDelegate(this.OnBeginGetSingleOfRssItemOfAll);
+            }
+            if ((this.onEndGetSingleOfRssItemOfAllDelegate == null))
+            {
+                this.onEndGetSingleOfRssItemOfAllDelegate = new EndOperationDelegate(this.OnEndGetSingleOfRssItemOfAll);
+            }
+            if ((this.onGetSingleOfRssItemOfAllCompletedDelegate == null))
+            {
+                this.onGetSingleOfRssItemOfAllCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetSingleOfRssItemOfAllCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetSingleOfRssItemOfAllDelegate, new object[] {
+                        request}, this.onEndGetSingleOfRssItemOfAllDelegate, this.onGetSingleOfRssItemOfAllCompletedDelegate, userState);
+        }
+
+        #endregion Query Methods Of RssItem of All
+
+        #region Query Methods Of Entity of ByIdentifier
 
         /// <summary>
         /// Gets the count of entity of "ByIdentifier".
@@ -2378,7 +2707,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfEntityOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetCountOfEntityOfByIdentifier(request);
         }
@@ -2387,20 +2716,20 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "ByIdentifier".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfEntityOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.ExistsOfEntityOfByIdentifier(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "ByIdentifier".
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetCollectionOfEntityOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetCollectionOfEntityOfByIdentifier(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetCollectionOfEntityOfByIdentifier(request);
         }
@@ -2410,35 +2739,33 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog GetSingleOfEntityOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn GetSingleOfEntityOfByIdentifier(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetSingleOfEntityOfByIdentifier(request);
-		}
-
-#endif
+        }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCountOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCountOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCountOfEntityOfByIdentifier(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCountOfEntityOfByIdentifier(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.ILogServiceAsyn.EndGetCountOfEntityOfByIdentifier(System.IAsyncResult result)
         {
             return base.Channel.EndGetCountOfEntityOfByIdentifier(result);
         }
 
         private System.IAsyncResult OnBeginGetCountOfEntityOfByIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCountOfEntityOfByIdentifier(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCountOfEntityOfByIdentifier(request, callback, asyncState);
         }
 
         private object[] OnEndGetCountOfEntityOfByIdentifier(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCountOfEntityOfByIdentifier(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCountOfEntityOfByIdentifier(result);
             return new object[] {
                     retVal};
         }
@@ -2452,12 +2779,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCountOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public void GetCountOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             this.GetCountOfEntityOfByIdentifierAsync(request, null);
         }
 
-        public void GetCountOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, object userState)
+        public void GetCountOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, object userState)
         {
             if ((this.onBeginGetCountOfEntityOfByIdentifierDelegate == null))
             {
@@ -2476,26 +2803,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginExistsOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginExistsOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginExistsOfEntityOfByIdentifier(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.WcfServiceContractAsynLog.EndExistsOfEntityOfByIdentifier(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.ILogServiceAsyn.EndExistsOfEntityOfByIdentifier(System.IAsyncResult result)
         {
             return base.Channel.EndExistsOfEntityOfByIdentifier(result);
         }
 
         private System.IAsyncResult OnBeginExistsOfEntityOfByIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginExistsOfEntityOfByIdentifier(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginExistsOfEntityOfByIdentifier(request, callback, asyncState);
         }
 
         private object[] OnEndExistsOfEntityOfByIdentifier(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndExistsOfEntityOfByIdentifier(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndExistsOfEntityOfByIdentifier(result);
             return new object[] {
                     retVal};
         }
@@ -2509,12 +2836,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void ExistsOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public void ExistsOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             this.ExistsOfEntityOfByIdentifierAsync(request, null);
         }
 
-        public void ExistsOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, object userState)
+        public void ExistsOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, object userState)
         {
             if ((this.onBeginExistsOfEntityOfByIdentifierDelegate == null))
             {
@@ -2533,26 +2860,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCollectionOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCollectionOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCollectionOfEntityOfByIdentifier(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCollectionOfEntityOfByIdentifier(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndGetCollectionOfEntityOfByIdentifier(System.IAsyncResult result)
         {
             return base.Channel.EndGetCollectionOfEntityOfByIdentifier(result);
         }
 
         private System.IAsyncResult OnBeginGetCollectionOfEntityOfByIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCollectionOfEntityOfByIdentifier(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCollectionOfEntityOfByIdentifier(request, callback, asyncState);
         }
 
         private object[] OnEndGetCollectionOfEntityOfByIdentifier(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCollectionOfEntityOfByIdentifier(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCollectionOfEntityOfByIdentifier(result);
             return new object[] {
                     retVal};
         }
@@ -2566,12 +2893,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCollectionOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public void GetCollectionOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             this.GetCollectionOfEntityOfByIdentifierAsync(request, null);
         }
 
-        public void GetCollectionOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, object userState)
+        public void GetCollectionOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, object userState)
         {
             if ((this.onBeginGetCollectionOfEntityOfByIdentifierDelegate == null))
             {
@@ -2590,26 +2917,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetSingleOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetSingleOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetSingleOfEntityOfByIdentifier(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetSingleOfEntityOfByIdentifier(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn Log4Net.WcfContracts.ILogServiceAsyn.EndGetSingleOfEntityOfByIdentifier(System.IAsyncResult result)
         {
             return base.Channel.EndGetSingleOfEntityOfByIdentifier(result);
         }
 
         private System.IAsyncResult OnBeginGetSingleOfEntityOfByIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetSingleOfEntityOfByIdentifier(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetSingleOfEntityOfByIdentifier(request, callback, asyncState);
         }
 
         private object[] OnEndGetSingleOfEntityOfByIdentifier(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetSingleOfEntityOfByIdentifier(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetSingleOfEntityOfByIdentifier(result);
             return new object[] {
                     retVal};
         }
@@ -2623,12 +2950,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetSingleOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public void GetSingleOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             this.GetSingleOfEntityOfByIdentifierAsync(request, null);
         }
 
-        public void GetSingleOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, object userState)
+        public void GetSingleOfEntityOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, object userState)
         {
             if ((this.onBeginGetSingleOfEntityOfByIdentifierDelegate == null))
             {
@@ -2646,15 +2973,9 @@ namespace Log4Net.WcfClientBLL
                         request}, this.onEndGetSingleOfEntityOfByIdentifierDelegate, this.onGetSingleOfEntityOfByIdentifierCompletedDelegate, userState);
         }
 
-		#endregion Query Methods Of Entity of ByIdentifier 
+        #endregion Query Methods Of Entity of ByIdentifier
 
-
-
-
-		#region Query Methods Of KeyInformation of ByIdentifier 
-
-#if SILVERLIGHT
-#else
+        #region Query Methods Of KeyInformation of ByIdentifier
 
         /// <summary>
         /// Gets the count of entity of "ByIdentifier".
@@ -2662,7 +2983,7 @@ namespace Log4Net.WcfClientBLL
         /// <param name="request">The request.</param>
         /// <returns>the count</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger GetCountOfKeyInformationOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetCountOfKeyInformationOfByIdentifier(request);
         }
@@ -2671,20 +2992,20 @@ namespace Log4Net.WcfClientBLL
         /// Exists the of entity of "ByIdentifier".
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns>true if exists any, otherwise false</returns>		
+        /// <returns>true if exists any, otherwise false</returns>
         public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean ExistsOfKeyInformationOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.ExistsOfKeyInformationOfByIdentifier(request);
-		}
+        }
 
         /// <summary>
         /// Gets the collection of entity of "ByIdentifier".
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation GetCollectionOfKeyInformationOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation GetCollectionOfKeyInformationOfByIdentifier(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetCollectionOfKeyInformationOfByIdentifier(request);
         }
@@ -2694,35 +3015,33 @@ namespace Log4Net.WcfClientBLL
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns></returns>
-        public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation GetSingleOfKeyInformationOfByIdentifier(
-			Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation GetSingleOfKeyInformationOfByIdentifier(
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             return base.Channel.GetSingleOfKeyInformationOfByIdentifier(request);
-		}
-
-#endif
+        }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCountOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCountOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCountOfKeyInformationOfByIdentifier(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCountOfKeyInformationOfByIdentifier(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger Log4Net.WcfContracts.ILogServiceAsyn.EndGetCountOfKeyInformationOfByIdentifier(System.IAsyncResult result)
         {
             return base.Channel.EndGetCountOfKeyInformationOfByIdentifier(result);
         }
 
         private System.IAsyncResult OnBeginGetCountOfKeyInformationOfByIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCountOfKeyInformationOfByIdentifier(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCountOfKeyInformationOfByIdentifier(request, callback, asyncState);
         }
 
         private object[] OnEndGetCountOfKeyInformationOfByIdentifier(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCountOfKeyInformationOfByIdentifier(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCountOfKeyInformationOfByIdentifier(result);
             return new object[] {
                     retVal};
         }
@@ -2736,12 +3055,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCountOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public void GetCountOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             this.GetCountOfKeyInformationOfByIdentifierAsync(request, null);
         }
 
-        public void GetCountOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, object userState)
+        public void GetCountOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, object userState)
         {
             if ((this.onBeginGetCountOfKeyInformationOfByIdentifierDelegate == null))
             {
@@ -2760,26 +3079,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginExistsOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginExistsOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginExistsOfKeyInformationOfByIdentifier(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.WcfServiceContractAsynLog.EndExistsOfKeyInformationOfByIdentifier(System.IAsyncResult result)
+        Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean Log4Net.WcfContracts.ILogServiceAsyn.EndExistsOfKeyInformationOfByIdentifier(System.IAsyncResult result)
         {
             return base.Channel.EndExistsOfKeyInformationOfByIdentifier(result);
         }
 
         private System.IAsyncResult OnBeginExistsOfKeyInformationOfByIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginExistsOfKeyInformationOfByIdentifier(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginExistsOfKeyInformationOfByIdentifier(request, callback, asyncState);
         }
 
         private object[] OnEndExistsOfKeyInformationOfByIdentifier(System.IAsyncResult result)
         {
-            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndExistsOfKeyInformationOfByIdentifier(result);
+            Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndExistsOfKeyInformationOfByIdentifier(result);
             return new object[] {
                     retVal};
         }
@@ -2793,12 +3112,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void ExistsOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public void ExistsOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             this.ExistsOfKeyInformationOfByIdentifierAsync(request, null);
         }
 
-        public void ExistsOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, object userState)
+        public void ExistsOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, object userState)
         {
             if ((this.onBeginExistsOfKeyInformationOfByIdentifierDelegate == null))
             {
@@ -2817,26 +3136,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetCollectionOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetCollectionOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetCollectionOfKeyInformationOfByIdentifier(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetCollectionOfKeyInformationOfByIdentifier(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation Log4Net.WcfContracts.ILogServiceAsyn.EndGetCollectionOfKeyInformationOfByIdentifier(System.IAsyncResult result)
         {
             return base.Channel.EndGetCollectionOfKeyInformationOfByIdentifier(result);
         }
 
         private System.IAsyncResult OnBeginGetCollectionOfKeyInformationOfByIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetCollectionOfKeyInformationOfByIdentifier(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetCollectionOfKeyInformationOfByIdentifier(request, callback, asyncState);
         }
 
         private object[] OnEndGetCollectionOfKeyInformationOfByIdentifier(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetCollectionOfKeyInformationOfByIdentifier(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetCollectionOfKeyInformationOfByIdentifier(result);
             return new object[] {
                     retVal};
         }
@@ -2850,12 +3169,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetCollectionOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public void GetCollectionOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             this.GetCollectionOfKeyInformationOfByIdentifierAsync(request, null);
         }
 
-        public void GetCollectionOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, object userState)
+        public void GetCollectionOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, object userState)
         {
             if ((this.onBeginGetCollectionOfKeyInformationOfByIdentifierDelegate == null))
             {
@@ -2874,26 +3193,26 @@ namespace Log4Net.WcfClientBLL
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Log4Net.WcfContracts.WcfServiceContractAsynLog.BeginGetSingleOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+        System.IAsyncResult Log4Net.WcfContracts.ILogServiceAsyn.BeginGetSingleOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetSingleOfKeyInformationOfByIdentifier(request, callback, asyncState);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation Log4Net.WcfContracts.WcfServiceContractAsynLog.EndGetSingleOfKeyInformationOfByIdentifier(System.IAsyncResult result)
+        Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation Log4Net.WcfContracts.ILogServiceAsyn.EndGetSingleOfKeyInformationOfByIdentifier(System.IAsyncResult result)
         {
             return base.Channel.EndGetSingleOfKeyInformationOfByIdentifier(result);
         }
 
         private System.IAsyncResult OnBeginGetSingleOfKeyInformationOfByIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request = ((Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier )(inValues[0]));
-            return ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).BeginGetSingleOfKeyInformationOfByIdentifier(request, callback, asyncState);
+            Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request = ((Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier )(inValues[0]));
+            return ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).BeginGetSingleOfKeyInformationOfByIdentifier(request, callback, asyncState);
         }
 
         private object[] OnEndGetSingleOfKeyInformationOfByIdentifier(System.IAsyncResult result)
         {
-            Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation retVal = ((Log4Net.WcfContracts.WcfServiceContractAsynLog)(this)).EndGetSingleOfKeyInformationOfByIdentifier(result);
+            Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation retVal = ((Log4Net.WcfContracts.ILogServiceAsyn)(this)).EndGetSingleOfKeyInformationOfByIdentifier(result);
             return new object[] {
                     retVal};
         }
@@ -2907,12 +3226,12 @@ namespace Log4Net.WcfClientBLL
             }
         }
 
-        public void GetSingleOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request)
+        public void GetSingleOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request)
         {
             this.GetSingleOfKeyInformationOfByIdentifierAsync(request, null);
         }
 
-        public void GetSingleOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, object userState)
+        public void GetSingleOfKeyInformationOfByIdentifierAsync(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, object userState)
         {
             if ((this.onBeginGetSingleOfKeyInformationOfByIdentifierDelegate == null))
             {
@@ -2930,19 +3249,15 @@ namespace Log4Net.WcfClientBLL
                         request}, this.onEndGetSingleOfKeyInformationOfByIdentifierDelegate, this.onGetSingleOfKeyInformationOfByIdentifierCompletedDelegate, userState);
         }
 
-		#endregion Query Methods Of KeyInformation of ByIdentifier 
+        #endregion Query Methods Of KeyInformation of ByIdentifier
 
+        #endregion DataQueryPerQuerySettingCollection
 
+        #region GetAscendantAndDescendant
 
-		#endregion DataQueryPerQuerySettingCollection
+        #endregion GetAscendantAndDescendant
 
-		#region GetAscendantAndDescendant
-
-
-
-		#endregion GetAscendantAndDescendant
-
-		#region Open and Close
+        #region Open and Close
 
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState)
         {
@@ -3028,30 +3343,30 @@ namespace Log4Net.WcfClientBLL
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
 
-		#endregion Open and Close
+        #endregion Open and Close
 
 #if WINDOWS_PHONE
 
-        protected override Log4Net.WcfContracts.WcfServiceContractAsynLog CreateChannel()
+        protected override Log4Net.WcfContracts.ILogServiceAsyn CreateChannel()
         {
             return new WcfClientEntityAsynLogChannel(this);
         }
 
-        private class WcfClientEntityAsynLogChannel : ChannelBase<Log4Net.WcfContracts.WcfServiceContractAsynLog>, Log4Net.WcfContracts.WcfServiceContractAsynLog
+        private class WcfClientEntityAsynLogChannel : ChannelBase<Log4Net.WcfContracts.ILogServiceAsyn>, Log4Net.WcfContracts.ILogServiceAsyn
         {
 
-			#region constructor
+            #region constructor
 
-            public WcfClientEntityAsynLogChannel(System.ServiceModel.ClientBase<Log4Net.WcfContracts.WcfServiceContractAsynLog> client) :
+            public WcfClientEntityAsynLogChannel(System.ServiceModel.ClientBase<Log4Net.WcfContracts.ILogServiceAsyn> client) :
                 base(client)
             {
             }
 
-			#endregion constructor
+            #endregion constructor
 
-		    #region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
+            #region Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
-            public System.IAsyncResult BeginInsertEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginInsertEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = input;
@@ -3059,14 +3374,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndInsertEntity(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndInsertEntity(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("InsertEntity", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("InsertEntity", _args, result)));
                 return _result;
             }
-			
-            public System.IAsyncResult BeginUpdateEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+
+            public System.IAsyncResult BeginUpdateEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = input;
@@ -3074,14 +3389,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndUpdateEntity(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndUpdateEntity(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("UpdateEntity", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("UpdateEntity", _args, result)));
                 return _result;
             }
-			
-            public System.IAsyncResult BeginDeleteEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+
+            public System.IAsyncResult BeginDeleteEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = input;
@@ -3089,14 +3404,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndDeleteEntity(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndDeleteEntity(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("DeleteEntity", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("DeleteEntity", _args, result)));
                 return _result;
             }
 
-            public System.IAsyncResult BeginDeleteByIdentifierEntity(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInOfIdentifierLog id, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginDeleteByIdentifierEntity(Log4Net.CommonBLLEntities.LogRequestMessageBuiltInOfIdentifier id, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = id;
@@ -3104,14 +3419,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndDeleteByIdentifierEntity(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndDeleteByIdentifierEntity(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("DeleteByIdentifierEntity", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("DeleteByIdentifierEntity", _args, result)));
                 return _result;
             }
 
-            public System.IAsyncResult BeginBatchInsert(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginBatchInsert(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = input;
@@ -3119,14 +3434,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndBatchInsert(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndBatchInsert(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("BatchInsert", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("BatchInsert", _args, result)));
                 return _result;
             }
 
-            public System.IAsyncResult BeginBatchDelete(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginBatchDelete(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = input;
@@ -3134,14 +3449,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndBatchDelete(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndBatchDelete(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("BatchDelete", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("BatchDelete", _args, result)));
                 return _result;
             }
 
-            public System.IAsyncResult BeginBatchUpdate(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageBuiltInLog input, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginBatchUpdate(Log4Net.CommonBLLEntities.LogRequestMessageBuiltIn input, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = input;
@@ -3149,28 +3464,24 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndBatchUpdate(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndBatchUpdate(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("BatchUpdate", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("BatchUpdate", _args, result)));
                 return _result;
-            }			
+            }
 
-	        #endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
+            #endregion Framework.DAL.DataAccessLayerContractBase<Log4Net.DataSourceEntities.LogCollection,Log4Net.DataSourceEntities.Log,Log4Net.DataSourceEntities.LogIdentifier> Members
 
-	
-		#region Binary Columns
-
-
+        #region Binary Columns
 
         #endregion Binary Columns
 
-			#region DataQueryPerQuerySettingCollection
+            #region DataQueryPerQuerySettingCollection
 
+            #region Query Methods Of Entity of Common
 
-			#region Query Methods Of Entity of Common 
-
-            public System.IAsyncResult BeginGetCountOfEntityOfCommon(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCountOfEntityOfCommon(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3185,7 +3496,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginExistsOfEntityOfCommon(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginExistsOfEntityOfCommon(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3200,7 +3511,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetCollectionOfEntityOfCommon(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCollectionOfEntityOfCommon(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3208,14 +3519,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndGetCollectionOfEntityOfCommon(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndGetCollectionOfEntityOfCommon(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("GetCollectionOfEntityOfCommon", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("GetCollectionOfEntityOfCommon", _args, result)));
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetSingleOfEntityOfCommon(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfCommon request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetSingleOfEntityOfCommon(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfCommon request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3223,21 +3534,18 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndGetSingleOfEntityOfCommon(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndGetSingleOfEntityOfCommon(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("GetSingleOfEntityOfCommon", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("GetSingleOfEntityOfCommon", _args, result)));
                 return _result;
             }
 
-			#endregion Query Methods Of Entity of Common 
+            #endregion Query Methods Of Entity of Common
 
+            #region Query Methods Of Entity of All
 
-
-
-			#region Query Methods Of Entity of All 
-
-            public System.IAsyncResult BeginGetCountOfEntityOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCountOfEntityOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3252,7 +3560,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginExistsOfEntityOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginExistsOfEntityOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3267,7 +3575,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetCollectionOfEntityOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCollectionOfEntityOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3275,14 +3583,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndGetCollectionOfEntityOfAll(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndGetCollectionOfEntityOfAll(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("GetCollectionOfEntityOfAll", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("GetCollectionOfEntityOfAll", _args, result)));
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetSingleOfEntityOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetSingleOfEntityOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3290,21 +3598,18 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndGetSingleOfEntityOfAll(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndGetSingleOfEntityOfAll(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("GetSingleOfEntityOfAll", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("GetSingleOfEntityOfAll", _args, result)));
                 return _result;
             }
 
-			#endregion Query Methods Of Entity of All 
+            #endregion Query Methods Of Entity of All
 
+            #region Query Methods Of NameValuePair of All
 
-
-
-			#region Query Methods Of NameValuePair of All 
-
-            public System.IAsyncResult BeginGetCountOfNameValuePairOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCountOfNameValuePairOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3319,7 +3624,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginExistsOfNameValuePairOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginExistsOfNameValuePairOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3334,7 +3639,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetCollectionOfNameValuePairOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCollectionOfNameValuePairOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3349,7 +3654,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetSingleOfNameValuePairOfAll(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfAll request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetSingleOfNameValuePairOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3364,14 +3669,75 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-			#endregion Query Methods Of NameValuePair of All 
+            #endregion Query Methods Of NameValuePair of All
 
+            #region Query Methods Of RssItem of All
 
+            public System.IAsyncResult BeginGetCountOfRssItemOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
+            {
+                object[] _args = new object[1];
+                _args[0] = request;
+                System.IAsyncResult _result = base.BeginInvoke("GetCountOfRssItemOfAll", _args, callback, asyncState);
+                return _result;
+            }
 
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger EndGetCountOfRssItemOfAll(System.IAsyncResult result)
+            {
+                object[] _args = new object[0];
+                Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger _result = ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageInteger)(base.EndInvoke("GetCountOfRssItemOfAll", _args, result)));
+                return _result;
+            }
 
-			#region Query Methods Of Entity of ByIdentifier 
+            public System.IAsyncResult BeginExistsOfRssItemOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
+            {
+                object[] _args = new object[1];
+                _args[0] = request;
+                System.IAsyncResult _result = base.BeginInvoke("ExistsOfRssItemOfAll", _args, callback, asyncState);
+                return _result;
+            }
 
-            public System.IAsyncResult BeginGetCountOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean EndExistsOfRssItemOfAll(System.IAsyncResult result)
+            {
+                object[] _args = new object[0];
+                Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean _result = ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageBoolean)(base.EndInvoke("ExistsOfRssItemOfAll", _args, result)));
+                return _result;
+            }
+
+            public System.IAsyncResult BeginGetCollectionOfRssItemOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
+            {
+                object[] _args = new object[1];
+                _args[0] = request;
+                System.IAsyncResult _result = base.BeginInvoke("GetCollectionOfRssItemOfAll", _args, callback, asyncState);
+                return _result;
+            }
+
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection EndGetCollectionOfRssItemOfAll(System.IAsyncResult result)
+            {
+                object[] _args = new object[0];
+                Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection _result = ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection)(base.EndInvoke("GetCollectionOfRssItemOfAll", _args, result)));
+                return _result;
+            }
+
+            public System.IAsyncResult BeginGetSingleOfRssItemOfAll(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfAll request, System.AsyncCallback callback, object asyncState)
+            {
+                object[] _args = new object[1];
+                _args[0] = request;
+                System.IAsyncResult _result = base.BeginInvoke("GetSingleOfRssItemOfAll", _args, callback, asyncState);
+                return _result;
+            }
+
+            public Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection EndGetSingleOfRssItemOfAll(System.IAsyncResult result)
+            {
+                object[] _args = new object[0];
+                Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection _result = ((Framework.CommonBLLEntities.BusinessLogicLayerResponseMessageRssItemCollection)(base.EndInvoke("GetSingleOfRssItemOfAll", _args, result)));
+                return _result;
+            }
+
+            #endregion Query Methods Of RssItem of All
+
+            #region Query Methods Of Entity of ByIdentifier
+
+            public System.IAsyncResult BeginGetCountOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3386,7 +3752,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginExistsOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginExistsOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3401,7 +3767,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetCollectionOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCollectionOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3409,14 +3775,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndGetCollectionOfEntityOfByIdentifier(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndGetCollectionOfEntityOfByIdentifier(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("GetCollectionOfEntityOfByIdentifier", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("GetCollectionOfEntityOfByIdentifier", _args, result)));
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetSingleOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetSingleOfEntityOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3424,21 +3790,18 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog EndGetSingleOfEntityOfByIdentifier(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn EndGetSingleOfEntityOfByIdentifier(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog)(base.EndInvoke("GetSingleOfEntityOfByIdentifier", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn)(base.EndInvoke("GetSingleOfEntityOfByIdentifier", _args, result)));
                 return _result;
             }
 
-			#endregion Query Methods Of Entity of ByIdentifier 
+            #endregion Query Methods Of Entity of ByIdentifier
 
+            #region Query Methods Of KeyInformation of ByIdentifier
 
-
-
-			#region Query Methods Of KeyInformation of ByIdentifier 
-
-            public System.IAsyncResult BeginGetCountOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCountOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3453,7 +3816,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginExistsOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginExistsOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3468,7 +3831,7 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetCollectionOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetCollectionOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3476,14 +3839,14 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation EndGetCollectionOfKeyInformationOfByIdentifier(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation EndGetCollectionOfKeyInformationOfByIdentifier(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation)(base.EndInvoke("GetCollectionOfKeyInformationOfByIdentifier", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation)(base.EndInvoke("GetCollectionOfKeyInformationOfByIdentifier", _args, result)));
                 return _result;
             }
 
-            public System.IAsyncResult BeginGetSingleOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.BusinessLogicLayerRequestMessageUserDefinedLogOfByIdentifier request, System.AsyncCallback callback, object asyncState)
+            public System.IAsyncResult BeginGetSingleOfKeyInformationOfByIdentifier(Log4Net.CommonBLLEntities.LogRequestMessageUserDefinedOfByIdentifier request, System.AsyncCallback callback, object asyncState)
             {
                 object[] _args = new object[1];
                 _args[0] = request;
@@ -3491,32 +3854,23 @@ namespace Log4Net.WcfClientBLL
                 return _result;
             }
 
-            public Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation EndGetSingleOfKeyInformationOfByIdentifier(System.IAsyncResult result)
+            public Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation EndGetSingleOfKeyInformationOfByIdentifier(System.IAsyncResult result)
             {
                 object[] _args = new object[0];
-                Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation _result = ((Log4Net.CommonBLLEntities.BusinessLogicLayerResponseMessageBuiltInLog.KeyInformation)(base.EndInvoke("GetSingleOfKeyInformationOfByIdentifier", _args, result)));
+                Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation _result = ((Log4Net.CommonBLLEntities.LogResponseMessageBuiltIn.KeyInformation)(base.EndInvoke("GetSingleOfKeyInformationOfByIdentifier", _args, result)));
                 return _result;
             }
 
-			#endregion Query Methods Of KeyInformation of ByIdentifier 
+            #endregion Query Methods Of KeyInformation of ByIdentifier
 
+            #endregion DataQueryPerQuerySettingCollection
 
+            #region GetAscendantAndDescendant
 
-			#endregion DataQueryPerQuerySettingCollection
-
-			#region GetAscendantAndDescendant
-
-
-
-
-			#endregion GetAscendantAndDescendant
-
-
+            #endregion GetAscendantAndDescendant
 
         }
 #endif
-
-
 
     }
 }

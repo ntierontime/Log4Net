@@ -1,12 +1,12 @@
-@model Log4Net.AspNetMvc40Common.Models.LocalPasswordModel
+@model Log4Net.AspNetMvc40Rasor.Models.LocalPasswordModel
 @{
-    ViewBag.Title = Framework.Resources.UIStringResource.Account_Manage_TitleText;
+    ViewBag.Title = Framework.Resx.UIStringResource.Account_Manage_TitleText;
 }
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
+<hgroup>
+    <h2>@ViewBag.Title.</h2>
 </hgroup>
 <p class="message-success">@ViewBag.StatusMessage</p>
-<p>@Framework.Resources.UIStringResource.Account_Manage_Youreloggedinas <strong>@User.Identity.Name</strong>.</p>
+<p>@Framework.Resx.UIStringResource.Account_Manage_Youreloggedinas <strong>@User.Identity.Name</strong>.</p>
 @if (ViewBag.HasLocalPassword)
 {
     @Html.Partial("_ChangePasswordPartial")
@@ -17,9 +17,6 @@ else
 }
 <section id="externalLogins">
     @Html.Action("RemoveExternalLogins")
-    <h3>@Framework.Resources.UIStringResource.Account_Manage_Addanexternallogin</h3>
+    <h3>@Framework.Resx.UIStringResource.Account_Manage_Addanexternallogin</h3>
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 </section>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

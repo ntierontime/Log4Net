@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52F99887-9ACC-421F-83CA-1C98DF00233F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.EntityContracts</RootNamespace>
+    <AssemblyName>Framework.EntityContracts.X</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;XAMARIN;__MOBILE__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;XAMARIN;__MOBILE__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <None Include="map.1.B.3.vsd" />
+    <None Include="map.1.B.3.vsd.png" />
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\AlphabeticalOrderCategory.cs">
+      <Link>AlphabeticalOrderCategory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\DateTimePivotEntities\DateTimePivot.cs">
+      <Link>DateTimePivotEntities\DateTimePivot.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\DateTimePivotEntities\DateTimePivotCollection.cs">
+      <Link>DateTimePivotEntities\DateTimePivotCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\DateTimePivotEntities\DateTimePivotContextBase.cs">
+      <Link>DateTimePivotEntities\DateTimePivotContextBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\DateTimePivotEntities\DateTimePivotContextByAlphabeticalOrderCategoryBase.cs">
+      <Link>DateTimePivotEntities\DateTimePivotContextByAlphabeticalOrderCategoryBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\DateTimePivotEntities\DateTimePivotContextByDateTimePivotSettingBase.cs">
+      <Link>DateTimePivotEntities\DateTimePivotContextByDateTimePivotSettingBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\DateTimePivotEntities\DateTimePivotContextByNameValuePairBase.cs">
+      <Link>DateTimePivotEntities\DateTimePivotContextByNameValuePairBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\DateTimePivotEntities\DateTimePivotSetting.cs">
+      <Link>DateTimePivotEntities\DateTimePivotSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\DateTimeUnit.cs">
+      <Link>Queries\DateTimeUnit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\IClone.cs">
+      <Link>IClone.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\KnownMathCalculations.cs">
+      <Link>KnownMathCalculations.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\PredefinedBooleanSelectedValues.cs">
+      <Link>Queries\PredefinedBooleanSelectedValues.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\PreDefinedDateTimeRanges.cs">
+      <Link>Queries\PreDefinedDateTimeRanges.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryCriteriaBase.cs">
+      <Link>Queries\QueryCriteriaBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPagingResult.cs">
+      <Link>Queries\QueryPagingResult.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\SummaryData.cs">
+      <Link>SummaryData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\ViewModels\ContentData.cs">
+      <Link>ViewModels\ContentData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\ViewModels\SearchStatus.cs">
+      <Link>ViewModels\SearchStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryOrderBySetting.cs">
+      <Link>Queries\QueryOrderBySetting.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPagingSetting.cs">
+      <Link>Queries\QueryPagingSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPredicateBase.cs">
+      <Link>Queries\QueryPredicateBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPredicateTypes.cs">
+      <Link>Queries\QueryPredicateTypes.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.X\Framework.X.csproj">
+      <Project>{68218f7a-7603-418f-99c8-1b6e1fc426e0}</Project>
+      <Name>Framework.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Resx.X\Framework.Resx.X.csproj">
+      <Project>{da5209fe-248e-46d6-8e4d-2a6fc218bd94}</Project>
+      <Name>Framework.Resx.X</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

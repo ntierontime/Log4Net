@@ -10,7 +10,7 @@ namespace Framework
     /// <summary>
     /// interface of NameValuePair
     /// </summary>
-	public interface INameValuePair
+    public interface INameValuePair
     {
         /// <summary>
         /// Gets or sets the name.
@@ -48,7 +48,7 @@ namespace Framework
         /// <param name="name">The name.</param>
         void Add(string value, string name);
     }
-    
+
     #endregion interface
 
     #region class NameValuePairContractHelper
@@ -58,7 +58,7 @@ namespace Framework
     /// </summary>
     public static class NameValuePairContractHelper
     {
-		/// <summary>
+        /// <summary>
         /// Copies the specified from.
         /// </summary>
         /// <typeparam name="T1">The type of the 1.</typeparam>
@@ -81,7 +81,7 @@ namespace Framework
         /// <param name="from">From.</param>
         /// <param name="to">To.</param>
         /// <returns>true if equals, otherwise false</returns>
-		public static bool Equals<T1, T2>(T1 from, T2 to)
+        public static bool Equals<T1, T2>(T1 from, T2 to)
             where T1 : INameValuePair
             where T2 : INameValuePair
         {
@@ -115,7 +115,7 @@ namespace Framework
         /// <returns>
         /// A <see cref="System.String"/> that represents this instance.
         /// </returns>
-		public static string ToString<T>(T input)
+        public static string ToString<T>(T input)
             where T : INameValuePair
         {
             string _Format = "Name:{0};Value:{1};";
@@ -127,13 +127,123 @@ namespace Framework
 
     #region class NameValueCollection<T>
 
+    [DataContract]
+    public class NameValuePair<T>
+    {
+        #region Constructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NameValuePair"/> class.
+        /// </summary>
+        public NameValuePair() { }
+
+        public NameValuePair(
+            T value, string name
+            )
+        {
+            this.Value = value;
+            this.Name = name;
+        }
+
+        #endregion Constructors
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
+        [DataMember]
+
+        public T Value { get; set; }
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        [DataMember]
+
+        public string Name { get; set; }
+
+        #endregion Properties
+
+        #region ToString()
+
+        /// <summary>
+        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String"/> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("{0}:{1}", this.Value, this.Name);
+        }
+
+        #endregion ToString()
+
+        #region Equals(...)
+
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            try
+            {
+                if (obj is NameValuePair<T>)
+                {
+                    return obj != null && ((NameValuePair<T>)obj).Value.Equals(this.Value);
+                }
+                else if (obj is T)
+                {
+                    return obj != null && ((T)obj).Equals(this.Value);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+        /// </returns>
+        public override int GetHashCode()
+        {
+            try
+            {
+                return this.Value.GetHashCode();
+            }
+            catch
+            {
+                return base.GetHashCode();
+            }
+        }
+
+        #endregion Equals(...)
+    }
 
     /// <summary>
     /// Generic NameValueCollection
     /// </summary>
     /// <typeparam name="T">entity class implements <see cref="INameValuePair"/></typeparam>
-	public class NameValueCollection<T> : List<T>, INameValuePairEntityCollection<T>
-        where T : INameValuePair, new()
+    public class NameValueCollection<T, TItem> : List<T>
+        where T : NameValuePair<TItem>, new()
     {
         #region constructors
 
@@ -148,8 +258,8 @@ namespace Framework
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NameValueCollection&lt;T&gt;"/> class.
-        /// </summary>        
-		public NameValueCollection(IEnumerable<T> input)
+        /// </summary>
+        public NameValueCollection(IEnumerable<T> input)
             : base(input)
         {
         }
@@ -158,21 +268,19 @@ namespace Framework
 
         #region PrediacteByName
 
-
         /// <summary>
         /// Prediacte By Name
         /// </summary>
-		private class PrediacteByName
+        private class PrediacteByName
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="NameValueCollection&lt;T&gt;.PrediacteByName"/> class.
             /// </summary>
             /// <param name="comparedToName">Name of the compared to.</param>
-			public PrediacteByName(string comparedToName)
+            public PrediacteByName(string comparedToName)
             {
                 this.ComparedToName = comparedToName;
             }
-
 
             /// <summary>
             /// Gets or sets the name of the compared to.
@@ -193,17 +301,15 @@ namespace Framework
             }
         }
 
-
         /// <summary>
         /// Exists the name of the by.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns>true if meets criteria, otherwise false</returns>
-		public bool ExistsByName(string name)
+        public bool ExistsByName(string name)
         {
-            return this.Count(t => t.Name == name) > 0;
+            return this.Any(t => t.Name == name);
         }
-
 
         /// <summary>
         /// Gets the name of the by.
@@ -220,9 +326,9 @@ namespace Framework
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns>the collection which each item meets criteria, otherwise null</returns>
-        public NameValueCollection<T> GetCollectionByName(string name)
+        public NameValueCollection<T, TItem> GetCollectionByName(string name)
         {
-            NameValueCollection<T> _retval = new NameValueCollection<T>();
+            NameValueCollection<T, TItem> _retval = new NameValueCollection<T, TItem>();
             _retval.AddRange(this.Where(t => t.Name == name));
             return _retval;
         }
@@ -230,7 +336,7 @@ namespace Framework
         #endregion PrediacteByName
 
         #region PrediacteByValue
- 
+
         /// <summary>
         /// Prediacte by Value
         /// </summary>
@@ -260,7 +366,7 @@ namespace Framework
             /// <returns>true if meets criteria, otherwise false</returns>
             public bool Predicate(T input)
             {
-                return input != null && input.Value == ComparedToValue;
+                return input != null && input.Value.Equals(ComparedToValue);
             }
         }
 
@@ -271,7 +377,7 @@ namespace Framework
         /// <returns>true if meets criteria, otherwise false</returns>
         public bool ExistsByValue(string value)
         {
-            return this.Count(t => t.Value == value) > 0;
+            return this.Any(t => t.Value.Equals(value));
         }
 
         /// <summary>
@@ -281,19 +387,18 @@ namespace Framework
         /// <returns>the 1st instance if meets criteria, otherwise null</returns>
         public T GetByValue(string value)
         {
-            return this.Single(t => t.Value == value);
+            return this.Single(t => t.Value.Equals(value));
         }
-
 
         /// <summary>
         /// Gets the collection by value.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>the collection which each item meets criteria, otherwise null</returns>
-        public NameValueCollection<T> GetCollectionByValue(string value)
+        public NameValueCollection<T, TItem> GetCollectionByValue(string value)
         {
-            NameValueCollection<T> _retval = new NameValueCollection<T>();
-            _retval.AddRange(this.Where(t => t.Value == value));
+            NameValueCollection<T, TItem> _retval = new NameValueCollection<T, TItem>();
+            _retval.AddRange(this.Where(t => t.Value.Equals(value)));
             return _retval;
         }
 
@@ -306,32 +411,12 @@ namespace Framework
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="name">The name.</param>
-        public void Add(string value, string name)
+        public void Add(TItem value, string name)
         {
             T _NewItem = new T();
             _NewItem.Name = name;
             _NewItem.Value = value;
             this.Add(_NewItem);
-        }
-
-        /// <summary>
-        /// Adds the specified value.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="name">The name.</param>
-        public void Add(System.Guid value, string name)
-        {
-            this.Add(value.ToString(), name);
-        }
-
-        /// <summary>
-        /// Adds the specified value.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="name">The name.</param>
-		public void Add(long value, string name)
-        {
-            this.Add(value.ToString(), name);
         }
 
         #endregion Add(value, name)
@@ -342,23 +427,23 @@ namespace Framework
 
     #region class NameValuePair and NameValueCollection
 
-	/// <summary>
+    /// <summary>
     /// Concrete NameValuePair
     /// </summary>
     [DataContract]
-    public class NameValuePair : INameValuePair
+    public class NameValuePair : NameValuePair<string>
     {
-		#region Constructors
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NameValuePair"/> class.
         /// </summary>
         public NameValuePair() { }
 
-		public NameValuePair(
+        public NameValuePair(
             long value, string name
             )
-			: this(value.ToString(), name)
+            : this(value.ToString(), name)
         {
         }
 
@@ -370,7 +455,7 @@ namespace Framework
         public NameValuePair(
             Guid value, string name
             )
-			: this(value.ToString(), name)
+            : this(value.ToString(), name)
         {
         }
 
@@ -381,7 +466,7 @@ namespace Framework
         /// <param name="name">The name.</param>
         public NameValuePair(
             string value, string name
-            ) 
+            )
         {
             this.Name = name;
             this.Value = value;
@@ -399,59 +484,11 @@ namespace Framework
         {
         }
 
-		#endregion Constructors
+        #endregion Constructors
 
-		#region Properties
-
-
-        /// <summary>
-        /// Gets or sets the value.
-        /// </summary>
-        /// <value>
-        /// The value.
-        /// </value>
-		[DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
-        public string Value { get; set; }
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-		[DataMember]
-#if(WINDOWS_PHONE || SILVERLIGHT)
-#else
-            [LINQtoCSV.CsvColumn()]
-#endif
-        public string Name { get; set; }
-
-		#endregion Properties
-
-		#region ToString()
-
+        #region Equals(...)
 
         /// <summary>
-        /// Returns a <see cref="System.String"/> that represents this instance.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="System.String"/> that represents this instance.
-        /// </returns>
-		public override string ToString()
-        {
-            return string.Format("{0}:{1}", this.Value, this.Name);
-        }
-
-		#endregion ToString()
-
-		#region Equals(...)
-		
-        /// <summary>
-        /// http://blog.ariankulp.com/2013/07/fixing-selecteditem-must-always-be-set.html
-        /// Fixing SelectedItem must always be set to a valid value
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
@@ -474,7 +511,19 @@ namespace Framework
             }
         }
 
-		#endregion Equals(...)
+        public override int GetHashCode()
+        {
+            if (string.IsNullOrWhiteSpace(this.Value))
+            {
+                return base.GetHashCode();
+            }
+            else
+            {
+                return this.Value.GetHashCode();
+            }
+        }
+
+        #endregion Equals(...)
 
         #region Parse value to .net value
 
@@ -495,7 +544,6 @@ namespace Framework
             return retValue;
         }
 
-
         public System.Byte ParseToSystemByte(string defaultValueString)
         {
             System.Byte retValue;
@@ -513,12 +561,10 @@ namespace Framework
             return retValue;
         }
 
-
         public System.Char ParseToSystemChar(string defaultValueString)
         {
             return string.IsNullOrWhiteSpace(this.Value) || this.Value.Length == 0 ? ' ' : this.Value.ToCharArray()[0];
         }
-
 
         public System.DateTime ParseToSystemDateTime(string defaultValueString)
         {
@@ -537,7 +583,6 @@ namespace Framework
             return retValue;
         }
 
-
         public System.Decimal ParseToSystemDecimal(string defaultValueString)
         {
             System.Decimal retValue;
@@ -554,7 +599,6 @@ namespace Framework
             }
             return retValue;
         }
-
 
         public System.Double ParseToSystemDouble(string defaultValueString)
         {
@@ -573,7 +617,6 @@ namespace Framework
             return retValue;
         }
 
-
         public System.Guid ParseToSystemGuid(string defaultValueString)
         {
             System.Guid retValue;
@@ -590,7 +633,6 @@ namespace Framework
             }
             return retValue;
         }
-
 
         public System.Int16 ParseToSystemInt16(string defaultValueString)
         {
@@ -609,7 +651,6 @@ namespace Framework
             return retValue;
         }
 
-
         public System.Int32 ParseToSystemInt32(string defaultValueString)
         {
             System.Int32 retValue;
@@ -626,7 +667,6 @@ namespace Framework
             }
             return retValue;
         }
-
 
         public System.Int64 ParseToSystemInt64(string defaultValueString)
         {
@@ -645,7 +685,6 @@ namespace Framework
             return retValue;
         }
 
-
         public System.Single ParseToSystemSingle(string defaultValueString)
         {
             System.Single retValue;
@@ -663,12 +702,10 @@ namespace Framework
             return retValue;
         }
 
-
         public System.String ParseToSystemString(string defaultValueString)
         {
             return this.Value;
         }
-
 
         public System.SByte ParseToSystemSByte(string defaultValueString)
         {
@@ -687,7 +724,6 @@ namespace Framework
             return retValue;
         }
 
-
         public System.UInt16 ParseToSystemUInt16(string defaultValueString)
         {
             System.UInt16 retValue;
@@ -705,7 +741,6 @@ namespace Framework
             return retValue;
         }
 
-
         public System.UInt32 ParseToSystemUInt32(string defaultValueString)
         {
             System.UInt32 retValue;
@@ -722,7 +757,6 @@ namespace Framework
             }
             return retValue;
         }
-
 
         public System.UInt64 ParseToSystemUInt64(string defaultValueString)
         {
@@ -744,14 +778,12 @@ namespace Framework
         #endregion Parse value to .net value
     }
 
-
     /// <summary>
-    /// Concrete NameValueCollection 
+    /// Concrete NameValueCollection
     /// </summary>
-	public class NameValueCollection : NameValueCollection<NameValuePair>
+    public class NameValueCollection : NameValueCollection<NameValuePair, string>
     {
         #region constructors
-
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NameValueCollection"/> class.
@@ -770,7 +802,7 @@ namespace Framework
         {
         }
 
-		        /// <summary>
+                /// <summary>
         /// Initializes/Parse a new instance of the <see cref="NameValueCollection"/> class.
         /// </summary>
         /// <param name="input">input string</param>
@@ -792,8 +824,7 @@ namespace Framework
             }
         }
 
-        #endregion constructors    
-
+        #endregion constructors
 
         #region  this[string name]
 
@@ -806,7 +837,7 @@ namespace Framework
         {
             get
             {
-                NameValuePair _Item = this.GetByName(name);
+                NameValuePair<string> _Item = this.GetByName(name);
                 if (_Item != null)
                 {
                     return _Item.Value;
@@ -818,11 +849,11 @@ namespace Framework
             }
             set
             {
-                NameValuePair _Item;
-                
+                NameValuePair<string> _Item;
+
                 if(this.ExistsByName(name))
                 {
-                    _Item= this.GetByName(name);
+                    _Item = this.GetByName(name);
                     _Item.Value = value;
                 }
                 else
@@ -837,3 +868,4 @@ namespace Framework
 
     #endregion class NameValuePair and NameValueCollection
 }
+

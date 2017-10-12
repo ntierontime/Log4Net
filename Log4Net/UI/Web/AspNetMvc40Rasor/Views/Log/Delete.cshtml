@@ -1,67 +1,75 @@
-@model Log4Net.DataSourceEntities.Log
-@{
-    ViewBag.Title = Framework.Resources.UIStringResource.DeleteAlternativeText;
+@using UrlStringsAlias = Log4Net.AspNetMvc40Rasor.Helpers.UrlStrings;
+@model Log4Net.AspNetMvc40ViewModel.LogItemVM
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>@Model.ContentData.Title.</h2>
+                <h4>@Model.ContentData.Summary</h4>
+        <h3>@Framework.Resx.UIStringResource.Warning_Areyousureyouwanttodeletethis</h3>
+            </div>
+@if (Model.StatusOfResult != Framework.CommonBLLEntities.BusinessLogicLayerResponseStatus.MessageOK && Model.StatusOfResult != Framework.CommonBLLEntities.BusinessLogicLayerResponseStatus.UIProcessReady)
+{
+            <div class="panel-body">
+                <div class="text-danger">@Model.StatusMessageOfResult</div>
+            </div>
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-<h3>@Framework.Resources.UIStringResource.Warning_Areyousureyouwanttodeletethis</h3>
-            </hgroup>
-        </div>
-    </section>
-}
-<fieldset>
-    <legend>@Log4Net.Resources.UIStringResourcePerEntityLog.Log.</legend>
-	<div class="display-label">
-			@Html.LabelFor(model => model.Id)
-        </div>
-        <div class="display-field">
-			@Html.DisplayFor(model => model.Id)
-        </div>
-        <div class="display-label">
-			@Html.LabelFor(model => model.Date)
-        </div>
-        <div class="display-field">
-			@Html.DisplayFor(model => model.Date)
-        </div>
-        <div class="display-label">
-			@Html.LabelFor(model => model.Thread)
-        </div>
-        <div class="display-field">
-			@Html.DisplayFor(model => model.Thread)
-        </div>
-        <div class="display-label">
-			@Html.LabelFor(model => model.Level)
-        </div>
-        <div class="display-field">
-			@Html.DisplayFor(model => model.Level)
-        </div>
-        <div class="display-label">
-			@Html.LabelFor(model => model.Logger)
-        </div>
-        <div class="display-field">
-			@Html.DisplayFor(model => model.Logger)
-        </div>
-        <div class="display-label">
-			@Html.LabelFor(model => model.Message)
-        </div>
-        <div class="display-field">
-			@Html.DisplayFor(model => model.Message)
-        </div>
-        <div class="display-label">
-			@Html.LabelFor(model => model.Exception)
-        </div>
-        <div class="display-field">
-			@Html.DisplayFor(model => model.Exception)
-        </div>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm(UrlStringsAlias.ActionName_Log_Delete, UrlStringsAlias.ControllerName_Log, FormMethod.Post, new { @class= "form" })) {
     @Html.AntiForgeryToken()
-    <div class="buttonContainer">
-        <input type="submit" value="@Framework.Resources.UIStringResource.DeleteAlternativeText" class="button" />
-		<input type="button" value="@Framework.Resources.UIStringResource.BackAlternativeText" class="button" onclick="location.href='@Url.Action("Index")'" />
+            <div class="panel-body">
+@Html.HiddenFor(model => model.Item.Id)  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Date, new { @class = "control-label" })
+        <div class="form-control">
+            @Html.DisplayFor(model => model.Item.Date)
+        </div>
     </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Thread, new { @class = "control-label" })
+        <div class="form-control">
+            @Html.DisplayFor(model => model.Item.Thread)
+        </div>
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Level, new { @class = "control-label" })
+        <div class="form-control">
+            @Html.DisplayFor(model => model.Item.Level)
+        </div>
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Logger, new { @class = "control-label" })
+        <div class="form-control">
+            @Html.DisplayFor(model => model.Item.Logger)
+        </div>
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Message, new { @class = "control-label" })
+        <div class="form-control">
+            @Html.DisplayFor(model => model.Item.Message)
+        </div>
+    </div>
+  <div class="form-group">
+            @Html.LabelFor(model => model.Item.Exception, new { @class = "control-label" })
+        <div class="form-control">
+            @Html.DisplayFor(model => model.Item.Exception)
+        </div>
+    </div>
+            </div>
+            <div class="panel-footer nopadding">
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" role="button" type="submit">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            <span class="submit-text hidden-xs hidden-sm visible-md-inline visible-lg-inline">@Framework.Resx.UIStringResource.Delete</span>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <a href="@Url.Action(UrlStringsAlias.ActionName_Log_Index)" class="btn btn-default" role="button" type="button">
+                            <span class="glyphicon glyphicon-ban-circle"></span><span class="hidden-xs hidden-sm visible-md-inline visible-lg-inline">@Framework.Resx.UIStringResource.Back</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 }
-</fieldset>
+        </div>
+    </div>
+</div>

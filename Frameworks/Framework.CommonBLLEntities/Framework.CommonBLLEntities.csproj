@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Framework.CommonBLLEntities</RootNamespace>
     <AssemblyName>Framework.CommonBLLEntities</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,16 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
     <Compile Include="BusinessLogicLayerContext.cs" />
@@ -51,10 +41,11 @@
     <Compile Include="BusinessLogicLayerRequestMessageBase.cs" />
     <Compile Include="BusinessLogicLayerRequestTypes.cs" />
     <Compile Include="BusinessLogicLayerResponseMessageBase.cs" />
+    <Compile Include="IBusinessLogicLayerResponseMessageBase.cs" />
     <Compile Include="IBusinessLogicLayerContextContainer.cs" />
     <Compile Include="SessionVariablesCommon.cs" />
-    <Content Include="Maps\map.1.B.3.vsd" />
-    <Content Include="Maps\map.1.B.3.vsd.png" />
+    <None Include="map.1.B.3.vsd" />
+    <None Include="map.1.B.3.vsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.csproj">
@@ -65,26 +56,33 @@
       <Project>{f85a14d5-64e0-4cfc-88da-27fe9d0dd664}</Project>
       <Name>Framework.DataSourceEntities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Framework.Resources\Framework.Resources.csproj">
-      <Project>{c72b898b-b53b-42d5-9f4f-673f84bb485b}</Project>
-      <Name>Framework.Resources</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Framework.EntityContracts\Framework.EntityContracts.csproj">
       <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
       <Name>Framework.EntityContracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework.Resx\Framework.Resx.csproj">
+      <Project>{c72b898b-b53b-42d5-9f4f-673f84bb485b}</Project>
+      <Name>Framework.Resx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Services\Framework.Services.csproj">
+      <Project>{3ef91dc7-12c9-47f3-bb18-ad3d85d1b624}</Project>
+      <Name>Framework.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>rem copy $(TargetPath) $(SolutionDir)BuiltResults\*.* /y</PostBuildEvent>
