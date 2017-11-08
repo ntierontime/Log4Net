@@ -31,14 +31,14 @@ namespace Log4Net.AspNetMvc40Rasor.Controllers
         /// </summary>
         /// <returns></returns>
         [Log4Net.AspNetMvc40Rasor.Helpers.WebAuthorizationAttribute(Permissions = Log4Net.AspNetMvc40Rasor.Helpers.PermissionVariables.PermissionName_Log_WPCommonOfLog)]
-        public ActionResult WPCommonOfLog(int currentPage = 1 ,string lowerBoundDateCommonOftOfCommon = null, string upperBoundDateCommonOftOfCommon = null, WPCommonOfLogVM viewModel = null)
+        public ActionResult WPCommonOfLog(int currentPage = 1, WPCommonOfLogVM viewModel = null)
         {
             log.Info(string.Format("{0}: WPCommonOfLog", Framework.LoggingOptions.UI_Process_Started.ToString()));
 
-            Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommonFlatten> vmFromTempData;
+            Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommon> vmFromTempData;
             if (TempData.ContainsKey(TempDataKey_WPCommonOfLog))
             {
-                vmFromTempData = (Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommonFlatten>)TempData[TempDataKey_WPCommonOfLog];
+                vmFromTempData = (Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommon>)TempData[TempDataKey_WPCommonOfLog];
             }
             else
             {
@@ -46,9 +46,6 @@ namespace Log4Net.AspNetMvc40Rasor.Controllers
             }
 
             viewModel.PopulateAllUIElements(vmFromTempData, currentPage);
-
-            viewModel.Criteria.LowerBoundDateCommonOftOfCommon = string.IsNullOrWhiteSpace(lowerBoundDateCommonOftOfCommon) ? DateTime.MinValue : Framework.DateTimePeriodHelper.ParseDateTime(lowerBoundDateCommonOftOfCommon); viewModel.Criteria.UpperBoundDateCommonOftOfCommon = string.IsNullOrWhiteSpace(upperBoundDateCommonOftOfCommon) ? DateTime.MinValue : Framework.DateTimePeriodHelper.ParseDateTime(upperBoundDateCommonOftOfCommon);
-            //viewModel.Criteria.LowerBoundCreatedDateTimeCommonOftOfCommon = string.IsNullOrWhiteSpace(lowerBoundCreatedDateTimeCommonOftOfCommon) ? DateTime.MinValue : Framework.DateTimePeriodHelper.ParseDateTime(lowerBoundCreatedDateTimeCommonOftOfCommon); viewModel.Criteria.UpperBoundCreatedDateTimeCommonOftOfCommon = string.IsNullOrWhiteSpace(upperBoundCreatedDateTimeCommonOftOfCommon) ? DateTime.MinValue : Framework.DateTimePeriodHelper.ParseDateTime(upperBoundCreatedDateTimeCommonOftOfCommon);
 
             viewModel.LoadData(true);
 
@@ -86,13 +83,13 @@ namespace Log4Net.AspNetMvc40Rasor.Controllers
         {
             log.Info(string.Format("{0}: WPCommonOfLog_Export", Framework.LoggingOptions.UI_Process_Started.ToString()));
 
-            Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommonFlatten> vmFromTempData;
+            Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommon> vmFromTempData;
             if (TempData.ContainsKey(TempDataKey_WPCommonOfLog))
             {
-                vmFromTempData = (Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommonFlatten>)TempData[TempDataKey_WPCommonOfLog];
+                vmFromTempData = (Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommon>)TempData[TempDataKey_WPCommonOfLog];
 
                 var searchResult = Log4Net.CommonBLLIoC.IoCLog.GetMessageOfEntityOfCommon(
-                    new Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommon(vmFromTempData.Criteria)
+                    vmFromTempData.Criteria
                     , new Framework.EntityContracts.QueryPagingSetting(-1, -1)
                     , new Framework.EntityContracts.QueryOrderBySettingCollection(vmFromTempData.QueryOrderBySettingCollecionInString)
                     , dataServiceType);

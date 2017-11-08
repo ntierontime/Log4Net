@@ -54,7 +54,6 @@
     <Compile Include="ViewModels\SearchStatus.cs" />
     <Compile Include="Queries\QueryOrderBySetting.cs" />
     <Compile Include="Queries\QueryPagingSetting.cs" />
-    <Compile Include="Queries\QueryPredicateBase.cs" />
     <Compile Include="Queries\QueryPredicateTypes.cs" />
     <None Include="map.1.B.3.vsd" />
     <None Include="map.1.B.3.vsd.png" />

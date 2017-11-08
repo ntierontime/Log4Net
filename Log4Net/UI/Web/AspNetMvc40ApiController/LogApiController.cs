@@ -225,7 +225,7 @@ namespace Log4Net.AspNetMvc40ApiController.ApiControllers
             }
             else
             {
-                retval.Criteria = new Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommonFlatten();
+                retval.Criteria = new Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommon();
                 retval.QueryPagingSetting = Framework.EntityContracts.QueryPagingSetting.GetDefault();
                 //retval.QueryOrderBySettingCollecionInString = Log4Net.ViewModelData.OrderByLists.WPCommonOfLogVM_GetDefaultListOfQueryOrderBySettingCollecionInString();
             }

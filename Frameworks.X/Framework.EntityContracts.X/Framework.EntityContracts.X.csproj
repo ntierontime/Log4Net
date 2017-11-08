@@ -98,9 +98,6 @@
     <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPagingSetting.cs">
       <Link>Queries\QueryPagingSetting.cs</Link>
     </Compile>
-    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPredicateBase.cs">
-      <Link>Queries\QueryPredicateBase.cs</Link>
-    </Compile>
     <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPredicateTypes.cs">
       <Link>Queries\QueryPredicateTypes.cs</Link>
     </Compile>

@@ -40,7 +40,7 @@ namespace Log4Net.AspNetMvc40ViewModel
             }
 
             var searchResult = Log4Net.CommonBLLIoC.IoCLog.GetMessageOfEntityOfCommon(
-                new Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommon(this.Criteria)
+                this.Criteria
                 , this.QueryPagingSetting
                 , this.QueryOrderBySettingCollection);
 

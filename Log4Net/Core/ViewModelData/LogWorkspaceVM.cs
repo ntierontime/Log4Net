@@ -6,7 +6,7 @@ using System.Text;
 namespace Log4Net.ViewModelData
 {
 
-    public partial class WPCommonOfLogVM : Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommonFlatten, Log4Net.DataSourceEntities.LogCollection>
+    public partial class WPCommonOfLogVM : Framework.ViewModels.ViewModelBase<Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommon, Log4Net.DataSourceEntities.LogCollection>
     {
         public WPCommonOfLogVM()
             : base()

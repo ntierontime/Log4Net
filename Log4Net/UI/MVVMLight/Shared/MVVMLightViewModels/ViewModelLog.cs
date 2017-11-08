@@ -104,7 +104,7 @@ namespace Log4Net.MVVMLightViewModels
             try
             {
                 var vmData = new Log4Net.ViewModelData.WPCommonOfLogVM();
-                vmData.Criteria = new Log4Net.CommonBLLEntities.LogChainedQueryCriteriaCommonFlatten(this.Criteria);
+                vmData.Criteria = this.Criteria;
                 vmData.QueryPagingSetting = this.QueryPagingSetting;
                 vmData.QueryOrderBySettingCollection = this.QueryOrderBySettingCollection;
 

@@ -1062,6 +1062,9 @@ namespace Framework.EntityContracts
                 var calculated = GetBounds(value);
                 LowerBound = calculated.LowerBound;
                 UpperBound = calculated.UpperBound;
+                IsToCompare = value != PreDefinedDateTimeRanges.Unknown;
+                IsToCompareLowerBound = true;
+                IsToCompareUpperBound = true;
                 IsCustomEditor = m_PreDefinedDateTimeRange == Framework.EntityContracts.PreDefinedDateTimeRanges.Custom;
                 RaisePropertyChanged("PreDefinedDateTimeRange");
                 RaisePropertyChanged("IsCustomEditor");

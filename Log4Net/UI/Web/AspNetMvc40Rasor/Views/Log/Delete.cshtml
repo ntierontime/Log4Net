@@ -17,42 +17,48 @@
 @using (Html.BeginForm(UrlStringsAlias.ActionName_Log_Delete, UrlStringsAlias.ControllerName_Log, FormMethod.Post, new { @class= "form" })) {
     @Html.AntiForgeryToken()
             <div class="panel-body">
-@Html.HiddenFor(model => model.Item.Id)  <div class="form-group">
-            @Html.LabelFor(model => model.Item.Date, new { @class = "control-label" })
-        <div class="form-control">
-            @Html.DisplayFor(model => model.Item.Date)
-        </div>
-    </div>
-  <div class="form-group">
-            @Html.LabelFor(model => model.Item.Thread, new { @class = "control-label" })
-        <div class="form-control">
-            @Html.DisplayFor(model => model.Item.Thread)
-        </div>
-    </div>
-  <div class="form-group">
-            @Html.LabelFor(model => model.Item.Level, new { @class = "control-label" })
-        <div class="form-control">
-            @Html.DisplayFor(model => model.Item.Level)
-        </div>
-    </div>
-  <div class="form-group">
-            @Html.LabelFor(model => model.Item.Logger, new { @class = "control-label" })
-        <div class="form-control">
-            @Html.DisplayFor(model => model.Item.Logger)
-        </div>
-    </div>
-  <div class="form-group">
-            @Html.LabelFor(model => model.Item.Message, new { @class = "control-label" })
-        <div class="form-control">
-            @Html.DisplayFor(model => model.Item.Message)
-        </div>
-    </div>
-  <div class="form-group">
-            @Html.LabelFor(model => model.Item.Exception, new { @class = "control-label" })
-        <div class="form-control">
-            @Html.DisplayFor(model => model.Item.Exception)
-        </div>
-    </div>
+                <div class="form-group" >
+                    @Html.LabelFor(model => model.Item.Id, new { @class = "control-label" })
+                        <div class="form-control">
+                            @Html.DisplayFor(model => model.Item.Id)
+                        </div>
+                </div>
+                <div class="form-group" >
+                    @Html.LabelFor(model => model.Item.Date, new { @class = "control-label" })
+                        <div class="form-control">
+                            @Html.DisplayFor(model => model.Item.Date)
+                        </div>
+                </div>
+                <div class="form-group" >
+                    @Html.LabelFor(model => model.Item.Thread, new { @class = "control-label" })
+                        <div class="form-control">
+                            @Html.DisplayFor(model => model.Item.Thread)
+                        </div>
+                </div>
+                <div class="form-group" >
+                    @Html.LabelFor(model => model.Item.Level, new { @class = "control-label" })
+                        <div class="form-control">
+                            @Html.DisplayFor(model => model.Item.Level)
+                        </div>
+                </div>
+                <div class="form-group" >
+                    @Html.LabelFor(model => model.Item.Logger, new { @class = "control-label" })
+                        <div class="form-control">
+                            @Html.DisplayFor(model => model.Item.Logger)
+                        </div>
+                </div>
+                <div class="form-group" >
+                    @Html.LabelFor(model => model.Item.Message, new { @class = "control-label" })
+                        <div class="form-control">
+                            @Html.DisplayFor(model => model.Item.Message)
+                        </div>
+                </div>
+                <div class="form-group" >
+                    @Html.LabelFor(model => model.Item.Exception, new { @class = "control-label" })
+                        <div class="form-control">
+                            @Html.DisplayFor(model => model.Item.Exception)
+                        </div>
+                </div>
             </div>
             <div class="panel-footer nopadding">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">

@@ -50,50 +50,29 @@
 </div>
                 </div>
                 <div class="panel-body">
- <div class="form-group">
+     <label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareDateCommonOftOfCommon</label>
+    @Html.DropDownListFor(model => model.Criteria.LogQueryCriteriaCommon.DateCommonOft.PreDefinedDateTimeRange, Model.UISharedViewModel.PreDefinedDateTimeRangeList, new Dictionary<string, Object> { { "class", "form-control" } } )
+    @Html.TextBoxFor(model => model.Criteria.LogQueryCriteriaCommon.DateCommonOft.NullableLowerBound, new { @readonly = "readonly", @class = "form-control" })
+    @Html.TextBoxFor(model => model.Criteria.LogQueryCriteriaCommon.DateCommonOft.NullableUpperBound, new { @readonly = "readonly", @class = "form-control" })
+<div class="form-group">
+    <label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareThreadCommonOftOfCommon</label>
+    @Html.TextBoxFor(model=>model.Criteria.LogQueryCriteriaCommon.ThreadCommonOft.NullableValueToBeContained, new { @class = "form-control" })
 </div>
 <div class="form-group">
-<div class="checkbox checkbox-info">
-@Html.CheckBoxFor(model=>model.Criteria.IsToCompareExceptionCommonOftOfCommon, new { @class="styled" })<label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareExceptionCommonOftOfCommon</label>
-</div>
-@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedExceptionCommonOftOfCommon, new { @class = "form-control" })
+    <label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareLevelCommonOftOfCommon</label>
+    @Html.TextBoxFor(model=>model.Criteria.LogQueryCriteriaCommon.LevelCommonOft.NullableValueToBeContained, new { @class = "form-control" })
 </div>
 <div class="form-group">
-<div class="checkbox checkbox-info">
-@Html.CheckBoxFor(model=>model.Criteria.IsToCompareMessageCommonOftOfCommon, new { @class="styled" })<label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareMessageCommonOftOfCommon</label>
-</div>
-@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedMessageCommonOftOfCommon, new { @class = "form-control" })
+    <label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareLoggerCommonOftOfCommon</label>
+    @Html.TextBoxFor(model=>model.Criteria.LogQueryCriteriaCommon.LoggerCommonOft.NullableValueToBeContained, new { @class = "form-control" })
 </div>
 <div class="form-group">
-<div class="checkbox checkbox-info">
-@Html.CheckBoxFor(model=>model.Criteria.IsToCompareLoggerCommonOftOfCommon, new { @class="styled" })<label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareLoggerCommonOftOfCommon</label>
-</div>
-@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedLoggerCommonOftOfCommon, new { @class = "form-control" })
+    <label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareMessageCommonOftOfCommon</label>
+    @Html.TextBoxFor(model=>model.Criteria.LogQueryCriteriaCommon.MessageCommonOft.NullableValueToBeContained, new { @class = "form-control" })
 </div>
 <div class="form-group">
-<div class="checkbox checkbox-info">
-@Html.CheckBoxFor(model=>model.Criteria.IsToCompareLevelCommonOftOfCommon, new { @class="styled" })<label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareLevelCommonOftOfCommon</label>
-</div>
-@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedLevelCommonOftOfCommon, new { @class = "form-control" })
-</div>
-<div class="form-group">
-<div class="checkbox checkbox-info">
-@Html.CheckBoxFor(model=>model.Criteria.IsToCompareThreadCommonOftOfCommon, new { @class="styled" })<label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareThreadCommonOftOfCommon</label>
-</div>
-@Html.TextBoxFor(model=>model.Criteria.ValueToBeContainedThreadCommonOftOfCommon, new { @class = "form-control" })
-</div>
-<div class="form-group">
-<div class="checkbox checkbox-info">
-@Html.CheckBoxFor(model=>model.Criteria.IsToCompareDateCommonOftOfCommon, new { @class="styled" })<label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareDateCommonOftOfCommon</label>
-</div><input type="text" rangepickername="datefilter" value="" class="form-control" />
-<div class="checkbox checkbox-info">
-@Html.CheckBoxFor(model=>model.Criteria.IsToCompareLowerBoundDateCommonOftOfCommon, new { @class="styled" })<label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompareLowerBound_ID_CheckBox_Search_isToCompareLowerBoundDateCommonOftOfCommon</label>
-</div>
-@Html.TextBox("lowerBoundDateCommonOftOfCommon", Model.Criteria.LowerBoundDateCommonOftOfCommon.ToString(), new { @readonly = "readonly", @class = "form-control" })
-<div class="checkbox checkbox-info">
-@Html.CheckBoxFor(model=>model.Criteria.IsToCompareUpperBoundDateCommonOftOfCommon, new { @class="styled" })<label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompareUpperBound_ID_CheckBox_Search_isToCompareUpperBoundDateCommonOftOfCommon</label>
-</div>
-@Html.TextBox("upperBoundDateCommonOftOfCommon", Model.Criteria.UpperBoundDateCommonOftOfCommon.ToString(), new { @readonly = "readonly", @class = "form-control" })
+    <label class="control-label">@Log4Net.Resx.UIStringResourcePerEntityLog.IsToCompare_ID_CheckBox_Search_isToCompareExceptionCommonOftOfCommon</label>
+    @Html.TextBoxFor(model=>model.Criteria.LogQueryCriteriaCommon.ExceptionCommonOft.NullableValueToBeContained, new { @class = "form-control" })
 </div>
                     <div class="form-group form-inline">
                         <label class="control-label">Items per page : </label>
@@ -144,41 +123,44 @@
             <div class="table-responsive">
 <table id="MasterDataControl1" name="MasterDataControl1" class="table table-hover table-bordered table-striped">
 <thead>
- <tr><th  style="min-width:100px" class="hidden-xs visible-sm"></th>
-<th >@Log4Net.Resx.UIStringResourcePerEntityLog.Date</th>
-<th >@Log4Net.Resx.UIStringResourcePerEntityLog.Thread</th>
-<th >@Log4Net.Resx.UIStringResourcePerEntityLog.Level</th>
-<th  class="hidden-xs visible-sm visible-md visible-lg">@Log4Net.Resx.UIStringResourcePerEntityLog.Logger</th>
-<th  class="hidden-xs hidden-sm visible-md visible-lg">@Log4Net.Resx.UIStringResourcePerEntityLog.Message</th>
-<th  class="hidden-xs hidden-sm visible-md visible-lg">@Log4Net.Resx.UIStringResourcePerEntityLog.Exception</th>
-<th  class="col-xs-4 col-sm-3 col-md-2 col-lg-2"></th></tr>
+    <tr>
+<th style="min-width:100px" class="hidden-xs visible-sm"></th>
+<th class="hidden-sm">@Log4Net.Resx.UIStringResourcePerEntityLog.Id</th>
+<th>@Log4Net.Resx.UIStringResourcePerEntityLog.Date</th>
+<th>@Log4Net.Resx.UIStringResourcePerEntityLog.Thread</th>
+<th>@Log4Net.Resx.UIStringResourcePerEntityLog.Level</th>
+<th class="hidden-xs">@Log4Net.Resx.UIStringResourcePerEntityLog.Logger</th>
+<th class="hidden-xs">@Log4Net.Resx.UIStringResourcePerEntityLog.Message</th>
+<th class="hidden-sm">@Log4Net.Resx.UIStringResourcePerEntityLog.Exception</th>
+    </tr>
 </thead>
 <tbody>
     @if (Model != null && Model.StatusOfResult == Framework.CommonBLLEntities.BusinessLogicLayerResponseStatus.MessageOK)
     {
-        int index = 0;
-        foreach (var item in Model.Result)
+        for (var i = 0; i < Model.Result.Count; i ++)
         {
-            index++;
-<tr><td  style="min-width:100px" class="hidden-xs visible-sm"></td>
-<td  class="col-xs-4 col-sm-3 col-md-2 col-lg-2"><div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <tr>
+<td><div class="btn-group btn-group-justified" role="group" aria-label="...">
 <div class="btn-group">
-    <a href="@Url.Action(UrlStringsAlias.ActionName_Log_WPEntityRelatedOfLog, UrlStringsAlias.ControllerName_Log, new { isToCompareIdByIdentifierOftOfByIdentifier=true, valueToCompareIdByIdentifierOftOfByIdentifier = item.Id })" class="btn btn-default" role="button" type="button" name="FullDetailsToolBarRightInList" title="@Framework.Resx.UIStringResource.FullDetails">
+    <a href="@Url.Action(UrlStringsAlias.ActionName_Log_WPEntityRelatedOfLog, UrlStringsAlias.ControllerName_Log, new { isToCompareIdByIdentifierOftOfByIdentifier=true, valueToCompareIdByIdentifierOftOfByIdentifier = Model.Result[i].Id })" class="btn btn-default" role="button" type="button" name="FullDetailsToolBarRightInList" title="@Framework.Resx.UIStringResource.FullDetails">
         <span class="glyphicon glyphicon-briefcase"></span>
     </a>
 </div>
 <div class="btn-group">
-    <a href="@Url.Action(UrlStringsAlias.ActionName_Log_Edit, UrlStringsAlias.ControllerName_Log, new { isToCompareIdByIdentifierOftOfByIdentifier=true, valueToCompareIdByIdentifierOftOfByIdentifier = item.Id })" class="btn btn-default" role="button" type="button" name="EditToolBarRightInList" title="@Framework.Resx.UIStringResource.Edit">
+    <a href="@Url.Action(UrlStringsAlias.ActionName_Log_Edit, UrlStringsAlias.ControllerName_Log, new { isToCompareIdByIdentifierOftOfByIdentifier=true, valueToCompareIdByIdentifierOftOfByIdentifier = Model.Result[i].Id })" class="btn btn-default" role="button" type="button" name="EditToolBarRightInList" title="@Framework.Resx.UIStringResource.Edit">
         <span class="glyphicon glyphicon-edit"></span>
     </a>
 </div>
-</div></td>
-<td >@Html.DisplayFor(modelItem => item.Date)</td>
-<td >@Html.DisplayFor(modelItem => item.Thread)</td>
-<td >@Html.DisplayFor(modelItem => item.Level)</td>
-<td >@Html.DisplayFor(modelItem => item.Logger)</td>
-<td >@Html.DisplayFor(modelItem => item.Message)</td>
-<td >@Html.DisplayFor(modelItem => item.Exception)</td></tr>
+</div>
+</td>
+<td class="hidden-sm">@Html.DisplayFor(model => model.Result[i].Id)</td>
+<td>@Html.DisplayFor(model => model.Result[i].Date)</td>
+<td>@Html.DisplayFor(model => model.Result[i].Thread)</td>
+<td>@Html.DisplayFor(model => model.Result[i].Level)</td>
+<td class="hidden-xs">@Html.DisplayFor(model => model.Result[i].Logger)</td>
+<td class="hidden-xs">@Html.DisplayFor(model => model.Result[i].Message)</td>
+<td class="hidden-sm">@Html.DisplayFor(model => model.Result[i].Exception)</td>
+            </tr>
         }
     }
     else
@@ -202,9 +184,13 @@
  </div>
  </div>
 @section Scripts {
-    <script type="text/javascript">
+   <script type="text/javascript">
         $(document).ready($(function() {
-            $('input[name=upperBoundDateCommonOftOfCommon]').datepicker({
+            $('select[name="Criteria.LogQueryCriteriaCommon.DateCommonOft.PreDefinedDateTimeRange"]').change(function () {
+                preDefinedDateTimeRangeChanged('Criteria.LogQueryCriteriaCommon.DateCommonOft');
+            });
+            preDefinedDateTimeRangeChanged('Criteria.LogQueryCriteriaCommon.DateCommonOft');
+            $('input[name="Criteria.LogQueryCriteriaCommon.DateCommonOft.NullableLowerBound"]').datepicker({
                 autoclose: true,
                 beforeShowDay: $.noop,
                 calendarWeeks: false,
@@ -212,7 +198,7 @@
                 daysOfWeekDisabled: [],
                 endDate: Infinity,
                 forceParse: true,
-                format: 'dd/mm/yyyy',
+                format: 'mm/dd/yyyy',
                 keyboardNavigation: true,
                 language: 'en',
                 minViewMode: 0,
@@ -224,7 +210,7 @@
                 todayHighlight: false,
                 weekStart: 0
             });
-            $('input[name=lowerBoundDateCommonOftOfCommon]').datepicker({
+            $('input[name="Criteria.LogQueryCriteriaCommon.DateCommonOft.NullableUpperBound"]').datepicker({
                 autoclose: true,
                 beforeShowDay: $.noop,
                 calendarWeeks: false,
@@ -232,7 +218,7 @@
                 daysOfWeekDisabled: [],
                 endDate: Infinity,
                 forceParse: true,
-                format: 'dd/mm/yyyy',
+                format: 'mm/dd/yyyy',
                 keyboardNavigation: true,
                 language: 'en',
                 minViewMode: 0,
@@ -244,113 +230,8 @@
                 todayHighlight: false,
                 weekStart: 0
             });
-            // Daterangepicker init
-            $(function() {
-                $('input[rangepickername="datefilter"]').daterangepicker({
-                    autoUpdateInput: false,
-                    locale: {
-                                cancelLabel: 'Clear'
-                            },
-                    ranges: {
-                               'Today': [moment(), moment()],
-                               'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                               'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                               'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                               'This Month': [moment().startOf('month'), moment().endOf('month')],
-                               'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                            }
-                });
-                $('input[rangepickername="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                    var filterCheckbox = $(this).siblings(".input-group-addon").children('input');
-                    if (filterCheckbox.prop( "checked", false )) {
-                        filterCheckbox.trigger('click');
-                    }
-                    $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-                    $(this).next().children("input:text").first().val(picker.startDate.format('MM/DD/YYYY'));
-                    $(this).next().children("input:text").last().val(picker.endDate.format('MM/DD/YYYY'));
-                });
-                $('input[rangepickername="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                    $(this).val('');
-                    var filterCheckbox = $(this).siblings(".input-group-addon").children('input');
-                    if (filterCheckbox.prop( "checked" )) {
-                        filterCheckbox.trigger('click');
-                    }
-                    $(this).next().children("input:text").first().val(picker.startDate.format('MM/DD/YYYY'));
-                    $(this).next().children("input:text").last().val(picker.endDate.format('MM/DD/YYYY'));
-                });
-                // Set daterange to reflect hidden inputs
-                $('input[rangepickername="datefilter"]').each(function(){
-                    var startDate = $(this).next().children("input:text").first().val()
-                    var endDate = $(this).next().children("input:text").last().val()
-                    if (startDate != '1/1/0001 12:00:00 AM') {
-                        $(this).data('daterangepicker').setStartDate( startDate );
-                    }
-                    if (endDate != '1/1/0001 12:00:00 AM') {
-                        $(this).data('daterangepicker').setEndDate( endDate );
-                    }
-                });
-            });
+            $('input[name="Criteria.LogQueryCriteriaCommon.DateCommonOft.NullableLowerBound"]').prop('disabled', true);
+            $('input[name="Criteria.LogQueryCriteriaCommon.DateCommonOft.NullableUpperBound"]').prop('disabled', true);
         }));
-        $(document).ready($(function() {
-            $.validator.addMethod(
-                "date",
-                function(value, element) {
-                    var bits = value.match(/([0-9]+)/gi), str;
-                    if (!bits)
-                        return this.optional(element) || false;
-                    str = bits[1] + '/' + bits[0] + '/' + bits[2];
-                    return this.optional(element) || !/Invalid|NaN/.test(new Date(str));
-                },
-                "Please enter a date in the format dd/mm/yyyy"
-            );
-            $("form").validate({
-                onkeyup: false,
-                errorPlacement: function(error, element) {
-                    if (element.attr("name").indexOf("DOB") >= 0) {
-                        error.insertAfter("#DOB_Day");
-                    } else {
-                        error.insertAfter(element);
-                    }
-                },
-                rules: {
-                    upperBoundDateCommonOftOfCommon: {
-                        //required: true,
-                        date: true,
-                        range: ['1900-01-01', '2100-01-01']
-                    }
-                    ,                    lowerBoundDateCommonOftOfCommon: {
-                        //required: true,
-                        date: true,
-                        range: ['1900-01-01', '2100-01-01']
-                    }
-                },
-                messages: {
-                    upperBoundDateCommonOftOfCommon: {
-                        //required: 'Email is required',
-                        date: 'Please enter a date in the format dd/mm/yyyy',
-                    }
-                    ,                    lowerBoundDateCommonOftOfCommon: {
-                        //required: 'Email is required',
-                        date: 'Please enter a date in the format dd/mm/yyyy',
-                    }
-                },
-                highlight:
-                    function(element) {
-                        $(element).css('border', '2px solid red');
-                    },
-                unhighlight:
-                    function(element) {
-                        $(element).css('border', '1px solid rgb(170, 170, 170)');
-                    },
-                errorLabelContainer: "#ErrorList",
-                wrapper: "li"
-            });
-        }));
-        //cascaded dropdownlist by knockoutjs
-        function CascadingDDLViewModel() {
-            var self = this;
-        }
-        var objVM = new CascadingDDLViewModel();
-        ko.applyBindings(objVM);
     </script>
 }
