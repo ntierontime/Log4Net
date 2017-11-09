@@ -2,7 +2,7 @@
 <edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <edmx:Diagrams>
-      <edmx:Diagram DiagramId="4d9cb2b2d67c4a0fa9fece99d286d983" Name="Diagram1">
+      <edmx:Diagram DiagramId="97544396804f4c6793cdb6f123269fa8" Name="Diagram1">
         <edmx:EntityTypeShape EntityType="Log4NetModel.Log" Width="1.5" PointX="1" PointY="1" IsExpanded="true" />
       </edmx:Diagram>
     </edmx:Diagrams>
