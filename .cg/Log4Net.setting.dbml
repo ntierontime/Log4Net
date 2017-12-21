@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Log4Net" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Log" Member="Log">
+    <Type Name="Log">
+    </Type>
+  </Table>
+</Database>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5275528B-918A-474B-8825-0D05266B2DF0}</ProjectGuid>
+    <ProjectGuid>{7B681617-25B1-495E-B434-FC42FDDFF1A0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Framework.DataSourceEntities</RootNamespace>
@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework.X\Framework.X.csproj">
-      <Project>{68218f7a-7603-418f-99c8-1b6e1fc426e0}</Project>
+      <Project>{daad2a69-4863-41a0-94ee-7bef4852ee3e}</Project>
       <Name>Framework.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.EntityContracts.X\Framework.EntityContracts.X.csproj">
-      <Project>{52f99887-9acc-421f-83ca-1c98df00233f}</Project>
+      <Project>{320d4511-7a58-42cf-8373-21fcac855c98}</Project>
       <Name>Framework.EntityContracts.X</Name>
     </ProjectReference>
   </ItemGroup>

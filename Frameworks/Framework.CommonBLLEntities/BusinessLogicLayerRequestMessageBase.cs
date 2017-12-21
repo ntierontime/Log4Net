@@ -173,3 +173,4 @@ namespace Framework.CommonBLLEntities
         }
     }
 }
+

@@ -43,3 +43,4 @@ namespace Framework.CommonBLLEntities
         //public Log4Net.DALContracts.DataAccessLayerFactoryContract DataAccessLayerFactory { get; set; }
     }
 }
+

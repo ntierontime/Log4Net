@@ -102,3 +102,4 @@ namespace Framework.CommonBLLEntities
         #endregion properties
     }
 }
+

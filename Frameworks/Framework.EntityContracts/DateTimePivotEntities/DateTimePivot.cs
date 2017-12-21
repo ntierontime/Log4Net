@@ -224,3 +224,4 @@ namespace Framework.EntityContracts.DateTimePivotEntities
         #endregion override string ToString()
     }
 }
+

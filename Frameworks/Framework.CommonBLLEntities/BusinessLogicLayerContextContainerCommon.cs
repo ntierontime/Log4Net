@@ -39,3 +39,4 @@ namespace Framework.CommonBLLEntities
         #endregion Framework.CommonBLLEntities.IBusinessLogicLayerContextContainer Members
     }
 }
+

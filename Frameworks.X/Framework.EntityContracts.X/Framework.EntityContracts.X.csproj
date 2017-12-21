@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52F99887-9ACC-421F-83CA-1C98DF00233F}</ProjectGuid>
+    <ProjectGuid>{320D4511-7A58-42CF-8373-21FCAC855C98}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Framework.EntityContracts</RootNamespace>
@@ -98,17 +98,14 @@
     <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPagingSetting.cs">
       <Link>Queries\QueryPagingSetting.cs</Link>
     </Compile>
-    <Compile Include="..\..\Frameworks\Framework.EntityContracts\Queries\QueryPredicateTypes.cs">
-      <Link>Queries\QueryPredicateTypes.cs</Link>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework.X\Framework.X.csproj">
-      <Project>{68218f7a-7603-418f-99c8-1b6e1fc426e0}</Project>
+      <Project>{daad2a69-4863-41a0-94ee-7bef4852ee3e}</Project>
       <Name>Framework.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.Resx.X\Framework.Resx.X.csproj">
-      <Project>{da5209fe-248e-46d6-8e4d-2a6fc218bd94}</Project>
+      <Project>{065710da-6c2e-4eca-aea4-6176ca21ff86}</Project>
       <Name>Framework.Resx.X</Name>
     </ProjectReference>
   </ItemGroup>

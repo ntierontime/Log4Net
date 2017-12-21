@@ -2664,7 +2664,7 @@ namespace Framework
         /// <returns>true if meets criteria, otherwise false</returns>
         public bool ExistsByFullContentType(string fullContentType)
         {
-            return this.Count(t => t.FullContentType == fullContentType) > 0;
+            return this.Any(t => t.FullContentType == fullContentType);
         }
 
         /// <summary>
@@ -2705,3 +2705,4 @@ namespace Framework
 
     }
 }
+

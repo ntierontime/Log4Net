@@ -1,0 +1,4 @@
+ALTER TABLE [dbo].[Log] CHECK CONSTRAINT ALL
+
+
+

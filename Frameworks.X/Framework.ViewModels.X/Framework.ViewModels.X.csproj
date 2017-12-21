@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7B095EDC-5611-454F-9E70-418A45ACBD0E}</ProjectGuid>
+    <ProjectGuid>{BA463A45-EA0F-4E76-8162-1E09884D5D3C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Framework.ViewModels</RootNamespace>
@@ -59,19 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework.X\Framework.X.csproj">
-      <Project>{68218f7a-7603-418f-99c8-1b6e1fc426e0}</Project>
+      <Project>{daad2a69-4863-41a0-94ee-7bef4852ee3e}</Project>
       <Name>Framework.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.CommonBLLEntities.X\Framework.CommonBLLEntities.X.csproj">
-      <Project>{bfb74635-4b67-41a5-abd3-e7b286d77cfc}</Project>
+      <Project>{237bd957-1424-49dd-a532-fefbfe469f05}</Project>
       <Name>Framework.CommonBLLEntities.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.EntityContracts.X\Framework.EntityContracts.X.csproj">
-      <Project>{52f99887-9acc-421f-83ca-1c98df00233f}</Project>
+      <Project>{320d4511-7a58-42cf-8373-21fcac855c98}</Project>
       <Name>Framework.EntityContracts.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.Resx.X\Framework.Resx.X.csproj">
-      <Project>{da5209fe-248e-46d6-8e4d-2a6fc218bd94}</Project>
+      <Project>{065710da-6c2e-4eca-aea4-6176ca21ff86}</Project>
       <Name>Framework.Resx.X</Name>
     </ProjectReference>
   </ItemGroup>

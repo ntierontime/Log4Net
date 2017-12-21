@@ -105,3 +105,4 @@ namespace Framework.EntityContracts.DateTimePivotEntities
         #endregion void Add(...)
     }
 }
+

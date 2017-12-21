@@ -87,3 +87,4 @@ namespace Framework.EntityContracts
         }
     }
 }
+

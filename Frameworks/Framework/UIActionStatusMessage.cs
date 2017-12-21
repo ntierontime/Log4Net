@@ -108,3 +108,4 @@ namespace Framework
         #endregion override string ToString()
     }
 }
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{339BD079-751C-4106-BFE9-9D3D107F57AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Log4Net.WcfClientBLL</RootNamespace>
+    <AssemblyName>Log4Net.WcfClientBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <None Include="App.config" />
+    <Compile Include="WcfClientEntityLog.cs" />
+    <Compile Include="WcfClientEntityAsynLog.cs" />
+    <Compile Include="WcfClientFactory.cs" />
+    <None Include="map.2.A.3.vsd" />
+    <None Include="map.2.A.3.vsd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Contracts\CommonBLLEntities\Log4Net.CommonBLLEntities.csproj">
+      <Project>{e8a97cdf-dbba-4f88-9539-39e61094ca1a}</Project>
+      <Name>Log4Net.CommonBLLEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contracts\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
+      <Project>{57cdb421-b4f0-4659-b344-363a5859d0d9}</Project>
+      <Name>Log4Net.DataSourceEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contracts\EntityContracts\Log4Net.EntityContracts.csproj">
+      <Project>{48ec0e52-ff56-412f-94ae-a1d5414f6e73}</Project>
+      <Name>Log4Net.EntityContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks\Framework\Framework.csproj">
+      <Project>{6d25aa30-c3af-4ae0-b567-0f2653120cdc}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks\Framework.CommonBLLEntities\Framework.CommonBLLEntities.csproj">
+      <Project>{ba8c8c0b-470a-4d3c-b3da-9e28599799b5}</Project>
+      <Name>Framework.CommonBLLEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks\Framework.DataSourceEntities\Framework.DataSourceEntities.csproj">
+      <Project>{f85a14d5-64e0-4cfc-88da-27fe9d0dd664}</Project>
+      <Name>Framework.DataSourceEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks\Framework.EntityContracts\Framework.EntityContracts.csproj">
+      <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
+      <Name>Framework.EntityContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfContracts\Log4Net.WcfContracts.csproj">
+      <Project>{ff469561-114d-4c7e-9bc1-f9f22d063314}</Project>
+      <Name>Log4Net.WcfContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>rem copy $(TargetPath) $(SolutionDir)BuiltResults\*.* /y</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

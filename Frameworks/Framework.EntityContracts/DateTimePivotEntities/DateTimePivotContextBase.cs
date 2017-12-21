@@ -151,3 +151,4 @@ namespace Framework.EntityContracts.DateTimePivotEntities
         #endregion GetDateTimePerX...PivotBaseCollection(...)
     }
 }
+

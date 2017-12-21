@@ -525,49 +525,5 @@ namespace Framework.Xaml
 
         #endregion not implements and not used
     }
-
-    public abstract class ViewModelBaseWithResultAndUIElement<TSearchCriteria, TSearchResultEntityCollection, TSearchResultEntityItem, TSearchResultDataViewCollection, TSearchResultDataViewItem>
-        : ViewModelBaseWithResultAndUIElement<TSearchCriteria, TSearchResultDataViewCollection, TSearchResultDataViewItem>
-        where TSearchCriteria : class, new()
-        where TSearchResultDataViewCollection : List<TSearchResultDataViewItem>, new()
-        where TSearchResultDataViewItem : class, new()
-        where TSearchResultEntityCollection : List<TSearchResultEntityItem>, new()
-        where TSearchResultEntityItem : class, new()
-    {
-        #region constructor
-
-        public ViewModelBaseWithResultAndUIElement()
-            : base()
-        {
-        }
-
-        #endregion constructor
-
-        protected ObservableCollection<TSearchResultDataViewItem> m_EntityCollectionDefault;
-
-        /// <summary>
-        /// Gets or sets the Default DataView Item list.
-        /// should investigate whether can remove RaisePropertyChanged
-        /// </summary>
-        /// <value>The Default DataView Item list.</value>
-        public ObservableCollection<TSearchResultDataViewItem> EntityCollectionDefault
-        {
-            get { return m_EntityCollectionDefault; }
-            set
-            {
-                m_EntityCollectionDefault = value;
-                RaisePropertyChanged("EntityCollectionDefault");
-            }
-        }
-
-        #region Cleanup()
-
-        public override  void Cleanup()
-        {
-            base.Cleanup();
-        }
-
-        #endregion Cleanup()
-    }
 }
 

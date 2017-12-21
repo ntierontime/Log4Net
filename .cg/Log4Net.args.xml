@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QuickCodeGenConfigurationCmdLineArg>
+  <MasterOption>LoadQuickCodeGenConfigurationCmdLineArgPerSolution</MasterOption>
+  <IsToBuildAndExportSolution>true</IsToBuildAndExportSolution>
+  <CompanyName>NTIER ON TIME TECHNOLOGIES INC.</CompanyName>
+  <DatabaseName>Log4Net</DatabaseName>
+  <ToBeExportedProjectKnownCategories />
+  <OutputRootFolder>D:\Test4\WhatEverII\GeneratedCode\B2_Solutions</OutputRootFolder>
+  <InputFileType>.dbml</InputFileType>
+  <InputFilePath>D:\Test4\WhatEverII\GeneratedCode\B1_Dbmls\Log4Net.dbml</InputFilePath>
+  <IDE>Unknown</IDE>
+  <ToBeBuiltProjectKnownCategories />
+  <NotToBeBuiltProjectKnownCategories>AspNetMvc50AngularSPA,AspNetMvc50ApiController,AspNetMvc50Rasor,AspNetMvc50WebApi2,LinqDataAccessLayer,LinqDataAccessLayerNUnitTest,LinqToSqlContexts,WebFormApplication,AspNetMvcAspx,AspNetMvcController,AspNetMvcRasor,DatabaseScripts,EntityFrameworkContext,EntityFrameworkDataAccessLayer,WcfClientUnitTests,MVVMLightWindowsPhone71,AspNetMvc40WebApi,FrameworkTokenAuth,FrameworkWcfClient,FrameworkWebApplication</NotToBeBuiltProjectKnownCategories>
+  <IsToBuildAndExportPreDefinedClasses>false</IsToBuildAndExportPreDefinedClasses>
+  <StartPort>10800</StartPort>
+  <IsRewriteFileWhenSame>false</IsRewriteFileWhenSame>
+  <DatabaseSever>Localhost</DatabaseSever>
+  <IsToUsedboAsTableSchema>true</IsToUsedboAsTableSchema>
+  <StatusChangedTypeFullNameList />
+  <SolutionVersion>1.0.0.0</SolutionVersion>
+  <ExcludedTables>aspnet_*;__RefactorLog;__MigrationHistory</ExcludedTables>
+  <IsToBuildSolutionOutputContextOnly>false</IsToBuildSolutionOutputContextOnly>
+  <IsToZip>true</IsToZip>
+  <DDDSettingCollection>
+	<DDDSetting DomainName="Administrators" Alias="Admin" Description="Administrator web site, Used for Asp.Net Mvc for Now"></DDDSetting>	
+	<DDDSetting DomainName="Partners" Alias="Partner" Description="Partner web site, Used for Asp.Net Mvc for Now"></DDDSetting>	
+	<DDDSetting DomainName="Clients" Alias="Client" Description="Client web site, Used for Asp.Net Mvc for Now"></DDDSetting>	
+  </DDDSettingCollection>
+</QuickCodeGenConfigurationCmdLineArg>

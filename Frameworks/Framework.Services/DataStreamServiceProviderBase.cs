@@ -105,3 +105,4 @@ namespace Framework.Services
         #endregion Read from stream
     }
 }
+

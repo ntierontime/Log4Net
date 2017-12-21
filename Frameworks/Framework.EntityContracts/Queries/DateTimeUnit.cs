@@ -26,3 +26,4 @@ namespace Framework.EntityContracts.Queries
         None,
     }
 }
+

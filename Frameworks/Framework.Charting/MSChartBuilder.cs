@@ -273,3 +273,4 @@ namespace Framework.Charting
         #endregion methods to build a chart
     }
 }
+

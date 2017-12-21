@@ -1,0 +1,11 @@
+﻿Name,DisplayName,Path,ParentPath,Guid,ParentGuid
+UIWeb,UIWeb,UIWeb,,d816b201-7326-49f0-97e1-9178f26053cf,
+Services,Services,Services,,289299eb-09cd-4249-9f80-16e9ab8f71a0,
+Contracts,Contracts,Contracts,,c33f9072-7ff8-4e9a-98a2-3b6a500fcddf,
+DAL,DAL,DAL,,14f984d7-a2f0-4c89-aa76-75c9bae83d75,
+Frameworks,Frameworks,Frameworks,,7030f2e5-96c9-454b-bc68-bef7c7f89743,
+Frameworks.X,Frameworks.X,Frameworks.X,,fb4a7b6a-9d41-44cf-9057-f6b3e9354d57,
+UINative,UINative,UINative,,26524139-41b6-46ac-8c1b-8bdebc8b2567,
+Shared,Shared,UINative\Shared,UINative,037d7953-7ed8-4a2a-a597-9bb530455315,26524139-41b6-46ac-8c1b-8bdebc8b2567
+Shared.X,Shared.X,UINative\Shared.X,UINative,c2a5b05f-64a5-442d-84ec-ea63ba71df51,26524139-41b6-46ac-8c1b-8bdebc8b2567
+Contracts.X,Contracts.X,Contracts.X,,00ebf82a-141a-4095-9677-e86ae77e41ba,

@@ -14,3 +14,4 @@ namespace Framework.Charting
         public SeriesChartType ChartType { get; set; }
     }
 }
+

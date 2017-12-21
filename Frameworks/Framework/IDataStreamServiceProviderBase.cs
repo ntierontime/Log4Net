@@ -7,3 +7,4 @@ namespace Framework
         Framework.DataStreamServiceResult BuildResult(TCollection input, Framework.DataServiceTypes dataServiceType);
     }
 }
+

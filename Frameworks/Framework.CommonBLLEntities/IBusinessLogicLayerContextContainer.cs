@@ -10,3 +10,4 @@ namespace Framework.CommonBLLEntities
         Framework.CommonBLLEntities.BusinessLogicLayerContext BusinessLogicLayerContext { get; set; }
     }
 }
+

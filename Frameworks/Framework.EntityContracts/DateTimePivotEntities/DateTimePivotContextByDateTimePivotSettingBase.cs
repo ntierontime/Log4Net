@@ -64,3 +64,4 @@ namespace Framework.EntityContracts.DateTimePivotEntities
         #endregion constructors
     }
 }
+

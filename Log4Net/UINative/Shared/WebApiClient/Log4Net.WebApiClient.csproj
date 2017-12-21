@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{022A3122-6510-49F1-B0F1-0AF69C6F0B83}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Log4Net.WebApiClient</RootNamespace>
+    <AssemblyName>Log4Net.WebApiClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <Compile Include="LogApiControllerClient.cs" />
+    <None Include="map.2.B.2.vsd" />
+    <None Include="map.2.B.2.vsd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Contracts\CommonBLLEntities\Log4Net.CommonBLLEntities.csproj">
+      <Project>{e8a97cdf-dbba-4f88-9539-39e61094ca1a}</Project>
+      <Name>Log4Net.CommonBLLEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Contracts\DataSourceEntities\Log4Net.DataSourceEntities.csproj">
+      <Project>{57cdb421-b4f0-4659-b344-363a5859d0d9}</Project>
+      <Name>Log4Net.DataSourceEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Contracts\EntityContracts\Log4Net.EntityContracts.csproj">
+      <Project>{48ec0e52-ff56-412f-94ae-a1d5414f6e73}</Project>
+      <Name>Log4Net.EntityContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework\Framework.csproj">
+      <Project>{6d25aa30-c3af-4ae0-b567-0f2653120cdc}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.CommonBLLEntities\Framework.CommonBLLEntities.csproj">
+      <Project>{ba8c8c0b-470a-4d3c-b3da-9e28599799b5}</Project>
+      <Name>Framework.CommonBLLEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.DAL\Framework.DAL.csproj">
+      <Project>{525678c4-fdc1-4a5d-9d8a-d7e78309335f}</Project>
+      <Name>Framework.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.DataSourceEntities\Framework.DataSourceEntities.csproj">
+      <Project>{f85a14d5-64e0-4cfc-88da-27fe9d0dd664}</Project>
+      <Name>Framework.DataSourceEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.EntityContracts\Framework.EntityContracts.csproj">
+      <Project>{c3a270de-9727-492e-91e2-f56e7e0e0f83}</Project>
+      <Name>Framework.EntityContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.Resx\Framework.Resx.csproj">
+      <Project>{c72b898b-b53b-42d5-9f4f-673f84bb485b}</Project>
+      <Name>Framework.Resx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Frameworks\Framework.ViewModels\Framework.ViewModels.csproj">
+      <Project>{2cc97c32-9ffa-4da4-a6c0-83f300404ec3}</Project>
+      <Name>Framework.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Contracts\Resx\Log4Net.Resx.csproj">
+      <Project>{97a3e081-b346-4f76-a0e5-fa69b19f03d9}</Project>
+      <Name>Log4Net.Resx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Contracts\ViewModelData\Log4Net.ViewModelData.csproj">
+      <Project>{9e6d2086-79a6-40cf-bd0d-d5e4c041e049}</Project>
+      <Name>Log4Net.ViewModelData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>..\..\..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>rem copy $(TargetPath) $(SolutionDir)BuiltResults\*.* /y</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

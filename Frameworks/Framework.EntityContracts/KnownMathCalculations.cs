@@ -20,3 +20,4 @@ namespace Framework.EntityContracts
         Varp,
     }
 }
+

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B33C694-6CEC-4B98-A640-86F8B0115CC7}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Log4Net.IOSApp</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Log4Net.IOSApp</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;XAMARIN;__MOBILE__;__IOS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>XAMARIN;__MOBILE__;__IOS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;XAMARIN;__MOBILE__;__IOS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>XAMARIN;__MOBILE__;__IOS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <DefineConstants>XAMARIN;__MOBILE__;__IOS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <BuildIpa>True</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <DefineConstants>XAMARIN;__MOBILE__;__IOS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="DispatcherHelperWrapper.cs" />
+    <Compile Include="Localize.cs" />
+    <Compile Include="Main.cs" />
+    <None Include="packages.config" />
+    <None Include="map.2.D.2.vsd" />
+    <None Include="map.2.D.2.vsd.png" />
+    <BundleResource Include="Assets\Add.png" />
+    <BundleResource Include="Assets\Bin.png" />
+    <BundleResource Include="Assets\Copy.png" />
+    <BundleResource Include="Assets\Download.png" />
+    <BundleResource Include="Assets\Edit.png" />
+    <BundleResource Include="Assets\Properties.png" />
+    <BundleResource Include="Assets\RecycleBin.png" />
+    <BundleResource Include="Assets\Reload.png" />
+    <BundleResource Include="Assets\Save.png" />
+    <BundleResource Include="Assets\Search.png" />
+    <BundleResource Include="Assets\Upload.png" />
+    <BundleResource Include="Assets\UserProfile.png" />
+    <BundleResource Include="Assets\Back.png" />
+    <BundleResource Include="Assets\Home.png" />
+    <BundleResource Include="Assets\LockScreenLogo.scale-100.png" />
+    <BundleResource Include="Assets\LockScreenLogo.scale-125.png" />
+    <BundleResource Include="Assets\LockScreenLogo.scale-150.png" />
+    <BundleResource Include="Assets\LockScreenLogo.scale-200.png" />
+    <BundleResource Include="Assets\LockScreenLogo.scale-400.png" />
+    <BundleResource Include="Assets\SplashScreen.scale-100.png" />
+    <BundleResource Include="Assets\SplashScreen.scale-125.png" />
+    <BundleResource Include="Assets\SplashScreen.scale-150.png" />
+    <BundleResource Include="Assets\SplashScreen.scale-200.png" />
+    <BundleResource Include="Assets\SplashScreen.scale-400.png" />
+    <BundleResource Include="Assets\Square150x150Logo.scale-100.png" />
+    <BundleResource Include="Assets\Square150x150Logo.scale-125.png" />
+    <BundleResource Include="Assets\Square150x150Logo.scale-150.png" />
+    <BundleResource Include="Assets\Square150x150Logo.scale-200.png" />
+    <BundleResource Include="Assets\Square150x150Logo.scale-400.png" />
+    <BundleResource Include="Assets\Square44x44Logo.scale-100.png" />
+    <BundleResource Include="Assets\Square44x44Logo.scale-125.png" />
+    <BundleResource Include="Assets\Square44x44Logo.scale-150.png" />
+    <BundleResource Include="Assets\Square44x44Logo.scale-200.png" />
+    <BundleResource Include="Assets\Square44x44Logo.scale-400.png" />
+    <BundleResource Include="Assets\Square44x44Logo.targetsize-16_altform-unplated.png" />
+    <BundleResource Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <BundleResource Include="Assets\Square44x44Logo.targetsize-256_altform-unplated.png" />
+    <BundleResource Include="Assets\Square44x44Logo.targetsize-32_altform-unplated.png" />
+    <BundleResource Include="Assets\Square44x44Logo.targetsize-48_altform-unplated.png" />
+    <BundleResource Include="Assets\StoreLogo.png" />
+    <BundleResource Include="Assets\Wide310x150Logo.scale-100.png" />
+    <BundleResource Include="Assets\Wide310x150Logo.scale-125.png" />
+    <BundleResource Include="Assets\Wide310x150Logo.scale-150.png" />
+    <BundleResource Include="Assets\Wide310x150Logo.scale-200.png" />
+    <BundleResource Include="Assets\Wide310x150Logo.scale-400.png" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork@2x" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default@2x.png" />
+    <BundleResource Include="Resources\Default-568h@2x.png" />
+    <BundleResource Include="Resources\Default-Portrait.png" />
+    <BundleResource Include="Resources\Default-Portrait@2x.png" />
+    <BundleResource Include="Resources\Icon-60@2x.png" />
+    <BundleResource Include="Resources\Icon-60@3x.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
+    <BundleResource Include="Resources\Icon-76@2x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small@2x.png" />
+    <BundleResource Include="Resources\Icon-Small@3x.png" />
+    <BundleResource Include="Resources\Icon-Small-40.png" />
+    <BundleResource Include="Resources\Icon-Small-40@2x.png" />
+    <BundleResource Include="Resources\Icon-Small-40@3x.png" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Contracts.X\CommonBLLEntities.X\Log4Net.CommonBLLEntities.X.csproj">
+      <Project>{299bc3e3-1187-4611-a19c-acea02f35e6c}</Project>
+      <Name>Log4Net.CommonBLLEntities.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contracts.X\DataSourceEntities.X\Log4Net.DataSourceEntities.X.csproj">
+      <Project>{618c8fa8-754b-4d50-bb32-8908a26c1689}</Project>
+      <Name>Log4Net.DataSourceEntities.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contracts.X\EntityContracts.X\Log4Net.EntityContracts.X.csproj">
+      <Project>{5833d0e5-c490-4505-a0e3-5e417f040f53}</Project>
+      <Name>Log4Net.EntityContracts.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.X\Framework.X.csproj">
+      <Project>{daad2a69-4863-41a0-94ee-7bef4852ee3e}</Project>
+      <Name>Framework.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.CommonBLLEntities.X\Framework.CommonBLLEntities.X.csproj">
+      <Project>{237bd957-1424-49dd-a532-fefbfe469f05}</Project>
+      <Name>Framework.CommonBLLEntities.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.DAL.X\Framework.DAL.X.csproj">
+      <Project>{386c5cdb-c93b-4fc1-a404-7e97499d6a2d}</Project>
+      <Name>Framework.DAL.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.DataSourceEntities.X\Framework.DataSourceEntities.X.csproj">
+      <Project>{7b681617-25b1-495e-b434-fc42fddff1a0}</Project>
+      <Name>Framework.DataSourceEntities.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.EntityContracts.X\Framework.EntityContracts.X.csproj">
+      <Project>{320d4511-7a58-42cf-8373-21fcac855c98}</Project>
+      <Name>Framework.EntityContracts.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.Resx.X\Framework.Resx.X.csproj">
+      <Project>{065710da-6c2e-4eca-aea4-6176ca21ff86}</Project>
+      <Name>Framework.Resx.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.ViewModels.X\Framework.ViewModels.X.csproj">
+      <Project>{ba463a45-ea0f-4e76-8162-1e09884d5d3c}</Project>
+      <Name>Framework.ViewModels.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.Xamariner.X\Framework.Xamariner.X.csproj">
+      <Project>{397ffa3d-9a4e-4900-9714-65d16a871613}</Project>
+      <Name>Framework.Xamariner.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks.X\Framework.Xaml.X\Framework.Xaml.X.csproj">
+      <Project>{8774a9e2-e9a7-409b-97e1-8a9274d795df}</Project>
+      <Name>Framework.Xaml.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared.X\MVVMLightViewModels.X\Log4Net.MVVMLightViewModels.X.csproj">
+      <Project>{197d0095-f258-43fc-b853-4b31929166a5}</Project>
+      <Name>Log4Net.MVVMLightViewModels.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared.X\XamarinForms.X\Log4Net.XamarinForms.X.csproj">
+      <Project>{78470d5c-8cc2-4e9f-99e0-85fcbf934798}</Project>
+      <Name>Log4Net.XamarinForms.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contracts.X\Resx.X\Log4Net.Resx.X.csproj">
+      <Project>{1b1f458a-9444-42d4-9ca4-261edf68c2dc}</Project>
+      <Name>Log4Net.Resx.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contracts.X\ViewModelData.X\Log4Net.ViewModelData.X.csproj">
+      <Project>{05ca071e-17b9-4802-a4c2-0e15b5e741bb}</Project>
+      <Name>Log4Net.ViewModelData.X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared.X\WebApiClient.X\Log4Net.WebApiClient.X.csproj">
+      <Project>{407f98db-3ca0-4c91-8e41-b51a56ddd37d}</Project>
+      <Name>Log4Net.WebApiClient.X</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\MvvmLightLibs.5.3.0.0\lib\xamarin.ios10\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\MvvmLightLibs.5.3.0.0\lib\xamarin.ios10\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19043, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\MvvmLightLibs.5.3.0.0\lib\xamarin.ios10\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLAppConfig, Version=0.2.0.0, Culture=neutral, PublicKeyToken=7dc9bc9afb3fa588, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\PCLAppConfig.0.3.2\lib\Xamarin.iOS\PCLAppConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLAppConfig.FileSystemStream.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\PCLAppConfig.0.3.2\lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLAppConfig.FileSystemStream.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\PCLAppConfig.0.3.2\lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\Xamarin.Forms.2.3.4.231\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\Xamarin.Forms.2.3.4.231\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\Xamarin.Forms.2.3.4.231\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\\packages\Xamarin.Forms.2.3.4.231\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+</Project>

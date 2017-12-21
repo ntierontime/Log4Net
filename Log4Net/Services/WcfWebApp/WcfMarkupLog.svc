@@ -1,0 +1,2 @@
+<%@ ServiceHost Language="C#" Debug="true" Service="Log4Net.CommonBLL.LogService, Log4Net.CommonBLL" %>
+

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D799A929-C600-4B5D-8C1A-3BCE58B32E16}</ProjectGuid>
+    <ProjectGuid>{8774A9E2-E9A7-409B-97E1-8A9274D795DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Framework.Xaml</RootNamespace>
@@ -53,23 +53,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework.X\Framework.X.csproj">
-      <Project>{68218f7a-7603-418f-99c8-1b6e1fc426e0}</Project>
+      <Project>{daad2a69-4863-41a0-94ee-7bef4852ee3e}</Project>
       <Name>Framework.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.CommonBLLEntities.X\Framework.CommonBLLEntities.X.csproj">
-      <Project>{bfb74635-4b67-41a5-abd3-e7b286d77cfc}</Project>
+      <Project>{237bd957-1424-49dd-a532-fefbfe469f05}</Project>
       <Name>Framework.CommonBLLEntities.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.EntityContracts.X\Framework.EntityContracts.X.csproj">
-      <Project>{52f99887-9acc-421f-83ca-1c98df00233f}</Project>
+      <Project>{320d4511-7a58-42cf-8373-21fcac855c98}</Project>
       <Name>Framework.EntityContracts.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.Resx.X\Framework.Resx.X.csproj">
-      <Project>{da5209fe-248e-46d6-8e4d-2a6fc218bd94}</Project>
+      <Project>{065710da-6c2e-4eca-aea4-6176ca21ff86}</Project>
       <Name>Framework.Resx.X</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework.ViewModels.X\Framework.ViewModels.X.csproj">
-      <Project>{7b095edc-5611-454f-9e70-418a45acbd0e}</Project>
+      <Project>{ba463a45-ea0f-4e76-8162-1e09884d5d3c}</Project>
       <Name>Framework.ViewModels.X</Name>
     </ProjectReference>
   </ItemGroup>
@@ -109,13 +109,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
