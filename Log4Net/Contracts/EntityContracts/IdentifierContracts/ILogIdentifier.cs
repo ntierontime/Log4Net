@@ -29,14 +29,5 @@ namespace Log4Net.EntityContracts
 ;
         }
     }
-
-    /// <summary>
-    ///  a property defined when <see cref="LogIdentifier"/> is used in other classes.
-    /// </summary>
-    public partial interface WithIdentifierContractLog<T>
-        where T : ILogIdentifier
-    {
-        T LogIdentifier { get; set; }
-    }
 }
 

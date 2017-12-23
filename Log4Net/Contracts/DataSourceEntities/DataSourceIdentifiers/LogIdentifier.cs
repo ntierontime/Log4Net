@@ -102,19 +102,5 @@ System.Int64 id)
 
         #endregion Method of LogIdentifier GetAClone()
     }
-
-    /// <summary>
-    ///  a property defined when <see cref="WithIdentifierContractLog"/> is used in other classes.
-    /// </summary>
-    public partial interface WithIdentifierContractLog
-    {
-        /// <summary>
-        /// Gets or sets the LogIdentifier
-        /// </summary>
-        /// <value>
-        /// The LogIdentifier
-        /// </value>
-        LogIdentifier LogIdentifier { get; set; }
-    }
 }
 

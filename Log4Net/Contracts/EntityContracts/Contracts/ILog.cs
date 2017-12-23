@@ -22,21 +22,5 @@ namespace Log4Net.EntityContracts
         System.String Exception { get; set; }
 
     }
-
-    /// <summary>
-    /// a property defined when <see cref="WithEntityContractLog"/> is used in other classes.
-    /// </summary>
-    /// <typeparam name="T">a type inherits from <see cref="WithEntityContractLog"/></typeparam>
-    public partial interface WithEntityContractLog<T>
-        where T : ILog
-    {
-        /// <summary>
-        /// Gets or sets the Log
-        /// </summary>
-        /// <value>
-        /// The Log
-        /// </value>
-        T Log { get; set; }
-    }
 }
 

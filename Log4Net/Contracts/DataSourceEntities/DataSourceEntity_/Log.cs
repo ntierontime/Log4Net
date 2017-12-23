@@ -394,22 +394,6 @@ namespace Log4Net.DataSourceEntities
         #endregion Nested Views classes and their collection classes 1
     }
 
-/*
-    /// <summary>
-    /// a property defined when <see cref="Log"/> is used in other classes.
-    /// </summary>
-    public interface WithEntityContractLog
-    {
-        /// <summary>
-        /// Gets or sets Log.
-        /// </summary>
-        /// <value>
-        /// The Log
-        /// </value>
-        Log Log { get; set; }
-    }
-*/
-
     /// <summary>
     /// message definition, pass single entry, pulled from database, to business logic layer. <see cref="Log"/> and <see cref="Framework.DataAccessLayerMessageBase&lt;T&gt;"/>
     /// </summary>
