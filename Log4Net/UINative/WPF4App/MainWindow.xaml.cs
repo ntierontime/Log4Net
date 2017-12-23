@@ -62,7 +62,7 @@ namespace Log4Net.WPF4App
         {
             #region Workspaces with MasterTypeFullName
 
-            Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.WPCommonOfLogVM.EntityName_Static, Log4Net.MVVMLightViewModels.WPCommonOfLogVM.ViewName_Static, Framework.UIAction.Search,  Framework.UIActionStatus.Launch, Framework.UIAction.Navigate, "/Pages/WPCommonOfLog.xaml", typeof(Log4Net.WPF4App.Pages.WPCommonOfLog));
+            Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.WPCommonOfLogVM.EntityName_Static, Log4Net.MVVMLightViewModels.WPCommonOfLogVM.ViewName_Static, Framework.UIAction.Search,  Framework.UIActionStatus.Launch, Framework.UIAction.Navigate, "/Pages/Log/WPCommonOfLog.xaml", typeof(Log4Net.WPF4App.Pages.Log.WPCommonOfLog));
 
             #endregion Workspaces with MasterTypeFullName
 
@@ -74,9 +74,9 @@ namespace Log4Net.WPF4App
             Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.ItemVMLog.EntityName_Static, Log4Net.MVVMLightViewModels.ItemVMLog.ViewName_Edit, Framework.UIAction.Update,  Framework.UIActionStatus.Close, Framework.UIAction.GoBack, null, null);
             Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.ItemVMLog.EntityName_Static, Log4Net.MVVMLightViewModels.ItemVMLog.ViewName_Delete, Framework.UIAction.Delete,  Framework.UIActionStatus.Close, Framework.UIAction.GoBack, null, null);
 
-            Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.ItemVMLog.EntityName_Static, Log4Net.MVVMLightViewModels.ItemVMLog.ViewName_Create, Framework.UIAction.Create,  Framework.UIActionStatus.Success, Framework.UIAction.Navigate, "/Pages/WPCommonOfLog.xaml", typeof(Log4Net.WPF4App.Pages.WPCommonOfLog));
-            Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.ItemVMLog.EntityName_Static, Log4Net.MVVMLightViewModels.ItemVMLog.ViewName_Edit, Framework.UIAction.Update,  Framework.UIActionStatus.Success, Framework.UIAction.Navigate, "/Pages/WPCommonOfLog.xaml", typeof(Log4Net.WPF4App.Pages.WPCommonOfLog));
-            Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.ItemVMLog.EntityName_Static, Log4Net.MVVMLightViewModels.ItemVMLog.ViewName_Delete, Framework.UIAction.Delete,  Framework.UIActionStatus.Success, Framework.UIAction.Navigate, "/Pages/WPCommonOfLog.xaml", typeof(Log4Net.WPF4App.Pages.WPCommonOfLog));
+            Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.ItemVMLog.EntityName_Static, Log4Net.MVVMLightViewModels.ItemVMLog.ViewName_Create, Framework.UIAction.Create,  Framework.UIActionStatus.Success, Framework.UIAction.Navigate, "/Pages/Log/WPCommonOfLog.xaml", typeof(Log4Net.WPF4App.Pages.Log.WPCommonOfLog));
+            Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.ItemVMLog.EntityName_Static, Log4Net.MVVMLightViewModels.ItemVMLog.ViewName_Edit, Framework.UIAction.Update,  Framework.UIActionStatus.Success, Framework.UIAction.Navigate, "/Pages/Log/WPCommonOfLog.xaml", typeof(Log4Net.WPF4App.Pages.Log.WPCommonOfLog));
+            Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.ItemVMLog.EntityName_Static, Log4Net.MVVMLightViewModels.ItemVMLog.ViewName_Delete, Framework.UIAction.Delete,  Framework.UIActionStatus.Success, Framework.UIAction.Navigate, "/Pages/Log/WPCommonOfLog.xaml", typeof(Log4Net.WPF4App.Pages.Log.WPCommonOfLog));
 
             Log4Net.MVVMLightViewModels.ViewModelLocator.MainStatic.NavigationSettingCollection.Add(Log4Net.MVVMLightViewModels.WPCommonOfLogVM.EntityName_Static, Log4Net.MVVMLightViewModels.WPCommonOfLogVM.ViewName_Static, Framework.UIAction.SelectionChanged,  Framework.UIActionStatus.Success, Framework.UIAction.Navigate, "/Pages/Log/Details.xaml", typeof(Log4Net.WPF4App.Pages.Log.Details));
 

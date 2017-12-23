@@ -151,18 +151,18 @@
       <SubType>RESXCodeBehind</SubType>
     </Compile>
     <None Include="packages.config" />
-    <Page Include="Pages\WPCommonOfLog.xaml">
+    <Page Include="Pages\Log\WPCommonOfLog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Pages\WPCommonOfLog.xaml.cs">
+    <Compile Include="Pages\Log\WPCommonOfLog.xaml.cs">
       <DependentUpon>WPCommonOfLog.xaml</DependentUpon>
     </Compile>
-    <Page Include="UserControls\UCCommonOfLog.xaml">
+    <Page Include="UserControls\Log\UCCommonOfLog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="UserControls\UCCommonOfLog.xaml.cs">
+    <Compile Include="UserControls\Log\UCCommonOfLog.xaml.cs">
       <DependentUpon>UCCommonOfLog.xaml</DependentUpon>
     </Compile>
     <None Include="map.2.D.2.vsd" />
